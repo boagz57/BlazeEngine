@@ -4,8 +4,10 @@
 
 namespace BlazeFramework
 {
-	//Not part of KeyboardHandling class (Callback functions cannot be class members)
-	//Only serves as a callback function to be used within SetWindowContextForKeyboard()
+	//Not part of KeyboardHandling class (Callback functions cannot be class members).
+	//Only serves as a callback function to be used within SetWindowContextForKeyboard().
+	//Is used to set the boolean at the keycode location (in the array) to true if the 
+	//key is pressed. This key state will then be polled each frame.
 	void KeyCallBackFunction(WindowHandling::BlazeWindow* window, int keyCode, int scancode, int action, int mods)
 	{
 		KeyboardHandling::m_keyCodes.at(keyCode) = (action != GLFW_RELEASE);
@@ -19,11 +21,14 @@ namespace BlazeFramework
 		}
 	}
 
+	//Will specify what window you want to poll your KeyCallBackFunction from every frame.
 	void KeyboardHandling::SetWindowContextForKeyboard(WindowHandling::BlazeWindow * window)
 	{
 		glfwSetKeyCallback(window, KeyCallBackFunction);
 	}
 
+	//This is used to extract out what key has actually been pressed from glfw so that 
+	//you can use this information to perform whatever action you attach to this input.
 	bool KeyboardHandling::IsKeyPressed(const uint16 key)
 	{
 		RUNTIME_ASSERT(key <= GLFW_KEY_LAST, "ERROR: keycode entered does not exist on keyboard");
