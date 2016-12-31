@@ -10,9 +10,7 @@ namespace MyOpenGL
 	void Initialize();
 	void InitializeGLBuffers();
 	void MoveTriangle(float x, float y);
-	bool CheckShaderStatus(GLuint shaderID);
-	bool CheckProgramStatus(GLuint programID);
-	std::string ReadShaderCode(const char8* fileName);
+	std::string ReadShaderCode(const char8* fileName, const char8* typeOfShader);
 	void InstallShaders();
 
 	bool RestartGLLogFile();

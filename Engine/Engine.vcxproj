@@ -46,6 +46,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\StatusChecks.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\GameWorld\World.h" />
@@ -64,6 +65,7 @@
     <ClInclude Include="Source\Graphics\Window\Window.h" />
     <ClInclude Include="Source\Framework\Vector.h" />
     <ClInclude Include="Source\Universal\UniversalTypeDefs.h" />
+    <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\StatusChecks.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\Framework\Array.inl">

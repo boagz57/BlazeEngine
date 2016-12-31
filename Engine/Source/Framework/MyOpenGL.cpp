@@ -9,6 +9,7 @@
 #include <ctime>
 #include "Math/Vector3D/Vector3D.h"
 #include "../Universal/Globals.h"
+#include "LowLevelGraphics/OpenGL/StatusChecks.h"
 
 #define GL_LOG_FILE "gl.log"
 
@@ -61,49 +62,6 @@ namespace MyOpenGL
 		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(triangle), triangle);
 	}
 
-	bool CheckShaderStatus(GLuint shaderID)
-	{
-		GLint compileStatus;
-		glGetShaderiv(shaderID, GL_COMPILE_STATUS, &compileStatus);
-		if (compileStatus != GL_TRUE)
-		{
-			GLint infoLogLength;
-			glGetShaderiv(shaderID, GL_INFO_LOG_LENGTH, &infoLogLength);
-			GLchar* buffer = new GLchar[infoLogLength];
-
-			GLsizei bufferSize;
-			glGetShaderInfoLog(shaderID, infoLogLength, &bufferSize, buffer);
-
-			LOG(buffer);
-
-			delete[] buffer;
-			return false;
-		}
-
-		return true;
-	}
-
-	bool CheckProgramStatus(GLuint programID)
-	{
-		GLint linkStatus;
-		glGetProgramiv(programID, GL_LINK_STATUS, &linkStatus);
-		if (linkStatus != GL_TRUE)
-		{
-			GLint infoLogLength;
-			glGetProgramiv(programID, GL_INFO_LOG_LENGTH, &infoLogLength);
-			GLchar* buffer = new GLchar[infoLogLength];
-
-			GLsizei bufferSize;
-			glGetProgramInfoLog(programID, infoLogLength, &bufferSize, buffer);
-
-			LOG(buffer);
-
-			delete[] buffer;
-			return false;
-		}
-		return true;
-	}
-
 	std::string ReadShaderCode(const char8* shaderFilePath, const char8* typeOfShader)
 	{
 		std::ifstream shaderFileInputStream(shaderFilePath);
@@ -122,12 +80,12 @@ namespace MyOpenGL
 		GLuint FragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
 
 		//Add source or text file to shader object
-		std::string temp = ReadShaderCode("../Engine/Source/Graphics/Shaders/VertexShader.glsl", "Vertex").c_str();
+		std::string temp = ReadShaderCode("../Engine/Source/Framework/LowLevelGraphics/OpenGL/Shaders/VertexShader.glsl", "Vertex").c_str();
 		const GLchar* adapter[1];
 
 		adapter[0] = temp.c_str();
 		glShaderSource(vertexShaderID, 1, adapter, 0);
-		temp = ReadShaderCode("../Engine/Source/Graphics/Shaders/FragmentShader.glsl", "Fragment").c_str();
+		temp = ReadShaderCode("../Engine/Source/Framework/LowLevelGraphics/OpenGL/Shaders/FragmentShader.glsl", "Fragment").c_str();
 		adapter[0] = temp.c_str();
 		glShaderSource(FragmentShaderID, 1, adapter, 0);
 
@@ -135,7 +93,7 @@ namespace MyOpenGL
 		glCompileShader(vertexShaderID);
 		glCompileShader(FragmentShaderID);
 
-		if (!CheckShaderStatus(vertexShaderID) || !CheckShaderStatus(FragmentShaderID))
+		if (!BlazeFramework::OpenGL::CheckGLShaderStatus(vertexShaderID) || !BlazeFramework::OpenGL::CheckGLShaderStatus(FragmentShaderID))
 			return;
 
 		//Create Program
@@ -146,7 +104,7 @@ namespace MyOpenGL
 		//Link Program
 		glLinkProgram(programID);
 
-		if (!CheckProgramStatus(programID))
+		if (!BlazeFramework::OpenGL::CheckGLProgramStatus(programID))
 		{
 			LOG("Failed to link program");
 			return;
