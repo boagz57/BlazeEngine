@@ -329,3 +329,4 @@ build/
 ### Additional Ignore Files/Folders ###############################################################################
 
 Intermediate/
+Binaries/
