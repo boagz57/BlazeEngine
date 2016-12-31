@@ -104,15 +104,15 @@ namespace MyOpenGL
 		return true;
 	}
 
-	std::string ReadShaderCode(const char8* fileName)
+	std::string ReadShaderCode(const char8* shaderFilePath, const char8* typeOfShader)
 	{
-		std::ifstream meInput(fileName);
-		if (!meInput.good())
+		std::ifstream shaderFileInputStream(shaderFilePath);
+		if (!shaderFileInputStream.good())
 		{
-			LOG("File failed to load!");
+			LOG("%s Shader File failed to load!\n", typeOfShader);
 		};
 
-		return std::string(std::istreambuf_iterator<char8>(meInput), std::istreambuf_iterator<char8>());
+		return std::string(std::istreambuf_iterator<char8>(shaderFileInputStream), std::istreambuf_iterator<char8>());
 	}
 
 	void InstallShaders()
@@ -122,12 +122,12 @@ namespace MyOpenGL
 		GLuint FragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
 
 		//Add source or text file to shader object
-		std::string temp = ReadShaderCode("../Engine/Source/Framework/Shaders/VertexShader.glsl").c_str();
+		std::string temp = ReadShaderCode("../Engine/Source/Graphics/Shaders/VertexShader.glsl", "Vertex").c_str();
 		const GLchar* adapter[1];
 
 		adapter[0] = temp.c_str();
 		glShaderSource(vertexShaderID, 1, adapter, 0);
-		temp = ReadShaderCode("../Engine/Source/Framework/Shaders/FragmentShader.glsl").c_str();
+		temp = ReadShaderCode("../Engine/Source/Graphics/Shaders/FragmentShader.glsl", "Fragment").c_str();
 		adapter[0] = temp.c_str();
 		glShaderSource(FragmentShaderID, 1, adapter, 0);
 
