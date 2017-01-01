@@ -1,13 +1,14 @@
-#pragma once
+#include "Precompiled.h"
 #include "Macro.h"
-#include "GL\glew.h"
-#include "GLFW\glfw3.h"
+#include "GL/glew.h"
+#include "GLFW/glfw3.h"
+#include "GLInitialization.h"
 
 namespace BlazeFramework
 {
-	namespace GLInitialization
+	namespace OpenGL
 	{
-		inline void InitializeGLFW()
+		void InitializeGLFW()
 		{
 			if (!glfwInit())
 			{
@@ -16,20 +17,21 @@ namespace BlazeFramework
 			};
 		}
 
-		inline void InitializeGLEW()
+		void InitializeGlew()
 		{
 			if (glewInit() != GLEW_OK)
 			{
 				LOG("Failed to initialize glew!");
+				return;
 			};
 		}
 
-		inline void SetMinGLVersion()
+		void SetMinGLVersion()
 		{
 			glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 			glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
 			glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 			glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 		}
-	};
+	}
 }

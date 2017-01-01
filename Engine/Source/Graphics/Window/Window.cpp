@@ -1,6 +1,6 @@
 #include "Precompiled.h"
 #include "UniversalTypeDefs.h"
-#include "../Framework/GLInitialization.h"
+#include "../../Framework/LowLevelGraphics/OpenGL/Initialization/GLInitialization.h"
 #include "../Universal/Globals.h"
 #include "Window.h"
 
@@ -11,7 +11,7 @@ namespace BlazeGraphics
 		M_HEIGHT(height),
 		M_TITLE(title)
 	{
-		BlazeFramework::GLInitialization::InitializeGLFW();
+		BlazeFramework::OpenGL::InitializeGLFW();
 
 		//InitializeWindow
 		{
@@ -29,8 +29,8 @@ namespace BlazeGraphics
 			BlazeFramework::WindowHandling::CenterViewportToWindow(m_window);
 		}
 
-		BlazeFramework::GLInitialization::InitializeGLEW();
-		BlazeFramework::GLInitialization::SetMinGLVersion();
+		BlazeFramework::OpenGL::InitializeGlew();
+		BlazeFramework::OpenGL::SetMinGLVersion();
 	}
 
 
