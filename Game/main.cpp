@@ -5,7 +5,7 @@
 
 void glfwErrorCallback(int errorCode, const char* description)
 {
-	BlazeFramework::OpenGL::GlLogError("GLFW ERROR: message: %s, error code: %i\n", description, errorCode);
+	BlazeFramework::OpenGL::LogToFileAndConsole("GLFW ERROR: message: %s, error code: %i\n", description, errorCode);
 };
 
 World gameWorld;

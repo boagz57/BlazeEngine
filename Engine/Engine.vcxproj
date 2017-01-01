@@ -35,7 +35,6 @@
     <ClCompile Include="Source\Framework\LowLevelInput\KeyboardHandling.cpp" />
     <ClCompile Include="Source\Clock\Clock.cpp" />
     <ClCompile Include="Source\Framework\FileHandling\File.cpp" />
-    <ClCompile Include="Source\HeaderTest.cpp" />
     <ClCompile Include="Source\Universal\Precompiled.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>

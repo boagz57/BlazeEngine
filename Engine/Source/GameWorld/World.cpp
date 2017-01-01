@@ -12,7 +12,7 @@ World::World()
 void World::GameLoop()
 {
 	BlazeFramework::OpenGL::RestartGLLogFile();
-	BlazeFramework::OpenGL::GlLogToFile("starting GLFW\n%s\n", glfwGetVersionString());
+	BlazeFramework::OpenGL::LogToFile("starting GLFW\n%s\n", glfwGetVersionString());
 
 	MyOpenGL::InitializeGLBuffers();
 	MyOpenGL::InstallShaders();

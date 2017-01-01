@@ -33,7 +33,7 @@ namespace BlazeFramework
 			return true;
 		}
 
-		bool GlLogToFile(const char8* message)
+		bool LogToFile(const char8* message)
 		{
 			FileHandling::File glLogFile(GL_LOG_FILE);
 			if (!glLogFile.Good())
@@ -47,7 +47,7 @@ namespace BlazeFramework
 			return true;
 		}
 
-		bool GlLogToFile(const char8* message, const char8* string)
+		bool LogToFile(const char8* message, const char8* string)
 		{
 			FileHandling::File glLogFile;
 			glLogFile.Open(GL_LOG_FILE, "a");
@@ -63,7 +63,7 @@ namespace BlazeFramework
 			return true;
 		}
 
-		bool GlLogToFile(const char8 * message, const char8* stringToInsertInMessage, int numberToInsertInMessage)
+		bool LogToFile(const char8 * message, const char8* stringToInsertInMessage, int numberToInsertInMessage)
 		{
 			FileHandling::File glLogFile(GL_LOG_FILE);
 			if (!glLogFile.Good())
@@ -77,7 +77,7 @@ namespace BlazeFramework
 			return true;
 		}
 
-		bool GlLogToFile(const char8 * message, int numberToInsertInMessage)
+		bool LogToFile(const char8 * message, int numberToInsertInMessage)
 		{
 			FileHandling::File glLogFile(GL_LOG_FILE);
 			if (!glLogFile.Good())
@@ -91,7 +91,7 @@ namespace BlazeFramework
 			return true;
 		}
 
-		bool GlLogError(const char8* message)//TODO: Convert to my File system
+		bool LogToFileAndConsole(const char8* message)//TODO: Convert to my File system
 		{
 			FILE* glLogFile = fopen(GL_LOG_FILE, "a");
 			if (!glLogFile)
@@ -110,7 +110,7 @@ namespace BlazeFramework
 			return true;
 		}
 
-		bool GlLogError(const char8 * message, const char8 * string)//TODO: Convert to my File system
+		bool LogToFileAndConsole(const char8 * message, const char8 * string)//TODO: Convert to my File system
 		{
 			FILE* glLogFile = fopen(GL_LOG_FILE, "a");
 			if (!glLogFile)
@@ -129,7 +129,7 @@ namespace BlazeFramework
 			return true;
 		}
 
-		bool GlLogError(const char8 * message, const char8 * string, int number)//TODO: Convert to my file system
+		bool LogToFileAndConsole(const char8 * message, const char8 * string, int number)//TODO: Convert to my file system
 		{
 			FILE* glLogFile = fopen(GL_LOG_FILE, "a");
 			if (!glLogFile)
@@ -148,7 +148,7 @@ namespace BlazeFramework
 			return true;
 		}
 
-		bool GlLogError(const char8 * message, int number)//TODO: Convert to my file system
+		bool LogToFileAndConsole(const char8 * message, int number)//TODO: Convert to my file system
 		{
 			FILE* glLogFile = fopen(GL_LOG_FILE, "a");
 			if (!glLogFile)
