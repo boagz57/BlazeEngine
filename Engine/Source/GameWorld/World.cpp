@@ -1,5 +1,6 @@
 #include "Precompiled.h"
 #include "../Framework/MyOpenGL.h"
+#include "../Framework/LowLevelGraphics/OpenGL/ErrorLogging/ErrorLogging.h"
 #include "../Universal/Globals.h"
 #include "../Input/Keyboard/Keyboard.h"
 #include "World.h"
@@ -10,12 +11,13 @@ World::World()
 
 void World::GameLoop()
 {
-	MyOpenGL::RestartGLLogFile();
-	MyOpenGL::GlLogToFile("starting GLFW\n%s\n", glfwGetVersionString());
+	BlazeFramework::OpenGL::RestartGLLogFile();
+	BlazeFramework::OpenGL::GlLogToFile("starting GLFW\n%s\n", glfwGetVersionString());
 
 	MyOpenGL::InitializeGLBuffers();
 	MyOpenGL::InstallShaders();
-	MyOpenGL::Initialize();
+
+	engineClock.Initialize();
 
 	BlazeInput::Keyboard keyboard;
 

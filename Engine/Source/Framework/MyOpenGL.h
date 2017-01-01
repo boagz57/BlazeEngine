@@ -7,23 +7,8 @@
 
 namespace MyOpenGL
 {
-	void Initialize();
 	void InitializeGLBuffers();
 	void MoveTriangle(float x, float y);
 	std::string ReadShaderCode(const char8* fileName, const char8* typeOfShader);
 	void InstallShaders();
-
-	bool RestartGLLogFile();
-
-	//Log openGL messages/erros to log file
-	bool GlLogToFile(const char8* message);
-	bool GlLogToFile(const char8* message, const char8* stringToInsertInMessage);
-	bool GlLogToFile(const char8* message, const char8* stringToInsertInMessage, int numberToInsertInMessage);
-	bool GlLogToFile(const char8* message, int numberToInsertInMessage);
-
-	//Log openGL messages/errors to BOTH log file and console
-	bool GlLogError(const char8* message);
-	bool GlLogError(const char8* message, const char8* string);
-	bool GlLogError(const char8* message, const char8* string, int number);
-	bool GlLogError(const char8* message, int number);
 }
