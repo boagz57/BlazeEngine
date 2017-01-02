@@ -14,7 +14,8 @@ namespace BlazeFramework
 	{
 		bool RestartGLLogFile()
 		{
-			//Will create a NEW gl.log file, or replace old one, each compilation. Will use this log file to dump opengl info into to help with debugging
+			//Will create a NEW gl.log file, or replace old one, each compilation. 
+			//Will use this log file to dump opengl info into to help with debugging
 			FileHandling::File glLogFile(GL_LOG_FILE);
 			if (!glLogFile.Good())
 			{
