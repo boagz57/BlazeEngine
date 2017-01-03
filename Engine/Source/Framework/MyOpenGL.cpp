@@ -101,7 +101,7 @@ namespace MyOpenGL
 
 		if (!BlazeFramework::OpenGL::CheckGLProgramStatus(programID))
 		{
-			LOG("Failed to link program");
+			LOG("Failed to link openGL program");
 			return;
 		}
 
