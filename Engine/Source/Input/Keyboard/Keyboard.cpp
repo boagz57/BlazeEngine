@@ -18,7 +18,7 @@ namespace BlazeInput
 			MyOpenGL::MoveTriangle(-.6f, 0.0f);
 		else if (KeyboardHandling::IsKeyPressed(Key::UpArrow))
 			MyOpenGL::MoveTriangle(0.0f, 0.6f);
-		else if(KeyboardHandling::IsKeyPressed(Key::DownArrow))
+		else if (KeyboardHandling::IsKeyPressed(Key::DownArrow))
 			MyOpenGL::MoveTriangle(0.0f, -0.6f);
 	}
 }

@@ -10,6 +10,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Game", "Game\Game.vcxproj",
 		{C32C8CD4-D9FB-4EE6-A341-263E52238393} = {C32C8CD4-D9FB-4EE6-A341-263E52238393}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EngineTester", "EngineTester\EngineTester.vcxproj", "{0386493E-D8BE-40FC-89BA-05B69E1BDC2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -44,6 +46,18 @@ Global
 		{5250B023-5849-402F-9787-7C8F75AFDA83}.Release|x64.Build.0 = Release|x64
 		{5250B023-5849-402F-9787-7C8F75AFDA83}.Release|x86.ActiveCfg = Release|Win32
 		{5250B023-5849-402F-9787-7C8F75AFDA83}.Release|x86.Build.0 = Release|Win32
+		{0386493E-D8BE-40FC-89BA-05B69E1BDC2A}.Debug|x64.ActiveCfg = Debug|x64
+		{0386493E-D8BE-40FC-89BA-05B69E1BDC2A}.Debug|x64.Build.0 = Debug|x64
+		{0386493E-D8BE-40FC-89BA-05B69E1BDC2A}.Debug|x86.ActiveCfg = Debug|Win32
+		{0386493E-D8BE-40FC-89BA-05B69E1BDC2A}.Debug|x86.Build.0 = Debug|Win32
+		{0386493E-D8BE-40FC-89BA-05B69E1BDC2A}.Profile|x64.ActiveCfg = Release|x64
+		{0386493E-D8BE-40FC-89BA-05B69E1BDC2A}.Profile|x64.Build.0 = Release|x64
+		{0386493E-D8BE-40FC-89BA-05B69E1BDC2A}.Profile|x86.ActiveCfg = Release|Win32
+		{0386493E-D8BE-40FC-89BA-05B69E1BDC2A}.Profile|x86.Build.0 = Release|Win32
+		{0386493E-D8BE-40FC-89BA-05B69E1BDC2A}.Release|x64.ActiveCfg = Release|x64
+		{0386493E-D8BE-40FC-89BA-05B69E1BDC2A}.Release|x64.Build.0 = Release|x64
+		{0386493E-D8BE-40FC-89BA-05B69E1BDC2A}.Release|x86.ActiveCfg = Release|Win32
+		{0386493E-D8BE-40FC-89BA-05B69E1BDC2A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
