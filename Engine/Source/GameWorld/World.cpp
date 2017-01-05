@@ -1,5 +1,5 @@
 #include "Precompiled.h"
-#include "../Framework/MyOpenGL.h"
+#include "../Framework/LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "../Framework/LowLevelGraphics/OpenGL/ErrorLogging/ErrorLogging.h"
 #include "../Universal/Globals.h"
 #include "../Input/Keyboard/Keyboard.h"

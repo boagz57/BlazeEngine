@@ -1,5 +1,5 @@
 #include "Precompiled.h"
-#include "../MyOpenGL.h"
+#include "LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "KeyboardHandling.h"
 
 namespace BlazeFramework

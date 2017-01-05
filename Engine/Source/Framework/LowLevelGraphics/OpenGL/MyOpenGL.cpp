@@ -4,12 +4,9 @@
 #include <fstream>
 #include "GL/glew.h"
 #include "MyOpenGL.h"
-#include <stdarg.h>
-#include "FileHandling/File.h"
-#include <ctime>
-#include "Math/Vector3D/Vector3D.h"
-#include "../Universal/Globals.h"
-#include "LowLevelGraphics/OpenGL/StatusChecks.h"
+#include "../../Math/Vector3D/Vector3D.h"
+#include "../../../Universal/Globals.h"
+#include "StatusChecks/StatusChecks.h"
 
 
 namespace MyOpenGL

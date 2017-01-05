@@ -40,14 +40,14 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Source\Framework\MyOpenGL.cpp" />
+    <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\MyOpenGL.cpp" />
     <ClCompile Include="Source\Graphics\Window\Window.cpp" />
     <ClCompile Include="Source\Framework\Vector.inl">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\StatusChecks.cpp" />
+    <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\StatusChecks\StatusChecks.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\ErrorLogging\ErrorLogging.h" />
@@ -62,12 +62,12 @@
     <ClInclude Include="Source\Framework\Math\Vector3D\Vector3D.h" />
     <ClInclude Include="Source\Framework\LowLevelWindow\WindowHandling.h" />
     <ClInclude Include="Source\Universal\Precompiled.h" />
-    <ClInclude Include="Source\Framework\MyOpenGL.h" />
+    <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\MyOpenGL.h" />
     <ClInclude Include="Source\Macro.h" />
     <ClInclude Include="Source\Graphics\Window\Window.h" />
     <ClInclude Include="Source\Framework\Vector.h" />
     <ClInclude Include="Source\Universal\UniversalTypeDefs.h" />
-    <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\StatusChecks.h" />
+    <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\StatusChecks\StatusChecks.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\Framework\Array.inl">
@@ -186,7 +186,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)\ThirdParty\Boost\Include;$(ProjectDir)Source\Universal\;$(SolutionDir)\ThirdParty\GLEW\Include\;$(SolutionDir)\ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)Source\Framework\;$(SolutionDir)\ThirdParty\Boost\Include;$(ProjectDir)Source\Universal\;$(SolutionDir)\ThirdParty\GLEW\Include\;$(SolutionDir)\ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Precompiled.h</PrecompiledHeaderFile>
