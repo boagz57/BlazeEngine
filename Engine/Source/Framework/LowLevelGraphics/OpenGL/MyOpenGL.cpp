@@ -4,8 +4,8 @@
 #include <fstream>
 #include "GL/glew.h"
 #include "MyOpenGL.h"
-#include "Array/Array.h"
-#include "../../Math/Vector3D/Vector3D.h"
+#include "Vector/Vector.h"
+#include "../../Math/Vertex3D/Vertex3D.h"
 #include "../../../Universal/Globals.h"
 #include "StatusChecks/StatusChecks.h"
 
@@ -15,11 +15,11 @@ namespace MyOpenGL
 	using namespace BlazeFramework;
 	using namespace Math;
 
-	Array<Vector3D, 3> triangle
+	Vector<Vertex3D> triangle
 	{
-		Vector3D(+0.0f, +0.2f, 0.0f),
-		Vector3D(-0.1f, 0.0f, 0.0f),
-		Vector3D(+0.1f, 0.0f, 0.0f)
+		Vertex3D(+0.0f, +0.2f, 0.0f),
+		Vertex3D(-0.1f, 0.0f, 0.0f),
+		Vertex3D(+0.1f, 0.0f, 0.0f)
 	};
 
 	void InitializeGLBuffers()
@@ -27,7 +27,7 @@ namespace MyOpenGL
 		GLuint bufferID;
 		glGenBuffers(1, &bufferID);
 		glBindBuffer(GL_ARRAY_BUFFER, bufferID);
-		glBufferData(GL_ARRAY_BUFFER, triangle.size() * sizeof(Vector3D), &triangle.front(), GL_STATIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, triangle.size() * sizeof(Vertex3D), &triangle.front(), GL_STATIC_DRAW);
 		glEnableVertexAttribArray(0);
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, (sizeof(GLfloat)) * 3, nullptr);
 
@@ -44,14 +44,14 @@ namespace MyOpenGL
 
 	void MoveTriangle(float x, float y)
 	{
-		Vector3D velocity(x, y, 0.0f);
+		Vertex3D velocity(x, y, 0.0f);
 
 		for (int i = 0; i < 3; i++)
 		{
 			triangle.at(i) = triangle.at(i) + velocity * engineClock.TimeSinceLastFrame();
 		};
 
-		glBufferSubData(GL_ARRAY_BUFFER, 0, triangle.size() * sizeof(Vector3D), &triangle.front());
+		glBufferSubData(GL_ARRAY_BUFFER, 0, triangle.size() * sizeof(Vertex3D), &triangle.front());
 	}
 
 	std::string ReadShaderCode(const char8* shaderFilePath, const char8* typeOfShader)

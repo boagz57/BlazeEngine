@@ -2,6 +2,8 @@
 #include "Macro.h"
 #include "UniversalTypeDefs.h"
 #include "GL/glew.h"
+#include "Math/Vertex3D/Vertex3D.h"
+#include "Vector/Vector.h"
 #include <iostream>
 #include <fstream>
 
