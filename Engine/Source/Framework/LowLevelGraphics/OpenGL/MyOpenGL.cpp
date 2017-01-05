@@ -27,7 +27,7 @@ namespace MyOpenGL
 		GLuint bufferID;
 		glGenBuffers(1, &bufferID);
 		glBindBuffer(GL_ARRAY_BUFFER, bufferID);
-		glBufferData(GL_ARRAY_BUFFER, triangle.size() * sizeof(Vertex3D), &triangle.front(), GL_STATIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, objVerts.size() * sizeof(Vertex3D), &objVerts.front(), GL_STATIC_DRAW);
 		glEnableVertexAttribArray(0);
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, (sizeof(GLfloat)) * 3, nullptr);
 
