@@ -22,7 +22,7 @@ namespace MyOpenGL
 		Vertex3D(+0.1f, 0.0f, 0.0f)
 	};
 
-	void InitializeGLBuffers()
+	void InitializeGLBuffers(Vector<Vertex3D> objVerts)
 	{
 		GLuint bufferID;
 		glGenBuffers(1, &bufferID);

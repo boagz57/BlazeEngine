@@ -10,3 +10,7 @@ Entity::Entity()
 Entity::~Entity()
 {
 }
+
+void Entity::Initialize()
+{
+}

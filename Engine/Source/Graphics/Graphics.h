@@ -4,9 +4,10 @@
 class Graphics
 {
 public:
-	Graphics();
+	Graphics(Entity* obj);
 
 	void Draw();
+	void InitializeBuffers();
 
 private:
 	Entity* obj;
