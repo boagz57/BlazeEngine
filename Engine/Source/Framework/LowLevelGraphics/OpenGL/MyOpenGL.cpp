@@ -4,6 +4,7 @@
 #include <fstream>
 #include "GL/glew.h"
 #include "MyOpenGL.h"
+#include "Array/Array.h"
 #include "../../Math/Vector3D/Vector3D.h"
 #include "../../../Universal/Globals.h"
 #include "StatusChecks/StatusChecks.h"
@@ -14,20 +15,19 @@ namespace MyOpenGL
 	using namespace BlazeFramework;
 	using namespace Math;
 
-	Vector3D triangle[] =
+	Array<Vector3D, 3> triangle
 	{
 		Vector3D(+0.0f, +0.2f, 0.0f),
 		Vector3D(-0.1f, 0.0f, 0.0f),
 		Vector3D(+0.1f, 0.0f, 0.0f)
 	};
 
-
 	void InitializeGLBuffers()
 	{
 		GLuint bufferID;
 		glGenBuffers(1, &bufferID);
 		glBindBuffer(GL_ARRAY_BUFFER, bufferID);
-		glBufferData(GL_ARRAY_BUFFER, sizeof(triangle), triangle, GL_STATIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, triangle.size() * sizeof(Vector3D), &triangle.front(), GL_STATIC_DRAW);
 		glEnableVertexAttribArray(0);
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, (sizeof(GLfloat)) * 3, nullptr);
 
@@ -48,10 +48,10 @@ namespace MyOpenGL
 
 		for (int i = 0; i < 3; i++)
 		{
-			triangle[i] = triangle[i] + velocity * engineClock.TimeSinceLastFrame();
+			triangle.at(i) = triangle.at(i) + velocity * engineClock.TimeSinceLastFrame();
 		};
 
-		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(triangle), triangle);
+		glBufferSubData(GL_ARRAY_BUFFER, 0, triangle.size() * sizeof(Vector3D), &triangle.front());
 	}
 
 	std::string ReadShaderCode(const char8* shaderFilePath, const char8* typeOfShader)
