@@ -27,6 +27,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\GameWorld\Entity.cpp" />
+    <ClCompile Include="Source\Graphics\Graphics.cpp" />
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\ErrorLogging\ErrorLogging.cpp" />
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\Initialization\GLInitialization.cpp" />
     <ClCompile Include="Source\GameWorld\World.cpp" />
@@ -50,6 +52,8 @@
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\StatusChecks\StatusChecks.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\GameWorld\Entity.h" />
+    <ClInclude Include="Source\Graphics\Graphics.h" />
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\ErrorLogging\ErrorLogging.h" />
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\Initialization\GLInitialization.h" />
     <ClInclude Include="Source\GameWorld\World.h" />
