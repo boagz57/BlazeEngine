@@ -31,7 +31,7 @@ void World::GameLoop()
 
 		engineClock.NewFrame();
 
-		glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
+		graphics.Draw();
 
 		window.Update();
 	};

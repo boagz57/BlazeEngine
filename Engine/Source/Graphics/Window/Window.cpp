@@ -41,7 +41,6 @@ namespace BlazeGraphics
 
 	void Window::Update()
 	{
-
 		BlazeFramework::WindowHandling::PollEvents();
 		BlazeFramework::WindowHandling::SwapFrontAndBackBuffers(m_window);
 	}

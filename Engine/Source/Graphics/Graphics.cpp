@@ -9,6 +9,7 @@ Graphics::Graphics(Entity* obj) : obj(obj)
 
 void Graphics::Draw()
 {
+	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
 }
 
 void Graphics::InitializeBuffers()
