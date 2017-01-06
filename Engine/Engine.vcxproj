@@ -28,6 +28,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\GameWorld\Entity.cpp" />
+    <ClCompile Include="Source\GameWorld\Triangle.cpp" />
     <ClCompile Include="Source\Graphics\Graphics.cpp" />
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\ErrorLogging\ErrorLogging.cpp" />
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\Initialization\GLInitialization.cpp" />
@@ -53,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\GameWorld\Entity.h" />
+    <ClInclude Include="Source\GameWorld\Triangle.h" />
     <ClInclude Include="Source\Graphics\Graphics.h" />
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\ErrorLogging\ErrorLogging.h" />
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\Initialization\GLInitialization.h" />
@@ -243,7 +245,7 @@
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Precompiled.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)\ThirdParty\Boost\Include;$(ProjectDir)\Source\Universal\;$(SolutionDir)\Engine\;$(SolutionDir)\Engine\Source\Framework;$(SolutionDir)\ThirdParty\GLEW\Include\;$(SolutionDir)\ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)Source\Framework\;$(SolutionDir)\ThirdParty\Boost\Include;$(ProjectDir)\Source\Universal\;$(SolutionDir)\Engine\;$(SolutionDir)\Engine\Source\Framework;$(SolutionDir)\ThirdParty\GLEW\Include\;$(SolutionDir)\ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -266,7 +268,7 @@
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Precompiled.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)\ThirdParty\Boost\Include;$(ProjectDir)\Source\Universal\;$(SolutionDir)\Engine\;$(SolutionDir)\Engine\Source\Framework;$(SolutionDir)\ThirdParty\GLEW\Include\;$(SolutionDir)\ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)Source\Framework\;$(SolutionDir)\ThirdParty\Boost\Include;$(ProjectDir)\Source\Universal\;$(SolutionDir)\Engine\;$(SolutionDir)\Engine\Source\Framework;$(SolutionDir)\ThirdParty\GLEW\Include\;$(SolutionDir)\ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>

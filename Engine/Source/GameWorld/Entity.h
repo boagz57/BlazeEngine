@@ -1,7 +1,7 @@
 #pragma once
 #include "../Universal/UniversalTypeDefs.h"
-#include "Math/Vertex3D/Vertex3D.h"
-#include "Vector/Vector.h"
+#include "../Framework/Math/Vertex3D/Vertex3D.h"
+#include "../Framework/Vector/Vector.h"
 
 class Entity
 {
@@ -17,5 +17,6 @@ public:
 	};
 
 	void Initialize();
+	virtual void Update() = 0;
 };
 

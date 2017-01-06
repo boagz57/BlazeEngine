@@ -13,3 +13,8 @@ Entity::~Entity()
 void Entity::Initialize()
 {
 }
+
+void Entity::Update()
+{
+
+}

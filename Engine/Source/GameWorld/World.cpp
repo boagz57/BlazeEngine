@@ -5,9 +5,10 @@
 #include "../Input/Keyboard/Keyboard.h"
 #include "Entity.h"
 #include "../Graphics/Graphics.h"
+#include "Triangle.h"
 #include "World.h"
 
-World::World()
+World::World() : numberOfEntities(0)
 {
 }
 
@@ -15,8 +16,8 @@ void World::GameLoop()
 {
 	BlazeFramework::OpenGL::RestartGLLogFile();
 	BlazeFramework::OpenGL::LogToFile("starting GLFW\n%s\n", glfwGetVersionString());
-	Entity Triangle;
-	Graphics graphics(&Triangle);
+	Triangle triangle;
+	Graphics graphics(&triangle);
 
 	graphics.InitializeBuffers();
 	MyOpenGL::InstallShaders();
@@ -25,11 +26,22 @@ void World::GameLoop()
 
 	BlazeInput::Keyboard keyboard;
 
+	for (int i = 0; i < 1; i++)
+	{
+		m_entities.push_back(&triangle);
+		numberOfEntities++;
+	}
+
 	while (!window.Closed())
 	{
 		window.Clear();
-
 		engineClock.NewFrame();
+
+		uint16 numberOfEntitiesThisFrame = numberOfEntities;
+		for (int i = 0; i < numberOfEntitiesThisFrame; i++)
+		{
+			m_entities.at(i)->Update();
+		}
 
 		graphics.Draw();
 
