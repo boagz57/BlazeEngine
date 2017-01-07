@@ -15,14 +15,14 @@ namespace MyOpenGL
 	using namespace BlazeFramework;
 	using namespace Math;
 
-	tVector<Vertex3D> triangle
+	Vector<Vertex3D> triangle
 	{
 		Vertex3D(+0.0f, +0.2f, 0.0f),
 		Vertex3D(-0.1f, 0.0f, 0.0f),
 		Vertex3D(+0.1f, 0.0f, 0.0f)
 	};
 
-	void InitializeGLBuffers(tVector<Vertex3D> objVerts)
+	void InitializeGLBuffers(Vector<Vertex3D> objVerts)
 	{
 		GLuint bufferID;
 		glGenBuffers(1, &bufferID);

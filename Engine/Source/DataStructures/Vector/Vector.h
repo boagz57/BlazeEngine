@@ -4,4 +4,4 @@
 
 //C++11's way of typedef'ing with 'using'
 template<typename type>
-using tVector = std::vector<type>;
+using Vector = std::vector<type>;

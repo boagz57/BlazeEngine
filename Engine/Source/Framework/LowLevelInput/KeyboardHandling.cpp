@@ -36,5 +36,5 @@ namespace BlazeFramework
 		return KeyboardHandling::m_keyCodes.at(key);
 	}
 
-	tArray<bool, GLFW_KEY_LAST> KeyboardHandling::m_keyCodes;
+	Array<bool, GLFW_KEY_LAST> KeyboardHandling::m_keyCodes;
 }

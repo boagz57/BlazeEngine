@@ -28,6 +28,6 @@ namespace BlazeFramework
 		friend void KeyCallBackFunction(WindowHandling::BlazeWindow* window, int keyCode, int scancode, int action, int mods);
 		//This boolean array will be used to set different keycodes to either true 
 		//or false, depending on what keys have been pressed
-		static tArray<bool, GLFW_KEY_LAST> m_keyCodes;
+		static Array<bool, GLFW_KEY_LAST> m_keyCodes;
 	};
 }
