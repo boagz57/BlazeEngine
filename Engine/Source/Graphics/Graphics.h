@@ -4,12 +4,12 @@
 class Graphics
 {
 public:
-	Graphics(Entity* obj);
+	Graphics(Entity* pObject);
 
 	void Draw();
 	void InitializeBuffers();
 
 private:
-	Entity* mObj;
+	Entity* mpObject;
 };
 

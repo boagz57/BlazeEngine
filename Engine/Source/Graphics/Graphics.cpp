@@ -3,7 +3,7 @@
 #include "Graphics.h"
 
 
-Graphics::Graphics(Entity* obj) : mObj(obj)
+Graphics::Graphics(Entity* pObject) : mpObject(pObject)
 {
 }
 
@@ -14,5 +14,5 @@ void Graphics::Draw()
 
 void Graphics::InitializeBuffers()
 {
-	MyOpenGL::InitializeGLBuffers(mObj->objVerts);
+	MyOpenGL::InitializeGLBuffers(mpObject->objVerts);
 }
