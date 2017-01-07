@@ -54,12 +54,12 @@ namespace MyOpenGL
 		glBufferSubData(GL_ARRAY_BUFFER, 0, triangle.size() * sizeof(Vertex3D), &triangle.front());
 	}
 
-	std::string ReadShaderCode(const char8* shaderFilePath, const char8* typeOfShader)
+	std::string ReadShaderCode(const char8* cShaderFilePath, const char8* cTypeOfShader)
 	{
-		std::ifstream shaderFileInputStream(shaderFilePath);
+		std::ifstream shaderFileInputStream(cShaderFilePath);
 		if (!shaderFileInputStream.good())
 		{
-			LOG("%s Shader File failed to load!\n", typeOfShader);
+			LOG("%s Shader File failed to load!\n", cTypeOfShader);
 		};
 
 		return std::string(std::istreambuf_iterator<char8>(shaderFileInputStream), std::istreambuf_iterator<char8>());
@@ -73,13 +73,13 @@ namespace MyOpenGL
 
 		//Add source or text file to shader object
 		std::string temp = ReadShaderCode("../Engine/Source/Framework/LowLevelGraphics/OpenGL/Shaders/VertexShader.glsl", "Vertex").c_str();
-		const GLchar* adapter[1];
+		const GLchar* cAdapter[1];
 
-		adapter[0] = temp.c_str();
-		glShaderSource(vertexShaderID, 1, adapter, 0);
+		cAdapter[0] = temp.c_str();
+		glShaderSource(vertexShaderID, 1, cAdapter, 0);
 		temp = ReadShaderCode("../Engine/Source/Framework/LowLevelGraphics/OpenGL/Shaders/FragmentShader.glsl", "Fragment").c_str();
-		adapter[0] = temp.c_str();
-		glShaderSource(FragmentShaderID, 1, adapter, 0);
+		cAdapter[0] = temp.c_str();
+		glShaderSource(FragmentShaderID, 1, cAdapter, 0);
 
 		//Compile Shadaer
 		glCompileShader(vertexShaderID);

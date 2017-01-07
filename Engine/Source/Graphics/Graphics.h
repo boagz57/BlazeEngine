@@ -10,6 +10,6 @@ public:
 	void InitializeBuffers();
 
 private:
-	Entity* obj;
+	Entity* mObj;
 };
 

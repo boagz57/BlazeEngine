@@ -12,6 +12,6 @@ namespace MyOpenGL
 {
 	void InitializeGLBuffers(Vector<BlazeFramework::Math::Vertex3D> objVerts);
 	void MoveTriangle(sfloat x, sfloat y);
-	std::string ReadShaderCode(const char8* fileName, const char8* typeOfShader);
+	std::string ReadShaderCode(const char8* cFileName, const char8* cTypeOfShader);
 	void InstallShaders();
 }

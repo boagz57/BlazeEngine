@@ -15,7 +15,7 @@ namespace Timing
 		sfloat TimeSinceLastFrame();
 
 	private:
-		sfloat deltaTime;
-		std::chrono::time_point<std::chrono::steady_clock> timePointLastFrame;
+		sfloat mDeltaTime;
+		std::chrono::time_point<std::chrono::steady_clock> mTimePointLastFrame;
 	};
 }

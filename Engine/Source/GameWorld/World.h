@@ -12,7 +12,7 @@ public:
 	void GameLoop();
 
 private:
-	Vector<Entity*> m_entities;
-	uint16 numberOfEntities;
+	Vector<Entity*> mEntities;
+	uint16 mNumberOfEntities;
 };
 

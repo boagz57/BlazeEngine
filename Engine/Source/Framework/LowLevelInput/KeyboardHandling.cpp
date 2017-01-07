@@ -10,12 +10,12 @@ namespace BlazeFramework
 	//key is pressed. This key state will then be polled each frame.
 	void KeyCallBackFunction(WindowHandling::BlazeWindow* window, int keyCode, int scancode, int action, int mods)
 	{
-		KeyboardHandling::m_keyCodes.at(keyCode) = (action != GLFW_RELEASE);
+		KeyboardHandling::mKeyCodes.at(keyCode) = (action != GLFW_RELEASE);
 	}
 	
 	KeyboardHandling::KeyboardHandling()
 	{
-		for (auto& keyCode : m_keyCodes)
+		for (auto& keyCode : mKeyCodes)
 		{
 			keyCode = false;
 		}
@@ -33,8 +33,8 @@ namespace BlazeFramework
 	{
 		RUNTIME_ASSERT(key <= GLFW_KEY_LAST, "ERROR: keycode entered does not exist on keyboard");
 
-		return KeyboardHandling::m_keyCodes.at(key);
+		return KeyboardHandling::mKeyCodes.at(key);
 	}
 
-	Array<bool, GLFW_KEY_LAST> KeyboardHandling::m_keyCodes;
+	Array<bool, GLFW_KEY_LAST> KeyboardHandling::mKeyCodes;
 }

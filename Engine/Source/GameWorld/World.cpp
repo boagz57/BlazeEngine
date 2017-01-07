@@ -8,7 +8,7 @@
 #include "Triangle.h"
 #include "World.h"
 
-World::World() : numberOfEntities(0)
+World::World() : mNumberOfEntities(0)
 {
 }
 
@@ -28,8 +28,8 @@ void World::GameLoop()
 
 	for (int i = 0; i < 1; i++)
 	{
-		m_entities.push_back(&triangle);
-		numberOfEntities++;
+		mEntities.push_back(&triangle);
+		mNumberOfEntities++;
 	}
 
 	while (!window.Closed())
@@ -37,10 +37,10 @@ void World::GameLoop()
 		window.Clear();
 		engineClock.NewFrame();
 
-		uint16 numberOfEntitiesThisFrame = numberOfEntities;
+		uint16 numberOfEntitiesThisFrame = mNumberOfEntities;
 		for (int i = 0; i < numberOfEntitiesThisFrame; i++)
 		{
-			m_entities.at(i)->Update();
+			mEntities.at(i)->Update();
 		}
 
 		graphics.Draw();

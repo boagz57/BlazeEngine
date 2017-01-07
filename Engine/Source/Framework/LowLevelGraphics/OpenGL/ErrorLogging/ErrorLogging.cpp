@@ -34,7 +34,7 @@ namespace BlazeFramework
 			return true;
 		}
 
-		bool LogToFile(const char8* message)
+		bool LogToFile(const char8* cMessage)
 		{
 			FileHandling::File glLogFile(GL_LOG_FILE);
 			if (!glLogFile.Good())
@@ -48,7 +48,7 @@ namespace BlazeFramework
 			return true;
 		}
 
-		bool LogToFile(const char8* message, const char8* string)
+		bool LogToFile(const char8* cMessage, const char8* cString)
 		{
 			FileHandling::File glLogFile;
 			glLogFile.Open(GL_LOG_FILE, "a");
@@ -59,12 +59,12 @@ namespace BlazeFramework
 				return false;
 			}
 
-			glLogFile.Write(message, string);
+			glLogFile.Write(cMessage, cString);
 
 			return true;
 		}
 
-		bool LogToFile(const char8 * message, const char8* stringToInsertInMessage, int numberToInsertInMessage)
+		bool LogToFile(const char8 * cMessage, const char8* cStringToInsertInMessage, int numberToInsertInMessage)
 		{
 			FileHandling::File glLogFile(GL_LOG_FILE);
 			if (!glLogFile.Good())
@@ -73,12 +73,12 @@ namespace BlazeFramework
 				return false;
 			}
 
-			glLogFile.Write(message, stringToInsertInMessage, numberToInsertInMessage);
+			glLogFile.Write(cMessage, cStringToInsertInMessage, numberToInsertInMessage);
 
 			return true;
 		}
 
-		bool LogToFile(const char8 * message, int numberToInsertInMessage)
+		bool LogToFile(const char8 * cMessage, int numberToInsertInMessage)
 		{
 			FileHandling::File glLogFile(GL_LOG_FILE);
 			if (!glLogFile.Good())
@@ -87,12 +87,12 @@ namespace BlazeFramework
 				return false;
 			}
 
-			glLogFile.Write(message, numberToInsertInMessage);
+			glLogFile.Write(cMessage, numberToInsertInMessage);
 
 			return true;
 		}
 
-		bool LogToFileAndConsole(const char8* message)//TODO: Convert to my File system
+		bool LogToFileAndConsole(const char8* cMessage)//TODO: Convert to my File system
 		{
 			FILE* glLogFile = fopen(GL_LOG_FILE, "a");
 			if (!glLogFile)
@@ -102,16 +102,16 @@ namespace BlazeFramework
 			}
 
 			//Prints to log file
-			fprintf(glLogFile, message);
+			fprintf(glLogFile, cMessage);
 			//Prints to console
-			fprintf(stderr, message);
+			fprintf(stderr, cMessage);
 
 			fclose(glLogFile);
 
 			return true;
 		}
 
-		bool LogToFileAndConsole(const char8 * message, const char8 * string)//TODO: Convert to my File system
+		bool LogToFileAndConsole(const char8 * cMessage, const char8 * cString)//TODO: Convert to my File system
 		{
 			FILE* glLogFile = fopen(GL_LOG_FILE, "a");
 			if (!glLogFile)
@@ -121,16 +121,16 @@ namespace BlazeFramework
 			}
 
 			//Prints to log file
-			fprintf(glLogFile, message, string);
+			fprintf(glLogFile, cMessage, cString);
 			//Prints to console
-			fprintf(stderr, message, string);
+			fprintf(stderr, cMessage, cString);
 
 			fclose(glLogFile);
 
 			return true;
 		}
 
-		bool LogToFileAndConsole(const char8 * message, const char8 * string, int number)//TODO: Convert to my file system
+		bool LogToFileAndConsole(const char8 * cMessage, const char8 * cString, int number)//TODO: Convert to my file system
 		{
 			FILE* glLogFile = fopen(GL_LOG_FILE, "a");
 			if (!glLogFile)
@@ -140,16 +140,16 @@ namespace BlazeFramework
 			}
 
 			//Prints to log file
-			fprintf(glLogFile, message, string, number);
+			fprintf(glLogFile, cMessage, cString, number);
 			//Prints to console
-			fprintf(stderr, message, string, number);
+			fprintf(stderr, cMessage, cString, number);
 
 			fclose(glLogFile);
 
 			return true;
 		}
 
-		bool LogToFileAndConsole(const char8 * message, int number)//TODO: Convert to my file system
+		bool LogToFileAndConsole(const char8 * cMessage, int number)//TODO: Convert to my file system
 		{
 			FILE* glLogFile = fopen(GL_LOG_FILE, "a");
 			if (!glLogFile)
@@ -159,9 +159,9 @@ namespace BlazeFramework
 			}
 
 			//Prints to log file
-			fprintf(glLogFile, message, number);
+			fprintf(glLogFile, cMessage, number);
 			//Prints to console
-			fprintf(stderr, message, number);
+			fprintf(stderr, cMessage, number);
 
 			fclose(glLogFile);
 
