@@ -2,9 +2,6 @@
 #include "Universal/UniversalTypeDefs.h"
 #include <vector>
 
-namespace BlazeFramework
-{
-	//C++11's way of typedef'ing with 'using'
-	template<typename type>
-	using Vector = std::vector<type>;
-};
+//C++11's way of typedef'ing with 'using'
+template<typename type>
+using tVector = std::vector<type>;

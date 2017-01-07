@@ -12,7 +12,7 @@ public:
 	void GameLoop();
 
 private:
-	BlazeFramework::Vector<Entity*> m_entities;
+	tVector<Entity*> m_entities;
 	uint16 numberOfEntities;
 };
 
