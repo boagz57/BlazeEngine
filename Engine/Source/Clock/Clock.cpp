@@ -1,6 +1,7 @@
 #include "Precompiled.h"
 #include <chrono>
 #include "Clock.h"
+#include "../Universal/UniversalTypeDefs.h"
 #include "../Universal/Globals.h"
 
 namespace Timing
@@ -25,11 +26,11 @@ namespace Timing
 	{
 		auto timePointThisFrame = high_resolution_clock::now();
 		auto timeDifference = timePointThisFrame - timePointLastFrame;
-		deltaTime = ((float)timeDifference.count()) * .000000001f;
+		deltaTime = ((sfloat)timeDifference.count()) * .000000001f;
 		timePointLastFrame = timePointThisFrame;
 	}
 
-	float Clock::TimeSinceLastFrame()
+	sfloat Clock::TimeSinceLastFrame()
 	{
 		return deltaTime;
 	}

@@ -42,7 +42,7 @@ namespace MyOpenGL
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 	}
 
-	void MoveTriangle(float x, float y)
+	void MoveTriangle(sfloat x, sfloat y)
 	{
 		Vertex3D velocity(x, y, 0.0f);
 

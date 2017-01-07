@@ -1,5 +1,6 @@
 #pragma once
 #include <chrono>
+#include "../Universal/UniversalTypeDefs.h"
 
 namespace Timing
 {
@@ -11,10 +12,10 @@ namespace Timing
 		void Initialize();
 		bool ShutDown();
 		void NewFrame();
-		float TimeSinceLastFrame();
+		sfloat TimeSinceLastFrame();
 
 	private:
-		float deltaTime;
+		sfloat deltaTime;
 		std::chrono::time_point<std::chrono::steady_clock> timePointLastFrame;
 	};
 }
