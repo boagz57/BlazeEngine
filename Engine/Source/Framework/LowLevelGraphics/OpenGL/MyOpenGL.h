@@ -1,10 +1,10 @@
 #pragma once
-#include "Macro.h"
-#include "UniversalTypeDefs.h"
+#include "Universal/Macro.h"
+#include "Universal/UniversalTypeDefs.h"
 #include "GL/glew.h"
 #include "Math/Vertex3D/Vertex3D.h"
-#include "../../../Universal/UniversalTypeDefs.h"
-#include "Vector/Vector.h"
+#include "Universal/UniversalTypeDefs.h"
+#include "DataStructures/Vector/Vector.h"
 #include <iostream>
 #include <fstream>
 

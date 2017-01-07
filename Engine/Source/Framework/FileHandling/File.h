@@ -1,5 +1,5 @@
 #pragma once
-#include "UniversalTypeDefs.h"
+#include "Universal/UniversalTypeDefs.h"
 
 namespace BlazeFramework
 {

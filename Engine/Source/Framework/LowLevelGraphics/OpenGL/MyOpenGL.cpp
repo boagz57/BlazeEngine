@@ -1,12 +1,12 @@
 #include "Precompiled.h"
-#include "Macro.h"
-#include "UniversalTypeDefs.h"
+#include "Universal/Macro.h"
+#include "Universal/UniversalTypeDefs.h"
 #include <fstream>
 #include "GL/glew.h"
 #include "MyOpenGL.h"
-#include "Vector/Vector.h"
-#include "../../Math/Vertex3D/Vertex3D.h"
-#include "../../../Universal/Globals.h"
+#include "DataStructures/Vector/Vector.h"
+#include "Math/Vertex3D/Vertex3D.h"
+#include "Universal/Globals.h"
 #include "StatusChecks/StatusChecks.h"
 
 

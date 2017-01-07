@@ -1,5 +1,5 @@
 #include "Precompiled.h"
-#include "Macro.h"
+#include "Universal/Macro.h"
 #include "StatusChecks.h"
 
 namespace BlazeFramework

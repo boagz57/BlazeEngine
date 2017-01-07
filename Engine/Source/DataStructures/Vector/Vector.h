@@ -1,6 +1,5 @@
 #pragma once
-#include "Macro.h"
-#include "UniversalTypeDefs.h"
+#include "Universal/UniversalTypeDefs.h"
 #include <vector>
 
 namespace BlazeFramework

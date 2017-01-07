@@ -1,8 +1,8 @@
 #pragma once
-#include "Macro.h"
+#include "Universal/Macro.h"
 //Needs to be included before the glfw.h (since RenderWindow contains glew.h)
-#include "../LowLevelWindow/WindowHandling.h"
-#include "../Array/Array.h"
+#include "LowLevelWindow/WindowHandling.h"
+#include "DataStructures/Array/Array.h"
 #include "GLFW/glfw3.h"
 
 namespace BlazeFramework

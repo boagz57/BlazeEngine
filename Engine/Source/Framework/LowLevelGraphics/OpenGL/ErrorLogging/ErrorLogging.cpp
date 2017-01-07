@@ -1,9 +1,9 @@
 #include "Precompiled.h"
-#include "Macro.h"
+#include "Universal/Macro.h"
 #include <ctime>
 #include <stdarg.h>
 #include <fstream>
-#include "../../../FileHandling/File.h"
+#include "FileHandling/File.h"
 #include "ErrorLogging.h"
 
 #define GL_LOG_FILE "gl.log"

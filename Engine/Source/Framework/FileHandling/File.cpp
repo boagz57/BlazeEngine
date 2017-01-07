@@ -1,5 +1,6 @@
 #include "Precompiled.h"
-#include "Macro.h"
+#include "Universal/Macro.h"
+#include "Universal/UniversalTypeDefs.h"
 #include "File.h"
 #include <stdarg.h>
 #include <stdio.h>

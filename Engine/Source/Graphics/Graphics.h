@@ -1,5 +1,5 @@
 #pragma once
-#include "../GameWorld/Entity.h"
+#include "GameWorld/Entity.h"
 
 class Graphics
 {

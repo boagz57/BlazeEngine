@@ -1,8 +1,8 @@
 #pragma once
-#include "../Universal/UniversalTypeDefs.h"
-#include "../Framework/Vector/Vector.h"
+#include "Universal/UniversalTypeDefs.h"
+#include "DataStructures/Vector/Vector.h"
 #include <Array>
-#include "Entity.h"
+#include "GameWorld/Entity.h"
 
 class World
 {

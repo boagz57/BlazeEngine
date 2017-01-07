@@ -1,8 +1,8 @@
 #include "Precompiled.h"
 #include <chrono>
 #include "Clock.h"
-#include "../Universal/UniversalTypeDefs.h"
-#include "../Universal/Globals.h"
+#include "Universal/UniversalTypeDefs.h"
+#include "Universal/Globals.h"
 
 namespace Timing
 {

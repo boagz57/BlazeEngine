@@ -1,6 +1,6 @@
 #pragma once
 #include <chrono>
-#include "../Universal/UniversalTypeDefs.h"
+#include "Universal/UniversalTypeDefs.h"
 
 namespace Timing
 {

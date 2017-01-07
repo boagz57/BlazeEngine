@@ -53,6 +53,8 @@
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\StatusChecks\StatusChecks.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\DataStructures\Array\Array.h" />
+    <ClInclude Include="Source\DataStructures\Vector\Vector.h" />
     <ClInclude Include="Source\GameWorld\Entity.h" />
     <ClInclude Include="Source\GameWorld\Triangle.h" />
     <ClInclude Include="Source\Graphics\Graphics.h" />
@@ -67,6 +69,8 @@
     <ClInclude Include="Source\Framework\Math\Vertex2D\Vector2D.h" />
     <ClInclude Include="Source\Framework\Math\Vertex3D\Vertex3D.h" />
     <ClInclude Include="Source\Framework\LowLevelWindow\WindowHandling.h" />
+    <ClInclude Include="Source\Universal\Globals.h" />
+    <ClInclude Include="Source\Universal\Macro.h" />
     <ClInclude Include="Source\Universal\Precompiled.h" />
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\MyOpenGL.h" />
     <ClInclude Include="Source\Macro.h" />
@@ -192,7 +196,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)Source\Framework\;$(SolutionDir)\ThirdParty\Boost\Include;$(ProjectDir)Source\Universal\;$(SolutionDir)\ThirdParty\GLEW\Include\;$(SolutionDir)\ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)Source\;$(ProjectDir)Source\Universal\;$(ProjectDir)Source\Framework\;$(SolutionDir)\ThirdParty\Boost\Include;$(SolutionDir)ThirdParty\GLM\Include\;$(SolutionDir)\ThirdParty\GLEW\Include\;$(SolutionDir)\ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Precompiled.h</PrecompiledHeaderFile>
@@ -245,7 +249,7 @@
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Precompiled.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)Source\Framework\;$(SolutionDir)\ThirdParty\Boost\Include;$(ProjectDir)\Source\Universal\;$(SolutionDir)\Engine\;$(SolutionDir)\Engine\Source\Framework;$(SolutionDir)\ThirdParty\GLEW\Include\;$(SolutionDir)\ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)Source\;$(ProjectDir)Source\Framework\;$(SolutionDir)\ThirdParty\Boost\Include\;$(SolutionDir)\ThirdParty\GLEW\Include\;$(SolutionDir)\ThirdParty\GLM\Include\;$(SolutionDir)\ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -268,7 +272,7 @@
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Precompiled.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)Source\Framework\;$(SolutionDir)\ThirdParty\Boost\Include;$(ProjectDir)\Source\Universal\;$(SolutionDir)\Engine\;$(SolutionDir)\Engine\Source\Framework;$(SolutionDir)\ThirdParty\GLEW\Include\;$(SolutionDir)\ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Engine\Source\;$(SolutionDir)Engine\Source\Universal\;$(SolutionDir)Engine\Source\Framework\;$(SolutionDir)\ThirdParty\Boost\Include;$(SolutionDir)\ThirdParty\GLEW\Include\;$(SolutionDir)ThirdParty\GLM\Include\;$(SolutionDir)\ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>

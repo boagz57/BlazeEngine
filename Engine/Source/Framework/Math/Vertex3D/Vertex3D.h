@@ -1,5 +1,5 @@
 #pragma once
-#include "../../../ThirdParty/GLM/Include/GLM/glm.hpp"
+#include "GLM/glm.hpp"
 
 namespace BlazeFramework
 {

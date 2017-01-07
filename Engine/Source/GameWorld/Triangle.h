@@ -1,5 +1,5 @@
 #pragma once
-#include "Entity.h"
+#include "GameWorld/Entity.h"
 
 class Triangle : public Entity
 {

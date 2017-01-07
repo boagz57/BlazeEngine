@@ -1,5 +1,5 @@
 #pragma once
-#include "UniversalTypeDefs.h"
+#include "Universal\UniversalTypeDefs.h"
 #include "GLFW\glfw3.h"
 
 namespace BlazeFramework

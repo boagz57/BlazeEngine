@@ -1,5 +1,5 @@
 #pragma once
-#include "../Framework/LowLevelInput/KeyboardHandling.h"
+#include "Framework/LowLevelInput/KeyboardHandling.h"
 
 namespace BlazeInput
 {
