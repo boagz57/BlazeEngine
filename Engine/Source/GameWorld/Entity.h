@@ -9,13 +9,6 @@ public:
 	Entity();
 	~Entity();
 
-	Vector<BlazeFramework::Math::Vertex3D> objVerts
-	{
-		BlazeFramework::Math::Vertex3D(+0.0f, +0.2f, 0.0f),
-		BlazeFramework::Math::Vertex3D(-0.1f, 0.0f, 0.0f),
-		BlazeFramework::Math::Vertex3D(+0.1f, 0.0f, 0.0f)
-	};
-
 	void Initialize();
 	virtual void Update() = 0;
 };

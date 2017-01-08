@@ -15,13 +15,6 @@ namespace MyOpenGL
 	using namespace BlazeFramework;
 	using namespace Math;
 
-	Vector<Vertex3D> triangle
-	{
-		Vertex3D(+0.0f, +0.2f, 0.0f),
-		Vertex3D(-0.1f, 0.0f, 0.0f),
-		Vertex3D(+0.1f, 0.0f, 0.0f)
-	};
-
 	void InitializeGLBuffers(Vector<Vertex3D> objVerts)
 	{
 		GLuint bufferID;
@@ -44,14 +37,14 @@ namespace MyOpenGL
 
 	void MoveTriangle(sfloat x, sfloat y)
 	{
-		Vertex3D velocity(x, y, 0.0f);
+		/*Vertex3D velocity(x, y, 0.0f);
 
 		for (int i = 0; i < 3; i++)
 		{
 			triangle.at(i) = triangle.at(i) + velocity * engineClock.TimeSinceLastFrame();
 		};
 
-		glBufferSubData(GL_ARRAY_BUFFER, 0, triangle.size() * sizeof(Vertex3D), &triangle.front());
+		glBufferSubData(GL_ARRAY_BUFFER, 0, triangle.size() * sizeof(Vertex3D), &triangle.front());*/
 	}
 
 	std::string ReadShaderCode(const char8* cShaderFilePath, const char8* cTypeOfShader)
@@ -67,7 +60,7 @@ namespace MyOpenGL
 
 	void InstallShaders()
 	{
-		//Create Shader
+		//Create GL Shaders
 		GLuint vertexShaderID = glCreateShader(GL_VERTEX_SHADER);
 		GLuint FragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
 
@@ -81,19 +74,19 @@ namespace MyOpenGL
 		cAdapter[0] = temp.c_str();
 		glShaderSource(FragmentShaderID, 1, cAdapter, 0);
 
-		//Compile Shadaer
+		//Compile GL Shader
 		glCompileShader(vertexShaderID);
 		glCompileShader(FragmentShaderID);
 
 		if (!BlazeFramework::OpenGL::CheckGLShaderStatus(vertexShaderID) || !BlazeFramework::OpenGL::CheckGLShaderStatus(FragmentShaderID))
 			return;
 
-		//Create Program
+		//Create GL Program
 		GLuint programID = glCreateProgram();
 		glAttachShader(programID, vertexShaderID);
 		glAttachShader(programID, FragmentShaderID);
 
-		//Link Program
+		//Link GL Program
 		glLinkProgram(programID);
 
 		if (!BlazeFramework::OpenGL::CheckGLProgramStatus(programID))

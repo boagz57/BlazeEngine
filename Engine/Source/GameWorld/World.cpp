@@ -17,9 +17,8 @@ void World::GameLoop()
 	BlazeFramework::OpenGL::RestartGLLogFile();
 	BlazeFramework::OpenGL::LogToFile("starting GLFW\n%s\n", glfwGetVersionString());
 	Triangle triangle;
-	Graphics graphics(&triangle);
+	triangle.Initialize();
 
-	graphics.InitializeBuffers();
 	MyOpenGL::InstallShaders();
 
 	engineClock.Initialize();
@@ -42,8 +41,6 @@ void World::GameLoop()
 		{
 			mEntities.at(i)->Update();
 		}
-
-		graphics.Draw();
 
 		window.Update();
 	};
