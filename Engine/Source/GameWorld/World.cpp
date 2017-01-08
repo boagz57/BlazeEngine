@@ -5,7 +5,6 @@
 #include "Input/Keyboard/Keyboard.h"
 #include "Entity.h"
 #include "Graphics/Graphics.h"
-#include "Triangle.h"
 #include "World.h"
 
 World::World() : mNumberOfEntities(0)
@@ -16,7 +15,7 @@ void World::GameLoop()
 {
 	BlazeFramework::OpenGL::RestartGLLogFile();
 	BlazeFramework::OpenGL::LogToFile("starting GLFW\n%s\n", glfwGetVersionString());
-	Triangle triangle;
+	Entity triangle;
 	triangle.Initialize();
 
 	MyOpenGL::InstallShaders();

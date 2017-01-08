@@ -3,6 +3,8 @@
 #include "Framework/Math/Vertex3D/Vertex3D.h"
 #include "DataStructures/Vector/Vector.h"
 
+class Graphics;
+
 class Entity
 {
 public:
@@ -10,6 +12,11 @@ public:
 	~Entity();
 
 	void Initialize();
-	virtual void Update() = 0;
+	virtual void Update();
+
+	uint16 velocity;
+
+private:
+	Graphics* graphics;
 };
 

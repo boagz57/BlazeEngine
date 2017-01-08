@@ -9,10 +9,15 @@ Graphics::Graphics()
 
 void Graphics::Draw()
 {
-	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
 }
 
 void Graphics::InitializeBuffers()
 {
 	MyOpenGL::InitializeGLBuffers(triangle);
+}
+
+void Graphics::Update(Entity& obj)
+{
+	obj.velocity = 100;
+	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
 }

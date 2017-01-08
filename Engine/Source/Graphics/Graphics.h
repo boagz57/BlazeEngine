@@ -1,5 +1,6 @@
 #pragma once
 #include "Math/Vertex3D/Vertex3D.h"
+#include "DataStructures/Vector/Vector.h"
 #include "GameWorld/Entity.h"
 
 class Graphics
@@ -9,6 +10,7 @@ public:
 
 	void Draw();
 	void InitializeBuffers();
+	void Update(Entity& obj);
 
 private:
 	Vector<BlazeFramework::Math::Vertex3D> triangle
