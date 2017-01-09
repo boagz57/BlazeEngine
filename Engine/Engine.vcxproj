@@ -50,6 +50,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\StatusChecks\StatusChecks.cpp" />
+    <ClCompile Include="Source\GameWorld\Traingle1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\DataStructures\Array\Array.h" />
@@ -76,6 +77,7 @@
     <ClInclude Include="Source\Framework\Vector.h" />
     <ClInclude Include="Source\Universal\UniversalTypeDefs.h" />
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\StatusChecks\StatusChecks.h" />
+    <ClInclude Include="Source\GameWorld\Traingle1.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\Framework\Array.inl">

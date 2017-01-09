@@ -1,26 +1,18 @@
 #include "Precompiled.h"
-#include <memory>
+#include <memory.h>
 #include "Graphics/Graphics.h"
 #include "Entity.h"
 
 
-Entity::Entity() : velocity(0)
+Entity::Entity() : velocity(0), graphics(std::make_unique<Graphics>())
 {
-	graphics = new Graphics;
 }
 
 Entity::~Entity()
 {
-	delete graphics;
-	graphics = nullptr;
 }
 
-void Entity::Initialize()
+void Entity::AnotherFunc()
 {
-	graphics->InitializeBuffers();
-}
 
-void Entity::Update()
-{
-	graphics->Update(*this);
 }
