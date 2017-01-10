@@ -18,6 +18,5 @@ void Graphics::InitializeBuffers()
 
 void Graphics::Update(Entity& obj)
 {
-	obj.velocity = 100;
 	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
 }
