@@ -27,6 +27,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Audio\Audio.cpp" />
     <ClCompile Include="Source\GameWorld\Entity.cpp" />
     <ClCompile Include="Source\Graphics\Graphics.cpp" />
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\ErrorLogging\ErrorLogging.cpp" />
@@ -53,6 +54,7 @@
     <ClCompile Include="Source\GameWorld\Traingle1.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Audio\Audio.h" />
     <ClInclude Include="Source\DataStructures\Array\Array.h" />
     <ClInclude Include="Source\DataStructures\Vector\Vector.h" />
     <ClInclude Include="Source\GameWorld\Entity.h" />
