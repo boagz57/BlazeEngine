@@ -19,6 +19,8 @@ void Traingle1::Update()
 	Audio::PlaySound("1\n", 3);
 	Audio::PlaySound("2\n", 3);
 	Audio::PlaySound("3\n", 3);
+	Audio::PlaySound("4\n", 3);
+	Audio::PlaySound("5\n", 3);
 }
 
 void Traingle1::Initialize()

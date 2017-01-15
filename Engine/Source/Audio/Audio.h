@@ -16,9 +16,7 @@ public:
 	static void Update();
 
 private:
-	static uint16 mHead;
-	static uint16 mTail;
-
+	static int16 numberPending;
 	static PlayMessage pending[MAX_PENDING];
 };
 

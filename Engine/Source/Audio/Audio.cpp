@@ -3,8 +3,7 @@
 #include "Audio.h"
 
 PlayMessage Audio::pending[];
-uint16 Audio::mHead;
-uint16 Audio::mTail;
+int16 Audio::numberPending;
 
 void Audio::Initialize()
 {
@@ -14,28 +13,25 @@ void Audio::Initialize()
 		pending[i].volume = 0;
 	}
 
-	mHead = 0;
-	mTail = 0;
+	numberPending = 0;
 }
 
 void Audio::PlaySound(char* message, int16 volume)
 {
-	RUNTIME_ASSERT((mTail + 1) % MAX_PENDING != mHead, "number of pending audio messages exceeds max amount allowed!!");
+	RUNTIME_ASSERT(numberPending < MAX_PENDING, "ERROR: number of pending elements is more than array can hold!");
 
-	pending[mTail].message = message;
-	pending[mTail].volume = volume;
+	pending[numberPending].message = message;
+	pending[numberPending].volume = volume;
 
-	//Wrap tail around to 0 if it reaches end of array
-	mTail = (mTail + 1) % MAX_PENDING;
+	numberPending++;
 }
 
 void Audio::Update()
 {
-	//If the ring buffer is empty then do nothing and return from function
-	if (mHead == mTail) return;
+	for (int i = 0; i < numberPending; i++)
+	{
+		LOG("%s", pending[i].message);
+	};
 
-	LOG("%s", pending[mHead].message);
-
-	//Wrap head back around to 0 if it reaches end of array
-	mHead = (mHead + 1) % MAX_PENDING;
+	numberPending = 0;
 }
