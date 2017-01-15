@@ -4,6 +4,7 @@
 #include "Universal/Globals.h"
 #include "Input/Keyboard/Keyboard.h"
 #include "Traingle1.h"
+#include "Audio/Audio.h"
 #include "Graphics/Graphics.h"
 #include "World.h"
 
@@ -40,6 +41,7 @@ void World::GameLoop()
 		{
 			mEntities.at(i)->Update();
 		}
+		Audio::Update();
 
 		window.Update();
 	};

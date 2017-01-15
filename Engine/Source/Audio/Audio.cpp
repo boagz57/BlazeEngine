@@ -2,25 +2,40 @@
 #include "Universal/Macro.h"
 #include "Audio.h"
 
-uint16 Audio::numberPending = 0;
 PlayMessage Audio::pending[];
+uint16 Audio::mHead;
+uint16 Audio::mTail;
+
+void Audio::Initialize()
+{
+	for (int i = 0; i < MAX_PENDING; i++)
+	{
+		pending[i].message = nullptr;
+		pending[i].volume = 0;
+	}
+
+	mHead = 0;
+	mTail = 0;
+}
 
 void Audio::PlaySound(char* message, int16 volume)
 {
-	RUNTIME_ASSERT(numberPending < MAX_PENDING, "number of pending audio messages exceeds max amount allowed!!");
+	RUNTIME_ASSERT((mTail + 1) % MAX_PENDING != mHead, "number of pending audio messages exceeds max amount allowed!!");
 
-	pending[numberPending].message = message;
-	pending[numberPending].volume = volume;
+	pending[mTail].message = message;
+	pending[mTail].volume = volume;
 
-	numberPending++;
+	//Wrap tail around to 0 if it reaches end of array
+	mTail = (mTail + 1) % MAX_PENDING;
 }
 
 void Audio::Update()
 {
-	for (int i = 0; i < numberPending; i++)
-	{
-		LOG("%s", pending[i].message);
-	}
+	//If the ring buffer is empty then do nothing and return from function
+	if (mHead == mTail) return;
 
-	numberPending = 0;
+	LOG("%s", pending[mHead].message);
+
+	//Wrap head back around to 0 if it reaches end of array
+	mHead = (mHead + 1) % MAX_PENDING;
 }

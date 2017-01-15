@@ -16,10 +16,9 @@ Traingle1::~Traingle1()
 void Traingle1::Update()
 {
 	graphics->Update(*this);
-	Audio::PlaySound("hahahah\n", 3);
-	Audio::PlaySound("nooooooo\n", 3);
-	Audio::PlaySound("yessssss\n", 3);
-	Audio::Update();
+	Audio::PlaySound("1\n", 3);
+	Audio::PlaySound("2\n", 3);
+	Audio::PlaySound("3\n", 3);
 }
 
 void Traingle1::Initialize()

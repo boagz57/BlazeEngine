@@ -11,11 +11,14 @@ struct PlayMessage
 class Audio
 {
 public:
+	static void Initialize();
 	static void PlaySound(char* message, int16 volume);
 	static void Update();
 
 private:
-	static uint16 numberPending;
+	static uint16 mHead;
+	static uint16 mTail;
+
 	static PlayMessage pending[MAX_PENDING];
 };
 
