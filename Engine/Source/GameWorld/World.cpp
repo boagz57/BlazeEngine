@@ -41,7 +41,6 @@ void World::GameLoop()
 		{
 			mEntities.at(i)->Update();
 		}
-		Audio::Update();
 
 		window.Update();
 	};

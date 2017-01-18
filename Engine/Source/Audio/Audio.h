@@ -1,22 +1,22 @@
 #pragma once
 #include "Universal/UniversalTypeDefs.h"
+#include "GameWorld/Entity.h"
 #define MAX_PENDING 16
 
 struct PlayMessage
 {
 	char* message;
-	int16 volume;
 };
 
 class Audio
 {
 public:
-	static void Initialize();
-	static void PlaySound(char* message, int16 volume);
-	static void Update();
+	void Initialize();
+	void PlaySound(char* message, Entity& obj);
+	void Update();
 
 private:
-	static int16 numberPending;
-	static PlayMessage pending[MAX_PENDING];
+	int16 numberPending;
+	PlayMessage pending[MAX_PENDING];
 };
 
