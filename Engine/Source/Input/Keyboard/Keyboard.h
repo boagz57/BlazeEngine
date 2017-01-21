@@ -7,6 +7,7 @@ namespace BlazeInput
 	{
 	public:
 		void ReadInput();
+		static bool KeyPress(const uint16 key);
 	};
 }
 

@@ -10,7 +10,6 @@ namespace BlazeInput
 	void Keyboard::ReadInput()
 	{
 		using namespace BlazeFramework;
-		KeyboardHandling::SetWindowContextForKeyboard(window.m_window);
 
 		if (KeyboardHandling::IsKeyPressed(Key::RightArrow))
 			MyOpenGL::MoveTriangle(.6f, 0.0f);
@@ -21,4 +20,11 @@ namespace BlazeInput
 		else if (KeyboardHandling::IsKeyPressed(Key::DownArrow))
 			MyOpenGL::MoveTriangle(0.0f, -0.6f);
 	}
+
+	bool Keyboard::KeyPress(const uint16 key)
+	{
+		BlazeFramework::KeyboardHandling::SetWindowContextForKeyboard(window.m_window);
+		return BlazeFramework::KeyboardHandling::IsKeyPressed(key);
+	}
+
 }

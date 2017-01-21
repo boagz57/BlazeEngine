@@ -24,6 +24,13 @@ private:
 		BlazeFramework::Math::Vertex3D(-0.1f, 0.0f, 0.0f),
 		BlazeFramework::Math::Vertex3D(+0.1f, 0.0f, 0.0f)
 	};
+	
+	Vector<BlazeFramework::Math::Vertex3D> transformedTriangle
+	{
+		BlazeFramework::Math::Vertex3D(0.0f, 0.0f, 0.0f),
+		BlazeFramework::Math::Vertex3D(0.0f, 0.0f, 0.0f),
+		BlazeFramework::Math::Vertex3D(0.0f, 0.0f, 0.0f)
+	};
 
 	Vector<GLushort> indicies
 	{
