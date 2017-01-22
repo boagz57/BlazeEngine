@@ -21,5 +21,6 @@ void Traingle1::Update()
 void Traingle1::Initialize()
 {
 	Geometry* triangleMesh = graphics->addGeometry(3, triangleVerts, 3, triangleIndicies);
+	graphics->addRenderable(triangleMesh);
 	graphics->InitializeBuffers();
 }

@@ -28,6 +28,9 @@ private:
 	uint16 numGeometries = 0;
 	Vector<Geometry> geometries;
 
+	const uint16 numMaxRenderables= 10;
+	uint16 numRenderables = 0;
+	Vector<Renderable> renderables;
 
 	Vector<BlazeFramework::Math::Vertex3D> transformedTriangle
 	{

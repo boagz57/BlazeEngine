@@ -7,7 +7,7 @@
 #include "Graphics.h"
 
 
-Graphics::Graphics() : geometries(numMaxGeometries)
+Graphics::Graphics() : geometries(numMaxGeometries), renderables(numMaxRenderables)
 {
 }
 
@@ -33,13 +33,12 @@ void Graphics::InitializeBuffers()
 
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 3, nullptr);
-
 }
 
 void Graphics::Update(Entity& obj)
 {
-	glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(BlazeFramework::Math::Vertex3D) * geometries.at(0).vertices.size(), &geometries.at(0).vertices.front());
-	glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, sizeof(uint16) * geometries.at(0).indicies.size(), &geometries.at(0).indicies.front());
+	glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(BlazeFramework::Math::Vertex3D) * renderables.at(0).mesh->vertices.size(), &renderables.at(0).mesh->vertices.front());
+	glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, sizeof(uint16) * renderables.at(0).mesh->indicies.size(), &renderables.at(0).mesh->indicies.front());
 	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
 }
 
@@ -59,5 +58,10 @@ Geometry* Graphics::addGeometry(uint16 numVerts, Vector<BlazeFramework::Math::Ve
 
 Renderable * Graphics::addRenderable(Geometry * mesh)
 {
-	return nullptr;
+	RUNTIME_ASSERT(numRenderables != numMaxRenderables, "ERROR: number of renderables more than vector can hold!");
+
+	Renderable& object = renderables.at(numRenderables++);
+	object.mesh = mesh;
+
+	return &object;
 }
