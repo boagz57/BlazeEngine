@@ -1,6 +1,9 @@
 #pragma once
 #include "GL/glew.h"
+#include "Universal/UniversalTypeDefs.h"
 #include "Math/Vertex3D/Vertex3D.h"
+#include "Graphics/Renderable.h"
+#include "Graphics/Geometry.h"
 #include "DataStructures/Vector/Vector.h"
 #include "GameWorld/Entity.h"
 
@@ -12,6 +15,8 @@ public:
 	void Draw();
 	void InitializeBuffers();
 	void Update(Entity& obj);
+	Geometry* addGeometry(uint16 numVerts, Vector<BlazeFramework::Math::Vertex3D> verticies, uint16 numIndicies, Vector<uint16> indices);
+	Renderable* addRenderable(Geometry* mesh);
 
 private:
 	static const uint16 cMaxBufferSize = 1024;

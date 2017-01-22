@@ -61,3 +61,14 @@ void Graphics::Update(Entity& obj)
 	glBufferSubData(GL_ARRAY_BUFFER, 0, transformedTriangle.size() * sizeof(BlazeFramework::Math::Vertex3D), &transformedTriangle.front());
 	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
 }
+
+Geometry* Graphics::addGeometry(uint16 numVerts, Vector<BlazeFramework::Math::Vertex3D> verticies, uint16 numIndicies, Vector<uint16> indices)
+{
+	Geometry* mygeom = nullptr;
+	return mygeom;
+}
+
+Renderable * Graphics::addRenderable(Geometry * mesh)
+{
+	return nullptr;
+}
