@@ -4,10 +4,9 @@
 
 namespace BlazeFramework
 {
-	//Not part of KeyboardHandling class (Callback functions cannot be class members).
-	//Only serves as a callback function to be used within SetWindowContextForKeyboard().
-	//Is used to set the boolean at the keycode location (in the array) to true if the 
-	//key is pressed. This key state will then be polled each frame.
+	//I've implemented the call back function this way so that input will be truly polled each frame,
+	//regardless if the key is held down or not. Without this implementation, holding down a key will
+	//cause a slight delay for the action for the first few frames.
 	void KeyCallBackFunction(WindowHandling::BlazeWindow* window, int keyCode, int scancode, int action, int mods)
 	{
 		KeyboardHandling::mKeyCodes.at(keyCode) = (action != GLFW_RELEASE);
@@ -22,6 +21,7 @@ namespace BlazeFramework
 	}
 
 	//Will specify what window you want to poll your KeyCallBackFunction from every frame.
+	//The glfw KeyCallBack function is only used inside this function.
 	void KeyboardHandling::SetWindowContextForKeyboard(WindowHandling::BlazeWindow * window)
 	{
 		glfwSetKeyCallback(window, KeyCallBackFunction);
