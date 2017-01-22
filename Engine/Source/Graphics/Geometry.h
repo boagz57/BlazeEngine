@@ -5,10 +5,12 @@
 
 class Geometry
 {
+private:
+	//TODO: Make empty constructors for all classes (not just this one)
 	friend class Graphics;
-	const uint16 numVerts;
+	uint16 numVerts;
 	Vector<BlazeFramework::Math::Vertex3D> vertices;
-	const uint16 numIndicies;
+	uint16 numIndicies;
 	Vector<uint16> indicies;
 	uint renderMode;
 };

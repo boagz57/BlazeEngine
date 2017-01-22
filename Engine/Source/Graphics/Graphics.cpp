@@ -1,4 +1,5 @@
 #include "Precompiled.h"
+#include "Universal/Macro.h"
 #include "LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "LowLevelInput/KeyboardHandling.h"
 #include "Input/Keyboard/Keyboard.h"
@@ -6,12 +7,13 @@
 #include "Graphics.h"
 
 
-Graphics::Graphics()
+Graphics::Graphics() : geometries(numMaxGeometries)
 {
-	for (int i = 0; i < 3; i++)
-	{
-		transformedTriangle.at(i) = triangle.at(i);
-	}
+}
+
+bool Graphics::Initialize()
+{
+	return true;
 }
 
 void Graphics::Draw()
@@ -32,40 +34,27 @@ void Graphics::InitializeBuffers()
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 3, nullptr);
 
-	glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, sizeof(GLushort) * 3, &indicies.front());
 }
 
 void Graphics::Update(Entity& obj)
 {
-	glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(BlazeFramework::Math::Vertex3D) * triangle.size(), &triangle.front());
-	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
-
-	if (BlazeInput::Keyboard::KeyPress(BlazeFramework::Key::RightArrow))
-	{
-		BlazeFramework::Math::Vertex3D velocity(.6f, 0.0f, 0.0f);
-		for (int i = 0; i < 3; i++)
-		{
-			transformedTriangle.at(i) = transformedTriangle.at(i) + velocity * engineClock.TimeSinceLastFrame();
-		};
-	} 
-
-	else if (BlazeInput::Keyboard::KeyPress(BlazeFramework::Key::LeftArrow))
-	{
-		BlazeFramework::Math::Vertex3D velocity(-.6f, 0.0f, 0.0f);
-		for (int i = 0; i < 3; i++)
-		{
-			transformedTriangle.at(i) = transformedTriangle.at(i) + velocity * engineClock.TimeSinceLastFrame();
-		};
-	}
-
-	glBufferSubData(GL_ARRAY_BUFFER, 0, transformedTriangle.size() * sizeof(BlazeFramework::Math::Vertex3D), &transformedTriangle.front());
+	glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(BlazeFramework::Math::Vertex3D) * geometries.at(0).vertices.size(), &geometries.at(0).vertices.front());
+	glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, sizeof(uint16) * geometries.at(0).indicies.size(), &geometries.at(0).indicies.front());
 	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
 }
 
 Geometry* Graphics::addGeometry(uint16 numVerts, Vector<BlazeFramework::Math::Vertex3D> verticies, uint16 numIndicies, Vector<uint16> indices)
 {
-	Geometry* mygeom = nullptr;
-	return mygeom;
+	RUNTIME_ASSERT(numGeometries != numMaxGeometries, "ERROR: number of geometries more than vector can hold!");
+	
+	Geometry& mesh = geometries.at(numGeometries);
+
+	mesh.numVerts = numVerts;
+	mesh.vertices = verticies;
+	mesh.numIndicies = numIndicies;
+	mesh.indicies = indices;
+
+	return &mesh;
 }
 
 Renderable * Graphics::addRenderable(Geometry * mesh)

@@ -12,6 +12,7 @@ class Graphics
 public:
 	Graphics();
 
+	bool Initialize();
 	void Draw();
 	void InitializeBuffers();
 	void Update(Entity& obj);
@@ -23,23 +24,16 @@ private:
 	GLuint vertexBufferID;
 	GLuint indexBufferID;
 
-	Vector<BlazeFramework::Math::Vertex3D> triangle
-	{
-		BlazeFramework::Math::Vertex3D(+0.0f, +0.2f, 0.0f),
-		BlazeFramework::Math::Vertex3D(-0.1f, 0.0f, 0.0f),
-		BlazeFramework::Math::Vertex3D(+0.1f, 0.0f, 0.0f)
-	};
-	
+	const uint16 numMaxGeometries = 10;
+	uint16 numGeometries = 0;
+	Vector<Geometry> geometries;
+
+
 	Vector<BlazeFramework::Math::Vertex3D> transformedTriangle
 	{
 		BlazeFramework::Math::Vertex3D(0.0f, 0.0f, 0.0f),
 		BlazeFramework::Math::Vertex3D(0.0f, 0.0f, 0.0f),
 		BlazeFramework::Math::Vertex3D(0.0f, 0.0f, 0.0f)
-	};
-
-	Vector<GLushort> indicies
-	{
-		0, 1, 2
 	};
 };
 
