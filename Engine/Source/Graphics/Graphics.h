@@ -24,13 +24,13 @@ private:
 	GLuint vertexBufferID;
 	GLuint indexBufferID;
 
-	const uint16 numMaxGeometries = 10;
-	uint16 numGeometries = 0;
-	Vector<Geometry> geometries;
+	static const uint16 numMaxGeometries = 10;
+	static uint16 numGeometries;
+	static Vector<Geometry> geometries;
 
-	const uint16 numMaxRenderables= 10;
-	uint16 numRenderables = 0;
-	Vector<Renderable> renderables;
+	static const uint16 numMaxRenderables= 10;
+	static uint16 numRenderables;
+	static Vector<Renderable> renderables;
 
 	Vector<BlazeFramework::Math::Vertex3D> transformedTriangle
 	{

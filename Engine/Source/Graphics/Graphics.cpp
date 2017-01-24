@@ -6,8 +6,12 @@
 #include "Universal/Globals.h"
 #include "Graphics.h"
 
+Vector<Geometry> Graphics::geometries(numMaxGeometries);
+Vector<Renderable> Graphics::renderables(numMaxRenderables);
+uint16 Graphics::numGeometries = 0;
+uint16 Graphics::numRenderables = 0;
 
-Graphics::Graphics() : geometries(numMaxGeometries), renderables(numMaxRenderables)
+Graphics::Graphics()
 {
 }
 
@@ -46,7 +50,7 @@ Geometry* Graphics::addGeometry(uint16 numVerts, Vector<BlazeFramework::Math::Ve
 {
 	RUNTIME_ASSERT(numGeometries != numMaxGeometries, "ERROR: number of geometries more than vector can hold!");
 	
-	Geometry& mesh = geometries.at(numGeometries);
+	Geometry& mesh = geometries.at(numGeometries++);
 
 	mesh.numVerts = numVerts;
 	mesh.vertices = verticies;
