@@ -1,6 +1,8 @@
 #pragma once
 #include "Entity.h"
 
+//TODO: Make sure to update all header files and make them lean and mean
+
 class Traingle1 : public Entity
 {
 public:

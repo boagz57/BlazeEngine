@@ -6,12 +6,8 @@
 #include "Universal/Globals.h"
 #include "Graphics.h"
 
-Vector<Geometry> Graphics::geometries(numMaxGeometries);
-Vector<Renderable> Graphics::renderables(numMaxRenderables);
-uint16 Graphics::numGeometries = 0;
-uint16 Graphics::numRenderables = 0;
 
-Graphics::Graphics()
+Graphics::Graphics() 
 {
 }
 
@@ -41,17 +37,13 @@ void Graphics::InitializeBuffers()
 
 void Graphics::Update(Entity& obj)
 {
-	glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(BlazeFramework::Math::Vertex3D) * renderables.at(0).mesh->vertices.size(), &renderables.at(0).mesh->vertices.front());
-	glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, sizeof(uint16) * renderables.at(0).mesh->indicies.size(), &renderables.at(0).mesh->indicies.front());
+	glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(BlazeFramework::Math::Vertex3D) * object.mesh->vertices.size(), &object.mesh->vertices.front());
+	glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, sizeof(uint16) * object.mesh->indicies.size(), &object.mesh->indicies.front());
 	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
 }
 
 Geometry* Graphics::addGeometry(uint16 numVerts, Vector<BlazeFramework::Math::Vertex3D> verticies, uint16 numIndicies, Vector<uint16> indices)
 {
-	RUNTIME_ASSERT(numGeometries != numMaxGeometries, "ERROR: number of geometries more than vector can hold!");
-	
-	Geometry& mesh = geometries.at(numGeometries++);
-
 	mesh.numVerts = numVerts;
 	mesh.vertices = verticies;
 	mesh.numIndicies = numIndicies;
@@ -62,9 +54,6 @@ Geometry* Graphics::addGeometry(uint16 numVerts, Vector<BlazeFramework::Math::Ve
 
 Renderable * Graphics::addRenderable(Geometry * mesh)
 {
-	RUNTIME_ASSERT(numRenderables != numMaxRenderables, "ERROR: number of renderables more than vector can hold!");
-
-	Renderable& object = renderables.at(numRenderables++);
 	object.mesh = mesh;
 
 	return &object;
