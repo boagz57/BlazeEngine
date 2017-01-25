@@ -1,5 +1,6 @@
 #include "Precompiled.h"
 #include "Universal/Macro.h"
+#include "GLM/gtx/matrix_transform_2d.hpp"
 #include "LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "LowLevelInput/KeyboardHandling.h"
 #include "Input/Keyboard/Keyboard.h"
@@ -37,6 +38,12 @@ void Graphics::InitializeBuffers()
 
 void Graphics::Update(Entity& obj)
 {
+	object.location += obj.position;
+	for (int i = 0; i < 3; i++)
+	{
+		object.mesh->vertices.at(0) += obj.position;
+	};
+
 	glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(BlazeFramework::Math::Vertex3D) * object.mesh->vertices.size(), &object.mesh->vertices.front());
 	glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, sizeof(uint16) * object.mesh->indicies.size(), &object.mesh->indicies.front());
 	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);

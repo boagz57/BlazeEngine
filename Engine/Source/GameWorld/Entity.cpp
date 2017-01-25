@@ -4,7 +4,10 @@
 #include "Entity.h"
 
 
-Entity::Entity() : graphics(std::make_unique<Graphics>()), position(0.0f, 0.0f, 1.0f), velocity(.6f, 0.0f, 0.0f)
+Entity::Entity() : graphics(std::make_unique<Graphics>()), 
+	position(0.0f, 0.0f, 1.0f), 
+	velocity(.6f, 0.0f, 0.0f),
+	oldPosition(0.0f, 0.0f, 0.0f)
 {
 }
 
