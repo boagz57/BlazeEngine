@@ -7,7 +7,7 @@ class Renderable
 {
 private:
 	friend class Graphics;
-	const Geometry* mesh;
+	Geometry* mesh;
 
 public:
 	Renderable();

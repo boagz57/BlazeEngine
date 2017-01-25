@@ -41,7 +41,7 @@ void Graphics::Update(Entity& obj)
 	object.location += obj.position;
 	for (int i = 0; i < 3; i++)
 	{
-		object.mesh->vertices.at(0) += obj.position;
+		object.mesh->vertices.at(0) += object.location;
 	};
 
 	glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(BlazeFramework::Math::Vertex3D) * object.mesh->vertices.size(), &object.mesh->vertices.front());
