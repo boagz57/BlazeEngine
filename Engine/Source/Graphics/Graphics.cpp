@@ -9,8 +9,10 @@
 
 
 Graphics::Graphics() : transformedVerts(3)
-{
-}
+{}
+
+Graphics::~Graphics()
+{}
 
 bool Graphics::Initialize()
 {

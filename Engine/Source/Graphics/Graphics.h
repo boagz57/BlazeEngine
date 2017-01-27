@@ -11,6 +11,7 @@ class Graphics
 {
 public:
 	Graphics();
+	~Graphics();
 
 	bool Initialize();
 	void Draw();

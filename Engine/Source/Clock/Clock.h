@@ -8,6 +8,7 @@ namespace Timing
 	{
 	public:
 		Clock();
+		~Clock();
 
 		void Initialize();
 		bool ShutDown();

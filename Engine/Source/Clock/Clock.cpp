@@ -9,8 +9,10 @@ namespace Timing
 	using namespace std::chrono;
 
 	Clock::Clock()
-	{
-	}
+	{}
+
+	Clock::~Clock()
+	{}
 
 	void Clock::Initialize()
 	{

@@ -12,6 +12,11 @@ World::World() : mNumberOfEntities(0)
 {
 }
 
+World::~World()
+{
+
+}
+
 void World::GameLoop()
 {
 	BlazeFramework::OpenGL::RestartGLLogFile();

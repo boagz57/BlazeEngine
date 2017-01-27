@@ -4,3 +4,6 @@
 Renderable::Renderable() :
 	location(0.0f, 0.0f)
 {}
+
+Renderable::~Renderable()
+{}

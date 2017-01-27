@@ -5,6 +5,10 @@
 
 class Geometry
 {
+public:
+	Geometry();
+	~Geometry();
+
 private:
 	//TODO: Make empty constructors for all classes (not just this one)
 	friend class Graphics;

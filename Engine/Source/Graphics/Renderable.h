@@ -5,12 +5,14 @@ class Geometry;
 
 class Renderable
 {
+public:
+	Renderable();
+	~Renderable();
+
+	BlazeFramework::Math::Vector2D location;
+
 private:
 	friend class Graphics;
 	Geometry* mesh;
-
-public:
-	Renderable();
-	BlazeFramework::Math::Vector2D location;
 };
 
