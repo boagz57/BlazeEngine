@@ -1,5 +1,5 @@
 #pragma once
-#include "Math/Vertex3D/Vertex3D.h"
+#include "Math/Vertex2D/Vector2D.h"
 
 class Geometry;
 
@@ -11,6 +11,6 @@ private:
 
 public:
 	Renderable();
-	BlazeFramework::Math::Vertex3D location;
+	BlazeFramework::Math::Vector2D location;
 };
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "GL/glew.h"
 #include "Universal/UniversalTypeDefs.h"
-#include "Math/Vertex3D/Vertex3D.h"
+#include "Math/Vertex2D/Vector2D.h"
 #include "Graphics/Renderable.h"
 #include "Graphics/Geometry.h"
 #include "DataStructures/Vector/Vector.h"
@@ -16,7 +16,7 @@ public:
 	void Draw();
 	void InitializeBuffers();
 	void Update(Entity& obj);
-	Geometry* addGeometry(uint16 numVerts, Vector<BlazeFramework::Math::Vertex3D> verticies, uint16 numIndicies, Vector<uint16> indices);
+	Geometry* addGeometry(uint16 numVerts, Vector<BlazeFramework::Math::Vector2D> verticies, uint16 numIndicies, Vector<uint16> indices);
 	Renderable* addRenderable(Geometry* mesh);
 
 private:
@@ -25,13 +25,8 @@ private:
 	GLuint indexBufferID;
 
 	Geometry mesh;
-	Renderable object;
+	Renderable renderable;
 
-	Vector<BlazeFramework::Math::Vertex3D> transformedTriangle
-	{
-		BlazeFramework::Math::Vertex3D(0.0f, 0.0f, 0.0f),
-		BlazeFramework::Math::Vertex3D(0.0f, 0.0f, 0.0f),
-		BlazeFramework::Math::Vertex3D(0.0f, 0.0f, 0.0f)
-	};
+	Vector<BlazeFramework::Math::Vector2D> transformedVerts;
 };
 

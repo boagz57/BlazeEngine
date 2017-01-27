@@ -15,7 +15,6 @@ Traingle1::~Traingle1()
 
 void Traingle1::Update()
 {
-	oldPosition = position;
 	position += (velocity * engineClock.TimeSinceLastFrame());
 
 	graphics->Update(*this);

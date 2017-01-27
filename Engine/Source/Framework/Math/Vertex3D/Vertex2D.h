@@ -6,6 +6,6 @@ namespace BlazeFramework
 {
 	namespace Math
 	{
-		typedef glm::vec3 Vertex3D;//TODO: Change name to vector3D 
+		typedef glm::vec3 Vector3D;//TODO: Change name to vector3D 
 	}
 }

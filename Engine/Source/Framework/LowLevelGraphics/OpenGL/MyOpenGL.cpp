@@ -5,7 +5,7 @@
 #include "GL/glew.h"
 #include "MyOpenGL.h"
 #include "DataStructures/Vector/Vector.h"
-#include "Math/Vertex3D/Vertex3D.h"
+#include "Math/Vertex3D/Vertex2D.h"
 #include "Universal/Globals.h"
 #include "StatusChecks/StatusChecks.h"
 
@@ -15,12 +15,12 @@ namespace MyOpenGL
 	using namespace BlazeFramework;
 	using namespace Math;
 
-	void InitializeGLBuffers(Vector<Vertex3D> objVerts)
+	void InitializeGLBuffers(Vector<Vector2D> objVerts)
 	{
 		GLuint bufferID;
 		glGenBuffers(1, &bufferID);
 		glBindBuffer(GL_ARRAY_BUFFER, bufferID);
-		glBufferData(GL_ARRAY_BUFFER, objVerts.size() * sizeof(Vertex3D), &objVerts.front(), GL_STATIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, objVerts.size() * sizeof(Vector2D), &objVerts.front(), GL_STATIC_DRAW);
 		glEnableVertexAttribArray(0);
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, (sizeof(GLfloat)) * 3, nullptr);
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "DataStructures/Vector/Vector.h"
-#include "Math/Vertex3D/Vertex3D.h"
+#include "Math/Vertex2D/Vector2D.h"
 #include "Universal/UniversalTypeDefs.h"
 
 class Geometry
@@ -10,7 +10,7 @@ private:
 	friend class Graphics;
 
 	uint16 numVerts;
-	Vector<BlazeFramework::Math::Vertex3D> vertices;
+	Vector<BlazeFramework::Math::Vector2D> vertices;
 	uint16 numIndicies;
 	Vector<uint16> indicies;
 	uint renderMode;

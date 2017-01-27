@@ -2,5 +2,5 @@
 #include "Renderable.h"
 
 Renderable::Renderable() :
-	location(0.0f, 0.0f, 0.0f)
+	location(0.0f, 0.0f)
 {}

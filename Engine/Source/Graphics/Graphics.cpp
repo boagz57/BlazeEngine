@@ -8,7 +8,7 @@
 #include "Graphics.h"
 
 
-Graphics::Graphics() 
+Graphics::Graphics() : transformedVerts(3)
 {
 }
 
@@ -33,23 +33,24 @@ void Graphics::InitializeBuffers()
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, cMaxBufferSize, nullptr, GL_DYNAMIC_DRAW);
 
 	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 3, nullptr);
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 2, nullptr);
 }
 
-void Graphics::Update(Entity& obj)
+void Graphics::Update(Entity& object)
 {
-	object.location += obj.position;
+
+	renderable.location = object.position;
 	for (int i = 0; i < 3; i++)
 	{
-		object.mesh->vertices.at(0) += object.location;
+		transformedVerts.at(i) = renderable.mesh->vertices.at(i) + renderable.location;
 	};
 
-	glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(BlazeFramework::Math::Vertex3D) * object.mesh->vertices.size(), &object.mesh->vertices.front());
-	glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, sizeof(uint16) * object.mesh->indicies.size(), &object.mesh->indicies.front());
+	glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(BlazeFramework::Math::Vector2D) * renderable.mesh->vertices.size(), &transformedVerts.front());
+	glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, sizeof(uint16) * renderable.mesh->indicies.size(), &renderable.mesh->indicies.front());
 	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
 }
 
-Geometry* Graphics::addGeometry(uint16 numVerts, Vector<BlazeFramework::Math::Vertex3D> verticies, uint16 numIndicies, Vector<uint16> indices)
+Geometry* Graphics::addGeometry(uint16 numVerts, Vector<BlazeFramework::Math::Vector2D> verticies, uint16 numIndicies, Vector<uint16> indices)
 {
 	mesh.numVerts = numVerts;
 	mesh.vertices = verticies;
@@ -61,7 +62,7 @@ Geometry* Graphics::addGeometry(uint16 numVerts, Vector<BlazeFramework::Math::Ve
 
 Renderable * Graphics::addRenderable(Geometry * mesh)
 {
-	object.mesh = mesh;
+	renderable.mesh = mesh;
 
-	return &object;
+	return &renderable;
 }
