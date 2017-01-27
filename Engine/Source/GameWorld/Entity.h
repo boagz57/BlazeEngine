@@ -18,11 +18,12 @@ public:
 	virtual void Update() = 0;
 	void AnotherFunc(); //TODO: Eventually have an actual default function for Entity to make it abstract
 
-	BlazeFramework::Math::Vector2D position;
+	BlazeFramework::Math::Vector2D GetPosition() const { return position; }
 
 protected:
 	std::unique_ptr<Graphics> graphics;
 
 	BlazeFramework::Math::Vector2D velocity;
+	BlazeFramework::Math::Vector2D position;
 };
 

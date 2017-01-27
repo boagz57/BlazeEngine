@@ -40,7 +40,7 @@ void Graphics::InitializeBuffers()
 
 void Graphics::Update(Entity& object)
 {
-	renderable.location = object.position;
+	renderable.location = object.GetPosition();
 
 	for (int i = 0; i < 3; i++)
 	{
