@@ -5,7 +5,7 @@
 #include "GL/glew.h"
 #include "MyOpenGL.h"
 #include "DataStructures/Vector/Vector.h"
-#include "Math/Vertex3D/Vertex2D.h"
+#include "Math/Vector2D/Vector2D.h"
 #include "Universal/Globals.h"
 #include "StatusChecks/StatusChecks.h"
 

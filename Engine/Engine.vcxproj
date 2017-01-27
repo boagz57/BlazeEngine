@@ -71,8 +71,8 @@
     <ClInclude Include="Source\Clock\Clock.h" />
     <ClInclude Include="Source\Framework\FileHandling\File.h" />
     <ClInclude Include="Source\Framework\Array.h" />
-    <ClInclude Include="Source\Framework\Math\Vertex2D\Vector2D.h" />
-    <ClInclude Include="Source\Framework\Math\Vertex3D\Vertex2D.h" />
+    <ClInclude Include="Source\Framework\Math\Vector2D\Vector2D.h" />
+    <ClInclude Include="Source\Framework\Math\Vector3D\Vector3D.h" />
     <ClInclude Include="Source\Framework\LowLevelWindow\WindowHandling.h" />
     <ClInclude Include="Source\Universal\Globals.h" />
     <ClInclude Include="Source\Universal\Macro.h" />

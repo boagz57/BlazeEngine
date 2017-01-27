@@ -1,7 +1,7 @@
 #pragma once
 #include "GL/glew.h"
 #include "Universal/UniversalTypeDefs.h"
-#include "Math/Vertex2D/Vector2D.h"
+#include "Math/Vector2D/Vector2D.h"
 #include "Graphics/Renderable.h"
 #include "Graphics/Geometry.h"
 #include "DataStructures/Vector/Vector.h"

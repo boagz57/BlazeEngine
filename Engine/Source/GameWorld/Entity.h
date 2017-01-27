@@ -1,7 +1,7 @@
 #pragma once
 #include "Universal/UniversalTypeDefs.h"
 #include <memory>
-#include "Framework/Math/Vertex2D/Vector2D.h"
+#include "Math/Vector2D/Vector2D.h"
 #include "DataStructures/Vector/Vector.h"
 
 class Graphics;

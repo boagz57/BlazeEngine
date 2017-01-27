@@ -1,6 +1,6 @@
 #pragma once
 #include "DataStructures/Vector/Vector.h"
-#include "Math/Vertex2D/Vector2D.h"
+#include "Math/Vector2D/Vector2D.h"
 #include "Universal/UniversalTypeDefs.h"
 
 class Geometry
