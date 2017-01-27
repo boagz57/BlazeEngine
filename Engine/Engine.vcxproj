@@ -27,15 +27,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\GameWorld\Ship.cpp" />
+    <ClCompile Include="Source\GameWorld\GameEntities\Ship.cpp" />
     <ClCompile Include="Source\Graphics\Renderable.cpp" />
     <ClCompile Include="Source\Graphics\Geometry.cpp" />
     <ClCompile Include="Source\Audio\Audio.cpp" />
-    <ClCompile Include="Source\GameWorld\Entity.cpp" />
+    <ClCompile Include="Source\GameWorld\GameEntities\Entity\Entity.cpp" />
     <ClCompile Include="Source\Graphics\Graphics.cpp" />
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\ErrorLogging\ErrorLogging.cpp" />
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\Initialization\GLInitialization.cpp" />
-    <ClCompile Include="Source\GameWorld\World.cpp" />
+    <ClCompile Include="Source\GameWorld\World\World.cpp" />
     <ClCompile Include="Source\Framework\LowLevelWindow\WindowHandling.cpp" />
     <ClCompile Include="Source\Input\Keyboard\Keyboard.cpp" />
     <ClCompile Include="Source\Framework\LowLevelInput\KeyboardHandling.cpp" />
@@ -57,17 +57,17 @@
     <ClCompile Include="Source\Graphics\ShapeData.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\GameWorld\Ship.h" />
+    <ClInclude Include="Source\GameWorld\GameEntities\Ship.h" />
     <ClInclude Include="Source\Graphics\Renderable.h" />
     <ClInclude Include="Source\Graphics\Geometry.h" />
     <ClInclude Include="Source\Audio\Audio.h" />
     <ClInclude Include="Source\DataStructures\Array\Array.h" />
     <ClInclude Include="Source\DataStructures\Vector\Vector.h" />
-    <ClInclude Include="Source\GameWorld\Entity.h" />
+    <ClInclude Include="Source\GameWorld\GameEntities\Entity\Entity.h" />
     <ClInclude Include="Source\Graphics\Graphics.h" />
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\ErrorLogging\ErrorLogging.h" />
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\Initialization\GLInitialization.h" />
-    <ClInclude Include="Source\GameWorld\World.h" />
+    <ClInclude Include="Source\GameWorld\World\World.h" />
     <ClInclude Include="Source\Input\Keyboard\Keyboard.h" />
     <ClInclude Include="Source\Framework\LowLevelInput\KeyboardHandling.h" />
     <ClInclude Include="Source\Clock\Clock.h" />

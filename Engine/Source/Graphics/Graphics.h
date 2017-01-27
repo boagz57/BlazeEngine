@@ -5,7 +5,7 @@
 #include "Graphics/Renderable.h"
 #include "Graphics/Geometry.h"
 #include "DataStructures/Vector/Vector.h"
-#include "GameWorld/Entity.h"
+#include "GameWorld/GameEntities/Entity/Entity.h"
 
 class Graphics
 {

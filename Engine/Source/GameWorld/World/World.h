@@ -2,7 +2,7 @@
 #include "Universal/UniversalTypeDefs.h"
 #include "DataStructures/Vector/Vector.h"
 #include <Array>
-#include "GameWorld/Entity.h"
+#include "GameWorld/GameEntities/Entity/Entity.h"
 
 class World
 {

@@ -3,7 +3,7 @@
 #include "Framework/LowLevelGraphics/OpenGL/ErrorLogging/ErrorLogging.h"
 #include "Universal/Globals.h"
 #include "Input/Keyboard/Keyboard.h"
-#include "Ship.h"
+#include "GameWorld/GameEntities/Ship.h"
 #include "Audio/Audio.h"
 #include "Graphics/Graphics.h"
 #include "World.h"
