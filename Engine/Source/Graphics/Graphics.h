@@ -14,9 +14,11 @@ public:
 	~Graphics();
 
 	bool Initialize();
-	void Draw();
+	bool Shutdown();
+
 	void InitializeBuffers();
 	void Update(Entity& obj);
+
 	void addGeometry(Geometry geometry);
 	void CreateRenderable();
 

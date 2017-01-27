@@ -10,7 +10,9 @@ public:
 	Ship();
 	~Ship();
 
-	virtual void Update() override;
-	virtual void Initialize(sfloat velocity) override;
+	bool Initialize(sfloat velocity) override;
+	bool Shutdown() override;
+
+	void Update() override;
 };
 

@@ -8,13 +8,20 @@
 #include "Graphics/Graphics.h"
 #include "World.h"
 
-World::World() : mNumberOfEntities(0)
-{
-}
+World::World() : numEntities(0)
+{}
 
 World::~World()
-{
+{}
 
+bool World::Initialize()
+{
+	return false;
+}
+
+bool World::Shutdown()
+{
+	return false;
 }
 
 void World::GameLoop()
@@ -33,21 +40,21 @@ void World::GameLoop()
 
 	BlazeInput::Keyboard keyboard;
 
-	mEntities.push_back(&triangle);
-	mNumberOfEntities++;
+	entities.push_back(&triangle);
+	numEntities++;
 
-	mEntities.push_back(&triangle2);
-	mNumberOfEntities++;
+	entities.push_back(&triangle2);
+	numEntities++;
 
 	while (!window.Closed())
 	{
 		window.Clear();
 		engineClock.NewFrame();
 
-		uint16 numberOfEntitiesThisFrame = mNumberOfEntities;
+		uint16 numberOfEntitiesThisFrame = numEntities;
 		for (int i = 0; i < numberOfEntitiesThisFrame; i++)
 		{
-			mEntities.at(i)->Update();
+			entities.at(i)->Update();
 		}
 
 		window.Update();

@@ -10,12 +10,15 @@ public:
 	World();
 	~World();
 
+	bool Initialize();
+	bool Shutdown();
+
 	void GameLoop();
 
 private:
 	//Used to store all Entity objects in the game and iterate over them to call their respective
 	//Update() functions. One of the possible implementations of the Update pattern. 
-	Vector<Entity*> mEntities;
-	uint16 mNumberOfEntities;
+	Vector<Entity*> entities;
+	uint16 numEntities;
 };
 

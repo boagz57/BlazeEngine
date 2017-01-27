@@ -19,8 +19,12 @@ bool Graphics::Initialize()
 	return true;
 }
 
-void Graphics::Draw()
+bool Graphics::Shutdown()
 {
+	glDeleteBuffers(1, &vertexBufferID);
+	glDeleteBuffers(1, &indexBufferID);
+
+	return true;
 }
 
 void Graphics::InitializeBuffers()

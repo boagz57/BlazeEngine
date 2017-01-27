@@ -1,17 +1,14 @@
 #include "Precompiled.h"
 #include "ShapeData.h"
 
+//static memory
 Geometry ShapeData::geometry;
 
 ShapeData::ShapeData()
-{
-
-}
+{}
 
 ShapeData::~ShapeData()
-{
-
-}
+{}
 
 Geometry ShapeData::Triangle()
 {

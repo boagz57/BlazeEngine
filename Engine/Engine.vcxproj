@@ -54,7 +54,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\StatusChecks\StatusChecks.cpp" />
-    <ClCompile Include="Source\GameWorld\ShapeData.cpp" />
+    <ClCompile Include="Source\Graphics\ShapeData.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\GameWorld\Ship.h" />
@@ -85,7 +85,7 @@
     <ClInclude Include="Source\Framework\Vector.h" />
     <ClInclude Include="Source\Universal\UniversalTypeDefs.h" />
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\StatusChecks\StatusChecks.h" />
-    <ClInclude Include="Source\GameWorld\ShapeData.h" />
+    <ClInclude Include="Source\Graphics\ShapeData.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\Framework\Array.inl">
