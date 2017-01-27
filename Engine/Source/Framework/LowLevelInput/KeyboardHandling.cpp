@@ -29,11 +29,11 @@ namespace BlazeFramework
 
 	//This is used to extract out what key has actually been pressed from glfw so that 
 	//you can use this information to perform whatever action you attach to this input.
-	bool KeyboardHandling::IsKeyPressed(const uint16 key)
+	bool KeyboardHandling::IsKeyPressed(const uint16 cKey)
 	{
-		RUNTIME_ASSERT(key <= GLFW_KEY_LAST, "ERROR: keycode entered does not exist on keyboard");
+		RUNTIME_ASSERT(cKey <= GLFW_KEY_LAST, "ERROR: keycode entered does not exist on keyboard");
 
-		return KeyboardHandling::mKeyCodes.at(key);
+		return KeyboardHandling::mKeyCodes.at(cKey);
 	}
 
 	Array<bool, GLFW_KEY_LAST> KeyboardHandling::mKeyCodes;

@@ -20,8 +20,8 @@ namespace BlazeFramework
 			void Write(const char8* message, ...);
 			void Write(const char8* message);
 		private:
-			const char8* cmFilename;
-			FILE* mOutputFile;
+			const char8* cpFilename;
+			FILE* pOutputFile;
 		};
 	}
 }

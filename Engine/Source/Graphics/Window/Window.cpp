@@ -7,15 +7,15 @@
 namespace BlazeGraphics
 {
 	Window::Window(uint16 width, uint16 height, char8* title) :
-		M_WIDTH(width),
-		M_HEIGHT(height),
-		M_TITLE(title)
+		cWidth(width),
+		cHeight(height),
+		cpTitle(title)
 	{
 		BlazeFramework::OpenGL::InitializeGLFW();
 
 		//InitializeWindow
 		{
-			m_window = BlazeFramework::WindowHandling::CreateWindow(M_WIDTH, M_HEIGHT, M_TITLE, NULL, NULL);
+			m_window = BlazeFramework::WindowHandling::CreateWindow(cWidth, cHeight, cpTitle, NULL, NULL);
 
 			if (!m_window)
 			{

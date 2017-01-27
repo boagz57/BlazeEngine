@@ -28,9 +28,9 @@ namespace BlazeGraphics
 		//making m_window publicly available.
 		friend class BlazeInput::Keyboard;
 
-		const uint16 M_HEIGHT = 0;
-		const uint16 M_WIDTH = 0;
-		const char8* M_TITLE = nullptr;
+		const uint16 cHeight = 0;
+		const uint16 cWidth = 0;
+		const char8* cpTitle = nullptr;
 
 		BlazeFramework::WindowHandling::BlazeWindow* m_window;
 	};

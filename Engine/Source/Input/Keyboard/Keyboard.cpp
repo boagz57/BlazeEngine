@@ -7,10 +7,10 @@
 
 namespace BlazeInput
 {
-	bool Keyboard::KeyPress(const uint16 key)
+	bool Keyboard::KeyPress(const uint16 cKey)
 	{
 		BlazeFramework::KeyboardHandling::SetWindowContextForKeyboard(window.m_window);
-		return BlazeFramework::KeyboardHandling::IsKeyPressed(key);
+		return BlazeFramework::KeyboardHandling::IsKeyPressed(cKey);
 	}
 
 }

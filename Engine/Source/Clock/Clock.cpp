@@ -14,7 +14,7 @@ namespace Timing
 
 	void Clock::Initialize()
 	{
-		mTimePointLastFrame = high_resolution_clock::now();
+		TimePointLastFrame = high_resolution_clock::now();
 	}
 
 	bool Clock::ShutDown()
@@ -25,14 +25,14 @@ namespace Timing
 	void Clock::NewFrame()
 	{
 		auto timePointThisFrame = high_resolution_clock::now();
-		auto timeDifference = timePointThisFrame - mTimePointLastFrame;
-		mDeltaTime = ((sfloat)timeDifference.count()) * .000000001f;
-		mTimePointLastFrame = timePointThisFrame;
+		auto timeDifference = timePointThisFrame - TimePointLastFrame;
+		DeltaTime = ((sfloat)timeDifference.count()) * .000000001f;
+		TimePointLastFrame = timePointThisFrame;
 	}
 
 	sfloat Clock::TimeSinceLastFrame()
 	{
-		return mDeltaTime;
+		return DeltaTime;
 	}
 }
 

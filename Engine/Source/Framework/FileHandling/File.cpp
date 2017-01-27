@@ -13,52 +13,52 @@ namespace BlazeFramework
 		{
 		}
 
-		File::File(char8* fileName) : 
-			mOutputFile(mOutputFile = fopen(fileName, "w")), 
-			cmFilename(fileName)
+		File::File(char8* pFileName) : 
+			pOutputFile(pOutputFile = fopen(pFileName, "w")), 
+			cpFilename(pFileName)
 		{
 		}
 
 		File::~File()
 		{
-			fclose(mOutputFile);
+			fclose(pOutputFile);
 		}
 
 		void File::Close()
 		{
-			fclose(mOutputFile);
+			fclose(pOutputFile);
 		}
 
-		void File::Open(const char8* fileName, const char8* mode)
+		void File::Open(const char8* cFileName, const char8* mode)
 		{
-			mOutputFile = fopen(fileName, mode);
+			pOutputFile = fopen(cFileName, mode);
 		}
 
 		bool File::Good()
 		{
-			if (!mOutputFile)
+			if (!pOutputFile)
 			{
-				LOG("ERROR: could not open %s file for appending\n", cmFilename);
+				LOG("ERROR: could not open %s file for appending\n", this->cpFilename);
 				return false;
 			}
 
 			return true;
 		}
 
-		void File::Write(const char8 * message, ...)
+		void File::Write(const char8 * cpMessage, ...)
 		{
 			//Believe this captures the ellipsis parameter in your function
 			va_list argptr;
-			va_start(argptr, message);//Initializes the va_list
+			va_start(argptr, cpMessage);//Initializes the va_list
 
-			vfprintf(mOutputFile, message, argptr);
+			vfprintf(pOutputFile, cpMessage, argptr);
 
 			va_end(argptr);//Cleans up the va_list
 		}
 
-		void File::Write(const char8* message)
+		void File::Write(const char8* cpMessage)
 		{
-			fprintf(mOutputFile, message);
+			fprintf(pOutputFile, cpMessage);
 		}
 	}
 }
