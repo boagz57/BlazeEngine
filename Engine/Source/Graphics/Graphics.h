@@ -17,8 +17,8 @@ public:
 	void Draw();
 	void InitializeBuffers();
 	void Update(Entity& obj);
-	Geometry* addGeometry(uint16 numVerts, Vector<BlazeFramework::Math::Vector2D> verticies, uint16 numIndicies, Vector<uint16> indices);
-	Renderable* addRenderable(Geometry* mesh);
+	void addGeometry(Geometry geometry);
+	void CreateRenderable();
 
 private:
 	static const uint16 cMaxBufferSize = 1024;

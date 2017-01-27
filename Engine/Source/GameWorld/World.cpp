@@ -3,7 +3,7 @@
 #include "Framework/LowLevelGraphics/OpenGL/ErrorLogging/ErrorLogging.h"
 #include "Universal/Globals.h"
 #include "Input/Keyboard/Keyboard.h"
-#include "Traingle1.h"
+#include "Ship.h"
 #include "Audio/Audio.h"
 #include "Graphics/Graphics.h"
 #include "World.h"
@@ -21,7 +21,7 @@ void World::GameLoop()
 {
 	BlazeFramework::OpenGL::RestartGLLogFile();
 	BlazeFramework::OpenGL::LogToFile("starting GLFW\n%s\n", glfwGetVersionString());
-	Traingle1 triangle;
+	Ship triangle;
 	triangle.Initialize();
 
 	MyOpenGL::InstallShaders();

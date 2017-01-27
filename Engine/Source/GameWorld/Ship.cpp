@@ -1,28 +1,28 @@
 #include "Precompiled.h"
 #include "Graphics/Graphics.h"
 #include "Graphics/Geometry.h"
+#include "ShapeData.h"
 #include "Universal/Globals.h"
-#include "Traingle1.h"
+#include "Ship.h"
 
-
-Traingle1::Traingle1()
+Ship::Ship()
 {
 }
 
-Traingle1::~Traingle1()
+Ship::~Ship()
 {
 }
 
-void Traingle1::Update()
+void Ship::Update()
 {
 	position += (velocity * engineClock.TimeSinceLastFrame());
 
 	graphics->Update(*this);
 }
 
-void Traingle1::Initialize()
+void Ship::Initialize()
 {
-	Geometry* triangleMesh = graphics->addGeometry(3, triangleVerts, 3, triangleIndicies);
-	graphics->addRenderable(triangleMesh);
+	graphics->addGeometry(ShapeData::Triangle());
+	graphics->CreateRenderable();
 	graphics->InitializeBuffers();
 }

@@ -10,8 +10,8 @@ public:
 	~Geometry();
 
 private:
-	//TODO: Make empty constructors for all classes (not just this one)
 	friend class Graphics;
+	friend class ShapeData;
 
 	uint16 numVerts;
 	Vector<BlazeFramework::Math::Vector2D> vertices;

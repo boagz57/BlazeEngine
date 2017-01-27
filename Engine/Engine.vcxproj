@@ -27,6 +27,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\GameWorld\Ship.cpp" />
     <ClCompile Include="Source\Graphics\Renderable.cpp" />
     <ClCompile Include="Source\Graphics\Geometry.cpp" />
     <ClCompile Include="Source\Audio\Audio.cpp" />
@@ -53,9 +54,10 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\StatusChecks\StatusChecks.cpp" />
-    <ClCompile Include="Source\GameWorld\Traingle1.cpp" />
+    <ClCompile Include="Source\GameWorld\ShapeData.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\GameWorld\Ship.h" />
     <ClInclude Include="Source\Graphics\Renderable.h" />
     <ClInclude Include="Source\Graphics\Geometry.h" />
     <ClInclude Include="Source\Audio\Audio.h" />
@@ -83,7 +85,7 @@
     <ClInclude Include="Source\Framework\Vector.h" />
     <ClInclude Include="Source\Universal\UniversalTypeDefs.h" />
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\StatusChecks\StatusChecks.h" />
-    <ClInclude Include="Source\GameWorld\Traingle1.h" />
+    <ClInclude Include="Source\GameWorld\ShapeData.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\Framework\Array.inl">

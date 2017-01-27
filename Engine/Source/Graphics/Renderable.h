@@ -1,7 +1,6 @@
 #pragma once
 #include "Math/Vector2D/Vector2D.h"
-
-class Geometry;
+#include "Graphics/Geometry.h"
 
 class Renderable
 {
@@ -13,6 +12,6 @@ public:
 
 private:
 	friend class Graphics;
-	Geometry* mesh;
+	Geometry mesh;
 };
 

@@ -40,31 +40,27 @@ void Graphics::InitializeBuffers()
 
 void Graphics::Update(Entity& object)
 {
-
 	renderable.location = object.position;
+
 	for (int i = 0; i < 3; i++)
 	{
-		transformedVerts.at(i) = renderable.mesh->vertices.at(i) + renderable.location;
+		transformedVerts.at(i) = renderable.mesh.vertices.at(i) + renderable.location;
 	};
 
-	glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(BlazeFramework::Math::Vector2D) * renderable.mesh->vertices.size(), &transformedVerts.front());
-	glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, sizeof(uint16) * renderable.mesh->indicies.size(), &renderable.mesh->indicies.front());
+	glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(BlazeFramework::Math::Vector2D) * renderable.mesh.vertices.size(), &transformedVerts.front());
+	glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, sizeof(uint16) * renderable.mesh.indicies.size(), &renderable.mesh.indicies.front());
 	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
 }
 
-Geometry* Graphics::addGeometry(uint16 numVerts, Vector<BlazeFramework::Math::Vector2D> verticies, uint16 numIndicies, Vector<uint16> indices)
+void Graphics::addGeometry(Geometry geometry)
 {
-	mesh.numVerts = numVerts;
-	mesh.vertices = verticies;
-	mesh.numIndicies = numIndicies;
-	mesh.indicies = indices;
-
-	return &mesh;
+	mesh.numVerts = geometry.numVerts;
+	mesh.vertices = geometry.vertices;
+	mesh.numIndicies = geometry.numIndicies;
+	mesh.indicies = geometry.indicies;
 }
 
-Renderable * Graphics::addRenderable(Geometry * mesh)
+void Graphics::CreateRenderable()
 {
 	renderable.mesh = mesh;
-
-	return &renderable;
 }
