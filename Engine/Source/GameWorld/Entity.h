@@ -12,7 +12,7 @@ public:
 	Entity();
 	~Entity();
 
-	virtual void Initialize() = 0;
+	virtual void Initialize(sfloat velocity) = 0;
 	//Every object which inherits from this base class will have it's update function called from
 	//world's GameLoop() function which iterates over a collection of objects each frame.
 	virtual void Update() = 0;

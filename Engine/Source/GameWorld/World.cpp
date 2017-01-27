@@ -21,8 +21,11 @@ void World::GameLoop()
 {
 	BlazeFramework::OpenGL::RestartGLLogFile();
 	BlazeFramework::OpenGL::LogToFile("starting GLFW\n%s\n", glfwGetVersionString());
+
 	Ship triangle;
-	triangle.Initialize();
+	Ship triangle2;
+	triangle2.Initialize(.6f);
+	triangle.Initialize(-.6f);
 
 	MyOpenGL::InstallShaders();
 
@@ -31,6 +34,9 @@ void World::GameLoop()
 	BlazeInput::Keyboard keyboard;
 
 	mEntities.push_back(&triangle);
+	mNumberOfEntities++;
+
+	mEntities.push_back(&triangle2);
 	mNumberOfEntities++;
 
 	while (!window.Closed())

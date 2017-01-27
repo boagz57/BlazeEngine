@@ -11,6 +11,6 @@ public:
 	~Ship();
 
 	virtual void Update() override;
-	virtual void Initialize() override;
+	virtual void Initialize(sfloat velocity) override;
 };
 

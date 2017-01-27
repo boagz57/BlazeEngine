@@ -20,8 +20,9 @@ void Ship::Update()
 	graphics->Update(*this);
 }
 
-void Ship::Initialize()
+void Ship::Initialize(sfloat velocity)
 {
+	this->velocity.x = velocity;
 	graphics->addGeometry(ShapeData::Triangle());
 	graphics->CreateRenderable();
 	graphics->InitializeBuffers();
