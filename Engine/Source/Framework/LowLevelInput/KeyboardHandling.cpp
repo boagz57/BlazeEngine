@@ -28,7 +28,7 @@ namespace BlazeFramework
 	}
 
 	//This is used to extract out what key has actually been pressed from glfw so that 
-	//you can use this information to perform whatever action you attach to this input.
+	//you can use this information to perform whatever action is associated with what key is returned.
 	uint16 KeyboardHandling::PollInput()
 	{
 		if (KeyboardHandling::KeyCodes.at(GLFW_KEY_RIGHT))
@@ -39,6 +39,10 @@ namespace BlazeFramework
 			return GLFW_KEY_UP;
 		else if (KeyboardHandling::KeyCodes.at(GLFW_KEY_DOWN))
 			return GLFW_KEY_DOWN;
+		else
+			//This final else statement gets rid of a compiler warning saying not all control paths
+			//return a value. Returning -1 since no glfw keys are mapped to -1.
+			return -1;
 	}
 
 	Array<bool, GLFW_KEY_LAST> KeyboardHandling::KeyCodes;
