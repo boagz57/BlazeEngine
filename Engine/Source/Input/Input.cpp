@@ -38,7 +38,7 @@ namespace BlazeInput
 			case BlazeFramework::Key::UpArrow: 
 				entity.velocity.y = .6f;
 				break;
-			case BlazeFramework::Key::DownArrow: LOG("Left pressed");
+			case BlazeFramework::Key::DownArrow: 
 				entity.velocity.y = -.6f;
 				break;
 			default:

@@ -9,7 +9,7 @@
 
 namespace BlazeGraphics
 {
-	Renderer::Renderer() : transformedVerts(3)
+	Renderer::Renderer() : transformedVerts(3)//TODO: Move to initialize() function
 	{}
 
 	Renderer::~Renderer()
@@ -52,7 +52,7 @@ namespace BlazeGraphics
 			transformedVerts.at(i) = renderable.mesh.vertices.at(i) + renderable.location;
 		};
 
-		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(BlazeFramework::Math::Vector2D) * renderable.mesh.vertices.size(), &transformedVerts.front());
+		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(BlazeFramework::Math::Vector2D) * transformedVerts.size(), &transformedVerts.front());
 		glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, sizeof(uint16) * renderable.mesh.indicies.size(), &renderable.mesh.indicies.front());
 		glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
 	}

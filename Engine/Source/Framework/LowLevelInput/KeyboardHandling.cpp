@@ -35,6 +35,10 @@ namespace BlazeFramework
 			return GLFW_KEY_RIGHT;
 		else if (KeyboardHandling::KeyCodes.at(GLFW_KEY_LEFT))
 			return GLFW_KEY_LEFT;
+		else if (KeyboardHandling::KeyCodes.at(GLFW_KEY_UP))
+			return GLFW_KEY_UP;
+		else if (KeyboardHandling::KeyCodes.at(GLFW_KEY_DOWN))
+			return GLFW_KEY_DOWN;
 	}
 
 	Array<bool, GLFW_KEY_LAST> KeyboardHandling::KeyCodes;
