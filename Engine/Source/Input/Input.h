@@ -1,5 +1,6 @@
 #pragma once
 #include "Framework/LowLevelInput/KeyboardHandling.h"
+#include "GameWorld/GameEntities/Entity/Entity.h"
 
 namespace BlazeInput
 {
@@ -12,7 +13,7 @@ namespace BlazeInput
 		bool Initialize();
 		bool Shutdown();
 
-		void KeyPress();
+		void Update(Entity& entity);
 	};
 }
 

@@ -9,6 +9,11 @@ namespace BlazeGraphics
 	class Renderer;
 }
 
+namespace BlazeInput
+{
+	class Input;
+}
+
 class Entity
 {
 public:
@@ -26,10 +31,12 @@ public:
 
 	BlazeFramework::Math::Vector2D GetPosition() const { return position; }
 
+	BlazeFramework::Math::Vector2D velocity;
+
 protected:
 	std::unique_ptr<BlazeGraphics::Renderer> graphics;
+	std::unique_ptr<BlazeInput::Input> input;
 
-	BlazeFramework::Math::Vector2D velocity;
 	BlazeFramework::Math::Vector2D position;
 };
 

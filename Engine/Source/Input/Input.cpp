@@ -25,19 +25,24 @@ namespace BlazeInput
 		return false;
 	}
 
-	void Input::KeyPress()
+	void Input::Update(Entity& entity)
 	{
 		switch (BlazeFramework::KeyboardHandling::PollInput())
 		{
-			case GLFW_KEY_RIGHT: LOG("INput pressed");
+			case BlazeFramework::Key::RightArrow: LOG("INput pressed");
 				break;
 
-			case GLFW_KEY_LEFT: LOG("kkek");
+			case BlazeFramework::Key::LeftArrow: LOG("Left pressed");
+				break;
+
+			case BlazeFramework::Key::UpArrow: LOG("Left pressed");
+				break;
+
+			case BlazeFramework::Key::DownArrow: LOG("Left pressed");
 				break;
 
 			default:
 				break;
 		}
 	}
-
 }

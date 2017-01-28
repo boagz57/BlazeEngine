@@ -19,6 +19,8 @@ bool Ship::Initialize(sfloat velocity, BlazeFramework::Math::Vector2D startPosit
 	this->position.x = startPosition.x;
 	this->position.y = startPosition.y;
 
+	input->Initialize();
+
 	graphics->addGeometry(BlazeGraphics::ShapeData::Triangle());
 	graphics->CreateRenderable();
 	graphics->InitializeBuffers();
@@ -35,5 +37,6 @@ void Ship::Update()
 {
 	position += (velocity * engineClock.TimeSinceLastFrame());
 
+	input->Update(*this);
 	graphics->Update(*this);
 }

@@ -43,9 +43,9 @@ namespace BlazeGraphics
 		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 2, nullptr);
 	}
 
-	void Renderer::Update(Entity& object)
+	void Renderer::Update(Entity& entity)
 	{
-		renderable.location = object.GetPosition();
+		renderable.location = entity.GetPosition();
 
 		for (int i = 0; i < 3; i++)
 		{
