@@ -32,18 +32,18 @@ namespace BlazeInput
 			case BlazeFramework::Key::RightArrow:
 				entity.velocity.x = .6f;
 				break;
-
 			case BlazeFramework::Key::LeftArrow: 
 				entity.velocity.x = -.6f;
 				break;
-
-			case BlazeFramework::Key::UpArrow: LOG("Left pressed");
+			case BlazeFramework::Key::UpArrow: 
+				entity.velocity.y = .6f;
 				break;
-
 			case BlazeFramework::Key::DownArrow: LOG("Left pressed");
+				entity.velocity.y = -.6f;
 				break;
-
 			default:
+				entity.velocity.x = 0.0f;
+				entity.velocity.y = 0.0f;
 				break;
 		}
 	}
