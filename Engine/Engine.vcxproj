@@ -37,7 +37,7 @@
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\Initialization\GLInitialization.cpp" />
     <ClCompile Include="Source\GameWorld\World\World.cpp" />
     <ClCompile Include="Source\Framework\LowLevelWindow\WindowHandling.cpp" />
-    <ClCompile Include="Source\Input\Keyboard\Keyboard.cpp" />
+    <ClCompile Include="Source\Input\Input.cpp" />
     <ClCompile Include="Source\Framework\LowLevelInput\KeyboardHandling.cpp" />
     <ClCompile Include="Source\Clock\Clock.cpp" />
     <ClCompile Include="Source\Framework\FileHandling\File.cpp" />
@@ -68,7 +68,7 @@
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\ErrorLogging\ErrorLogging.h" />
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\Initialization\GLInitialization.h" />
     <ClInclude Include="Source\GameWorld\World\World.h" />
-    <ClInclude Include="Source\Input\Keyboard\Keyboard.h" />
+    <ClInclude Include="Source\Input\Input.h" />
     <ClInclude Include="Source\Framework\LowLevelInput\KeyboardHandling.h" />
     <ClInclude Include="Source\Clock\Clock.h" />
     <ClInclude Include="Source\Framework\FileHandling\File.h" />

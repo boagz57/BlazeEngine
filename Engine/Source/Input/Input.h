@@ -3,11 +3,14 @@
 
 namespace BlazeInput
 {
-	class Keyboard
+	class Input
 	{
 	public:
-		Keyboard();
-		~Keyboard();
+		Input();
+		~Input();
+
+		bool Initialize();
+		bool Shutdown();
 
 		static bool KeyPress(const uint16 key);
 	};

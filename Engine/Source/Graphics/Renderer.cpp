@@ -3,7 +3,7 @@
 #include "GLM/gtx/matrix_transform_2d.hpp"
 #include "LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "LowLevelInput/KeyboardHandling.h"
-#include "Input/Keyboard/Keyboard.h"
+#include "Input/Input.h"
 #include "Universal/Globals.h"
 #include "Renderer.h"
 

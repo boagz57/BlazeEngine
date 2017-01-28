@@ -2,7 +2,7 @@
 #include "Framework/LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "Framework/LowLevelGraphics/OpenGL/ErrorLogging/ErrorLogging.h"
 #include "Universal/Globals.h"
-#include "Input/Keyboard/Keyboard.h"
+#include "Input/Input.h"
 #include "GameWorld/GameEntities/Ship.h"
 #include "Audio/Audio.h"
 #include "Graphics/Renderer.h"
@@ -38,7 +38,7 @@ void World::GameLoop()
 
 	engineClock.Initialize();
 
-	BlazeInput::Keyboard keyboard;
+	BlazeInput::Input keyboard;
 
 	entities.push_back(&triangle);
 	numEntities++;
