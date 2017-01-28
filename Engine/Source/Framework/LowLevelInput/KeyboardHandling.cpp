@@ -9,12 +9,12 @@ namespace BlazeFramework
 	//cause a slight delay for the action for the first few frames.
 	void KeyCallBackFunction(WindowHandling::BlazeWindow* window, int keyCode, int scancode, int action, int mods)
 	{
-		KeyboardHandling::mKeyCodes.at(keyCode) = (action != GLFW_RELEASE);
+		KeyboardHandling::KeyCodes.at(keyCode) = (action != GLFW_RELEASE);
 	}
 	
 	KeyboardHandling::KeyboardHandling()
 	{
-		for (auto& keyCode : mKeyCodes)
+		for (auto& keyCode : KeyCodes)
 		{
 			keyCode = false;
 		}
@@ -31,11 +31,11 @@ namespace BlazeFramework
 	//you can use this information to perform whatever action you attach to this input.
 	uint16 KeyboardHandling::PollInput()
 	{
-		if (KeyboardHandling::mKeyCodes.at(GLFW_KEY_RIGHT))
+		if (KeyboardHandling::KeyCodes.at(GLFW_KEY_RIGHT))
 			return GLFW_KEY_RIGHT;
-		else if (KeyboardHandling::mKeyCodes.at(GLFW_KEY_LEFT))
+		else if (KeyboardHandling::KeyCodes.at(GLFW_KEY_LEFT))
 			return GLFW_KEY_LEFT;
 	}
 
-	Array<bool, GLFW_KEY_LAST> KeyboardHandling::mKeyCodes;
+	Array<bool, GLFW_KEY_LAST> KeyboardHandling::KeyCodes;
 }

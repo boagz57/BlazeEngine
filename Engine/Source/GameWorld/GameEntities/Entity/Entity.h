@@ -20,7 +20,7 @@ public:
 	Entity();
 	~Entity();
 
-	virtual bool Initialize(sfloat velocity, BlazeFramework::Math::Vector2D startPosition) = 0;
+	virtual bool Initialize(BlazeFramework::Math::Vector2D startPosition) = 0;
 	virtual bool Shutdown() = 0;
 
 	//Every object which inherits from this base class will have it's update function called from

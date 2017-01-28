@@ -33,8 +33,8 @@ void World::GameLoop()
 
 	Ship triangle;
 	Ship triangle2;
-	triangle2.Initialize(.6f, BlazeFramework::Math::Vector2D(0.0f, 0.5f));
-	triangle.Initialize(-.6f, BlazeFramework::Math::Vector2D(0.0f, 0.0f));
+	triangle2.Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.5f));
+	triangle.Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.0f));
 
 	MyOpenGL::InstallShaders();
 

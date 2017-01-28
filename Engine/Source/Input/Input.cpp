@@ -29,10 +29,12 @@ namespace BlazeInput
 	{
 		switch (BlazeFramework::KeyboardHandling::PollInput())
 		{
-			case BlazeFramework::Key::RightArrow: LOG("INput pressed");
+			case BlazeFramework::Key::RightArrow:
+				entity.velocity.x = .6f;
 				break;
 
-			case BlazeFramework::Key::LeftArrow: LOG("Left pressed");
+			case BlazeFramework::Key::LeftArrow: 
+				entity.velocity.x = -.6f;
 				break;
 
 			case BlazeFramework::Key::UpArrow: LOG("Left pressed");
