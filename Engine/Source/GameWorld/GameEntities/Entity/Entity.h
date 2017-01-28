@@ -14,6 +14,11 @@ namespace BlazeInput
 	class Input;
 }
 
+namespace BlazePhysics
+{
+	class Physics;
+}
+
 class Entity
 {
 public:
@@ -36,7 +41,10 @@ public:
 protected:
 	std::unique_ptr<BlazeGraphics::Renderer> graphics;
 	std::unique_ptr<BlazeInput::Input> input;
+	std::unique_ptr<BlazePhysics::Physics> physics;
 
+	//So physics can gain access to position since physics needs to be able to modify position
+	friend class BlazePhysics::Physics;
 	BlazeFramework::Math::Vector2D position;
 };
 

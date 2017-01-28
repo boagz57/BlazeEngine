@@ -1,6 +1,8 @@
 #include "Precompiled.h"
 #include "Graphics/Renderer.h"
 #include "Graphics/Geometry.h"
+#include "Input/Input.h"
+#include "Physics/Physics.h"
 #include "Graphics/ShapeData.h"
 #include "Universal/Globals.h"
 #include "Ship.h"
@@ -35,9 +37,11 @@ bool Ship::Shutdown()
 void Ship::Update()
 {
 	input->Update(*this);
-	position += (velocity * engineClock.TimeSinceLastFrame());
+	physics->Update(*this);
 	graphics->Update(*this);
 
+	//Have to zero out velocity after updating every frame so that key input doesn't compound and 
+	//cause the object to move in a direction its not meant to for a certain key press.
 	velocity.x = 0;
 	velocity.y = 0;
 }

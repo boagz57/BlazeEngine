@@ -27,6 +27,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Physics\Physics.cpp" />
     <ClCompile Include="Source\GameWorld\GameEntities\Ship.cpp" />
     <ClCompile Include="Source\Graphics\Renderable.cpp" />
     <ClCompile Include="Source\Graphics\Geometry.cpp" />
@@ -57,6 +58,7 @@
     <ClCompile Include="Source\Graphics\ShapeData.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Physics\Physics.h" />
     <ClInclude Include="Source\GameWorld\GameEntities\Ship.h" />
     <ClInclude Include="Source\Graphics\Renderable.h" />
     <ClInclude Include="Source\Graphics\Geometry.h" />
