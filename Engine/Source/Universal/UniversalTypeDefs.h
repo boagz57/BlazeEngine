@@ -1,6 +1,7 @@
 #pragma once
 #include <stdint.h>
 
+typedef unsigned int uint;
 typedef uint64_t uint64;
 typedef uint32_t uint32;
 typedef uint16_t uint16;

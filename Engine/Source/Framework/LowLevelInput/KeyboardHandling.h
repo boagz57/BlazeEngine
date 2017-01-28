@@ -22,12 +22,12 @@ namespace BlazeFramework
 		KeyboardHandling();
 
 		static void SetWindowContextForKeyboard(WindowHandling::BlazeWindow* window);
-		static bool IsKeyPressed(const uint16 key);
+		static uint16 PollInput();
 
 	private:
 		friend void KeyCallBackFunction(WindowHandling::BlazeWindow* window, int keyCode, int scancode, int action, int mods);
 		//This boolean array will be used to set different keycodes to either true 
 		//or false, depending on what keys have been pressed
-		static Array<bool, GLFW_KEY_LAST> mKeyCodes;
+		static Array<bool, GLFW_KEY_LAST> KeyCodes;
 	};
 }

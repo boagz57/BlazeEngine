@@ -8,6 +8,7 @@ namespace Timing
 	{
 	public:
 		Clock();
+		~Clock();
 
 		void Initialize();
 		bool ShutDown();
@@ -15,7 +16,7 @@ namespace Timing
 		sfloat TimeSinceLastFrame();
 
 	private:
-		sfloat mDeltaTime;
-		std::chrono::time_point<std::chrono::steady_clock> mTimePointLastFrame;
+		sfloat DeltaTime;
+		std::chrono::time_point<std::chrono::steady_clock> TimePointLastFrame;
 	};
 }
