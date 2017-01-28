@@ -35,18 +35,6 @@ namespace MyOpenGL
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 	}
 
-	void MoveTriangle(sfloat x, sfloat y)
-	{
-		/*Vertex3D velocity(x, y, 0.0f);
-
-		for (int i = 0; i < 3; i++)
-		{
-			triangle.at(i) = triangle.at(i) + velocity * engineClock.TimeSinceLastFrame();
-		};
-
-		glBufferSubData(GL_ARRAY_BUFFER, 0, triangle.size() * sizeof(Vertex3D), &triangle.front());*/
-	}
-
 	std::string ReadShaderCode(const char8* cShaderFilePath, const char8* cTypeOfShader)
 	{
 		std::ifstream shaderFileInputStream(cShaderFilePath);
