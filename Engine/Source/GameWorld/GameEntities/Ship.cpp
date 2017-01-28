@@ -1,5 +1,5 @@
 #include "Precompiled.h"
-#include "Graphics/Graphics.h"
+#include "Graphics/Renderer.h"
 #include "Graphics/Geometry.h"
 #include "Graphics/ShapeData.h"
 #include "Universal/Globals.h"
@@ -17,7 +17,7 @@ bool Ship::Initialize(sfloat velocity)
 {
 	this->velocity.x = velocity;
 
-	graphics->addGeometry(ShapeData::Triangle());
+	graphics->addGeometry(BlazeGraphics::ShapeData::Triangle());
 	graphics->CreateRenderable();
 	graphics->InitializeBuffers();
 

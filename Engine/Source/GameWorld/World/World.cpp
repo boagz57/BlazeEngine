@@ -5,7 +5,7 @@
 #include "Input/Keyboard/Keyboard.h"
 #include "GameWorld/GameEntities/Ship.h"
 #include "Audio/Audio.h"
-#include "Graphics/Graphics.h"
+#include "Graphics/Renderer.h"
 #include "World.h"
 
 World::World() : numEntities(0)

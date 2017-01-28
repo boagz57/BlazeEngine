@@ -1,13 +1,16 @@
 #include "Graphics/Geometry.h"
 
-class ShapeData
+namespace BlazeGraphics
 {
-public:
-	ShapeData();
-	~ShapeData();
+	class ShapeData
+	{
+	public:
+		ShapeData();
+		~ShapeData();
 
-	static Geometry Triangle();
+		static Geometry Triangle();
 
-private:
-	static Geometry geometry;
-};
+	private:
+		static Geometry geometry;
+	};
+}

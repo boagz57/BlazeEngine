@@ -4,7 +4,10 @@
 #include "Math/Vector2D/Vector2D.h"
 #include "DataStructures/Vector/Vector.h"
 
-class Graphics;
+namespace BlazeGraphics
+{
+	class Renderer;
+}
 
 class Entity
 {
@@ -24,7 +27,7 @@ public:
 	BlazeFramework::Math::Vector2D GetPosition() const { return position; }
 
 protected:
-	std::unique_ptr<Graphics> graphics;
+	std::unique_ptr<BlazeGraphics::Renderer> graphics;
 
 	BlazeFramework::Math::Vector2D velocity;
 	BlazeFramework::Math::Vector2D position;
