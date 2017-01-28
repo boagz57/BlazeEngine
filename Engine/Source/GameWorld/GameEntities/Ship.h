@@ -10,7 +10,7 @@ public:
 	Ship();
 	~Ship();
 
-	bool Initialize(sfloat velocity) override;
+	bool Initialize(sfloat velocity, BlazeFramework::Math::Vector2D startPosition) override;
 	bool Shutdown() override;
 
 	void Update() override;

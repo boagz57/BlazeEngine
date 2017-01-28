@@ -13,9 +13,11 @@ Ship::~Ship()
 {
 }
 
-bool Ship::Initialize(sfloat velocity)
+bool Ship::Initialize(sfloat velocity, BlazeFramework::Math::Vector2D startPosition)
 {
 	this->velocity.x = velocity;
+	this->position.x = startPosition.x;
+	this->position.y = startPosition.y;
 
 	graphics->addGeometry(BlazeGraphics::ShapeData::Triangle());
 	graphics->CreateRenderable();

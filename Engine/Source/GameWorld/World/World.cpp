@@ -2,13 +2,14 @@
 #include "Framework/LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "Framework/LowLevelGraphics/OpenGL/ErrorLogging/ErrorLogging.h"
 #include "Universal/Globals.h"
+#include "Math/Vector2D/Vector2D.h"
 #include "Input/Input.h"
 #include "GameWorld/GameEntities/Ship.h"
 #include "Audio/Audio.h"
 #include "Graphics/Renderer.h"
 #include "World.h"
 
-World::World() : numEntities(0)
+World::World()
 {}
 
 World::~World()
@@ -16,6 +17,7 @@ World::~World()
 
 bool World::Initialize()
 {
+	numEntities = 0;
 	return false;
 }
 
@@ -31,8 +33,8 @@ void World::GameLoop()
 
 	Ship triangle;
 	Ship triangle2;
-	triangle2.Initialize(.6f);
-	triangle.Initialize(-.6f);
+	triangle2.Initialize(.6f, BlazeFramework::Math::Vector2D(0.0f, 0.5f));
+	triangle.Initialize(-.6f, BlazeFramework::Math::Vector2D(0.0f, 0.0f));
 
 	MyOpenGL::InstallShaders();
 
