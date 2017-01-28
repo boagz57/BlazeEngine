@@ -36,11 +36,12 @@ void World::GameLoop()
 	triangle2.Initialize(.6f, BlazeFramework::Math::Vector2D(0.0f, 0.5f));
 	triangle.Initialize(-.6f, BlazeFramework::Math::Vector2D(0.0f, 0.0f));
 
+	BlazeInput::Input input;
+	input.Initialize();
+
 	MyOpenGL::InstallShaders();
 
 	engineClock.Initialize();
-
-	BlazeInput::Input keyboard;
 
 	entities.push_back(&triangle);
 	numEntities++;
@@ -52,6 +53,8 @@ void World::GameLoop()
 	{
 		window.Clear();
 		engineClock.NewFrame();
+
+		input.KeyPress();
 
 		uint16 numberOfEntitiesThisFrame = numEntities;
 		for (int i = 0; i < numberOfEntitiesThisFrame; i++)

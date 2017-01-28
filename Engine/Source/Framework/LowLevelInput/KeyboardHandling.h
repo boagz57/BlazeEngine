@@ -22,7 +22,7 @@ namespace BlazeFramework
 		KeyboardHandling();
 
 		static void SetWindowContextForKeyboard(WindowHandling::BlazeWindow* window);
-		static bool IsKeyPressed(const uint16 cKey);
+		static uint16 PollInput();
 
 	private:
 		friend void KeyCallBackFunction(WindowHandling::BlazeWindow* window, int keyCode, int scancode, int action, int mods);

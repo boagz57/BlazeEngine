@@ -12,7 +12,7 @@ namespace BlazeInput
 		bool Initialize();
 		bool Shutdown();
 
-		static bool KeyPress(const uint16 key);
+		void KeyPress();
 	};
 }
 

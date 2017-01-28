@@ -1,4 +1,5 @@
 #include "Precompiled.h"
+#include "Universal/Macro.h"
 #include "Framework/LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "GLFW/glfw3.h"
 #include "Universal/Globals.h"
@@ -15,6 +16,7 @@ namespace BlazeInput
 
 	bool Input::Initialize()
 	{
+		BlazeFramework::KeyboardHandling::SetWindowContextForKeyboard(window.m_window);
 		return false;
 	}
 
@@ -23,10 +25,19 @@ namespace BlazeInput
 		return false;
 	}
 
-	bool Input::KeyPress(const uint16 cKey)
+	void Input::KeyPress()
 	{
-		BlazeFramework::KeyboardHandling::SetWindowContextForKeyboard(window.m_window);
-		return BlazeFramework::KeyboardHandling::IsKeyPressed(cKey);
+		switch (BlazeFramework::KeyboardHandling::PollInput())
+		{
+			case GLFW_KEY_RIGHT: LOG("INput pressed");
+				break;
+
+			case GLFW_KEY_LEFT: LOG("kkek");
+				break;
+
+			default:
+				break;
+		}
 	}
 
 }
