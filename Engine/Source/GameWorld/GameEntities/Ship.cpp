@@ -34,8 +34,10 @@ bool Ship::Shutdown()
 
 void Ship::Update()
 {
-	position += (velocity * engineClock.TimeSinceLastFrame());
-
 	input->Update(*this);
+	position += (velocity * engineClock.TimeSinceLastFrame());
 	graphics->Update(*this);
+
+	velocity.x = 0;
+	velocity.y = 0;
 }

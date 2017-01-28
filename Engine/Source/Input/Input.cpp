@@ -42,8 +42,6 @@ namespace BlazeInput
 				entity.velocity.y = -.6f;
 				break;
 			default:
-				entity.velocity.x = 0.0f;
-				entity.velocity.y = 0.0f;
 				break;
 		}
 	}
