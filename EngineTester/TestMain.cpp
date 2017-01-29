@@ -1,4 +1,5 @@
 #include "gtest/gtest.h"
+#include "Source/Graphics/GraphicsTest.cpp"
 
 int main(int argc, char* argv[])
 {
@@ -8,5 +9,3 @@ int main(int argc, char* argv[])
 	std::cin.get();
 	return 0;
 }
-
-#include "Source/Graphics/GraphicsTest.cpp"

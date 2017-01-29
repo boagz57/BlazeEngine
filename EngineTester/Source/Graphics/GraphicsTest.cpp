@@ -4,5 +4,5 @@
 TEST(GraphicsTest, InitializeFunction)
 {
 	BlazeGraphics::Graphics graphics;
-	graphics.Initialize();
+	EXPECT_TRUE(graphics.Initialize());
 }
