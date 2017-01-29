@@ -17,7 +17,7 @@ namespace BlazeGraphics
 
 	bool Graphics::Initialize()
 	{
-		return false;
+		return true;
 	}
 
 	bool Graphics::Shutdown()

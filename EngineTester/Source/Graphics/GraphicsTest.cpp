@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 #include "Graphics/Graphics.h"
 
-TEST(GraphicsTest, InitializeFunction)
+TEST(GraphicsSubSystem, GraphicsClass)
 {
 	BlazeGraphics::Graphics graphics;
 	EXPECT_TRUE(graphics.Initialize());

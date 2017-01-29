@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "Source/Graphics/GraphicsTest.cpp"
+#include "AllEngineTests.h"
 
 int main(int argc, char* argv[])
 {

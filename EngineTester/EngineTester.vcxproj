@@ -121,6 +121,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(SolutionDir)ThirdParty\GoogleTest\;$(SolutionDir)Engine\Source\;$(SolutionDir)Engine\Source\Framework\;$(SolutionDir)\ThirdParty\Boost\Include;$(SolutionDir)ThirdParty\GLEW\Include\;$(SolutionDir)ThirdParty\GLM\Include\;$(SolutionDir)ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalDependencies>glfw3x64.lib;glew64s.lib;opengl32.lib;Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -188,6 +189,9 @@
   <ItemGroup>
     <ClCompile Include="..\ThirdParty\GoogleTest\src\gtest-all.cc" />
     <ClCompile Include="TestMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AllEngineTests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
