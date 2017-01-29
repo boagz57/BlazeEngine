@@ -19,7 +19,7 @@ namespace BlazeGraphics
 		bool Shutdown();
 
 		void InitializeBuffers();
-		void Update(Entity& entity);
+		void Update(BlazeGameWorld::Entity& entity);
 
 		void addGeometry(Geometry geometry);
 		void CreateRenderable();

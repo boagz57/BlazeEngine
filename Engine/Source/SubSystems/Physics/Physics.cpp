@@ -23,7 +23,7 @@ namespace BlazePhysics
 		return true;
 	}
 
-	void Physics::Update(Entity& entity)
+	void Physics::Update(BlazeGameWorld::Entity& entity)
 	{
 		entity.position += (entity.velocity * engineClock.TimeSinceLastFrame());
 	}

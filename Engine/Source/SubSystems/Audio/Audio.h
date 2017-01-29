@@ -12,7 +12,7 @@ class Audio
 {
 public:
 	void Initialize();
-	void PlaySound(char* message, Entity& obj);
+	void PlaySound(char* message, BlazeGameWorld::Entity& obj);
 	void Update();
 
 private:

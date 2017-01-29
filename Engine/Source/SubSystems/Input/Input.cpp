@@ -25,7 +25,7 @@ namespace BlazeInput
 		return false;
 	}
 
-	void Input::Update(Entity& entity)
+	void Input::Update(BlazeGameWorld::Entity& entity)
 	{
 		switch (BlazeFramework::KeyboardHandling::PollInput())
 		{

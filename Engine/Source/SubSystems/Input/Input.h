@@ -13,7 +13,7 @@ namespace BlazeInput
 		bool Initialize();
 		bool Shutdown();
 
-		void Update(Entity& entity);
+		void Update(BlazeGameWorld::Entity& entity);
 	};
 }
 

@@ -4,15 +4,17 @@
 
 //TODO: Make sure to update all header files and make them lean and mean
 
-class Ship : public Entity
+namespace BlazeGameWorld
 {
-public:
-	Ship();
-	~Ship();
+	class Ship : public Entity
+	{
+	public:
+		Ship();
+		~Ship();
 
-	bool Initialize(BlazeFramework::Math::Vector2D startPosition) override;
-	bool Shutdown() override;
+		bool Initialize(BlazeFramework::Math::Vector2D startPosition) override;
+		bool Shutdown() override;
 
-	void Update() override;
-};
-
+		void Update() override;
+	};
+}

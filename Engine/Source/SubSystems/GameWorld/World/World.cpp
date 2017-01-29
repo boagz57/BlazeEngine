@@ -31,8 +31,8 @@ void World::GameLoop()
 	BlazeFramework::OpenGL::RestartGLLogFile();
 	BlazeFramework::OpenGL::LogToFile("starting GLFW\n%s\n", glfwGetVersionString());
 
-	Ship triangle;
-	Ship triangle2;
+	BlazeGameWorld::Ship triangle;
+	BlazeGameWorld::Ship triangle2;
 	triangle2.Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.5f));
 	triangle.Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.0f));
 

@@ -5,20 +5,22 @@
 #include "Input/Input.h"
 #include "Entity.h"
 
-
-Entity::Entity() : renderer(std::make_unique<BlazeGraphics::Graphics>()), 
-	input(std::make_unique<BlazeInput::Input>()),
-	physics(std::make_unique<BlazePhysics::Physics>()),
-	position(0.0f, 0.0f), 
-	velocity(0.0f, 0.0f)
+namespace BlazeGameWorld
 {
-}
+	Entity::Entity() : renderer(std::make_unique<BlazeGraphics::Graphics>()),
+		input(std::make_unique<BlazeInput::Input>()),
+		physics(std::make_unique<BlazePhysics::Physics>()),
+		position(0.0f, 0.0f),
+		velocity(0.0f, 0.0f)
+	{
+	}
 
-Entity::~Entity()
-{
-}
+	Entity::~Entity()
+	{
+	}
 
-void Entity::AnotherFunc()
-{
+	void Entity::AnotherFunc()
+	{
 
+	}
 }

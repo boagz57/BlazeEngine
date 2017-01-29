@@ -18,7 +18,7 @@ public:
 private:
 	//Used to store all Entity objects in the game and iterate over them to call their respective
 	//Update() functions. One of the possible implementations of the Update pattern. 
-	Vector<Entity*> entities;
+	Vector<BlazeGameWorld::Entity*> entities;
 	uint16 numEntities;
 };
 

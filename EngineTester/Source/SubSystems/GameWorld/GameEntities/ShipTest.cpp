@@ -3,5 +3,5 @@
 
 TEST(GameWorldSubSystem, ShipClass)//TODO: setup to test initialize and shutdown functions 
 {
-	Ship ship;
+	BlazeGameWorld::Ship ship;
 }
