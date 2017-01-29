@@ -17,7 +17,7 @@ namespace BlazeGraphics
 
 	bool Graphics::Initialize()
 	{
-		return true;
+		return false;
 	}
 
 	bool Graphics::Shutdown()
@@ -25,7 +25,7 @@ namespace BlazeGraphics
 		glDeleteBuffers(1, &vertexBufferID);
 		glDeleteBuffers(1, &indexBufferID);
 
-		return true;
+		return false;
 	}
 
 	void Graphics::InitializeBuffers()
