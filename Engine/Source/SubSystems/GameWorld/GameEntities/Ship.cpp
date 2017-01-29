@@ -19,6 +19,9 @@ namespace BlazeGameWorld
 
 	bool Ship::Initialize(BlazeFramework::Math::Vector2D startPosition)
 	{
+		RUNTIME_ASSERT(startPosition.x <= 1.0f && startPosition.x >= -1.0f, "ERROR: Entity's x start position is outside current window");
+		RUNTIME_ASSERT(startPosition.y <= 1.0f && startPosition.y >= -1.0f, "ERROR: Entity's y start position is outside current window");
+
 		this->position.x = startPosition.x;
 		this->position.y = startPosition.y;
 
@@ -50,7 +53,7 @@ namespace BlazeGameWorld
 
 		//Have to zero out velocity after updating every frame so that key input doesn't compound and 
 		//cause the object to move in a direction its not meant to for a certain key press.
-		velocity.x = 0;
-		velocity.y = 0;
+		this->velocity.x = 0;
+		this->velocity.y = 0;
 	}
 }

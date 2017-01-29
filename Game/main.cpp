@@ -2,7 +2,7 @@
 
 World gameWorld;
 
-int main()
+uint16 main()
 {
 	gameWorld.Initialize();
 

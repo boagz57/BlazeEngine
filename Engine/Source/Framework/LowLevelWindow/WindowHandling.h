@@ -9,14 +9,14 @@ namespace BlazeFramework
 		typedef GLFWwindow BlazeWindow;
 		typedef GLFWmonitor BlazeMonitor;
 
-		void MakeCurrentRenderContext(BlazeWindow* window);
+		void MakeCurrentRenderContext(BlazeWindow* p_window);
 		void TerminateWindowContextAndGLFW();
-		void SwapFrontAndBackBuffers(BlazeWindow* window);
+		void SwapFrontAndBackBuffers(BlazeWindow* p_window);
 		void ClearColorAndDepthBuffers();
 
-		int CloseWindow(BlazeWindow* window);
+		uint16 CloseWindow(BlazeWindow* window);
 		void PollEvents();
-		BlazeWindow* CreateWindow(int width, int height, const char8* title, BlazeMonitor* monitor, BlazeWindow* share);
+		BlazeWindow* CreateWindow(uint16 width, uint16 height, const char8* title, BlazeMonitor* monitor, BlazeWindow* share);
 
 		//Created only to be used as a callback function to CenterVeiwportToWindow
 		//which just uses glfw callback function (glfwSetWindowSizeCallback) to resize veiwport properly.

@@ -1,4 +1,5 @@
 #include "Precompiled.h"
+#include "Universal\Macro.h"
 #include "Universal\UniversalTypeDefs.h"
 #include "GL\glew.h"
 #include "GLFW\glfw3.h"
@@ -11,9 +12,10 @@ namespace BlazeFramework
 		typedef GLFWwindow BlazeWindow;
 		typedef GLFWmonitor BlazeMonitor;
 
-		void MakeCurrentRenderContext(BlazeWindow* window)
+		void MakeCurrentRenderContext(BlazeWindow* p_window)
 		{
-			glfwMakeContextCurrent(window);
+			RUNTIME_ASSERT(p_window != nullptr, "ERROR: No window to set current context!");
+			glfwMakeContextCurrent(p_window);
 		}
 
 		void TerminateWindowContextAndGLFW()
@@ -21,9 +23,10 @@ namespace BlazeFramework
 			glfwTerminate();
 		}
 
-		void SwapFrontAndBackBuffers(BlazeWindow* window)
+		void SwapFrontAndBackBuffers(BlazeWindow* p_window)
 		{
-			glfwSwapBuffers(window);
+			RUNTIME_ASSERT(p_window != nullptr, "ERROR: No window context to swap buffers!");
+			glfwSwapBuffers(p_window);
 		}
 
 		void ClearColorAndDepthBuffers()
@@ -31,9 +34,10 @@ namespace BlazeFramework
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		}
 
-		int CloseWindow(BlazeWindow* window)
+		uint16 CloseWindow(BlazeWindow* p_window)
 		{
-			return glfwWindowShouldClose(window);
+			RUNTIME_ASSERT(p_window != nullptr, "ERROR: No window to close!");
+			return glfwWindowShouldClose(p_window);
 		}
 
 		void PollEvents()
@@ -41,21 +45,21 @@ namespace BlazeFramework
 			glfwPollEvents();
 		}
 
-		BlazeWindow* CreateWindow(int width, int height, const char8* title, BlazeMonitor* monitor, BlazeWindow* share)
+		BlazeWindow* CreateWindow(uint16 width, uint16 height, const char8* p_title, BlazeMonitor* p_monitor, BlazeWindow* p_share)
 		{
-			return glfwCreateWindow(width, height, title, monitor, share);
+			return glfwCreateWindow(width, height, p_title, p_monitor, p_share);
 		}
 
 		//Created only to be used as a callback function to CenterVeiwportToWindow
 		//which just uses glfw callback function (glfwSetWindowSizeCallback) to resize veiwport properly.
-		void ViewportResize(BlazeWindow* window, int width, int height)
+		void ViewportResize(BlazeWindow* p_window, int width, int height)
 		{
 			glViewport(0, 0, width, height);
 		}
 
-		void CenterViewportToWindow(BlazeWindow* window)
+		void CenterViewportToWindow(BlazeWindow* p_window)
 		{
-			glfwSetWindowSizeCallback(window, ViewportResize);
+			glfwSetWindowSizeCallback(p_window, ViewportResize);
 		}
 	}
 }

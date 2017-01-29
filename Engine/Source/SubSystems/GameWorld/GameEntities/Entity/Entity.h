@@ -4,20 +4,9 @@
 #include "Math/Vector2D/Vector2D.h"
 #include "DataStructures/Vector/Vector.h"
 
-namespace BlazeGraphics
-{
-	class Graphics;
-}
-
-namespace BlazeInput
-{
-	class Input;
-}
-
-namespace BlazePhysics
-{
-	class Physics;
-}
+namespace BlazeGraphics{ class Graphics; }
+namespace BlazeInput{ class Input; }
+namespace BlazePhysics{ class Physics; }
 
 namespace BlazeGameWorld
 {

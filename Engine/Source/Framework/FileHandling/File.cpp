@@ -13,32 +13,32 @@ namespace BlazeFramework
 		{
 		}
 
-		File::File(char8* pFileName) : 
-			pOutputFile(pOutputFile = fopen(pFileName, "w")), 
-			cpFilename(pFileName)
+		File::File(char8* p_FileName) : 
+			p_OutputFile(p_OutputFile = fopen(p_FileName, "w")), 
+			cp_Filename(p_FileName)
 		{
 		}
 
 		File::~File()
 		{
-			fclose(pOutputFile);
+			fclose(p_OutputFile);
 		}
 
 		void File::Close()
 		{
-			fclose(pOutputFile);
+			fclose(p_OutputFile);
 		}
 
 		void File::Open(const char8* cFileName, const char8* mode)
 		{
-			pOutputFile = fopen(cFileName, mode);
+			p_OutputFile = fopen(cFileName, mode);
 		}
 
 		bool File::Good()
 		{
-			if (!pOutputFile)
+			if (!p_OutputFile)
 			{
-				LOG("ERROR: could not open %s file for appending\n", this->cpFilename);
+				LOG("ERROR: could not open %s file for appending\n", this->cp_Filename);
 				return false;
 			}
 
@@ -51,14 +51,14 @@ namespace BlazeFramework
 			va_list argptr;
 			va_start(argptr, cpMessage);//Initializes the va_list
 
-			vfprintf(pOutputFile, cpMessage, argptr);
+			vfprintf(p_OutputFile, cpMessage, argptr);
 
 			va_end(argptr);//Cleans up the va_list
 		}
 
 		void File::Write(const char8* cpMessage)
 		{
-			fprintf(pOutputFile, cpMessage);
+			fprintf(p_OutputFile, cpMessage);
 		}
 	}
 }
