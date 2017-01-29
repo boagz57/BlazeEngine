@@ -17,12 +17,12 @@ namespace BlazeInput
 	bool Input::Initialize()
 	{
 		BlazeFramework::KeyboardHandling::SetWindowContextForKeyboard(window.m_window);
-		return false;
+		return true;
 	}
 
 	bool Input::Shutdown()
 	{
-		return false;
+		return true;
 	}
 
 	void Input::Update(BlazeGameWorld::Entity& entity)
