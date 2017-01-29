@@ -18,12 +18,12 @@ World::~World()
 bool World::Initialize()
 {
 	numEntities = 0;
-	return false;
+	return true;
 }
 
 bool World::Shutdown()
 {
-	return false;
+	return true;
 }
 
 void World::GameLoop()

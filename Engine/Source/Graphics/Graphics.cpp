@@ -9,7 +9,7 @@
 
 namespace BlazeGraphics
 {
-	Graphics::Graphics() : transformedVerts(3)//TODO: Move to initialize() function
+	Graphics::Graphics() 
 	{}
 
 	Graphics::~Graphics()
@@ -17,6 +17,7 @@ namespace BlazeGraphics
 
 	bool Graphics::Initialize()
 	{
+		transformedVerts.resize(c_numTransformedVertices);
 		return true;
 	}
 

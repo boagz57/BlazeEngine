@@ -32,6 +32,7 @@ namespace BlazeGraphics
 		Geometry mesh;
 		Renderable renderable;
 
+		uint16 const c_numTransformedVertices = 3;
 		Vector<BlazeFramework::Math::Vector2D> transformedVerts;
 	};
 }

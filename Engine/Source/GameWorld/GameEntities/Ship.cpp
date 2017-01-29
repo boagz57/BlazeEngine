@@ -21,6 +21,8 @@ bool Ship::Initialize(BlazeFramework::Math::Vector2D startPosition)
 	this->position.y = startPosition.y;
 
 	input->Initialize();
+	physics->Initialize();
+	renderer->Initialize();
 
 	renderer->addGeometry(BlazeGraphics::ShapeData::Triangle());
 	renderer->CreateRenderable();

@@ -9,6 +9,9 @@ namespace BlazePhysics
 		Physics();
 		~Physics();
 
+		bool Initialize();
+		bool Shutdown();
+
 		void Update(Entity& entity);
 	};
 }
