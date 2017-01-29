@@ -1,7 +1,7 @@
 #pragma once
 #include "Macro.h"
 #include "UniversalTypeDefs.h"
-#include "../Input/Input.h"
+#include "Input/Input.h"
 #include "../Framework/LowLevelWindow/WindowHandling.h"
 
 namespace BlazeGraphics

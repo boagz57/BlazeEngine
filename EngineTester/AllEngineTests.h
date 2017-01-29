@@ -1,4 +1,5 @@
 #pragma once
-#include "Source/Graphics/GraphicsTest.cpp"
-#include "Source/GameWorld/World/WorldTest.cpp"
-#include "Source/Physics/PhysicsTest.cpp"
+#include "Graphics/GraphicsTest.cpp"
+#include "GameWorld/World/WorldTest.cpp"
+#include "GameWorld/GameEntities/ShipTest.cpp"
+#include "Physics/PhysicsTest.cpp"
