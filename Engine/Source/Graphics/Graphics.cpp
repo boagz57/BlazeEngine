@@ -5,22 +5,22 @@
 #include "LowLevelInput/KeyboardHandling.h"
 #include "Input/Input.h"
 #include "Universal/Globals.h"
-#include "Renderer.h"
+#include "Graphics.h"
 
 namespace BlazeGraphics
 {
-	Renderer::Renderer() : transformedVerts(3)//TODO: Move to initialize() function
+	Graphics::Graphics() : transformedVerts(3)//TODO: Move to initialize() function
 	{}
 
-	Renderer::~Renderer()
+	Graphics::~Graphics()
 	{}
 
-	bool Renderer::Initialize()
+	bool Graphics::Initialize()
 	{
 		return true;
 	}
 
-	bool Renderer::Shutdown()
+	bool Graphics::Shutdown()
 	{
 		glDeleteBuffers(1, &vertexBufferID);
 		glDeleteBuffers(1, &indexBufferID);
@@ -28,7 +28,7 @@ namespace BlazeGraphics
 		return true;
 	}
 
-	void Renderer::InitializeBuffers()
+	void Graphics::InitializeBuffers()
 	{
 		glGenBuffers(1, &vertexBufferID);
 		glGenBuffers(1, &indexBufferID);
@@ -43,7 +43,7 @@ namespace BlazeGraphics
 		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 2, nullptr);
 	}
 
-	void Renderer::Update(Entity& entity)
+	void Graphics::Update(Entity& entity)
 	{
 		renderable.location = entity.GetPosition();
 
@@ -57,7 +57,7 @@ namespace BlazeGraphics
 		glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
 	}
 
-	void Renderer::addGeometry(Geometry geometry)
+	void Graphics::addGeometry(Geometry geometry)
 	{
 		mesh.numVerts = geometry.numVerts;
 		mesh.vertices = geometry.vertices;
@@ -65,7 +65,7 @@ namespace BlazeGraphics
 		mesh.indicies = geometry.indicies;
 	}
 
-	void Renderer::CreateRenderable()
+	void Graphics::CreateRenderable()
 	{
 		renderable.mesh = mesh;
 	}

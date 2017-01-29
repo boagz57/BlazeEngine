@@ -13,7 +13,7 @@ namespace BlazeGraphics
 		BlazeFramework::Math::Vector2D location;
 
 	private:
-		friend class Renderer;
+		friend class Graphics;
 		Geometry mesh;
 	};
 }

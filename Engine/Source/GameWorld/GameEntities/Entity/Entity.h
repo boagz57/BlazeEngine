@@ -6,7 +6,7 @@
 
 namespace BlazeGraphics
 {
-	class Renderer;
+	class Graphics;
 }
 
 namespace BlazeInput
@@ -39,7 +39,7 @@ public:
 	BlazeFramework::Math::Vector2D velocity;
 
 protected:
-	std::unique_ptr<BlazeGraphics::Renderer> graphics;
+	std::unique_ptr<BlazeGraphics::Graphics> renderer;
 	std::unique_ptr<BlazeInput::Input> input;
 	std::unique_ptr<BlazePhysics::Physics> physics;
 

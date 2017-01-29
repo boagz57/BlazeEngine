@@ -1,5 +1,5 @@
 #include "Precompiled.h"
-#include "Graphics/Renderer.h"
+#include "Graphics/Graphics.h"
 #include "Graphics/Geometry.h"
 #include "Input/Input.h"
 #include "Physics/Physics.h"
@@ -22,9 +22,9 @@ bool Ship::Initialize(BlazeFramework::Math::Vector2D startPosition)
 
 	input->Initialize();
 
-	graphics->addGeometry(BlazeGraphics::ShapeData::Triangle());
-	graphics->CreateRenderable();
-	graphics->InitializeBuffers();
+	renderer->addGeometry(BlazeGraphics::ShapeData::Triangle());
+	renderer->CreateRenderable();
+	renderer->InitializeBuffers();
 
 	return true;
 }
@@ -38,7 +38,7 @@ void Ship::Update()
 {
 	input->Update(*this);
 	physics->Update(*this);
-	graphics->Update(*this);
+	renderer->Update(*this);
 
 	//Have to zero out velocity after updating every frame so that key input doesn't compound and 
 	//cause the object to move in a direction its not meant to for a certain key press.

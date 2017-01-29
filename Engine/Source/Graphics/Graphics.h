@@ -9,11 +9,11 @@
 
 namespace BlazeGraphics
 {
-	class Renderer
+	class Graphics
 	{
 	public:
-		Renderer();
-		~Renderer();
+		Graphics();
+		~Graphics();
 
 		bool Initialize();
 		bool Shutdown();

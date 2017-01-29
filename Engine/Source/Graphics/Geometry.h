@@ -12,7 +12,7 @@ namespace BlazeGraphics
 		~Geometry();
 
 	private:
-		friend class Renderer;
+		friend class Graphics;
 		friend class ShapeData;
 
 		uint16 numVerts;

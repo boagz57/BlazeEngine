@@ -6,7 +6,7 @@
 #include "Input/Input.h"
 #include "GameWorld/GameEntities/Ship.h"
 #include "Audio/Audio.h"
-#include "Graphics/Renderer.h"
+#include "Graphics/Graphics.h"
 #include "World.h"
 
 World::World()
