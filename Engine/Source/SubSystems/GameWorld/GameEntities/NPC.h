@@ -6,11 +6,11 @@
 
 namespace BlazeGameWorld
 {
-	class Enemy : public Entity
+	class NPC : public Entity
 	{
 	public:
-		Enemy();
-		~Enemy();
+		NPC();
+		~NPC();
 
 		bool Initialize(BlazeFramework::Math::Vector2D startPosition) override;
 		bool Shutdown() override;

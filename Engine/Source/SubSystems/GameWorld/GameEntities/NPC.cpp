@@ -1,25 +1,23 @@
 #include "Precompiled.h"
-#include "Graphics/Graphics.h"
-#include "Graphics/Geometry.h"
-#include "Input/Input.h"
-#include "Input/PlayerController.h"
-#include "Physics/Physics.h"
+#include "Universal/Macro.h"
 #include "Graphics/ShapeData.h"
-#include "Universal/Globals.h"
-#include "Ship.h"
+#include "Graphics/Graphics.h"
+#include "Physics/Physics.h"
+#include "Input/AIController.h"
+#include "NPC.h"
 
 namespace BlazeGameWorld
 {
-	Ship::Ship() :
-		Entity(new BlazeGraphics::Graphics, new BlazePhysics::Physics, new BlazeInput::PlayerController)
+	NPC::NPC() :
+		Entity(new BlazeGraphics::Graphics, new BlazePhysics::Physics, new BlazeInput::AIController)
 	{
 	}
 
-	Ship::~Ship()
+	NPC::~NPC()
 	{
 	}
 
-	bool Ship::Initialize(BlazeFramework::Math::Vector2D startPosition)
+	bool NPC::Initialize(BlazeFramework::Math::Vector2D startPosition)
 	{
 		RUNTIME_ASSERT(startPosition.x <= 1.0f && startPosition.x >= -1.0f, "ERROR: Entity's x start position is outside current window");
 		RUNTIME_ASSERT(startPosition.y <= 1.0f && startPosition.y >= -1.0f, "ERROR: Entity's y start position is outside current window");
@@ -38,7 +36,7 @@ namespace BlazeGameWorld
 		return true;
 	}
 
-	bool Ship::Shutdown()
+	bool NPC::Shutdown()
 	{
 		controller->Shutdown();
 		physics->Shutdown();
@@ -51,7 +49,7 @@ namespace BlazeGameWorld
 		return true;
 	}
 
-	void Ship::Update()
+	void NPC::Update()
 	{
 		controller->Update(*this);
 		physics->Update(*this);
@@ -62,4 +60,5 @@ namespace BlazeGameWorld
 		this->velocity.x = 0;
 		this->velocity.y = 0;
 	}
+
 }

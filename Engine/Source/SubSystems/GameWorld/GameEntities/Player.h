@@ -6,11 +6,11 @@
 
 namespace BlazeGameWorld
 {
-	class Ship : public Entity
+	class Player : public Entity
 	{
 	public:
-		Ship();
-		~Ship();
+		Player();
+		~Player();
 
 		bool Initialize(BlazeFramework::Math::Vector2D startPosition) override;
 		bool Shutdown() override;
