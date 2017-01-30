@@ -3,6 +3,7 @@
 #include "Framework/LowLevelGraphics/OpenGL/ErrorLogging/ErrorLogging.h"
 #include "Universal/Globals.h"
 #include "Math/Vector2D/Vector2D.h"
+#include "GameWorld/GameEntities/Enemy.h"
 #include "Input/Input.h"
 #include "GameWorld/GameEntities/Ship.h"
 #include "Audio/Audio.h"
@@ -32,8 +33,8 @@ void World::GameLoop()
 	BlazeFramework::OpenGL::LogToFile("starting GLFW\n%s\n", glfwGetVersionString());
 
 	BlazeGameWorld::Ship triangle;
-	BlazeGameWorld::Ship triangle2;
-	triangle2.Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.5f));
+	BlazeGameWorld::Enemy EnemyTriangle;
+	EnemyTriangle.Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.5f));
 	triangle.Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.0f));
 
 	MyOpenGL::InstallShaders();
@@ -43,7 +44,7 @@ void World::GameLoop()
 	entities.push_back(&triangle);
 	numEntities++;
 
-	entities.push_back(&triangle2);
+	entities.push_back(&EnemyTriangle);
 	numEntities++;
 
 	while (!window.Closed())

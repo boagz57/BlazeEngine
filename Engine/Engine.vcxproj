@@ -27,6 +27,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\SubSystems\GameWorld\GameEntities\Enemy.cpp" />
     <ClCompile Include="Source\SubSystems\Input\AIController.cpp" />
     <ClCompile Include="Source\SubSystems\Input\PlayerController.cpp" />
     <ClCompile Include="Source\SubSystems\Input\Controller.cpp" />
@@ -61,6 +62,7 @@
     <ClCompile Include="Source\SubSystems\Graphics\ShapeData.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\SubSystems\GameWorld\GameEntities\Enemy.h" />
     <ClInclude Include="Source\SubSystems\Input\AIController.h" />
     <ClInclude Include="Source\SubSystems\Input\PlayerController.h" />
     <ClInclude Include="Source\SubSystems\Input\Controller.h" />

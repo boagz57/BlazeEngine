@@ -1,4 +1,5 @@
 #include "Precompiled.h"
+#include "Universal/Macro.h"
 #include "GameWorld/GameEntities/Entity/Entity.h"
 #include "AIController.h"
 
@@ -25,5 +26,6 @@ namespace BlazeInput
 
 	void AIController::Update(BlazeGameWorld::Entity& entity)
 	{
+		LOG("AI reporting!!!!!!\n");
 	}
 }
