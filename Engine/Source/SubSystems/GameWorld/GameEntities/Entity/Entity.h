@@ -5,7 +5,6 @@
 #include "DataStructures/Vector/Vector.h"
 
 namespace BlazeGraphics{ class Graphics; }
-namespace BlazeInput{ class Input; }
 namespace BlazePhysics{ class Physics; }
 namespace BlazeInput{ class Controller; }
 
@@ -23,8 +22,6 @@ namespace BlazeGameWorld
 		//Every object which inherits from this base class will have it's update function called from
 		//world's GameLoop() function which iterates over a collection of objects each frame.
 		virtual void Update() = 0;
-
-		void AnotherFunc(); //TODO: Eventually have an actual default function for Entity to make it abstract
 
 		BlazeFramework::Math::Vector2D GetPosition() const { return position; }
 
