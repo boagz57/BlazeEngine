@@ -1,6 +1,7 @@
 #pragma once
 #include <memory>
 #include "Universal/UniversalTypeDefs.h"
+#include "Graphics/Geometry.h"
 #include "Math/Vector2D/Vector2D.h"
 #include "DataStructures/Vector/Vector.h"
 
@@ -16,8 +17,8 @@ namespace BlazeGameWorld
 		Entity();
 		~Entity();
 
-		virtual bool Initialize(BlazeFramework::Math::Vector2D startPosition) = 0;
-		virtual bool Shutdown() = 0;
+		virtual bool Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry);
+		virtual bool Shutdown();
 
 		//Every object which inherits from this base class will have it's update function called from
 		//world's GameLoop() function which iterates over a collection of objects each frame.

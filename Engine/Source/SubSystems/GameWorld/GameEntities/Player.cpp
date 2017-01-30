@@ -4,7 +4,6 @@
 #include "Input/Input.h"
 #include "Input/PlayerController.h"
 #include "Physics/Physics.h"
-#include "Graphics/ShapeData.h"
 #include "Universal/Globals.h"
 #include "Player.h"
 
@@ -19,34 +18,16 @@ namespace BlazeGameWorld
 	{
 	}
 
-	bool Player::Initialize(BlazeFramework::Math::Vector2D startPosition)
+	bool Player::Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry)
 	{
-		RUNTIME_ASSERT(startPosition.x <= 1.0f && startPosition.x >= -1.0f, "ERROR: Entity's x start position is outside current window");
-		RUNTIME_ASSERT(startPosition.y <= 1.0f && startPosition.y >= -1.0f, "ERROR: Entity's y start position is outside current window");
-
-		this->position.x = startPosition.x;
-		this->position.y = startPosition.y;
-
-		controller->Initialize();
-		physics->Initialize();
-		renderer->Initialize();
-
-		renderer->addGeometry(BlazeGraphics::ShapeData::Triangle());
-		renderer->CreateRenderable();
-		renderer->InitializeBuffers();
+		Entity::Initialize(startPosition, geometry);
 
 		return true;
 	}
 
 	bool Player::Shutdown()
 	{
-		controller->Shutdown();
-		physics->Shutdown();
-		renderer->Shutdown();
-
-		delete physics;
-		delete renderer;
-		delete controller;
+		Entity::Shutdown();
 
 		return true;
 	}

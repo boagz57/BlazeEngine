@@ -2,6 +2,7 @@
 #include "Framework/LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "Framework/LowLevelGraphics/OpenGL/ErrorLogging/ErrorLogging.h"
 #include "Universal/Globals.h"
+#include "Graphics/ShapeData.h"
 #include "Math/Vector2D/Vector2D.h"
 #include "GameWorld/GameEntities/NPC.h"
 #include "Input/Input.h"
@@ -34,8 +35,8 @@ void World::GameLoop()
 
 	BlazeGameWorld::Player triangle;
 	BlazeGameWorld::NPC EnemyTriangle;
-	EnemyTriangle.Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.5f));
-	triangle.Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.0f));
+	triangle.Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.0f), BlazeGraphics::ShapeData::Triangle());
+	EnemyTriangle.Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.5f), BlazeGraphics::ShapeData::Triangle());
 
 	MyOpenGL::InstallShaders();
 
