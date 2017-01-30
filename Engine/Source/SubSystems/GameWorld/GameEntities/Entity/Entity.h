@@ -1,6 +1,5 @@
 #pragma once
 #include <memory>
-#include "Input/Controller.h"
 #include "Universal/UniversalTypeDefs.h"
 #include "Math/Vector2D/Vector2D.h"
 #include "DataStructures/Vector/Vector.h"
@@ -8,6 +7,7 @@
 namespace BlazeGraphics{ class Graphics; }
 namespace BlazeInput{ class Input; }
 namespace BlazePhysics{ class Physics; }
+namespace BlazeInput{ class Controller; }
 
 namespace BlazeGameWorld
 {
@@ -31,10 +31,9 @@ namespace BlazeGameWorld
 		BlazeFramework::Math::Vector2D velocity;
 
 	protected:
-		Entity(BlazeGraphics::Graphics* renderer, BlazeInput::Input* input, BlazePhysics::Physics* physics, BlazeInput::Controller* controller);
+		Entity(BlazeGraphics::Graphics* renderer, BlazePhysics::Physics* physics, BlazeInput::Controller* controller);
 
 		BlazeGraphics::Graphics* renderer;
-		BlazeInput::Input* input;
 		BlazePhysics::Physics* physics;
 		BlazeInput::Controller* controller;
 

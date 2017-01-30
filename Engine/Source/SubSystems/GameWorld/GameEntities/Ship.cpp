@@ -11,7 +11,7 @@
 namespace BlazeGameWorld
 {
 	Ship::Ship() :
-		Entity(new BlazeGraphics::Graphics, new BlazeInput::Input, new BlazePhysics::Physics, new BlazeInput::PlayerController)
+		Entity(new BlazeGraphics::Graphics, new BlazePhysics::Physics, new BlazeInput::PlayerController)
 	{
 	}
 
@@ -27,7 +27,7 @@ namespace BlazeGameWorld
 		this->position.x = startPosition.x;
 		this->position.y = startPosition.y;
 
-		input->Initialize();
+		controller->Initialize();
 		physics->Initialize();
 		renderer->Initialize();
 
@@ -40,11 +40,10 @@ namespace BlazeGameWorld
 
 	bool Ship::Shutdown()
 	{
-		input->Shutdown();
+		controller->Shutdown();
 		physics->Shutdown();
 		renderer->Shutdown();
 
-		delete input;
 		delete physics;
 		delete renderer;
 		delete controller;
@@ -54,7 +53,7 @@ namespace BlazeGameWorld
 
 	void Ship::Update()
 	{
-		input->Update(*this);
+		controller->Update(*this);
 		physics->Update(*this);
 		renderer->Update(*this);
 

@@ -1,5 +1,6 @@
 #include "Precompiled.h"
 #include "Universal/Macro.h"
+#include "GameWorld/GameEntities/Entity/Entity.h"
 #include "Framework/LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "GLFW/glfw3.h"
 #include "Universal/Globals.h"
@@ -25,24 +26,8 @@ namespace BlazeInput
 		return true;
 	}
 
-	void Input::Update(BlazeGameWorld::Entity& entity)
+	uint16 Input::PollInput()
 	{
-		switch (BlazeFramework::KeyboardHandling::PollInput())
-		{
-			case BlazeFramework::Key::RightArrow:
-				entity.velocity.x = .6f;
-				break;
-			case BlazeFramework::Key::LeftArrow: 
-				entity.velocity.x = -.6f;
-				break;
-			case BlazeFramework::Key::UpArrow: 
-				entity.velocity.y = .6f;
-				break;
-			case BlazeFramework::Key::DownArrow: 
-				entity.velocity.y = -.6f;
-				break;
-			default:
-				break;
-		}
+		
 	}
 }

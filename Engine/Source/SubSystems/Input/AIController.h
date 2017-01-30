@@ -1,5 +1,6 @@
 #pragma once
 #include "Input/Controller.h"
+#include "GameWorld/GameEntities/Entity/Entity.h"
 
 namespace BlazeInput
 {
@@ -8,5 +9,10 @@ namespace BlazeInput
 	public:
 		AIController();
 		~AIController();
+
+		bool Initialize() override;
+		bool Shutdown() override;
+
+		void Update(BlazeGameWorld::Entity& entity) override;
 	};
 }

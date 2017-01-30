@@ -8,9 +8,8 @@
 
 namespace BlazeGameWorld
 {
-	Entity::Entity(BlazeGraphics::Graphics* renderer, BlazeInput::Input* input, BlazePhysics::Physics* physics, BlazeInput::Controller* controller) :
+	Entity::Entity(BlazeGraphics::Graphics* renderer, BlazePhysics::Physics* physics, BlazeInput::Controller* controller) :
 		renderer(renderer),
-		input(input),
 		physics(physics),
 		controller(controller),
 		position(0.0f, 0.0f),

@@ -1,4 +1,5 @@
 #include "Precompiled.h"
+#include "GameWorld/GameEntities/Entity/Entity.h"
 #include "AIController.h"
 
 namespace BlazeInput
@@ -9,6 +10,20 @@ namespace BlazeInput
 
 
 	AIController::~AIController()
+	{
+	}
+
+	bool AIController::Initialize()
+	{
+		return false;
+	}
+
+	bool AIController::Shutdown()
+	{
+		return false;
+	}
+
+	void AIController::Update(BlazeGameWorld::Entity& entity)
 	{
 	}
 }
