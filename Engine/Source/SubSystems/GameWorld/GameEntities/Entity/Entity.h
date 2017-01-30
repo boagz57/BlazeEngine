@@ -1,6 +1,7 @@
 #pragma once
-#include "Universal/UniversalTypeDefs.h"
 #include <memory>
+#include "Input/Controller.h"
+#include "Universal/UniversalTypeDefs.h"
 #include "Math/Vector2D/Vector2D.h"
 #include "DataStructures/Vector/Vector.h"
 
@@ -30,9 +31,12 @@ namespace BlazeGameWorld
 		BlazeFramework::Math::Vector2D velocity;
 
 	protected:
-		std::unique_ptr<BlazeGraphics::Graphics> renderer;
-		std::unique_ptr<BlazeInput::Input> input;
-		std::unique_ptr<BlazePhysics::Physics> physics;
+		Entity(BlazeGraphics::Graphics* renderer, BlazeInput::Input* input, BlazePhysics::Physics* physics, BlazeInput::Controller* controller);
+
+		BlazeGraphics::Graphics* renderer;
+		BlazeInput::Input* input;
+		BlazePhysics::Physics* physics;
+		BlazeInput::Controller* controller;
 
 		//So physics can gain access to position since physics needs to be able to modify position
 		friend class BlazePhysics::Physics;

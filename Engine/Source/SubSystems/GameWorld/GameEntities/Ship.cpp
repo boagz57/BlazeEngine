@@ -2,6 +2,7 @@
 #include "Graphics/Graphics.h"
 #include "Graphics/Geometry.h"
 #include "Input/Input.h"
+#include "Input/PlayerController.h"
 #include "Physics/Physics.h"
 #include "Graphics/ShapeData.h"
 #include "Universal/Globals.h"
@@ -9,7 +10,8 @@
 
 namespace BlazeGameWorld
 {
-	Ship::Ship()
+	Ship::Ship() :
+		Entity(new BlazeGraphics::Graphics, new BlazeInput::Input, new BlazePhysics::Physics, new BlazeInput::PlayerController)
 	{
 	}
 
@@ -42,7 +44,12 @@ namespace BlazeGameWorld
 		physics->Shutdown();
 		renderer->Shutdown();
 
-		return false;
+		delete input;
+		delete physics;
+		delete renderer;
+		delete controller;
+
+		return true;
 	}
 
 	void Ship::Update()
