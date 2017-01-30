@@ -1,4 +1,5 @@
 #include "Precompiled.h"
+#include <memory.h>
 #include "Graphics/Graphics.h"
 #include "Graphics/Geometry.h"
 #include "Input/Input.h"

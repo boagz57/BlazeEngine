@@ -51,10 +51,6 @@ namespace BlazeGameWorld
 		physics->Shutdown();
 		renderer->Shutdown();
 
-		delete physics;
-		delete renderer;
-		delete controller;
-
 		return true;
 	}
 }

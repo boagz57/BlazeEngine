@@ -31,9 +31,9 @@ namespace BlazeGameWorld
 	protected:
 		Entity(BlazeGraphics::Graphics* renderer, BlazePhysics::Physics* physics, BlazeInput::Controller* controller);
 
-		BlazeGraphics::Graphics* renderer;
-		BlazePhysics::Physics* physics;
-		BlazeInput::Controller* controller;
+		std::unique_ptr<BlazeGraphics::Graphics> renderer;
+		std::unique_ptr<BlazePhysics::Physics> physics;
+		std::unique_ptr<BlazeInput::Controller> controller;
 
 		//So physics can gain access to position since physics needs to be able to modify position
 		friend class BlazePhysics::Physics;
