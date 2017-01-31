@@ -3,12 +3,12 @@
 
 namespace BlazeGameWorld
 {
-	Scene::Scene()
+	SceneObject::SceneObject()
 	{
 	}
 
 
-	Scene::~Scene()
+	SceneObject::~SceneObject()
 	{
 	}
 }

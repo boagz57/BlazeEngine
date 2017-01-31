@@ -2,10 +2,10 @@
 
 namespace BlazeGameWorld
 {
-	class Scene
+	class SceneObject
 	{
 	public:
-		Scene();
-		~Scene();
+		SceneObject();
+		~SceneObject();
 	};
 }

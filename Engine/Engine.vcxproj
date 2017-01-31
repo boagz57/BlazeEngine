@@ -27,14 +27,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\SubSystems\GameWorld\GameEntities\Scene.cpp" />
-    <ClCompile Include="Source\SubSystems\GameWorld\GameEntities\Pawn.cpp" />
-    <ClCompile Include="Source\SubSystems\GameWorld\GameEntities\NPC.cpp" />
+    <ClCompile Include="Source\SubSystems\GameWorld\GameEntities\Scene\Scene.cpp" />
+    <ClCompile Include="Source\SubSystems\GameWorld\GameEntities\Pawn\Pawn.cpp" />
+    <ClCompile Include="Source\SubSystems\GameWorld\GameEntities\NPC\NPC.cpp" />
     <ClCompile Include="Source\SubSystems\Input\AIController.cpp" />
     <ClCompile Include="Source\SubSystems\Input\PlayerController.cpp" />
     <ClCompile Include="Source\SubSystems\Input\Controller.cpp" />
     <ClCompile Include="Source\SubSystems\Physics\Physics.cpp" />
-    <ClCompile Include="Source\SubSystems\GameWorld\GameEntities\Player.cpp" />
+    <ClCompile Include="Source\SubSystems\GameWorld\GameEntities\Player\Player.cpp" />
     <ClCompile Include="Source\SubSystems\Graphics\Renderable.cpp" />
     <ClCompile Include="Source\SubSystems\Graphics\Geometry.cpp" />
     <ClCompile Include="Source\SubSystems\Audio\Audio.cpp" />
@@ -64,14 +64,14 @@
     <ClCompile Include="Source\SubSystems\Graphics\ShapeData.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\SubSystems\GameWorld\GameEntities\Scene.h" />
-    <ClInclude Include="Source\SubSystems\GameWorld\GameEntities\Pawn.h" />
-    <ClInclude Include="Source\SubSystems\GameWorld\GameEntities\NPC.h" />
+    <ClInclude Include="Source\SubSystems\GameWorld\GameEntities\Scene\Scene.h" />
+    <ClInclude Include="Source\SubSystems\GameWorld\GameEntities\Pawn\Pawn.h" />
+    <ClInclude Include="Source\SubSystems\GameWorld\GameEntities\NPC\NPC.h" />
     <ClInclude Include="Source\SubSystems\Input\AIController.h" />
     <ClInclude Include="Source\SubSystems\Input\PlayerController.h" />
     <ClInclude Include="Source\SubSystems\Input\Controller.h" />
     <ClInclude Include="Source\SubSystems\Physics\Physics.h" />
-    <ClInclude Include="Source\SubSystems\GameWorld\GameEntities\Player.h" />
+    <ClInclude Include="Source\SubSystems\GameWorld\GameEntities\Player\Player.h" />
     <ClInclude Include="Source\SubSystems\Graphics\Renderable.h" />
     <ClInclude Include="Source\SubSystems\Graphics\Geometry.h" />
     <ClInclude Include="Source\SubSystems\Audio\Audio.h" />
