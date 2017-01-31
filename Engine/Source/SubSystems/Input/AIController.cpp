@@ -26,6 +26,5 @@ namespace BlazeInput
 
 	void AIController::Update(BlazeGameWorld::Entity& entity)
 	{
-		LOG("AI reporting!!!!!!\n");
 	}
 }

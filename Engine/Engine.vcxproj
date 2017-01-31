@@ -27,6 +27,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\SubSystems\GameWorld\GameEntities\Scene.cpp" />
+    <ClCompile Include="Source\SubSystems\GameWorld\GameEntities\Pawn.cpp" />
     <ClCompile Include="Source\SubSystems\GameWorld\GameEntities\NPC.cpp" />
     <ClCompile Include="Source\SubSystems\Input\AIController.cpp" />
     <ClCompile Include="Source\SubSystems\Input\PlayerController.cpp" />
@@ -62,6 +64,8 @@
     <ClCompile Include="Source\SubSystems\Graphics\ShapeData.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\SubSystems\GameWorld\GameEntities\Scene.h" />
+    <ClInclude Include="Source\SubSystems\GameWorld\GameEntities\Pawn.h" />
     <ClInclude Include="Source\SubSystems\GameWorld\GameEntities\NPC.h" />
     <ClInclude Include="Source\SubSystems\Input\AIController.h" />
     <ClInclude Include="Source\SubSystems\Input\PlayerController.h" />

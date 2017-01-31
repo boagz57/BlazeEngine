@@ -1,13 +1,13 @@
 #pragma once
 #include "Math/Vector2D/Vector2D.h"
+#include "GameWorld/GameEntities/Pawn.h"
 #include "Graphics/Geometry.h"
-#include "Entity/Entity.h"
 
 //TODO: Make sure to update all header files and make them lean and mean
 
 namespace BlazeGameWorld
 {
-	class NPC : public Entity
+	class NPC : public Pawn 
 	{
 	public:
 		NPC();

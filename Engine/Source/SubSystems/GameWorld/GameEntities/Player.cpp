@@ -11,7 +11,7 @@
 namespace BlazeGameWorld
 {
 	Player::Player() :
-		Entity(new BlazeGraphics::Graphics, new BlazePhysics::Physics, new BlazeInput::PlayerController)
+		Pawn(new BlazeInput::PlayerController)
 	{
 	}
 
@@ -21,7 +21,7 @@ namespace BlazeGameWorld
 
 	bool Player::Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry)
 	{
-		Entity::Initialize(startPosition, geometry);
+		Pawn::Initialize(startPosition, geometry);
 
 		return true;
 	}
@@ -29,6 +29,7 @@ namespace BlazeGameWorld
 	bool Player::Shutdown()
 	{
 		Entity::Shutdown();
+		controller->Shutdown();
 
 		return true;
 	}

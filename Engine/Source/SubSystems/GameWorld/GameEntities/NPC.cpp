@@ -1,6 +1,7 @@
 #include "Precompiled.h"
 #include "Universal/Macro.h"
 #include "Graphics/ShapeData.h"
+#include "GameWorld/GameEntities/Entity/Entity.h"
 #include "Graphics/Graphics.h"
 #include "Physics/Physics.h"
 #include "Input/AIController.h"
@@ -9,7 +10,7 @@
 namespace BlazeGameWorld
 {
 	NPC::NPC() :
-		Entity(new BlazeGraphics::Graphics, new BlazePhysics::Physics, new BlazeInput::AIController)
+		Pawn(new BlazeInput::AIController)
 	{
 	}
 

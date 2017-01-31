@@ -1,5 +1,6 @@
 #pragma once
 #include "Math/Vector2D/Vector2D.h"
+#include "GameWorld/GameEntities/Pawn.h"
 #include "Graphics/Geometry.h"
 #include "Entity/Entity.h"
 
@@ -7,7 +8,7 @@
 
 namespace BlazeGameWorld
 {
-	class Player : public Entity
+	class Player : public Pawn 
 	{
 	public:
 		Player();

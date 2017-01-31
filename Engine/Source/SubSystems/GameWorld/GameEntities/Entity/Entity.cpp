@@ -13,10 +13,9 @@ namespace BlazeGameWorld
 	Entity::Entity()
 	{}
 
-	Entity::Entity(BlazeGraphics::Graphics* renderer, BlazePhysics::Physics* physics, BlazeInput::Controller* controller) :
+	Entity::Entity(BlazeGraphics::Graphics* renderer, BlazePhysics::Physics* physics) :
 		renderer(renderer),
 		physics(physics),
-		controller(controller),
 		position(0.0f, 0.0f),
 		velocity(0.0f, 0.0f)
 	{
@@ -34,7 +33,6 @@ namespace BlazeGameWorld
 		this->position.x = startPosition.x;
 		this->position.y = startPosition.y;
 
-		controller->Initialize();
 		physics->Initialize();
 		renderer->Initialize();
 
@@ -47,7 +45,6 @@ namespace BlazeGameWorld
 
 	bool Entity::Shutdown()
 	{
-		controller->Shutdown();
 		physics->Shutdown();
 		renderer->Shutdown();
 
