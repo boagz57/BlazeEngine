@@ -12,6 +12,23 @@ namespace BlazeGraphics
 	class Graphics
 	{
 	public:
+
+	protected:
+
+	private:
+		static const uint16 cMaxBufferSize = 1024;
+		GLuint vertexBufferID;
+		GLuint indexBufferID;
+
+		Geometry mesh;
+		Renderable renderable;
+
+		uint16 const c_numTransformedVertices = 3;
+		Vector<BlazeFramework::Math::Vector2D> transformedVerts;
+
+		///////////////////////////////////////////////////////////////////////
+
+	public:
 		Graphics();
 		~Graphics();
 
@@ -24,15 +41,8 @@ namespace BlazeGraphics
 		void addGeometry(Geometry geometry);
 		void CreateRenderable();
 
+	protected:
+
 	private:
-		static const uint16 cMaxBufferSize = 1024;
-		GLuint vertexBufferID;
-		GLuint indexBufferID;
-
-		Geometry mesh;
-		Renderable renderable;
-
-		uint16 const c_numTransformedVertices = 3;
-		Vector<BlazeFramework::Math::Vector2D> transformedVerts;
 	};
 }

@@ -8,8 +8,8 @@ namespace BlazeGraphics
 	class Geometry
 	{
 	public:
-		Geometry();
-		~Geometry();
+
+	protected:
 
 	private:
 		friend class Graphics;
@@ -20,5 +20,15 @@ namespace BlazeGraphics
 		uint16 numIndicies;
 		Vector<uint16> indicies;
 		uint renderMode;
+
+		//////////////////////////////////////////////////////////////////////
+
+	public:
+		Geometry();
+		~Geometry();
+
+	protected:
+
+	private:
 	};
 }

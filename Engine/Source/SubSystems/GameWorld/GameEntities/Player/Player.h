@@ -11,6 +11,14 @@ namespace BlazeGameWorld
 	class Player : public Pawn 
 	{
 	public:
+
+	protected:
+
+	private:
+
+		//////////////////////////////////////////////////////////////////
+
+	public:
 		Player();
 		~Player();
 
@@ -18,5 +26,9 @@ namespace BlazeGameWorld
 		bool Shutdown() override;
 
 		void Update() override;
+
+	protected:
+
+	private:
 	};
 }

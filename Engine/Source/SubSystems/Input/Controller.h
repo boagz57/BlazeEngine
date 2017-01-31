@@ -13,5 +13,17 @@ namespace BlazeInput
 		virtual bool Shutdown() = 0;
 
 		virtual void Update(BlazeGameWorld::Entity& entity) = 0;
+
+	protected:
+
+	private:
+
+		///////////////////////////////////////////////////////////////////////////////////
+
+	public:
+
+	protected:
+
+	private:
 	};
 }

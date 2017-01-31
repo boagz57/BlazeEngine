@@ -8,6 +8,15 @@ namespace BlazeGameWorld
 	class Pawn : public Entity
 	{
 	public:
+
+	protected:
+		std::unique_ptr<BlazeInput::Controller> controller;
+
+	private:
+
+		///////////////////////////////////////////////////////////////////////
+
+	public:
 		Pawn();
 		~Pawn();
 
@@ -18,6 +27,6 @@ namespace BlazeGameWorld
 	protected:
 		Pawn(BlazeInput::Controller* controller);
 
-		std::unique_ptr<BlazeInput::Controller> controller;
+	private:
 	};
 }

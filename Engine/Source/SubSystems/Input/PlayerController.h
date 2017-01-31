@@ -7,6 +7,15 @@ namespace BlazeInput
 	class PlayerController : public Controller
 	{
 	public:
+
+	protected:
+
+	private:
+		Input input;
+
+		///////////////////////////////////////////////////////////////////////////////
+
+	public:
 		PlayerController();
 		~PlayerController();
 
@@ -15,7 +24,8 @@ namespace BlazeInput
 
 		void Update(BlazeGameWorld::Entity& entity) override;
 
+	protected:
+
 	private:
-		Input input;
 	};
 }

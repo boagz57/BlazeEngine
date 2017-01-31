@@ -10,6 +10,14 @@ namespace BlazeGameWorld
 	class NPC : public Pawn 
 	{
 	public:
+
+	protected:
+
+	private:
+
+		////////////////////////////////////////////////////////////////////////
+
+	public:
 		NPC();
 		~NPC();
 
@@ -17,5 +25,9 @@ namespace BlazeGameWorld
 		bool Shutdown() override;
 
 		void Update() override;
+
+	protected:
+
+	private:
 	};
 }

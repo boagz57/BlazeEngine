@@ -7,14 +7,21 @@ namespace BlazeGraphics
 	class Renderable
 	{
 	public:
-		Renderable();
-		~Renderable();
-
 		BlazeFramework::Math::Vector2D location;
+
+	protected:
 
 	private:
 		friend class Graphics;
 		Geometry mesh;
+
+		////////////////////////////////////////////////////////////////////////////////
+
+	public:
+		Renderable();
+		~Renderable();
+
+	private:
 	};
 }
 

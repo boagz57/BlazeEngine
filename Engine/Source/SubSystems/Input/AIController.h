@@ -7,6 +7,14 @@ namespace BlazeInput
 	class AIController : public Controller
 	{
 	public:
+
+	protected:
+
+	private:
+
+		///////////////////////////////////////////////////////////////////////////
+
+	public:
 		AIController();
 		~AIController();
 
@@ -14,5 +22,9 @@ namespace BlazeInput
 		bool Shutdown() override;
 
 		void Update(BlazeGameWorld::Entity& entity) override;
+
+	protected:
+
+	private:
 	};
 }

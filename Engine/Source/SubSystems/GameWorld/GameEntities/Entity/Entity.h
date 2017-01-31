@@ -14,7 +14,24 @@ namespace BlazeGameWorld
 	class Entity
 	{
 	public:
+		BlazeFramework::Math::Vector2D velocity;
+
+	protected:
+		std::unique_ptr<BlazeGraphics::Graphics> renderer;
+		std::unique_ptr<BlazePhysics::Physics> physics;
+
+		//So physics can gain access to position since physics needs to be able to modify position
+		friend class BlazePhysics::Physics;
+		BlazeFramework::Math::Vector2D position;
+
+	private:
+
+		///////////////////////////////////////////////////////////////////////
+
+	public:
 		Entity();
+		Entity(BlazeGraphics::Graphics* renderer, BlazePhysics::Physics* physics);
+
 		~Entity();
 
 		virtual bool Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry);
@@ -24,18 +41,10 @@ namespace BlazeGameWorld
 		//world's GameLoop() function which iterates over a collection of objects each frame.
 		virtual void Update() = 0;
 
-		BlazeFramework::Math::Vector2D GetPosition() const { return position; }
-
-		BlazeFramework::Math::Vector2D velocity;
+		BlazeFramework::Math::Vector2D GetPosition() const { return position; };
 
 	protected:
-		Entity(BlazeGraphics::Graphics* renderer, BlazePhysics::Physics* physics);
 
-		std::unique_ptr<BlazeGraphics::Graphics> renderer;
-		std::unique_ptr<BlazePhysics::Physics> physics;
-
-		//So physics can gain access to position since physics needs to be able to modify position
-		friend class BlazePhysics::Physics;
-		BlazeFramework::Math::Vector2D position;
+	private:
 	};
 }
