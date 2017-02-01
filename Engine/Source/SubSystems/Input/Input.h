@@ -1,4 +1,6 @@
 #pragma once
+#include "LowLevelInput/KeyboardHandling.h"
+#include <map>
 
 namespace BlazeInput
 {
@@ -19,11 +21,13 @@ namespace BlazeInput
 		bool Initialize();
 		bool Shutdown();
 
-		uint16 PollInput();
+		void BindKey(uint16 key, void(*keyHandlerFunc)());
+		void UseInput();
 
 	protected:
 
 	private:
+		std::map<const uint16, void (*)()> keyMap;
 	};
 }
 

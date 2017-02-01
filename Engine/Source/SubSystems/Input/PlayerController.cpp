@@ -1,7 +1,10 @@
 #include "Precompiled.h"
+#include "Universal/Macro.h"
 #include "Framework/LowLevelInput/KeyboardHandling.h"
 #include "Input/Input.h"
 #include "PlayerController.h"
+
+void Func();
 
 namespace BlazeInput
 {
@@ -16,6 +19,8 @@ namespace BlazeInput
 	bool PlayerController::Initialize()
 	{
 		input.Initialize();
+		input.BindKey(BlazeFramework::Key::UpArrow, Func);
+
 		return false;
 	}
 
@@ -26,23 +31,17 @@ namespace BlazeInput
 
 	void PlayerController::Update(BlazeGameWorld::Entity& entity)
 	{
-		switch (BlazeFramework::KeyboardHandling::PollInput())
-		{
-		case BlazeFramework::Key::RightArrow:
-			entity.velocity.x = .6f;
-			break;
-		case BlazeFramework::Key::LeftArrow:
-			entity.velocity.x = -.6f;
-			break;
-		case BlazeFramework::Key::UpArrow:
-			entity.velocity.y = .6f;
-			break;
-		case BlazeFramework::Key::DownArrow:
-			entity.velocity.y = -.6f;
-			break;
-		default:
-			break;
-		}
+		input.UseInput();
 	}
 
+	void PlayerController::MoveForward(sfloat velocity)
+	{
+
+	}
+
+}
+
+void Func()
+{
+	LOG("Hello");
 }

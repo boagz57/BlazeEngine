@@ -31,10 +31,10 @@ namespace BlazeFramework
 	//you can use this information to perform whatever action is associated with what key is returned.
 	uint16 KeyboardHandling::PollInput()
 	{
-		for (int key = 0; key < GLFW_KEY_LAST; key++)
+		for (int keyCode = 0; keyCode < GLFW_KEY_LAST; keyCode++)
 		{
-			if (KeyCodes.at(key))
-				return key;
+			if (KeyCodes.at(keyCode))
+				return keyCode;
 		}
 
 		//Return a key value that doesn't exist if no keys are pressed (so no action will be taken).

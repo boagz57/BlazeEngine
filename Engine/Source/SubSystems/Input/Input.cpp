@@ -26,8 +26,17 @@ namespace BlazeInput
 		return true;
 	}
 
-	uint16 Input::PollInput()
+	void Input::BindKey(const uint16 key, void(*keyHandlerFunc)())
 	{
-		
+		keyMap[key] = keyHandlerFunc;
 	}
+
+	void Input::UseInput()
+	{
+		if (BlazeFramework::KeyboardHandling::PollInput() == 349)
+			return;
+
+		keyMap.at(BlazeFramework::KeyboardHandling::PollInput())();
+	}
+
 }
