@@ -11,9 +11,8 @@ namespace BlazeFramework
 	{
 		RightArrow = GLFW_KEY_RIGHT,
 		LeftArrow = GLFW_KEY_LEFT,
-		UpArrow = GLFW_KEY_UP,
 		DownArrow = GLFW_KEY_DOWN,
-		SpaceBar = GLFW_KEY_SPACE,
+		UpArrow = GLFW_KEY_UP,
 		MaxKey = GLFW_KEY_LAST
 	};
 

@@ -30,7 +30,7 @@ namespace BlazeInput
 		//Bind function. 
 		for (int i = 0; i < (BlazeFramework::Key::MaxKey + 2); i++)//TODO: This is currently a hack and implementation must be fixed.
 		{
-			keyMap[i] = DoNothing;
+			movementKeyBindings[i] = DoNothing;
 		}
 
 		return true;
@@ -41,14 +41,14 @@ namespace BlazeInput
 		return true;
 	}
 
-	void Input::BindKey(const uint16 key, void(*keyHandlerFunc)())
+	void Input::BindMovement(const uint16 key, void(*pointerToMovementFunc)())
 	{
-		keyMap[key] = keyHandlerFunc;
+		movementKeyBindings[key] = pointerToMovementFunc;
 	}
 
-	void Input::UseInput()
+	void Input::Update()
 	{
 		//Calls the function being stored at whatever keyCode location in the map data structure.
-		keyMap.at(BlazeFramework::KeyboardHandling::PollInput())();
+		movementKeyBindings.at(BlazeFramework::KeyboardHandling::PollInput())();
 	}
 }

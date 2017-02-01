@@ -18,10 +18,10 @@ namespace BlazeInput
 	{
 		input.Initialize();
 
-		input.BindKey(BlazeFramework::Key::UpArrow, Controller::MoveUp);
-		input.BindKey(BlazeFramework::Key::DownArrow, Controller::MoveDown);
-		input.BindKey(BlazeFramework::Key::LeftArrow, Controller::MoveLeft);
-		input.BindKey(BlazeFramework::Key::RightArrow, Controller::MoveRight);
+		input.BindMovement(BlazeFramework::Key::UpArrow, Controller::MoveUp);
+		input.BindMovement(BlazeFramework::Key::DownArrow, Controller::MoveDown);
+		input.BindMovement(BlazeFramework::Key::LeftArrow, Controller::MoveLeft);
+		input.BindMovement(BlazeFramework::Key::RightArrow, Controller::MoveRight);
 
 		return false;
 	}
@@ -33,6 +33,6 @@ namespace BlazeInput
 
 	void PlayerController::Update(BlazeGameWorld::Entity& entity)
 	{
-		input.UseInput();
+		input.Update();
 	}
 }
