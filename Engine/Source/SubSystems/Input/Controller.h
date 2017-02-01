@@ -15,6 +15,7 @@ namespace BlazeInput
 		virtual void Update(BlazeGameWorld::Entity& entity) = 0;
 
 	protected:
+		static void MoveUp();
 
 	private:
 

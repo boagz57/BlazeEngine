@@ -1,4 +1,5 @@
 #include "Precompiled.h"
+#include "Universal/Macro.h"
 #include "Controller.h"
 
 namespace BlazeInput
@@ -11,4 +12,10 @@ namespace BlazeInput
 	Controller::~Controller()
 	{
 	}
+
+	void Controller::MoveUp()
+	{
+		LOG("h");
+	}
+
 }

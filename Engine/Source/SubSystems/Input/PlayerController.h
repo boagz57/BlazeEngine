@@ -24,7 +24,6 @@ namespace BlazeInput
 
 		void Update(BlazeGameWorld::Entity& entity) override;
 
-		void MoveForward(sfloat velocity);
 	protected:
 
 	private:

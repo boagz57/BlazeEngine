@@ -19,7 +19,7 @@ namespace BlazeInput
 	bool PlayerController::Initialize()
 	{
 		input.Initialize();
-		input.BindKey(BlazeFramework::Key::UpArrow, Func);
+		input.BindKey(BlazeFramework::Key::UpArrow, Controller::MoveUp);
 
 		return false;
 	}
@@ -33,12 +33,6 @@ namespace BlazeInput
 	{
 		input.UseInput();
 	}
-
-	void PlayerController::MoveForward(sfloat velocity)
-	{
-
-	}
-
 }
 
 void Func()

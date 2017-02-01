@@ -33,7 +33,7 @@ namespace BlazeInput
 
 	void Input::UseInput()
 	{
-		if (BlazeFramework::KeyboardHandling::PollInput() == 349)
+		if (BlazeFramework::KeyboardHandling::PollInput() == 349)//TODO: Need to prevent the returning of key codes that are not within map container
 			return;
 
 		keyMap.at(BlazeFramework::KeyboardHandling::PollInput())();
