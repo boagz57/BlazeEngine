@@ -11,6 +11,7 @@ namespace BlazeInput
 	protected:
 
 	private:
+		std::map<const uint16, void (*)()> keyMap;
 
 		////////////////////////////////////////////////////////////////////////////
 
@@ -27,7 +28,6 @@ namespace BlazeInput
 	protected:
 
 	private:
-		std::map<const uint16, void (*)()> keyMap;
 	};
 }
 

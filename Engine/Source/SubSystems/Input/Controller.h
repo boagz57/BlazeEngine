@@ -16,6 +16,9 @@ namespace BlazeInput
 
 	protected:
 		static void MoveUp();
+		static void MoveDown();
+		static void MoveLeft();
+		static void MoveRight();
 
 	private:
 

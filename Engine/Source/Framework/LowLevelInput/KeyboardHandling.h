@@ -14,6 +14,7 @@ namespace BlazeFramework
 		UpArrow = GLFW_KEY_UP,
 		DownArrow = GLFW_KEY_DOWN,
 		SpaceBar = GLFW_KEY_SPACE,
+		MaxKey = GLFW_KEY_LAST
 	};
 
 	class KeyboardHandling

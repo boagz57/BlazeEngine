@@ -4,8 +4,6 @@
 #include "Input/Input.h"
 #include "PlayerController.h"
 
-void Func();
-
 namespace BlazeInput
 {
 	PlayerController::PlayerController()
@@ -19,7 +17,11 @@ namespace BlazeInput
 	bool PlayerController::Initialize()
 	{
 		input.Initialize();
+
 		input.BindKey(BlazeFramework::Key::UpArrow, Controller::MoveUp);
+		input.BindKey(BlazeFramework::Key::DownArrow, Controller::MoveDown);
+		input.BindKey(BlazeFramework::Key::LeftArrow, Controller::MoveLeft);
+		input.BindKey(BlazeFramework::Key::RightArrow, Controller::MoveRight);
 
 		return false;
 	}
@@ -33,9 +35,4 @@ namespace BlazeInput
 	{
 		input.UseInput();
 	}
-}
-
-void Func()
-{
-	LOG("Hello");
 }

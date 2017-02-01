@@ -15,7 +15,22 @@ namespace BlazeInput
 
 	void Controller::MoveUp()
 	{
-		LOG("h");
+		LOG("Up");
+	}
+
+	void Controller::MoveDown()
+	{
+		LOG("Down");
+	}
+
+	void Controller::MoveLeft()
+	{
+		LOG("Left");
+	}
+
+	void Controller::MoveRight()
+	{
+		LOG("Right");
 	}
 
 }
