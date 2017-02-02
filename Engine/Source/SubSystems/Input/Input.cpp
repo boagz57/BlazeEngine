@@ -1,16 +1,12 @@
 #include "Precompiled.h"
 #include "Universal/Macro.h"
 #include "GameWorld/GameEntities/Entity/Entity.h"
+#include "GameWorld/GameEntities/Pawn/Pawn.h"
 #include "Framework/LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "GLFW/glfw3.h"
 #include "Universal/Globals.h"
 #include "Framework/LowLevelInput/KeyboardHandling.h"
 #include "Input.h"
-
-//This function is only used for initializing the keyMap member to default functions. Read 
-//more below.
-void DoNothing()//TODO: This is a hack and must be fixed and removed at some point
-{};
 
 namespace BlazeInput
 {
@@ -24,15 +20,6 @@ namespace BlazeInput
 	{
 		BlazeFramework::KeyboardHandling::SetWindowContextForKeyboard(window.m_window);
 
-		//Instantiating enough values in keyMap to make sure to cover all possible keys on the 
-		//keyboard. By providing a default function to point to that does nothing to all keys 
-		//I can prevent crashes from occuring from keys which are not explicitly bound in the 
-		//Bind function. 
-		for (int i = 0; i < (BlazeFramework::Key::MaxKey + 2); i++)//TODO: This is currently a hack and implementation must be fixed.
-		{
-			movementKeyBindings[i] = DoNothing;
-		}
-
 		return true;
 	}
 
@@ -41,14 +28,28 @@ namespace BlazeInput
 		return true;
 	}
 
-	void Input::BindMovement(const uint16 key, void(*pointerToMovementFunc)())
+	void Input::Update(BlazeGameWorld::Entity& entity)
 	{
-		movementKeyBindings[key] = pointerToMovementFunc;
-	}
+		switch (BlazeFramework::KeyboardHandling::PollInput())
+		{
+			case BlazeFramework::Key::UpArrow :
+				entity.velocity.y = .6f;
+				break;
 
-	void Input::Update(BlazeGameWorld::Entity* entity)
-	{
-		//Calls the function being stored at whatever keyCode location in the map data structure.
-		movementKeyBindings.at(BlazeFramework::KeyboardHandling::PollInput())();
+			case BlazeFramework::Key::DownArrow:
+				entity.velocity.y = -.6f;
+				break;
+
+			case BlazeFramework::Key::RightArrow:
+				entity.velocity.x = .6f;
+				break;
+
+			case BlazeFramework::Key::LeftArrow:
+				entity.velocity.x = -.6f;
+				break;
+
+			default:
+				break;
+		}
 	}
 }

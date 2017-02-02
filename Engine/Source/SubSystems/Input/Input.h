@@ -13,8 +13,6 @@ namespace BlazeInput
 	protected:
 
 	private:
-		//Used in Bind function to bind a keyCode with a pointer to a movement function.
-		std::map<const uint16, void (*)()> movementKeyBindings;
 
 		////////////////////////////////////////////////////////////////////////////
 
@@ -25,8 +23,7 @@ namespace BlazeInput
 		bool Initialize();
 		bool Shutdown();
 
-		void BindMovement(uint16 key, void(*pointerToMovementFunc)());
-		void Update(BlazeGameWorld::Entity* entity);
+		void Update(BlazeGameWorld::Entity& entity);
 
 	protected:
 
