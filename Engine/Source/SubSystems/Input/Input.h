@@ -2,6 +2,8 @@
 #include "LowLevelInput/KeyboardHandling.h"
 #include <map>
 
+namespace BlazeGameWorld { class Entity; }
+
 namespace BlazeInput
 {
 	class Input
@@ -24,7 +26,7 @@ namespace BlazeInput
 		bool Shutdown();
 
 		void BindMovement(uint16 key, void(*pointerToMovementFunc)());
-		void Update();
+		void Update(BlazeGameWorld::Entity* entity);
 
 	protected:
 

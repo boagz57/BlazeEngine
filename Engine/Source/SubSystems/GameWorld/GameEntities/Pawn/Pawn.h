@@ -1,8 +1,6 @@
 #pragma once
 #include "GameWorld/GameEntities/Entity/Entity.h"
 
-namespace BlazeInput { class Controller; }
-
 namespace BlazeGameWorld
 {
 	class Pawn : public Entity
@@ -10,7 +8,6 @@ namespace BlazeGameWorld
 	public:
 
 	protected:
-		std::unique_ptr<BlazeInput::Controller> controller;
 
 	private:
 
@@ -25,7 +22,6 @@ namespace BlazeGameWorld
 		virtual void Update() override;
 
 	protected:
-		Pawn(BlazeInput::Controller* controller);
 
 	private:
 	};

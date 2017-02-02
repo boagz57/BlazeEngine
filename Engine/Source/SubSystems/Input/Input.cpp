@@ -46,7 +46,7 @@ namespace BlazeInput
 		movementKeyBindings[key] = pointerToMovementFunc;
 	}
 
-	void Input::Update()
+	void Input::Update(BlazeGameWorld::Entity* entity)
 	{
 		//Calls the function being stored at whatever keyCode location in the map data structure.
 		movementKeyBindings.at(BlazeFramework::KeyboardHandling::PollInput())();
