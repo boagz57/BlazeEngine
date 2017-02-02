@@ -5,8 +5,7 @@
 
 namespace BlazeGameWorld
 {
-	Pawn::Pawn() :
-		Entity(new BlazeGraphics::Graphics, new BlazePhysics::Physics)
+	Pawn::Pawn() 
 	{}
 
 	Pawn::~Pawn()

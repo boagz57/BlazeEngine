@@ -9,20 +9,15 @@
 
 namespace BlazeGameWorld
 {
-	Entity::Entity()
-	{}
-
-	Entity::Entity(BlazeGraphics::Graphics* renderer, BlazePhysics::Physics* physics) :
-		renderer(renderer),
-		physics(physics),
+	Entity::Entity() :
+		renderer(new BlazeGraphics::Graphics),
+		physics(new BlazePhysics::Physics),
 		position(0.0f, 0.0f),
 		velocity(0.0f, 0.0f)
-	{
-	}
+	{}
 
 	Entity::~Entity()
-	{
-	}
+	{}
 
 	bool Entity::Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry)
 	{
