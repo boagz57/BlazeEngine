@@ -23,7 +23,7 @@ namespace BlazeInput
 		bool Initialize();
 		bool Shutdown();
 
-		void BindMovement(uint16 key, void(*pointerToMovementFunc)());
+		void BindMovement(const uint16 key, void (*pointerToMovementFunc)());
 		void Update();
 
 	protected:

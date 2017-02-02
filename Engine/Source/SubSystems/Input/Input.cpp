@@ -43,12 +43,13 @@ namespace BlazeInput
 
 	void Input::BindMovement(const uint16 key, void(*pointerToMovementFunc)())
 	{
+		RUNTIME_ASSERT(pointerToMovementFunc != nullptr, "ERROR: function pointer pointing to nothing!!");
 		movementKeyBindings[key] = pointerToMovementFunc;
 	}
 
 	void Input::Update()
 	{
-		//Calls the function being stored at whatever keyCode location in the map data structure.
+		//Calls the function being stored at whatever keyCode location is polled
 		movementKeyBindings.at(BlazeFramework::KeyboardHandling::PollInput())();
 	}
 }

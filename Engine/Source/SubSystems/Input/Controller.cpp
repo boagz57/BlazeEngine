@@ -32,5 +32,4 @@ namespace BlazeInput
 	{
 		LOG("Right");
 	}
-
 }

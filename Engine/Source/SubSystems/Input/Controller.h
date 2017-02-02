@@ -15,6 +15,7 @@ namespace BlazeInput
 		virtual void Update(BlazeGameWorld::Entity& entity) = 0;
 
 	protected:
+		//static functions used in BindMovement function in input to bind movement to a key press
 		static void MoveUp();
 		static void MoveDown();
 		static void MoveLeft();
