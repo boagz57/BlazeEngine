@@ -1,5 +1,4 @@
 #include "Precompiled.h"
-#include <memory.h>
 #include "Macro.h"
 #include "Graphics/Graphics.h"
 #include "Physics/Physics.h"
@@ -10,8 +9,8 @@
 namespace BlazeGameWorld
 {
 	Entity::Entity() :
-		renderer(new BlazeGraphics::Graphics),
-		physics(new BlazePhysics::Physics),
+		renderer(),
+		physics(),
 		position(0.0f, 0.0f),
 		velocity(0.0f, 0.0f)
 	{}
@@ -27,20 +26,20 @@ namespace BlazeGameWorld
 		this->position.x = startPosition.x;
 		this->position.y = startPosition.y;
 
-		physics->Initialize();
-		renderer->Initialize();
+		physics.Initialize();
+		renderer.Initialize();
 
-		renderer->addGeometry(geometry);
-		renderer->CreateRenderable();
-		renderer->InitializeBuffers();
+		renderer.addGeometry(geometry);
+		renderer.CreateRenderable();
+		renderer.InitializeBuffers();
 
 		return true;
 	}
 
 	bool Entity::Shutdown()
 	{
-		physics->Shutdown();
-		renderer->Shutdown();
+		physics.Shutdown();
+		renderer.Shutdown();
 
 		return true;
 	}

@@ -30,16 +30,7 @@ namespace BlazeInput
 
 	void Input::Update(BlazeGameWorld::Entity& entity)
 	{
-<<<<<<< HEAD
-		RUNTIME_ASSERT(pointerToMovementFunc != nullptr, "ERROR: function pointer pointing to nothing!!");
-		movementKeyBindings[key] = pointerToMovementFunc;
-	}
-
-	void Input::Update()
-	{
 		//Calls the function being stored at whatever keyCode location is polled
-		movementKeyBindings.at(BlazeFramework::KeyboardHandling::PollInput())();
-=======
 		switch (BlazeFramework::KeyboardHandling::PollInput())
 		{
 			case BlazeFramework::Key::UpArrow :
@@ -61,6 +52,5 @@ namespace BlazeInput
 			default:
 				break;
 		}
->>>>>>> InputImplementation2
 	}
 }

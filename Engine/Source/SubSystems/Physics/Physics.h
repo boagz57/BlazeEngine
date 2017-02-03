@@ -1,5 +1,6 @@
 #pragma once
-#include "GameWorld/GameEntities/Entity/Entity.h"
+
+namespace BlazeGameWorld { class Entity; }
 
 namespace BlazePhysics
 {

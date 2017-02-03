@@ -1,5 +1,4 @@
 #include "Precompiled.h"
-#include <memory.h>
 #include "Graphics/Graphics.h"
 #include "Graphics/Geometry.h"
 #include "Input/Input.h"
@@ -13,7 +12,7 @@
 namespace BlazeGameWorld
 {
 	Player::Player() :
-		input(new BlazeInput::Input)
+		input()
 	{
 	}
 
@@ -24,7 +23,7 @@ namespace BlazeGameWorld
 	bool Player::Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry)
 	{
 		Pawn::Initialize(startPosition, geometry);
-		input->Initialize();
+		input.Initialize();
 		
 		return true;
 	}
@@ -38,12 +37,12 @@ namespace BlazeGameWorld
 
 	void Player::Update()
 	{
-		input->Update(*this);
-		physics->Update(*this);
+		input.Update(*this);
+		physics.Update(*this);
 
 		position += (velocity * engineClock.TimeSinceLastFrame());
 
-		renderer->Update(*this);
+		renderer.Update(*this);
 
 
 		//Have to zero out velocity after updating every frame so that key input 

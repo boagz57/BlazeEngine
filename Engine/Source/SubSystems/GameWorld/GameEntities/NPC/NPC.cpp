@@ -32,8 +32,8 @@ namespace BlazeGameWorld
 
 	void NPC::Update()
 	{
-		physics->Update(*this);
-		renderer->Update(*this);
+		physics.Update(*this);
+		renderer.Update(*this);
 
 		//Have to zero out velocity after updating every frame so that key input doesn't compound and 
 		//cause the object to move in a direction its not meant to for a certain key press.

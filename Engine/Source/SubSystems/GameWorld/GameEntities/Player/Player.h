@@ -1,12 +1,9 @@
 #pragma once
-#include <memory>
 #include "Math/Vector2D/Vector2D.h"
 #include "GameWorld/GameEntities/Pawn/Pawn.h"
 #include "Input/Input.h"
 #include "Graphics/Geometry.h"
 #include "GameWorld/GameEntities/Entity/Entity.h"
-
-namespace BlazeInput { class Input; }
 
 namespace BlazeGameWorld
 {
@@ -17,7 +14,7 @@ namespace BlazeGameWorld
 	protected:
 
 	private:
-		std::unique_ptr<BlazeInput::Input> input;
+		BlazeInput::Input input;
 
 		//////////////////////////////////////////////////////////////////
 

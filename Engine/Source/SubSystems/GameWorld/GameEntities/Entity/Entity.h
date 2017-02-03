@@ -1,13 +1,10 @@
 #pragma once
-#include <memory>
 #include "Universal/UniversalTypeDefs.h"
 #include "Graphics/Geometry.h"
+#include "Physics/Physics.h"
+#include "Graphics/Graphics.h"
 #include "Math/Vector2D/Vector2D.h"
 #include "DataStructures/Vector/Vector.h"
-
-namespace BlazeGraphics{ class Graphics; }
-namespace BlazePhysics{ class Physics; }
-namespace BlazeInput{ class Controller; }
 
 namespace BlazeGameWorld
 {
@@ -17,8 +14,8 @@ namespace BlazeGameWorld
 		BlazeFramework::Math::Vector2D velocity;
 
 	protected:
-		std::unique_ptr<BlazeGraphics::Graphics> renderer;
-		std::unique_ptr<BlazePhysics::Physics> physics;
+		BlazeGraphics::Graphics renderer;
+		BlazePhysics::Physics physics;
 
 		//So physics can gain access to position since physics needs to be able to modify position
 		friend class BlazePhysics::Physics;

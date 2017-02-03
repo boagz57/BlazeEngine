@@ -5,7 +5,8 @@
 #include "Graphics/Renderable.h"
 #include "Graphics/Geometry.h"
 #include "DataStructures/Vector/Vector.h"
-#include "GameWorld/GameEntities/Entity/Entity.h"
+
+namespace BlazeGameWorld { class Entity; }
 
 namespace BlazeGraphics
 {
