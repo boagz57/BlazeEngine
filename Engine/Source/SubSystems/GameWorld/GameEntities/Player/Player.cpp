@@ -8,6 +8,8 @@
 #include "Input/Input.h"
 #include "Player.h"
 
+//TODO: move all game world classes out of GameEntities folder and delete it
+
 namespace BlazeGameWorld
 {
 	Player::Player() :
@@ -38,7 +40,11 @@ namespace BlazeGameWorld
 	{
 		input->Update(*this);
 		physics->Update(*this);
+
+		position += (velocity * engineClock.TimeSinceLastFrame());
+
 		renderer->Update(*this);
+
 
 		//Have to zero out velocity after updating every frame so that key input 
 		//doesn't compound and cause the object to move in a direction its 
