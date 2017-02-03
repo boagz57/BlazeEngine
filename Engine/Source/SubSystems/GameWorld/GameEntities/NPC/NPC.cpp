@@ -4,13 +4,11 @@
 #include "GameWorld/GameEntities/Entity/Entity.h"
 #include "Graphics/Graphics.h"
 #include "Physics/Physics.h"
-#include "Input/AIController.h"
 #include "NPC.h"
 
 namespace BlazeGameWorld
 {
-	NPC::NPC() :
-		Pawn(new BlazeInput::AIController)
+	NPC::NPC() 
 	{
 	}
 
@@ -34,7 +32,6 @@ namespace BlazeGameWorld
 
 	void NPC::Update()
 	{
-		controller->Update(*this);
 		physics->Update(*this);
 		renderer->Update(*this);
 
@@ -43,5 +40,4 @@ namespace BlazeGameWorld
 		this->velocity.x = 0;
 		this->velocity.y = 0;
 	}
-
 }

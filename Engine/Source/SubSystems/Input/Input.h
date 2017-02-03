@@ -2,6 +2,8 @@
 #include "LowLevelInput/KeyboardHandling.h"
 #include <map>
 
+namespace BlazeGameWorld { class Entity; }
+
 namespace BlazeInput
 {
 	class Input
@@ -11,8 +13,6 @@ namespace BlazeInput
 	protected:
 
 	private:
-		//Used in Bind function to bind a keyCode with a pointer to a movement function.
-		std::map<const uint16, void (*)()> movementKeyBindings;
 
 		////////////////////////////////////////////////////////////////////////////
 
@@ -23,8 +23,7 @@ namespace BlazeInput
 		bool Initialize();
 		bool Shutdown();
 
-		void BindMovement(const uint16 key, void (*pointerToMovementFunc)());
-		void Update();
+		void Update(BlazeGameWorld::Entity& entity);
 
 	protected:
 

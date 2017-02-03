@@ -30,8 +30,6 @@ namespace BlazeGameWorld
 
 	public:
 		Entity();
-		Entity(BlazeGraphics::Graphics* renderer, BlazePhysics::Physics* physics);
-
 		~Entity();
 
 		virtual bool Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry);
