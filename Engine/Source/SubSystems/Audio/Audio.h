@@ -1,6 +1,6 @@
 #pragma once
 #include "Universal/UniversalTypeDefs.h"
-#include "GameWorld/GameEntities/Entity/Entity.h"
+#include "GameWorld/Entity.h"
 #define MAX_PENDING 16
 
 struct PlayMessage

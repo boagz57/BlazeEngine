@@ -1,4 +1,4 @@
-#include "GameWorld/World/World.h"
+#include "GameWorld/World.h"
 
 World gameWorld;
 

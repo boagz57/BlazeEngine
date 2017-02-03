@@ -27,19 +27,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\SubSystems\GameWorld\GameEntities\SceneObject\SceneObject.cpp" />
-    <ClCompile Include="Source\SubSystems\GameWorld\GameEntities\Pawn\Pawn.cpp" />
-    <ClCompile Include="Source\SubSystems\GameWorld\GameEntities\NPC\NPC.cpp" />
+    <ClCompile Include="Source\SubSystems\GameWorld\SceneObject.cpp" />
+    <ClCompile Include="Source\SubSystems\GameWorld\Pawn.cpp" />
+    <ClCompile Include="Source\SubSystems\GameWorld\NPC.cpp" />
     <ClCompile Include="Source\SubSystems\Physics\Physics.cpp" />
-    <ClCompile Include="Source\SubSystems\GameWorld\GameEntities\Player\Player.cpp" />
+    <ClCompile Include="Source\SubSystems\GameWorld\Player.cpp" />
     <ClCompile Include="Source\SubSystems\Graphics\Renderable.cpp" />
     <ClCompile Include="Source\SubSystems\Graphics\Geometry.cpp" />
     <ClCompile Include="Source\SubSystems\Audio\Audio.cpp" />
-    <ClCompile Include="Source\SubSystems\GameWorld\GameEntities\Entity\Entity.cpp" />
+    <ClCompile Include="Source\SubSystems\GameWorld\Entity.cpp" />
     <ClCompile Include="Source\SubSystems\Graphics\Graphics.cpp" />
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\ErrorLogging\ErrorLogging.cpp" />
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\Initialization\GLInitialization.cpp" />
-    <ClCompile Include="Source\SubSystems\GameWorld\World\World.cpp" />
+    <ClCompile Include="Source\SubSystems\GameWorld\World.cpp" />
     <ClCompile Include="Source\Framework\LowLevelWindow\WindowHandling.cpp" />
     <ClCompile Include="Source\SubSystems\Input\Input.cpp" />
     <ClCompile Include="Source\Framework\LowLevelInput\KeyboardHandling.cpp" />
@@ -61,21 +61,21 @@
     <ClCompile Include="Source\SubSystems\Graphics\ShapeData.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\SubSystems\GameWorld\GameEntities\SceneObject\SceneObject.h" />
-    <ClInclude Include="Source\SubSystems\GameWorld\GameEntities\Pawn\Pawn.h" />
-    <ClInclude Include="Source\SubSystems\GameWorld\GameEntities\NPC\NPC.h" />
+    <ClInclude Include="Source\SubSystems\GameWorld\SceneObject.h" />
+    <ClInclude Include="Source\SubSystems\GameWorld\Pawn.h" />
+    <ClInclude Include="Source\SubSystems\GameWorld\NPC.h" />
     <ClInclude Include="Source\SubSystems\Physics\Physics.h" />
-    <ClInclude Include="Source\SubSystems\GameWorld\GameEntities\Player\Player.h" />
+    <ClInclude Include="Source\SubSystems\GameWorld\Player.h" />
     <ClInclude Include="Source\SubSystems\Graphics\Renderable.h" />
     <ClInclude Include="Source\SubSystems\Graphics\Geometry.h" />
     <ClInclude Include="Source\SubSystems\Audio\Audio.h" />
     <ClInclude Include="Source\DataStructures\Array\Array.h" />
     <ClInclude Include="Source\DataStructures\Vector\Vector.h" />
-    <ClInclude Include="Source\SubSystems\GameWorld\GameEntities\Entity\Entity.h" />
+    <ClInclude Include="Source\SubSystems\GameWorld\Entity.h" />
     <ClInclude Include="Source\SubSystems\Graphics\Graphics.h" />
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\ErrorLogging\ErrorLogging.h" />
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\Initialization\GLInitialization.h" />
-    <ClInclude Include="Source\SubSystems\GameWorld\World\World.h" />
+    <ClInclude Include="Source\SubSystems\GameWorld\World.h" />
     <ClInclude Include="Source\SubSystems\Input\Input.h" />
     <ClInclude Include="Source\Framework\LowLevelInput\KeyboardHandling.h" />
     <ClInclude Include="Source\Clock\Clock.h" />

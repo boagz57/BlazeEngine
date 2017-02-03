@@ -1,5 +1,5 @@
 #pragma once
-#include "GameWorld/GameEntities/Entity/Entity.h"
+#include "GameWorld/Entity.h"
 
 namespace BlazeGameWorld
 {

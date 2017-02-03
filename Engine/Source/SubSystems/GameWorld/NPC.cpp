@@ -1,7 +1,7 @@
 #include "Precompiled.h"
 #include "Universal/Macro.h"
 #include "Graphics/ShapeData.h"
-#include "GameWorld/GameEntities/Entity/Entity.h"
+#include "GameWorld/Entity.h"
 #include "Graphics/Graphics.h"
 #include "Physics/Physics.h"
 #include "NPC.h"

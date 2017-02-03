@@ -1,9 +1,9 @@
 #pragma once
 #include "Math/Vector2D/Vector2D.h"
-#include "GameWorld/GameEntities/Pawn/Pawn.h"
+#include "GameWorld/Pawn.h"
 #include "Input/Input.h"
 #include "Graphics/Geometry.h"
-#include "GameWorld/GameEntities/Entity/Entity.h"
+#include "GameWorld/Entity.h"
 
 namespace BlazeGameWorld
 {

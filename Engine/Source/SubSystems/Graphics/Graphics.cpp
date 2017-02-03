@@ -2,7 +2,7 @@
 #include "Universal/Macro.h"
 #include "GLM/gtx/matrix_transform_2d.hpp"
 #include "LowLevelGraphics/OpenGL/MyOpenGL.h"
-#include "GameWorld/GameEntities/Entity/Entity.h"
+#include "GameWorld/Entity.h"
 #include "LowLevelInput/KeyboardHandling.h"
 #include "Input/Input.h"
 #include "Universal/Globals.h"
