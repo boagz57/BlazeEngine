@@ -11,15 +11,11 @@ namespace BlazeGameWorld
 	class Entity
 	{
 	public:
-		BlazeFramework::Math::Vector2D velocity;
+		BlazeFramework::Math::Vector2D position;
 
 	protected:
 		BlazeGraphics::RendererComponent renderer;
 		BlazePhysics::CollisionComponent collision;
-
-		//So physics can gain access to position since physics needs to be able to modify position
-		friend class BlazePhysics::CollisionComponent;
-		BlazeFramework::Math::Vector2D position;
 
 	private:
 
@@ -35,8 +31,6 @@ namespace BlazeGameWorld
 		//Every object which inherits from this base class will have it's update function called from
 		//world's GameLoop() function which iterates over a collection of objects each frame.
 		virtual void Update() = 0;
-
-		BlazeFramework::Math::Vector2D GetPosition() const { return position; };
 
 		BlazePhysics::CollisionComponent* GetPhysicsComponent() { return &collision; };
 	protected:

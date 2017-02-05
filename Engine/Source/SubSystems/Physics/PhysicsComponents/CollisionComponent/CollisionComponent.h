@@ -17,6 +17,18 @@ namespace BlazePhysics
 	class CollisionComponent : public Component
 	{
 	public:
+
+	protected:
+
+	private:
+		BlazeGameWorld::Entity* p_entity;
+		BoundingBox collisionBox;
+
+		BlazeFramework::Math::Vector2D velocity;
+
+		///////////////////////////////////////////////////////////////
+
+	public:
 		CollisionComponent();
 		~CollisionComponent();
 
@@ -29,8 +41,8 @@ namespace BlazePhysics
 
 		BlazePhysics::BoundingBox GetCollisionBox() const { return collisionBox; }
 
+	protected:
+		
 	private:
-		BlazeGameWorld::Entity* p_entity;
-		BoundingBox collisionBox;
 	};
 }

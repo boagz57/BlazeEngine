@@ -6,7 +6,8 @@
 
 namespace BlazePhysics
 {
-	CollisionComponent::CollisionComponent() 
+	CollisionComponent::CollisionComponent() :
+		velocity(0.0f, 0.0f)
 	{
 	}
 
@@ -36,8 +37,16 @@ namespace BlazePhysics
 
 	void CollisionComponent::Update()
 	{
-		collisionBox.max += (p_entity->velocity * engineClock.TimeSinceLastFrame());
-		collisionBox.min += (p_entity->velocity * engineClock.TimeSinceLastFrame());
+		collisionBox.max += (velocity * engineClock.TimeSinceLastFrame());
+		collisionBox.min += (velocity * engineClock.TimeSinceLastFrame());
+
+		p_entity->position += (this->velocity * engineClock.TimeSinceLastFrame());
+
+		//Have to zero out velocity after updating every frame so that key input 
+		//doesn't compound and cause the object to move in a direction its 
+		//not meant to for a certain key press.
+		this->velocity.x = 0;
+		this->velocity.y = 0;
 	}
 
 	void CollisionComponent::CheckForCollision(BoundingBox otherCollisionBox)

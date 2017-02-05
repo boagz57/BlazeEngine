@@ -51,7 +51,7 @@ namespace BlazeGraphics
 
 	void RendererComponent::Update()
 	{
-		renderable.location = p_entity->GetPosition();
+		renderable.location = p_entity->position;
 
 		for (int i = 0; i < 3; i++)
 		{

@@ -34,10 +34,5 @@ namespace BlazeGameWorld
 	{
 		collision.Update();
 		renderer.Update();
-
-		//Have to zero out velocity after updating every frame so that key input doesn't compound and 
-		//cause the object to move in a direction its not meant to for a certain key press.
-		this->velocity.x = 0;
-		this->velocity.y = 0;
 	}
 }

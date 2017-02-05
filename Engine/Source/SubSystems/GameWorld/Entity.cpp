@@ -9,8 +9,7 @@
 namespace BlazeGameWorld
 {
 	Entity::Entity() :
-		position(0.0f, 0.0f),
-		velocity(0.0f, 0.0f)
+		position(0.0f, 0.0f)
 	{}
 
 	Entity::~Entity()

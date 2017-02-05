@@ -35,19 +35,15 @@ namespace BlazeInput
 		switch (BlazeFramework::KeyboardHandling::PollInput())
 		{
 		case BlazeFramework::Key::UpArrow:
-			p_entity->velocity.y = .6f;
 			break;
 
 		case BlazeFramework::Key::DownArrow:
-			p_entity->velocity.y = -.6f;
 			break;
 
 		case BlazeFramework::Key::RightArrow:
-			p_entity->velocity.x = .6f;
 			break;
 
 		case BlazeFramework::Key::LeftArrow:
-			p_entity->velocity.x = -.6f;
 			break;
 
 		default:
