@@ -188,6 +188,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\ThirdParty\GoogleTest\src\gtest-all.cc" />
+    <ClCompile Include="Source\SubSystems\ComponentTest.cpp" />
+    <ClCompile Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\RendererComponentTest.cpp" />
+    <ClCompile Include="Source\SubSystems\Graphics\GraphicsManagerTest.cpp" />
+    <ClCompile Include="Source\SubSystems\Input\InputComponents\KeyboardComponent\KeyboardComponentTest.cpp" />
+    <ClCompile Include="Source\SubSystems\Physics\PhysicsComponents\CollisionComponent\CollisionComponentTest.cpp" />
     <ClCompile Include="TestMain.cpp" />
   </ItemGroup>
   <ItemGroup>
