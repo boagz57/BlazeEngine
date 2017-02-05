@@ -1,6 +1,6 @@
 #include "Precompiled.h"
 #include "GraphicsComponents/RendererComponent/RendererComponent.h"
-#include "Physics/PhysicsComponents/CollisionComponent.h"
+#include "PhysicsComponents/CollisionComponent/CollisionComponent.h"
 #include "Pawn.h"
 
 namespace BlazeGameWorld

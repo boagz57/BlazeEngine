@@ -1,5 +1,5 @@
 #pragma once
-#include "Physics/PhysicsComponents/CollisionComponent.h"
+#include "PhysicsComponents/CollisionComponent/CollisionComponent.h"
 #include "DataStructures/Vector/Vector.h"
 
 namespace BlazePhysics

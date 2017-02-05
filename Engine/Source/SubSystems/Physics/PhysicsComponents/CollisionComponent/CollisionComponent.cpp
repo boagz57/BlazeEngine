@@ -2,7 +2,7 @@
 #include "Macro.h"
 #include "GameWorld/Entity.h"
 #include "Universal/Globals.h"
-#include "CollisionComponent.h"
+#include "PhysicsComponents/CollisionComponent/CollisionComponent.h"
 
 namespace BlazePhysics
 {

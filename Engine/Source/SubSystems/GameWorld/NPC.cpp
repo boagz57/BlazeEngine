@@ -3,7 +3,7 @@
 #include "GraphicsComponents/RendererComponent/ShapeData.h"
 #include "GameWorld/Entity.h"
 #include "GraphicsComponents/RendererComponent/RendererComponent.h"
-#include "Physics/PhysicsComponents/CollisionComponent.h"
+#include "PhysicsComponents/CollisionComponent/CollisionComponent.h"
 #include "NPC.h"
 
 namespace BlazeGameWorld

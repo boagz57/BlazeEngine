@@ -39,7 +39,7 @@ namespace BlazeGraphics
 		bool Shutdown();
 
 		void InitializeBuffers();
-		void Update();
+		void Update() override;
 
 		void addGeometry(Geometry geometry);
 		void CreateRenderable();

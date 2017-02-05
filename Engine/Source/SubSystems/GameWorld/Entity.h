@@ -1,7 +1,7 @@
 #pragma once
 #include "Universal/UniversalTypeDefs.h"
 #include "Graphics/GraphicsComponents/RendererComponent/Geometry.h"
-#include "Physics/PhysicsComponents/CollisionComponent.h"
+#include "PhysicsComponents/CollisionComponent/CollisionComponent.h"
 #include "GraphicsComponents/RendererComponent/RendererComponent.h"
 #include "Math/Vector2D/Vector2D.h"
 #include "DataStructures/Vector/Vector.h"

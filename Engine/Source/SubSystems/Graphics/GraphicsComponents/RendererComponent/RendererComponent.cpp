@@ -8,6 +8,8 @@
 #include "Universal/Globals.h"
 #include "RendererComponent.h"
 
+//TODO: Need to abstract away opengl functions from this class
+
 namespace BlazeGraphics
 {
 	RendererComponent::RendererComponent()

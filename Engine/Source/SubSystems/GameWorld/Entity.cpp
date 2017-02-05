@@ -1,7 +1,7 @@
 #include "Precompiled.h"
 #include "Macro.h"
 #include "GraphicsComponents/RendererComponent/RendererComponent.h"
-#include "Physics/PhysicsComponents/CollisionComponent.h"
+#include "PhysicsComponents/CollisionComponent/CollisionComponent.h"
 #include "Input/InputManager.h"
 #include "GraphicsComponents/RendererComponent/ShapeData.h"
 #include "Entity.h"

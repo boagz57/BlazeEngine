@@ -2,7 +2,7 @@
 #include "GraphicsComponents/RendererComponent/RendererComponent.h"
 #include "GraphicsComponents/RendererComponent/Geometry.h"
 #include "Input/InputManager.h"
-#include "Physics/PhysicsComponents/CollisionComponent.h"
+#include "PhysicsComponents/CollisionComponent/CollisionComponent.h"
 #include "Universal/Globals.h"
 #include "InputComponents/KeyboardComponent/KeyboardComponent.h"
 #include "Player.h"

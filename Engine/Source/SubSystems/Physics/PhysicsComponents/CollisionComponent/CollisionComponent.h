@@ -23,7 +23,7 @@ namespace BlazePhysics
 		bool Initialize(BlazeGameWorld::Entity* entity);
 		bool Shutdown();
 
-		void Update();
+		void Update() override;
 
 		void CheckForCollision(BoundingBox otherCollisionBox);
 

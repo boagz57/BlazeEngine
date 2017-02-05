@@ -24,7 +24,7 @@ namespace BlazeInput
 		bool Initialize(BlazeGameWorld::Entity* p_entity);
 		bool Shutdown();
 
-		void Update();
+		void Update() override;
 
 	protected:
 
