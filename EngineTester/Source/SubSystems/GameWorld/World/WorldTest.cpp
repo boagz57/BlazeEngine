@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "GameWorld/World/World.h"
+#include "GameWorld/World.h"
 
 TEST(GameWorldSubSystem, WorldClass)
 {
