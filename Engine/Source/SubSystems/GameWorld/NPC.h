@@ -1,7 +1,7 @@
 #pragma once
 #include "Math/Vector2D/Vector2D.h"
 #include "GameWorld/Pawn.h"
-#include "Graphics/Geometry.h"
+#include "GraphicsComponents/RendererComponent/Geometry.h"
 
 //TODO: Make sure to update all header files and make them lean and mean
 

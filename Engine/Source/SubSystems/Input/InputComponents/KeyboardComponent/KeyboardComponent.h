@@ -1,29 +1,30 @@
 #pragma once
+#include "SubSystems/Component.h"
 #include "LowLevelInput/KeyboardHandling.h"
-#include <map>
 
 namespace BlazeGameWorld { class Entity; }
 
 namespace BlazeInput
 {
-	class Input
+	class KeyboardComponent : public Component
 	{
 	public:
 
 	protected:
 
 	private:
+		BlazeGameWorld::Entity* p_entity;
 
 		////////////////////////////////////////////////////////////////////////////
 
 	public:
-		Input();
-		~Input();
+		KeyboardComponent();
+		~KeyboardComponent();
 
-		bool Initialize();
+		bool Initialize(BlazeGameWorld::Entity* p_entity);
 		bool Shutdown();
 
-		void Update(BlazeGameWorld::Entity& entity);
+		void Update();
 
 	protected:
 

@@ -2,15 +2,16 @@
 #include "GL/glew.h"
 #include "Universal/UniversalTypeDefs.h"
 #include "Math/Vector2D/Vector2D.h"
-#include "Graphics/Renderable.h"
-#include "Graphics/Geometry.h"
+#include "SubSystems/Component.h"
+#include "GraphicsComponents/RendererComponent/Renderable.h"
+#include "GraphicsComponents/RendererComponent/Geometry.h"
 #include "DataStructures/Vector/Vector.h"
 
 namespace BlazeGameWorld { class Entity; }
 
 namespace BlazeGraphics
 {
-	class Graphics
+	class RendererComponent : public Component
 	{
 	public:
 
@@ -23,6 +24,7 @@ namespace BlazeGraphics
 
 		Geometry mesh;
 		Renderable renderable;
+		BlazeGameWorld::Entity* p_entity;
 
 		uint16 const c_numTransformedVertices = 3;
 		Vector<BlazeFramework::Math::Vector2D> transformedVerts;
@@ -30,14 +32,14 @@ namespace BlazeGraphics
 		///////////////////////////////////////////////////////////////////////
 
 	public:
-		Graphics();
-		~Graphics();
+		RendererComponent();
+		~RendererComponent();
 
-		bool Initialize();
+		bool Initialize(BlazeGameWorld::Entity* p_entity);
 		bool Shutdown();
 
 		void InitializeBuffers();
-		void Update(BlazeGameWorld::Entity& entity);
+		void Update();
 
 		void addGeometry(Geometry geometry);
 		void CreateRenderable();

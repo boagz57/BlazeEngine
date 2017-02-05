@@ -1,4 +1,4 @@
-#include "Graphics/Geometry.h"
+#include "Geometry.h"
 
 namespace BlazeGraphics
 {

@@ -1,6 +1,6 @@
 #pragma once
 #include "Math/Vector2D/Vector2D.h"
-#include "Graphics/Geometry.h"
+#include "GraphicsComponents/RendererComponent/Geometry.h"
 
 namespace BlazeGraphics
 {
@@ -12,7 +12,7 @@ namespace BlazeGraphics
 	protected:
 
 	private:
-		friend class Graphics;
+		friend class RendererComponent;
 		Geometry mesh;
 
 		////////////////////////////////////////////////////////////////////////////////

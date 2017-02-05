@@ -1,9 +1,9 @@
 #include "Precompiled.h"
 #include "Universal/Macro.h"
-#include "Graphics/ShapeData.h"
+#include "GraphicsComponents/RendererComponent/ShapeData.h"
 #include "GameWorld/Entity.h"
-#include "Graphics/Graphics.h"
-#include "Physics/Physics.h"
+#include "GraphicsComponents/RendererComponent/RendererComponent.h"
+#include "Physics/PhysicsComponents/CollisionComponent.h"
 #include "NPC.h"
 
 namespace BlazeGameWorld
@@ -18,7 +18,7 @@ namespace BlazeGameWorld
 
 	bool NPC::Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry)
 	{
-		Entity::Initialize(startPosition, geometry);
+		Pawn::Initialize(startPosition, geometry);
 
 		return true;
 	}
@@ -32,8 +32,8 @@ namespace BlazeGameWorld
 
 	void NPC::Update()
 	{
-		physics.Update(*this);
-		renderer.Update(*this);
+		collision.Update();
+		renderer.Update();
 
 		//Have to zero out velocity after updating every frame so that key input doesn't compound and 
 		//cause the object to move in a direction its not meant to for a certain key press.

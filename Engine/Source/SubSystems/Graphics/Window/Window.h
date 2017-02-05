@@ -1,7 +1,7 @@
 #pragma once
 #include "Macro.h"
 #include "UniversalTypeDefs.h"
-#include "Input/Input.h"
+#include "InputComponents/KeyboardComponent/KeyboardComponent.h"
 #include "../Framework/LowLevelWindow/WindowHandling.h"
 
 namespace BlazeGraphics
@@ -16,7 +16,7 @@ namespace BlazeGraphics
 		//Needed Input to have access to Window's m_window variable since underlying implementation 
 		//requires a reference to BlazeWindow* (and not just a regular Window* object). Helps to avoid 
 		//making m_window publicly available.
-		friend class BlazeInput::Input;
+		friend class BlazeInput::KeyboardComponent;
 
 		const uint16 cHeight = 0;
 		const uint16 cWidth = 0;

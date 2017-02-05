@@ -1,8 +1,8 @@
 #pragma once
 #include "Math/Vector2D/Vector2D.h"
 #include "GameWorld/Pawn.h"
-#include "Input/Input.h"
-#include "Graphics/Geometry.h"
+#include "Input/InputManager.h"
+#include "GraphicsComponents/RendererComponent/Geometry.h"
 #include "GameWorld/Entity.h"
 
 namespace BlazeGameWorld
@@ -14,7 +14,7 @@ namespace BlazeGameWorld
 	protected:
 
 	private:
-		BlazeInput::Input input;
+		BlazeInput::KeyboardComponent keyboard;
 
 		//////////////////////////////////////////////////////////////////
 

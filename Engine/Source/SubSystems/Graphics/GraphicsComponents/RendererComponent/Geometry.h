@@ -12,7 +12,7 @@ namespace BlazeGraphics
 	protected:
 
 	private:
-		friend class Graphics;
+		friend class RendererComponent;
 		friend class ShapeData;
 
 		uint16 numVerts;

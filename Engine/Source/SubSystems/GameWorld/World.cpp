@@ -2,13 +2,14 @@
 #include "Framework/LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "Framework/LowLevelGraphics/OpenGL/ErrorLogging/ErrorLogging.h"
 #include "Universal/Globals.h"
-#include "Graphics/ShapeData.h"
+#include "GraphicsComponents/RendererComponent/ShapeData.h"
 #include "Math/Vector2D/Vector2D.h"
+#include "Physics/PhysicsManager.h"
 #include "GameWorld/NPC.h"
-#include "Input/Input.h"
+#include "Input/InputManager.h"
 #include "GameWorld/Player.h"
 #include "Audio/Audio.h"
-#include "Graphics/Graphics.h"
+#include "GraphicsComponents/RendererComponent/RendererComponent.h"
 #include "World.h"
 
 World::World()
@@ -30,13 +31,17 @@ bool World::Shutdown()
 
 void World::GameLoop()
 {
-	BlazeFramework::OpenGL::RestartGLLogFile();
-	BlazeFramework::OpenGL::LogToFile("starting GLFW\n%s\n", glfwGetVersionString());
+	BlazePhysics::PhysicsManager physics;
+	physics.Initialize();
 
 	BlazeGameWorld::Player triangle;
 	BlazeGameWorld::NPC EnemyTriangle;
+
 	triangle.Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.0f), BlazeGraphics::ShapeData::Triangle());
 	EnemyTriangle.Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.5f), BlazeGraphics::ShapeData::Triangle());
+
+	physics.AddPhysicsComponent(triangle.GetPhysicsComponent());
+	physics.AddPhysicsComponent(EnemyTriangle.GetPhysicsComponent());
 
 	MyOpenGL::InstallShaders();
 
@@ -58,6 +63,8 @@ void World::GameLoop()
 		{
 			entities.at(i)->Update();
 		}
+
+		physics.Update();
 
 		window.Update();
 	};

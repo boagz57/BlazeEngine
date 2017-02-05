@@ -4,25 +4,27 @@
 #include "LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "GameWorld/Entity.h"
 #include "LowLevelInput/KeyboardHandling.h"
-#include "Input/Input.h"
+#include "Input/InputManager.h"
 #include "Universal/Globals.h"
-#include "Graphics.h"
+#include "RendererComponent.h"
 
 namespace BlazeGraphics
 {
-	Graphics::Graphics() 
+	RendererComponent::RendererComponent()
 	{}
 
-	Graphics::~Graphics()
+	RendererComponent::~RendererComponent()
 	{}
 
-	bool Graphics::Initialize()
+	bool RendererComponent::Initialize(BlazeGameWorld::Entity* p_entity)
 	{
 		transformedVerts.resize(c_numTransformedVertices);
+		this->p_entity = p_entity;
+
 		return true;
 	}
 
-	bool Graphics::Shutdown()
+	bool RendererComponent::Shutdown()
 	{
 		glDeleteBuffers(1, &vertexBufferID);
 		glDeleteBuffers(1, &indexBufferID);
@@ -30,7 +32,7 @@ namespace BlazeGraphics
 		return false;
 	}
 
-	void Graphics::InitializeBuffers()
+	void RendererComponent::InitializeBuffers()
 	{
 		glGenBuffers(1, &vertexBufferID);
 		glGenBuffers(1, &indexBufferID);
@@ -45,9 +47,9 @@ namespace BlazeGraphics
 		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 2, nullptr);
 	}
 
-	void Graphics::Update(BlazeGameWorld::Entity& entity)
+	void RendererComponent::Update()
 	{
-		renderable.location = entity.GetPosition();
+		renderable.location = p_entity->GetPosition();
 
 		for (int i = 0; i < 3; i++)
 		{
@@ -59,7 +61,7 @@ namespace BlazeGraphics
 		glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
 	}
 
-	void Graphics::addGeometry(Geometry geometry)
+	void RendererComponent::addGeometry(Geometry geometry)
 	{
 		mesh.numVerts = geometry.numVerts;
 		mesh.vertices = geometry.vertices;
@@ -67,7 +69,7 @@ namespace BlazeGraphics
 		mesh.indicies = geometry.indicies;
 	}
 
-	void Graphics::CreateRenderable()
+	void RendererComponent::CreateRenderable()
 	{
 		renderable.mesh = mesh;
 	}

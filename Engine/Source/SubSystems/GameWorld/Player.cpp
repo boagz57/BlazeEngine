@@ -1,18 +1,17 @@
 #include "Precompiled.h"
-#include "Graphics/Graphics.h"
-#include "Graphics/Geometry.h"
-#include "Input/Input.h"
-#include "Physics/Physics.h"
+#include "GraphicsComponents/RendererComponent/RendererComponent.h"
+#include "GraphicsComponents/RendererComponent/Geometry.h"
+#include "Input/InputManager.h"
+#include "Physics/PhysicsComponents/CollisionComponent.h"
 #include "Universal/Globals.h"
-#include "Input/Input.h"
+#include "InputComponents/KeyboardComponent/KeyboardComponent.h"
 #include "Player.h"
 
 //TODO: move all game world classes out of GameEntities folder and delete it
 
 namespace BlazeGameWorld
 {
-	Player::Player() :
-		input()
+	Player::Player()
 	{
 	}
 
@@ -23,7 +22,7 @@ namespace BlazeGameWorld
 	bool Player::Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry)
 	{
 		Pawn::Initialize(startPosition, geometry);
-		input.Initialize();
+		keyboard.Initialize(this);
 		
 		return true;
 	}
@@ -37,12 +36,12 @@ namespace BlazeGameWorld
 
 	void Player::Update()
 	{
-		input.Update(*this);
-		physics.Update(*this);
+		keyboard.Update();
+		collision.Update();
 
 		position += (velocity * engineClock.TimeSinceLastFrame());
 
-		renderer.Update(*this);
+		renderer.Update();
 
 
 		//Have to zero out velocity after updating every frame so that key input 
