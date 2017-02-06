@@ -32,7 +32,5 @@ namespace BlazeGameWorld
 
 	void NPC::Update()
 	{
-		collision.Update();
-		renderer.Update();
 	}
 }

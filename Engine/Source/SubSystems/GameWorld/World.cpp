@@ -40,9 +40,6 @@ void World::GameLoop()
 	triangle.Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.0f), BlazeGraphics::ShapeData::Triangle());
 	EnemyTriangle.Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.5f), BlazeGraphics::ShapeData::Triangle());
 
-	physics.AddPhysicsComponent(triangle.GetPhysicsComponent());
-	physics.AddPhysicsComponent(EnemyTriangle.GetPhysicsComponent());
-
 	MyOpenGL::InstallShaders();
 
 	engineClock.Initialize();

@@ -1,7 +1,8 @@
 #include "Precompiled.h"
 #include "Macro.h"
 #include "GraphicsComponents/RendererComponent/RendererComponent.h"
-#include "PhysicsComponents/CollisionComponent/CollisionComponent.h"
+#include "GraphicsComponents/RendererComponent/Geometry.h"
+#include "SubSystems/Component.h"
 #include "Input/InputManager.h"
 #include "GraphicsComponents/RendererComponent/ShapeData.h"
 #include "Entity.h"
@@ -10,7 +11,9 @@ namespace BlazeGameWorld
 {
 	Entity::Entity() :
 		position(0.0f, 0.0f)
-	{}
+	{
+		components.reserve(3);
+	}
 
 	Entity::~Entity()
 	{}
@@ -23,21 +26,11 @@ namespace BlazeGameWorld
 		this->position.x = startPosition.x;
 		this->position.y = startPosition.y;
 
-		collision.Initialize(this);
-		renderer.Initialize(this);
-
-		renderer.addGeometry(geometry);
-		renderer.CreateRenderable();
-		renderer.InitializeBuffers();
-
 		return true;
 	}
 
 	bool Entity::Shutdown()
 	{
-		collision.Shutdown();
-		renderer.Shutdown();
-
 		return true;
 	}
 }

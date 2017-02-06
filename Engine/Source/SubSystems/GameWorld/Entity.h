@@ -1,8 +1,8 @@
 #pragma once
 #include "Universal/UniversalTypeDefs.h"
-#include "Graphics/GraphicsComponents/RendererComponent/Geometry.h"
-#include "PhysicsComponents/CollisionComponent/CollisionComponent.h"
-#include "GraphicsComponents/RendererComponent/RendererComponent.h"
+#include "SubSystems/Component.h"
+#include "GraphicsComponents/RendererComponent/Geometry.h"
+#include <memory>
 #include "Math/Vector2D/Vector2D.h"
 #include "DataStructures/Vector/Vector.h"
 
@@ -14,8 +14,7 @@ namespace BlazeGameWorld
 		BlazeFramework::Math::Vector2D position;
 
 	protected:
-		BlazeGraphics::RendererComponent renderer;
-		BlazePhysics::CollisionComponent collision;
+		Vector<Component*> components;
 
 	private:
 
@@ -32,7 +31,6 @@ namespace BlazeGameWorld
 		//world's GameLoop() function which iterates over a collection of objects each frame.
 		virtual void Update() = 0;
 
-		BlazePhysics::CollisionComponent* GetPhysicsComponent() { return &collision; };
 	protected:
 
 	private:

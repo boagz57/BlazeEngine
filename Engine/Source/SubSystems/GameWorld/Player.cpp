@@ -37,10 +37,6 @@ namespace BlazeGameWorld
 	void Player::Update()
 	{
 		keyboard.Update();
-		collision.Update();
-
-
-		renderer.Update();
 
 
 	}
