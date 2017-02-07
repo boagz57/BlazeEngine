@@ -21,7 +21,7 @@ namespace BlazeGraphics
 		~GraphicsManager();
 
 		template <typename GraphicsComponentType>
-		static GraphicsComponentType* CreateGraphicsComponent();
+		GraphicsComponentType* CreateGraphicsComponent();
 
 	private:
 	};

@@ -19,9 +19,9 @@ namespace BlazeGameWorld
 	{
 	}
 
-	bool Player::Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry)
+	bool Player::Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry, BlazePhysics::PhysicsManager& physManager, BlazeGraphics::GraphicsManager& grphsManager)
 	{
-		Pawn::Initialize(startPosition, geometry);
+		Pawn::Initialize(startPosition, geometry, physManager, grphsManager);
 		keyboard.Initialize(this);
 		
 		return true;
@@ -29,15 +29,15 @@ namespace BlazeGameWorld
 
 	bool Player::Shutdown()
 	{
-		Entity::Shutdown();
+		Pawn::Shutdown();
 
 		return true;
 	}
 
 	void Player::Update()
 	{
+		Pawn::Update();
 		keyboard.Update();
-
 
 	}
 }

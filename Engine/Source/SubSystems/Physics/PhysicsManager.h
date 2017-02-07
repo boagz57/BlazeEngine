@@ -16,13 +16,12 @@ namespace BlazePhysics
 		void Update();
 
 		template <typename PhysicsComponentType>
-		static PhysicsComponentType* CreatePhysicsComponent();
+		PhysicsComponentType* CreatePhysicsComponent();
 
 	private:
 		static uint16 numPhysicsComponents;
 		Vector<BlazePhysics::CollisionComponent> physicsComponents;
 	};
-
 
 	//template definitions
 	template <typename PhysicsComponentType>
@@ -31,6 +30,6 @@ namespace BlazePhysics
 		PhysicsComponentType physicsComponent;
 		physicsComponents.push_back(physicsComponent);
 
-		return &physicsComponent.at(numPhysicsComponents++);
+		return &physicsComponents.at(numPhysicsComponents++);
 	}
 }

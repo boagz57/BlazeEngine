@@ -6,9 +6,10 @@
 namespace BlazePhysics
 {
 	uint16 PhysicsManager::numPhysicsComponents = 0;
-
+	
 	PhysicsManager::PhysicsManager()
 	{
+		physicsComponents.reserve(23);
 	}
 
 	PhysicsManager::~PhysicsManager()
@@ -17,7 +18,6 @@ namespace BlazePhysics
 
 	bool PhysicsManager::Initialize()
 	{
-		physicsComponents.reserve(23);
 		return false;
 	}
 

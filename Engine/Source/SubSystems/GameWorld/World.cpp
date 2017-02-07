@@ -5,6 +5,7 @@
 #include "GraphicsComponents/RendererComponent/ShapeData.h"
 #include "Math/Vector2D/Vector2D.h"
 #include "Physics/PhysicsManager.h"
+#include "Graphics/GraphicsManager.h"
 #include "GameWorld/NPC.h"
 #include "Input/InputManager.h"
 #include "GameWorld/Player.h"
@@ -32,13 +33,13 @@ bool World::Shutdown()
 void World::GameLoop()
 {
 	BlazePhysics::PhysicsManager physics;
-	physics.Initialize();
+	BlazeGraphics::GraphicsManager graphics;
 
 	BlazeGameWorld::Player triangle;
 	BlazeGameWorld::NPC EnemyTriangle;
 
-	triangle.Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.0f), BlazeGraphics::ShapeData::Triangle());
-	EnemyTriangle.Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.5f), BlazeGraphics::ShapeData::Triangle());
+	triangle.Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.0f), BlazeGraphics::ShapeData::Triangle(), physics, graphics);
+	EnemyTriangle.Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.5f), BlazeGraphics::ShapeData::Triangle(), physics, graphics);
 
 	MyOpenGL::InstallShaders();
 
@@ -60,8 +61,6 @@ void World::GameLoop()
 		{
 			entities.at(i)->Update();
 		}
-
-		physics.Update();
 
 		window.Update();
 	};

@@ -16,9 +16,9 @@ namespace BlazeGameWorld
 	{
 	}
 
-	bool NPC::Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry)
+	bool NPC::Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry, BlazePhysics::PhysicsManager& physManager, BlazeGraphics::GraphicsManager& graphicsManager)
 	{
-		Pawn::Initialize(startPosition, geometry);
+		Pawn::Initialize(startPosition, geometry, physManager, graphicsManager);
 
 		return true;
 	}
@@ -32,5 +32,6 @@ namespace BlazeGameWorld
 
 	void NPC::Update()
 	{
+		Pawn::Update();
 	}
 }

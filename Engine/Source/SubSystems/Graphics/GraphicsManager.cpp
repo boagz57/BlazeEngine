@@ -8,8 +8,8 @@ namespace BlazeGraphics
 
 	GraphicsManager::GraphicsManager()
 	{
+		graphicsComponents.reserve(23);
 	}
-
 
 	GraphicsManager::~GraphicsManager()
 	{

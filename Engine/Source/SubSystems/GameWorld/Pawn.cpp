@@ -13,17 +13,25 @@ namespace BlazeGameWorld
 	Pawn::~Pawn()
 	{}
 
-	bool Pawn::Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry)
+	bool Pawn::Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry, BlazePhysics::PhysicsManager& physManager, BlazeGraphics::GraphicsManager& grphsManager)
 	{
-		Entity::Initialize(startPosition, geometry);
-		components.push_back(BlazePhysics::PhysicsManager::CreatePhysicsComponent<BlazePhysics::CollisionComponent>());
-		components.push_back(BlazeGraphics::GraphicsManager::CreateGraphicsComponent<BlazeGraphics::RendererComponent>());
+		Entity::Initialize(startPosition, geometry, physManager, grphsManager);
+		components.push_back(physManager.CreatePhysicsComponent<BlazePhysics::CollisionComponent>());
+		components.push_back(grphsManager.CreateGraphicsComponent<BlazeGraphics::RendererComponent>());
+
+		for (int i = 0; i < 2; i++)
+		{
+			components.at(i)->Initialize(this);
+		}
 
 		return false;
 	}
 
 	void Pawn::Update()
 	{
-
+		for (int i = 0; i < 2; i++)
+		{
+			components.at(i)->Update();
+		}
 	}
 }

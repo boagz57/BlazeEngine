@@ -32,7 +32,7 @@ namespace BlazePhysics
 		CollisionComponent();
 		~CollisionComponent();
 
-		bool Initialize(BlazeGameWorld::Entity* entity);
+		bool Initialize(BlazeGameWorld::Entity* entity) override;
 		bool Shutdown();
 
 		void Update() override;

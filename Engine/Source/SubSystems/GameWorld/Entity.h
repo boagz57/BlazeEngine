@@ -1,10 +1,13 @@
 #pragma once
 #include "Universal/UniversalTypeDefs.h"
-#include "SubSystems/Component.h"
 #include "GraphicsComponents/RendererComponent/Geometry.h"
+#include "Graphics/GraphicsManager.h"
+#include "Physics/PhysicsManager.h"
 #include <memory>
 #include "Math/Vector2D/Vector2D.h"
 #include "DataStructures/Vector/Vector.h"
+
+class Component;
 
 namespace BlazeGameWorld
 {
@@ -24,7 +27,7 @@ namespace BlazeGameWorld
 		Entity();
 		~Entity();
 
-		virtual bool Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry);
+		virtual bool Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry, BlazePhysics::PhysicsManager& physManager, BlazeGraphics::GraphicsManager& grphsManager);
 		virtual bool Shutdown();
 
 		//Every object which inherits from this base class will have it's update function called from

@@ -4,6 +4,7 @@
 #include "LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "GameWorld/Entity.h"
 #include "LowLevelInput/KeyboardHandling.h"
+#include "GraphicsComponents/RendererComponent/ShapeData.h"
 #include "Input/InputManager.h"
 #include "Universal/Globals.h"
 #include "RendererComponent.h"
@@ -23,6 +24,11 @@ namespace BlazeGraphics
 		transformedVerts.resize(c_numTransformedVertices);
 		this->p_entity = p_entity;
 
+		this->mesh = BlazeGraphics::ShapeData::Triangle();
+		this->renderable.mesh = this->mesh;
+
+		InitializeBuffers();
+	
 		return true;
 	}
 
@@ -65,14 +71,14 @@ namespace BlazeGraphics
 
 	void RendererComponent::addGeometry(Geometry geometry)
 	{
-		mesh.numVerts = geometry.numVerts;
-		mesh.vertices = geometry.vertices;
-		mesh.numIndicies = geometry.numIndicies;
-		mesh.indicies = geometry.indicies;
+		this->mesh.numVerts = geometry.numVerts;
+		this->mesh.vertices = geometry.vertices;
+		this->mesh.numIndicies = geometry.numIndicies;
+		this->mesh.indicies = geometry.indicies;
 	}
 
 	void RendererComponent::CreateRenderable()
 	{
-		renderable.mesh = mesh;
+		this->renderable.mesh = this->mesh;
 	}
 }

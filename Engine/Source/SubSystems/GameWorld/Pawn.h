@@ -17,7 +17,7 @@ namespace BlazeGameWorld
 		Pawn();
 		~Pawn();
 
-		virtual bool Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry) override;
+		virtual bool Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry, BlazePhysics::PhysicsManager& physManager, BlazeGraphics::GraphicsManager& grphsManager) override;
 
 		virtual void Update() override;
 

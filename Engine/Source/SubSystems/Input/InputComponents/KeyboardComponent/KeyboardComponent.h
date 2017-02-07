@@ -21,7 +21,7 @@ namespace BlazeInput
 		KeyboardComponent();
 		~KeyboardComponent();
 
-		bool Initialize(BlazeGameWorld::Entity* p_entity);
+		bool Initialize(BlazeGameWorld::Entity* p_entity) override;
 		bool Shutdown();
 
 		void Update() override;
