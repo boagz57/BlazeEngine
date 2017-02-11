@@ -14,6 +14,7 @@ namespace BlazeGameWorld
 	class Entity
 	{
 	public:
+		uint16 const EntityID;
 		BlazeFramework::Math::Vector2D position;
 
 	protected:
@@ -24,7 +25,7 @@ namespace BlazeGameWorld
 		///////////////////////////////////////////////////////////////////////
 
 	public:
-		Entity();
+		Entity(uint16 ID);
 		~Entity();
 
 		virtual bool Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry, BlazePhysics::PhysicsManager& physManager, BlazeGraphics::GraphicsManager& grphsManager);

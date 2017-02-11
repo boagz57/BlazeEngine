@@ -9,13 +9,8 @@
 
 namespace BlazeGameWorld
 {
-	Entity::Entity() :
-		position(0.0f, 0.0f)
-	{
-		components.reserve(3);
-	}
-
-	Entity::~Entity()
+	Entity::Entity(uint16 ID) :
+		EntityID(ID)
 	{}
 
 	bool Entity::Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry, BlazePhysics::PhysicsManager& physmanager, BlazeGraphics::GraphicsManager& grphcsManager)
