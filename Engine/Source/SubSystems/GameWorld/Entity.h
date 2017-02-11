@@ -34,6 +34,7 @@ namespace BlazeGameWorld
 		virtual void Update();
 
 		void AddComponent(Component* p_component);
+
 	protected:
 
 	private:
