@@ -27,16 +27,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\SubSystems\GameWorld\SceneManager.cpp" />
     <ClCompile Include="Source\SubSystems\Component.cpp" />
     <ClCompile Include="Source\SubSystems\Input\InputComponents\KeyboardComponent\KeyboardComponent.cpp" />
-    <ClCompile Include="Source\SubSystems\Graphics\GraphicsManager.cpp" />
     <ClCompile Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\RendererComponent.cpp" />
-    <ClCompile Include="Source\SubSystems\Physics\PhysicsManager.cpp" />
-    <ClCompile Include="Source\SubSystems\GameWorld\SceneObject.cpp" />
-    <ClCompile Include="Source\SubSystems\GameWorld\Pawn.cpp" />
-    <ClCompile Include="Source\SubSystems\GameWorld\NPC.cpp" />
     <ClCompile Include="Source\SubSystems\Physics\PhysicsComponents\CollisionComponent\CollisionComponent.cpp" />
-    <ClCompile Include="Source\SubSystems\GameWorld\Player.cpp" />
     <ClCompile Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\Renderable.cpp" />
     <ClCompile Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\Geometry.cpp" />
     <ClCompile Include="Source\SubSystems\Audio\Audio.cpp" />
@@ -45,7 +40,6 @@
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\Initialization\GLInitialization.cpp" />
     <ClCompile Include="Source\SubSystems\GameWorld\World.cpp" />
     <ClCompile Include="Source\Framework\LowLevelWindow\WindowHandling.cpp" />
-    <ClCompile Include="Source\SubSystems\Input\InputManager.cpp" />
     <ClCompile Include="Source\Framework\LowLevelInput\KeyboardHandling.cpp" />
     <ClCompile Include="Source\Clock\Clock.cpp" />
     <ClCompile Include="Source\Framework\FileHandling\File.cpp" />
@@ -65,16 +59,11 @@
     <ClCompile Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\ShapeData.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\SubSystems\GameWorld\SceneManager.h" />
     <ClInclude Include="Source\SubSystems\Component.h" />
     <ClInclude Include="Source\SubSystems\Input\InputComponents\KeyboardComponent\KeyboardComponent.h" />
-    <ClInclude Include="Source\SubSystems\Graphics\GraphicsManager.h" />
     <ClInclude Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\RendererComponent.h" />
-    <ClInclude Include="Source\SubSystems\Physics\PhysicsManager.h" />
-    <ClInclude Include="Source\SubSystems\GameWorld\SceneObject.h" />
-    <ClInclude Include="Source\SubSystems\GameWorld\Pawn.h" />
-    <ClInclude Include="Source\SubSystems\GameWorld\NPC.h" />
     <ClInclude Include="Source\SubSystems\Physics\PhysicsComponents\CollisionComponent\CollisionComponent.h" />
-    <ClInclude Include="Source\SubSystems\GameWorld\Player.h" />
     <ClInclude Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\Renderable.h" />
     <ClInclude Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\Geometry.h" />
     <ClInclude Include="Source\SubSystems\Audio\Audio.h" />
@@ -84,7 +73,6 @@
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\ErrorLogging\ErrorLogging.h" />
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\Initialization\GLInitialization.h" />
     <ClInclude Include="Source\SubSystems\GameWorld\World.h" />
-    <ClInclude Include="Source\SubSystems\Input\InputManager.h" />
     <ClInclude Include="Source\Framework\LowLevelInput\KeyboardHandling.h" />
     <ClInclude Include="Source\Clock\Clock.h" />
     <ClInclude Include="Source\Framework\FileHandling\File.h" />

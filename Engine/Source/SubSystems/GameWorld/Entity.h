@@ -1,8 +1,6 @@
 #pragma once
 #include "Universal/UniversalTypeDefs.h"
 #include "GraphicsComponents/RendererComponent/Geometry.h"
-#include "Graphics/GraphicsManager.h"
-#include "Physics/PhysicsManager.h"
 #include <memory>
 #include "Math/Vector2D/Vector2D.h"
 #include "DataStructures/Vector/Vector.h"
@@ -14,9 +12,12 @@ namespace BlazeGameWorld
 	class Entity
 	{
 	public:
+		uint16 const entityID;
 		BlazeFramework::Math::Vector2D position;
 
 	protected:
+		uint16 numComponents;
+		uint16 const numMaxComponents;
 		Vector<Component*> components;
 
 	private:
@@ -24,16 +25,15 @@ namespace BlazeGameWorld
 		///////////////////////////////////////////////////////////////////////
 
 	public:
-		Entity();
+		Entity(uint16 entityID);
 		~Entity();
 
-		virtual bool Initialize(BlazeFramework::Math::Vector2D startPosition, BlazeGraphics::Geometry geometry, BlazePhysics::PhysicsManager& physManager, BlazeGraphics::GraphicsManager& grphsManager);
+		virtual bool Initialize(BlazeFramework::Math::Vector2D startPosition);
 		virtual bool Shutdown();
 
-		//Every object which inherits from this base class will have it's update function called from
-		//world's GameLoop() function which iterates over a collection of objects each frame.
-		virtual void Update() = 0;
+		virtual void Update();
 
+		void AddComponent(Component* p_component);
 	protected:
 
 	private:
