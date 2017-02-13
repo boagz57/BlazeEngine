@@ -17,10 +17,6 @@ SceneManager::~SceneManager()
 {
 }
 
-void SceneManager::Update()
-{
-}
-
 uint16 SceneManager::CreateEntity()
 {
 	//There are no concrete entities. Only entity ID numbers. Each index 
@@ -42,6 +38,8 @@ uint16 SceneManager::CreateTriangle(BlazeFramework::Math::Vector2D startPosition
 {
 	uint16 entity = CreateEntity();
 
+	//Set an entity to show as having certain components attached (creates
+	//the 'key' for the entity to see if it will fit in a system's 'lock'.
 	bitMasks.at(entity) = PositionComponentMask;
 
 	positionComponents.at(entity).position = startPosition;
