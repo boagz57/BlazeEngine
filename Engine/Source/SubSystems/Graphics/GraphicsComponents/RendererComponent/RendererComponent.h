@@ -7,7 +7,7 @@
 #include "GraphicsComponents/RendererComponent/Geometry.h"
 #include "DataStructures/Vector/Vector.h"
 
-namespace BlazeGameWorld { class Entity; }
+/*namespace BlazeGameWorld { class Entity; }
 
 namespace BlazeGraphics
 {
@@ -48,4 +48,4 @@ namespace BlazeGraphics
 
 	private:
 	};
-}
+}*/

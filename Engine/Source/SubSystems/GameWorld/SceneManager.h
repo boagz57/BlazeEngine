@@ -1,5 +1,8 @@
 #pragma once
 #include "DataStructures/Vector/Vector.h"
+#include "Math/Vector2D/Vector2D.h"
+#include "Components/Appearance.h"
+#include "Components/Position.h"
 #include "GameWorld/Entity.h"
 
 class SceneManager
@@ -10,14 +13,14 @@ public:
 
 	void Update();
 
-	BlazeGameWorld::Entity* CreateEntity();
+	uint16 CreateEntity();
+	uint16 CreateTriangle(BlazeFramework::Math::Vector2D position);
 
 private:
-	uint16 numEntities;
 	uint16 const numMaxEntities;
+	Vector<uint16> bitMasks;
 
-	//Used to store all Entity objects in the game and iterate over them to call their respective
-	//Update() functions. One of the possible implementations of the Update pattern. 
-	Vector<BlazeGameWorld::Entity> entities;
+	Vector<Position> positionComponents;
+	Vector<Appearance> appearanceComponents;
 };
 

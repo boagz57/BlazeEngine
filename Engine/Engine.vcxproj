@@ -28,10 +28,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\SubSystems\GameWorld\SceneManager.cpp" />
-    <ClCompile Include="Source\SubSystems\Component.cpp" />
-    <ClCompile Include="Source\SubSystems\Input\InputComponents\KeyboardComponent\KeyboardComponent.cpp" />
     <ClCompile Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\RendererComponent.cpp" />
-    <ClCompile Include="Source\SubSystems\Physics\PhysicsComponents\CollisionComponent\CollisionComponent.cpp" />
     <ClCompile Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\Renderable.cpp" />
     <ClCompile Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\Geometry.cpp" />
     <ClCompile Include="Source\SubSystems\Audio\Audio.cpp" />
@@ -59,11 +56,11 @@
     <ClCompile Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\ShapeData.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\SubSystems\Components\Appearance.h" />
+    <ClInclude Include="Source\SubSystems\Components\Position.h" />
     <ClInclude Include="Source\SubSystems\GameWorld\SceneManager.h" />
-    <ClInclude Include="Source\SubSystems\Component.h" />
-    <ClInclude Include="Source\SubSystems\Input\InputComponents\KeyboardComponent\KeyboardComponent.h" />
+    <ClInclude Include="Source\SubSystems\Components\Component.h" />
     <ClInclude Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\RendererComponent.h" />
-    <ClInclude Include="Source\SubSystems\Physics\PhysicsComponents\CollisionComponent\CollisionComponent.h" />
     <ClInclude Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\Renderable.h" />
     <ClInclude Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\Geometry.h" />
     <ClInclude Include="Source\SubSystems\Audio\Audio.h" />

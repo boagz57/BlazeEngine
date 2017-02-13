@@ -1,5 +1,5 @@
 #include "Precompiled.h"
-#include "Universal/Macro.h"
+/*#include "Universal/Macro.h"
 #include "GLM/gtx/matrix_transform_2d.hpp"
 #include "LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "GameWorld/Entity.h"
@@ -80,4 +80,4 @@ namespace BlazeGraphics
 	{
 		this->renderable.mesh = this->mesh;
 	}
-}
+}*/

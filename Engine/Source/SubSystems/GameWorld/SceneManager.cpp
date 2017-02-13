@@ -1,14 +1,17 @@
 #include "Precompiled.h"
 #include "Universal/Macro.h"
+#include "Math/Vector2D/Vector2D.h"
+#include "Components/Component.h"
 #include "SceneManager.h"
 #include "GameWorld/Entity.h"
 
 
 SceneManager::SceneManager() :
-	numEntities(0),
 	numMaxEntities(10)
 {
-	entities.reserve(numMaxEntities);
+	bitMasks.reserve(numMaxEntities);
+	positionComponents.reserve(numMaxEntities);
+	appearanceComponents.reserve(numMaxEntities);
 }
 
 SceneManager::~SceneManager()
@@ -17,16 +20,28 @@ SceneManager::~SceneManager()
 
 void SceneManager::Update()
 {
-	for (int i = 0; i < numEntities; i++)
-		entities.at(i).Update();
 }
 
-BlazeGameWorld::Entity* SceneManager::CreateEntity()
+uint16 SceneManager::CreateEntity()
 {
-	RUNTIME_ASSERT(numEntities != numMaxEntities, "ERROR: Maximum amount of entities reached!");
+	uint16 entity;
+	for (entity = 0; entity < numMaxEntities; entity++)
+	{
+		if (bitMasks.at(entity) == NoComponent)
+			return entity;
+	}
 
-	BlazeGameWorld::Entity entity(numEntities);
-	entities.push_back(entity);
+	LOG("ERROR: Cannot create more entities!!");
+	return numMaxEntities;
+}
 
-	return &entities.at(numEntities++);
+uint16 SceneManager::CreateTriangle(BlazeFramework::Math::Vector2D startPosition)
+{
+	uint16 entity = CreateEntity();
+
+	bitMasks.at(entity) = PositionComponent;
+
+	positionComponents.at(entity).position = startPosition;
+
+	return entity;
 }

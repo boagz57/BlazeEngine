@@ -13,12 +13,8 @@ namespace BlazeGameWorld
 	{
 	public:
 		uint16 const entityID;
-		BlazeFramework::Math::Vector2D position;
 
 	protected:
-		uint16 numComponents;
-		uint16 const numMaxComponents;
-		Vector<Component*> components;
 
 	private:
 
@@ -32,8 +28,6 @@ namespace BlazeGameWorld
 		virtual bool Shutdown();
 
 		virtual void Update();
-
-		void AddComponent(Component* p_component);
 
 	protected:
 
