@@ -1,11 +1,14 @@
 #include "Precompiled.h"
+#include "Graphics/GraphicsComponents/RendererComponent/ShapeData.h"
 #include "Components/Component.h"
 #include "GameWorld/SceneManager.h"
 #include "RenderSystem.h"
 
 #define RENDER_MASK (PositionComponent)
 
-RenderSystem::RenderSystem()
+RenderSystem::RenderSystem() :
+	c_MaxBufferSize(1024),
+	c_numTransformedVertices(3)
 {
 }
 
@@ -15,6 +18,8 @@ RenderSystem::~RenderSystem()
 
 bool RenderSystem::Initialize()
 {
+	transformedVerts.resize(c_numTransformedVertices);
+
 	glGenBuffers(1, &vertexBufferID);
 	glGenBuffers(1, &indexBufferID);
 
@@ -39,22 +44,21 @@ void RenderSystem::RenderScene(SceneManager& scene)
 {
 	uint16 entity = 0;
 
+	//Loop through every 'entity' to see which entities match the
+	//render bit mask (which entity 'keys' fit into the render 'lock').
 	for (entity = 0; entity < scene.numMaxEntities; entity++)
 	{
 		if ((scene.bitMasks.at(entity) & RENDER_MASK) == RENDER_MASK)
 		{
 			Position* position = &scene.positionComponents.at(entity);
-			BlazeFramework::Math::Vector2D v{ 0.0f, 0.3f };
-			Vector<uint16> indicies{ 0,1,2 };
-			Vector<BlazeFramework::Math::Vector2D> transformedVerts
+
+			for (int i = 0; i < 3; i++)
 			{
-				BlazeFramework::Math::Vector2D(0.0f, 0.2f),
-				BlazeFramework::Math::Vector2D(-0.2f, 0.0f),
-				BlazeFramework::Math::Vector2D(0.2f, 0.0f),
+				transformedVerts.at(i) = BlazeGraphics::ShapeData::Triangle().vertices.at(i) + position->position;
 			};
 
-			glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(BlazeFramework::Math::Vector2D) * 3, &transformedVerts.front());
-			glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, sizeof(uint16) * 3, &indicies.front());
+			glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(BlazeFramework::Math::Vector2D) * transformedVerts.size(), &transformedVerts.front());//TODO: Need to make it where I only send down geometry data once in initialize() func
+			glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, sizeof(uint16) * 3, &BlazeGraphics::ShapeData::Triangle().indicies.front());
 			glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
 		}
 	}

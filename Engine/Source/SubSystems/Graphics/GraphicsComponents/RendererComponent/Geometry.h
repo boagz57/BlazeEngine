@@ -8,17 +8,16 @@ namespace BlazeGraphics
 	class Geometry
 	{
 	public:
+		Vector<BlazeFramework::Math::Vector2D> vertices;
+		Vector<uint16> indicies;
 
 	protected:
 
 	private:
-		friend class RendererComponent;
 		friend class ShapeData;
 
 		uint16 numVerts;
-		Vector<BlazeFramework::Math::Vector2D> vertices;
 		uint16 numIndicies;
-		Vector<uint16> indicies;
 		uint renderMode;
 
 		//////////////////////////////////////////////////////////////////////

@@ -1,7 +1,8 @@
 #pragma once
 #include "Universal/UniversalTypeDefs.h"
 
-struct Appearance
+//TODO: Need to rename this to geometry class
+struct Appearance 
 {
-	char8* renderShape;
+	char8* geometryShapeName;
 };

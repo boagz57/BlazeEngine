@@ -27,7 +27,7 @@ private:
 	//Component vectors. Each index of the vectors represents an entity.
 	//So positionComponents.at(0) represents position with entity 0. 
 	Vector<Position> positionComponents;
-	Vector<Appearance> appearanceComponents;
+	Vector<Appearance> geometryComponents;
 
 	uint16 const numMaxEntities;
 };

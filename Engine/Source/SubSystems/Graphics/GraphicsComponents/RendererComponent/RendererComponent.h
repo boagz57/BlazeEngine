@@ -3,7 +3,7 @@
 #include "Universal/UniversalTypeDefs.h"
 #include "Math/Vector2D/Vector2D.h"
 #include "GraphicsComponents/RendererComponent/Renderable.h"
-#include "GraphicsComponents/RendererComponent/Geometry.h"
+#include "GraphicsComponents/RendererComponent/Appearance.h"
 #include "DataStructures/Vector/Vector.h"
 
 /*namespace BlazeGameWorld { class Entity; }

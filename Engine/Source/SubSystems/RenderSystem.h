@@ -14,9 +14,9 @@ protected:
 private:
 	GLuint vertexBufferID;
 	GLuint indexBufferID;
-	uint16 const c_MaxBufferSize = 1024;
+	uint16 const c_MaxBufferSize;
 
-	uint16 const c_numTransformedVertices = 3;
+	uint16 const c_numTransformedVertices;
 	Vector<BlazeFramework::Math::Vector2D> transformedVerts;
 
 	/////////////////////////////////////////////////////////////

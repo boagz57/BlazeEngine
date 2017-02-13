@@ -10,7 +10,7 @@ SceneManager::SceneManager() :
 {
 	bitMasks.resize(numMaxEntities);
 	positionComponents.resize(numMaxEntities);
-	appearanceComponents.resize(numMaxEntities);
+	geometryComponents.resize(numMaxEntities);
 }
 
 SceneManager::~SceneManager()
