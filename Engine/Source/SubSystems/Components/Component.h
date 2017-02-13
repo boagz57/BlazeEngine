@@ -1,3 +1,5 @@
+#pragma once
+
 enum Component
 {
 	NoComponent = 0,

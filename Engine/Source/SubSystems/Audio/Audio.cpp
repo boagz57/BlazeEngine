@@ -12,14 +12,14 @@ void Audio::Initialize()
 	numberPending = 0;
 }
 
-void Audio::PlaySound(char* message, BlazeGameWorld::Entity& obj)
+/*void Audio::PlaySound(char* message, BlazeGameWorld::Entity& obj)
 {
 	RUNTIME_ASSERT(numberPending < MAX_PENDING, "ERROR: number of pending elements is more than array can hold!");
 
 	pending[numberPending].message = message;
 
 	numberPending++;
-}
+}*/
 
 void Audio::Update()
 {

@@ -3,15 +3,14 @@
 #include "Math/Vector2D/Vector2D.h"
 #include "Components/Component.h"
 #include "SceneManager.h"
-#include "GameWorld/Entity.h"
 
 
 SceneManager::SceneManager() :
 	numMaxEntities(10)
 {
-	bitMasks.reserve(numMaxEntities);
-	positionComponents.reserve(numMaxEntities);
-	appearanceComponents.reserve(numMaxEntities);
+	bitMasks.resize(numMaxEntities);
+	positionComponents.resize(numMaxEntities);
+	appearanceComponents.resize(numMaxEntities);
 }
 
 SceneManager::~SceneManager()

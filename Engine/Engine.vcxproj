@@ -32,7 +32,6 @@
     <ClCompile Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\Renderable.cpp" />
     <ClCompile Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\Geometry.cpp" />
     <ClCompile Include="Source\SubSystems\Audio\Audio.cpp" />
-    <ClCompile Include="Source\SubSystems\GameWorld\Entity.cpp" />
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\ErrorLogging\ErrorLogging.cpp" />
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\Initialization\GLInitialization.cpp" />
     <ClCompile Include="Source\SubSystems\GameWorld\World.cpp" />
@@ -66,7 +65,6 @@
     <ClInclude Include="Source\SubSystems\Audio\Audio.h" />
     <ClInclude Include="Source\DataStructures\Array\Array.h" />
     <ClInclude Include="Source\DataStructures\Vector\Vector.h" />
-    <ClInclude Include="Source\SubSystems\GameWorld\Entity.h" />
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\ErrorLogging\ErrorLogging.h" />
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\Initialization\GLInitialization.h" />
     <ClInclude Include="Source\SubSystems\GameWorld\World.h" />
@@ -77,6 +75,7 @@
     <ClInclude Include="Source\Framework\Math\Vector2D\Vector2D.h" />
     <ClInclude Include="Source\Framework\Math\Vector3D\Vector3D.h" />
     <ClInclude Include="Source\Framework\LowLevelWindow\WindowHandling.h" />
+    <ClInclude Include="Source\SubSystems\RenderSystem.h" />
     <ClInclude Include="Source\Universal\Globals.h" />
     <ClInclude Include="Source\Universal\Macro.h" />
     <ClInclude Include="Source\Universal\Precompiled.h" />

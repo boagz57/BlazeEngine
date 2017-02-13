@@ -1,8 +1,7 @@
 #include "Precompiled.h"
 #include "GameWorld/SceneManager.h"
-#include "Framework/LowLevelGraphics/OpenGL/MyOpenGL.h"
+#include "RenderSystem.h"
 #include "Universal/Globals.h"
-#include "GameWorld/Entity.h"
 #include "World.h"
 
 World::World()
@@ -23,14 +22,11 @@ bool World::Shutdown()
 
 void World::GameLoop()
 {
-	SceneManager sceneManager;
+	SceneManager scene;
 
-	BlazeGameWorld::Entity* triangle = sceneManager.CreateEntity();
-	BlazeGameWorld::Entity* enemyTriangle = sceneManager.CreateEntity();
+	uint16 triangle = scene.CreateTriangle(BlazeFramework::Math::Vector2D(0.0f, 0.2f));
 
-	triangle->Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.0f));
-	enemyTriangle->Initialize(BlazeFramework::Math::Vector2D(0.0f, 0.4f));
-
+	InitializeRenderSystem();
 	MyOpenGL::InstallShaders();
 
 	engineClock.Initialize();
@@ -40,7 +36,7 @@ void World::GameLoop()
 		window.Clear();
 		engineClock.NewFrame();
 
-		sceneManager.Update();
+		RenderSystem(scene);
 
 		window.Update();
 	};

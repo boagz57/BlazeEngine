@@ -3,7 +3,6 @@
 #include "Math/Vector2D/Vector2D.h"
 #include "Components/Appearance.h"
 #include "Components/Position.h"
-#include "GameWorld/Entity.h"
 
 class SceneManager
 {
@@ -16,11 +15,12 @@ public:
 	uint16 CreateEntity();
 	uint16 CreateTriangle(BlazeFramework::Math::Vector2D position);
 
-private:
-	uint16 const numMaxEntities;
+public:
 	Vector<uint16> bitMasks;
-
 	Vector<Position> positionComponents;
 	Vector<Appearance> appearanceComponents;
+
+private:
+	uint16 const numMaxEntities;
 };
 

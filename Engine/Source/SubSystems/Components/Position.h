@@ -4,11 +4,5 @@
 
 struct Position
 {
-	Position();
-
-	BlazeFramework::Math::Vector2D position;
+	BlazeFramework::Math::Vector2D position{ 0.0f, 0.0f };
 };
-
-Position::Position() :
-	position(0.0f, 0.0f)
-{}
