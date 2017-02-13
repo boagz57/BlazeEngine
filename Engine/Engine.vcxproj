@@ -27,11 +27,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\SubSystems\RenderSystem.cpp" />
+    <ClCompile Include="Source\SubSystems\Graphics\RenderSystem.cpp" />
     <ClCompile Include="Source\SubSystems\GameWorld\SceneManager.cpp" />
-    <ClCompile Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\RendererComponent.cpp" />
-    <ClCompile Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\Renderable.cpp" />
-    <ClCompile Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\Geometry.cpp" />
+    <ClCompile Include="Source\SubSystems\Graphics\Renderable.cpp" />
+    <ClCompile Include="Source\SubSystems\Graphics\Geometry.cpp" />
     <ClCompile Include="Source\SubSystems\Audio\Audio.cpp" />
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\ErrorLogging\ErrorLogging.cpp" />
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\Initialization\GLInitialization.cpp" />
@@ -53,17 +52,16 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\StatusChecks\StatusChecks.cpp" />
-    <ClCompile Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\ShapeData.cpp" />
+    <ClCompile Include="Source\SubSystems\Graphics\ShapeData.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\SubSystems\RenderSystem.h" />
+    <ClInclude Include="Source\SubSystems\Graphics\RenderSystem.h" />
     <ClInclude Include="Source\SubSystems\Components\Appearance.h" />
     <ClInclude Include="Source\SubSystems\Components\Position.h" />
     <ClInclude Include="Source\SubSystems\GameWorld\SceneManager.h" />
     <ClInclude Include="Source\SubSystems\Components\Component.h" />
-    <ClInclude Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\RendererComponent.h" />
-    <ClInclude Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\Renderable.h" />
-    <ClInclude Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\Geometry.h" />
+    <ClInclude Include="Source\SubSystems\Graphics\Renderable.h" />
+    <ClInclude Include="Source\SubSystems\Graphics\Geometry.h" />
     <ClInclude Include="Source\SubSystems\Audio\Audio.h" />
     <ClInclude Include="Source\DataStructures\Array\Array.h" />
     <ClInclude Include="Source\DataStructures\Vector\Vector.h" />
@@ -86,7 +84,7 @@
     <ClInclude Include="Source\Framework\Vector.h" />
     <ClInclude Include="Source\Universal\UniversalTypeDefs.h" />
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\StatusChecks\StatusChecks.h" />
-    <ClInclude Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\ShapeData.h" />
+    <ClInclude Include="Source\SubSystems\Graphics\ShapeData.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\Framework\Array.inl">

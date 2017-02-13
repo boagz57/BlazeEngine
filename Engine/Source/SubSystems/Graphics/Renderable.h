@@ -1,6 +1,6 @@
 #pragma once
 #include "Math/Vector2D/Vector2D.h"
-#include "GraphicsComponents/RendererComponent/Geometry.h"
+#include "Graphics/Geometry.h"
 
 namespace BlazeGraphics
 {

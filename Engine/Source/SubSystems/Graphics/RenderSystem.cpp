@@ -1,14 +1,18 @@
 #include "Precompiled.h"
-#include "Graphics/GraphicsComponents/RendererComponent/ShapeData.h"
+#include "Graphics/ShapeData.h"
 #include "Components/Component.h"
 #include "GameWorld/SceneManager.h"
 #include "RenderSystem.h"
 
+//Adding what components the system requires in order to process input
 #define RENDER_MASK (PositionComponent)
 
+#define NUM_BYTES 1024
+#define NUM_VERTICIES 3
+
 RenderSystem::RenderSystem() :
-	c_MaxBufferSize(1024),
-	c_numTransformedVertices(3)
+	c_MaxBufferSize(NUM_BYTES),
+	c_numTransformedVertices(NUM_VERTICIES)
 {
 }
 

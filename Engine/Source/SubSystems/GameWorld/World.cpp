@@ -1,6 +1,6 @@
 #include "Precompiled.h"
 #include "GameWorld/SceneManager.h"
-#include "SubSystems/RenderSystem.h"
+#include "Graphics/RenderSystem.h"
 #include "Framework/LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "Universal/Globals.h"
 #include "World.h"
