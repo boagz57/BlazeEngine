@@ -30,7 +30,7 @@ uint16 SceneManager::CreateEntity()
 	{
 		//Return the first empty (no bits turned on in bitMask; no 
 		//components attached) entity index found.
-		if (bitMasks.at(entity) == NoComponent)
+		if (bitMasks.at(entity) == NoComponentMask)
 			return entity;
 	}
 
@@ -42,7 +42,7 @@ uint16 SceneManager::CreateTriangle(BlazeFramework::Math::Vector2D startPosition
 {
 	uint16 entity = CreateEntity();
 
-	bitMasks.at(entity) = PositionComponent;
+	bitMasks.at(entity) = PositionComponentMask;
 
 	positionComponents.at(entity).position = startPosition;
 

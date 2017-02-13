@@ -2,7 +2,7 @@
 
 enum Component
 {
-	NoComponent = 0,
-	PositionComponent = 1 << 0,
-	AppearanceComponent = 1 << 1
+	NoComponentMask = 0,
+	PositionComponentMask = 1 << 0,
+	AppearanceComponentMask = 1 << 1
 };

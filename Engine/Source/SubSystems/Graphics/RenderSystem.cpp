@@ -5,7 +5,7 @@
 #include "RenderSystem.h"
 
 //Adding what components the system requires in order to process input
-#define RENDER_MASK (PositionComponent)
+#define RENDER_MASK (PositionComponentMask)
 
 #define NUM_BYTES 1024
 #define NUM_VERTICIES 3
@@ -54,11 +54,11 @@ void RenderSystem::RenderScene(SceneManager& scene)
 	{
 		if ((scene.bitMasks.at(entity) & RENDER_MASK) == RENDER_MASK)
 		{
-			Position* position = &scene.positionComponents.at(entity);
+			PositionComponent* entityPosition = &scene.positionComponents.at(entity);
 
 			for (int i = 0; i < 3; i++)
 			{
-				transformedVerts.at(i) = BlazeGraphics::ShapeData::Triangle().vertices.at(i) + position->position;
+				transformedVerts.at(i) = BlazeGraphics::ShapeData::Triangle().vertices.at(i) + entityPosition->position;
 			};
 
 			glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(BlazeFramework::Math::Vector2D) * transformedVerts.size(), &transformedVerts.front());//TODO: Need to make it where I only send down geometry data once in initialize() func
