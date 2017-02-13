@@ -27,6 +27,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\SubSystems\RenderSystem.cpp" />
     <ClCompile Include="Source\SubSystems\GameWorld\SceneManager.cpp" />
     <ClCompile Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\RendererComponent.cpp" />
     <ClCompile Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\Renderable.cpp" />
@@ -55,6 +56,7 @@
     <ClCompile Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\ShapeData.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\SubSystems\RenderSystem.h" />
     <ClInclude Include="Source\SubSystems\Components\Appearance.h" />
     <ClInclude Include="Source\SubSystems\Components\Position.h" />
     <ClInclude Include="Source\SubSystems\GameWorld\SceneManager.h" />
@@ -75,7 +77,6 @@
     <ClInclude Include="Source\Framework\Math\Vector2D\Vector2D.h" />
     <ClInclude Include="Source\Framework\Math\Vector3D\Vector3D.h" />
     <ClInclude Include="Source\Framework\LowLevelWindow\WindowHandling.h" />
-    <ClInclude Include="Source\SubSystems\RenderSystem.h" />
     <ClInclude Include="Source\Universal\Globals.h" />
     <ClInclude Include="Source\Universal\Macro.h" />
     <ClInclude Include="Source\Universal\Precompiled.h" />

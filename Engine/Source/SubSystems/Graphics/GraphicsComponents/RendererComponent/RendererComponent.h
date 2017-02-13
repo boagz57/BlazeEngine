@@ -2,7 +2,6 @@
 #include "GL/glew.h"
 #include "Universal/UniversalTypeDefs.h"
 #include "Math/Vector2D/Vector2D.h"
-#include "SubSystems/Component.h"
 #include "GraphicsComponents/RendererComponent/Renderable.h"
 #include "GraphicsComponents/RendererComponent/Geometry.h"
 #include "DataStructures/Vector/Vector.h"

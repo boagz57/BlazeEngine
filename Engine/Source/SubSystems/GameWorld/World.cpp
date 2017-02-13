@@ -1,6 +1,7 @@
 #include "Precompiled.h"
 #include "GameWorld/SceneManager.h"
-#include "RenderSystem.h"
+#include "SubSystems/RenderSystem.h"
+#include "Framework/LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "Universal/Globals.h"
 #include "World.h"
 
@@ -22,11 +23,13 @@ bool World::Shutdown()
 
 void World::GameLoop()
 {
+	RenderSystem renderer;
+	renderer.Initialize();
+
 	SceneManager scene;
 
 	uint16 triangle = scene.CreateTriangle(BlazeFramework::Math::Vector2D(0.0f, 0.2f));
 
-	InitializeRenderSystem();
 	MyOpenGL::InstallShaders();
 
 	engineClock.Initialize();
@@ -36,7 +39,7 @@ void World::GameLoop()
 		window.Clear();
 		engineClock.NewFrame();
 
-		RenderSystem(scene);
+		renderer.RenderScene(scene);
 
 		window.Update();
 	};
