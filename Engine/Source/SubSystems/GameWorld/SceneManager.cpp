@@ -23,9 +23,13 @@ void SceneManager::Update()
 
 uint16 SceneManager::CreateEntity()
 {
+	//There are no concrete entities. Only entity ID numbers. Each index 
+	//in all container classes represents a separate entity.
 	uint16 entity;
 	for (entity = 0; entity < numMaxEntities; entity++)
 	{
+		//Return the first empty (no bits turned on in bitMask; no 
+		//components attached) entity index found.
 		if (bitMasks.at(entity) == NoComponent)
 			return entity;
 	}

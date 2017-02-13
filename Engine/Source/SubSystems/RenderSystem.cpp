@@ -44,7 +44,7 @@ void RenderSystem::RenderScene(SceneManager& scene)
 {
 	uint16 entity = 0;
 
-	//Loop through every 'entity' to see which entities match the
+	//Loop through all 'entities' in scene to see which entities match the
 	//render bit mask (which entity 'keys' fit into the render 'lock').
 	for (entity = 0; entity < scene.numMaxEntities; entity++)
 	{
