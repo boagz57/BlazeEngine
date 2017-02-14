@@ -8,13 +8,25 @@
 SceneManager::SceneManager() :
 	numMaxEntities(10)
 {
-	bitMasks.resize(numMaxEntities);
-	positionComponents.resize(numMaxEntities);
-	geometryComponents.resize(numMaxEntities);
 }
 
 SceneManager::~SceneManager()
 {
+}
+
+bool SceneManager::Initialize()
+{
+	bitMasks.resize(numMaxEntities);
+	positionComponents.resize(numMaxEntities);
+	geometryComponents.resize(numMaxEntities);
+	velocityComponents.resize(numMaxEntities);
+
+	return false;
+}
+
+bool SceneManager::Shutdown()
+{
+	return false;
 }
 
 uint16 SceneManager::CreateEntity()
@@ -40,7 +52,7 @@ uint16 SceneManager::CreateTriangle(BlazeFramework::Math::Vector2D startPosition
 
 	//Set an entity to show as having certain components attached (creates
 	//the 'key' for the entity to see if it will fit in a system's 'lock'.
-	bitMasks.at(entity) = PositionComponentMask;
+	bitMasks.at(entity) = PositionComponentMask | VelocityComponentMask;
 
 	positionComponents.at(entity).position = startPosition;
 

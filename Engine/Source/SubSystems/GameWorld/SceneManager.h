@@ -11,6 +11,9 @@ public:
 	SceneManager();
 	~SceneManager();
 
+	bool Initialize();
+	bool Shutdown();
+
 	uint16 CreateEntity();
 	uint16 CreateTriangle(BlazeFramework::Math::Vector2D position);
 
@@ -19,6 +22,8 @@ public:
 
 private:
 	friend class RenderSystem;
+	friend class InputSystem;
+	friend class MovementSystem;
 
 	//Acts as the 'keys' which will selectively fit into system 'locks'.
 	Vector<uint32> bitMasks;

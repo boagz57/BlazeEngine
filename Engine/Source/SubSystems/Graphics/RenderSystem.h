@@ -3,6 +3,9 @@
 #include "DataStructures/Vector/Vector.h"
 #include "Math/Vector2D/Vector2D.h"
 
+//Adding what components the system requires in order to process information
+#define RENDER_MASK (PositionComponentMask)
+
 class SceneManager;
 
 class RenderSystem
@@ -28,7 +31,7 @@ public:
 	bool Initialize();
 	bool Shutdown();
 
-	void RenderScene(SceneManager& scene);
+	void Update(SceneManager& scene);
 
 protected:
 

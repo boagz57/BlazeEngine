@@ -4,9 +4,6 @@
 #include "GameWorld/SceneManager.h"
 #include "RenderSystem.h"
 
-//Adding what components the system requires in order to process input
-#define RENDER_MASK (PositionComponentMask)
-
 #define NUM_BYTES 1024
 #define NUM_VERTICIES 3
 
@@ -44,7 +41,7 @@ bool RenderSystem::Shutdown()
 	return false;
 }
 
-void RenderSystem::RenderScene(SceneManager& scene)
+void RenderSystem::Update(SceneManager& scene)
 {
 	uint16 entity = 0;
 

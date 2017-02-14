@@ -16,6 +16,8 @@ namespace BlazeGraphics
 		const uint16 cWidth = 0;
 		const char8* cpTitle = nullptr;
 
+		//InputSystem needs access to private window member
+		friend class InputSystem;
 		BlazeFramework::WindowHandling::BlazeWindow* m_window;
 
 		//////////////////////////////////////////////////////////////////////

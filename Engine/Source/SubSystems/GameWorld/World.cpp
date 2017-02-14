@@ -1,6 +1,8 @@
 #include "Precompiled.h"
-#include "GameWorld/SceneManager.h"
+#include "Input/InputSystem.h"
 #include "Graphics/RenderSystem.h"
+#include "Physics/MovementSystem.h"
+#include "GameWorld/SceneManager.h"
 #include "Framework/LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "Universal/Globals.h"
 #include "World.h"
@@ -23,10 +25,15 @@ bool World::Shutdown()
 
 void World::GameLoop()
 {
+	MovementSystem movement;
+	InputSystem input;
 	RenderSystem renderer;
-	renderer.Initialize();
-
 	SceneManager scene;
+
+	scene.Initialize();
+	movement.Initialize();
+	input.Initialize();
+	renderer.Initialize();
 
 	uint16 triangle = scene.CreateTriangle(BlazeFramework::Math::Vector2D(0.0f, 0.2f));
 
@@ -39,7 +46,9 @@ void World::GameLoop()
 		window.Clear();
 		engineClock.NewFrame();
 
-		renderer.RenderScene(scene);
+		input.Update(scene);
+		movement.Update(scene);
+		renderer.Update(scene);
 
 		window.Update();
 	};
