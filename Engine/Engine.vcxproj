@@ -27,6 +27,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\SubSystems\Physics\CollisionSystem.cpp" />
     <ClCompile Include="Source\SubSystems\Physics\MovementSystem.cpp" />
     <ClCompile Include="Source\SubSystems\Input\InputSystem.cpp" />
     <ClCompile Include="Source\SubSystems\Graphics\RenderSystem.cpp" />
@@ -57,6 +58,8 @@
     <ClCompile Include="Source\SubSystems\Graphics\ShapeData.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\SubSystems\Components\AABBComponent.h" />
+    <ClInclude Include="Source\SubSystems\Physics\CollisionSystem.h" />
     <ClInclude Include="Source\SubSystems\Physics\MovementSystem.h" />
     <ClInclude Include="Source\SubSystems\Input\InputSystem.h" />
     <ClInclude Include="Source\SubSystems\Graphics\RenderSystem.h" />

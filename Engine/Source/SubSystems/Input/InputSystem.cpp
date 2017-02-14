@@ -32,7 +32,7 @@ void InputSystem::Update(SceneManager& scene)
 	uint16 entity = 0;
 
 	//Loop through all 'entities' in scene to see which entities match the
-	//render bit mask (which entity 'keys' fit into the render 'lock').
+	//system bit mask (which entity 'keys' fit into the system 'lock').
 	for (entity = 0; entity < scene.numMaxEntities; entity++)
 	{
 		if ((scene.bitMasks.at(entity) & INPUT_MASK) == INPUT_MASK)

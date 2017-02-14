@@ -4,6 +4,7 @@
 #include "Components/Appearance.h"
 #include "Components/Position.h"
 #include "Components/Velocity.h"
+#include "Components/AABBComponent.h"
 
 class SceneManager
 {
@@ -25,6 +26,7 @@ private:
 	friend class RenderSystem;
 	friend class InputSystem;
 	friend class MovementSystem;
+	friend class CollisionSystem;
 
 	//Acts as the 'keys' which will selectively fit into system 'locks'.
 	Vector<uint32> bitMasks;
@@ -34,6 +36,7 @@ private:
 	Vector<PositionComponent> positionComponents;
 	Vector<Appearance> geometryComponents;
 	Vector<VelocityComponent> velocityComponents;
+	Vector<AABBComponent> AABBComponents;
 
 	uint16 const numMaxEntities;
 };
