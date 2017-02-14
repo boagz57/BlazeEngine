@@ -3,7 +3,7 @@
 
 class SceneManager;
 
-#define INPUT_MASK (PositionComponentMask | VelocityComponentMask)
+#define INPUT_MASK (VelocityComponentMask)
 
 class InputSystem
 {

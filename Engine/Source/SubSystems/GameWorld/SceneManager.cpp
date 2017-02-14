@@ -58,3 +58,16 @@ uint16 SceneManager::CreateTriangle(BlazeFramework::Math::Vector2D startPosition
 
 	return entity;
 }
+
+uint16 SceneManager::CreateStaticEntity(BlazeFramework::Math::Vector2D startPosition)
+{
+	uint16 entity = CreateEntity();
+
+	//Set an entity to show as having certain components attached (creates
+	//the 'key' for the entity to see if it will fit in a system's 'lock'.
+	bitMasks.at(entity) = PositionComponentMask;
+
+	positionComponents.at(entity).position = startPosition;
+
+	return entity;
+}

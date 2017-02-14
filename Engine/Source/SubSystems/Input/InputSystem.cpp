@@ -45,19 +45,15 @@ void InputSystem::Update(SceneManager& scene)
 			case BlazeFramework::Key::UpArrow:
 				entityVelocity->velocity.y += .6f;
 				break;
-
 			case BlazeFramework::Key::DownArrow:
 				entityVelocity->velocity.y += -.6f;
 				break;
-
 			case BlazeFramework::Key::RightArrow:
 				entityVelocity->velocity.x += .6f;
 				break;
-
 			case BlazeFramework::Key::LeftArrow:
 				entityVelocity->velocity.x += -.6f;
 				break;
-
 			default:
 				break;
 			}

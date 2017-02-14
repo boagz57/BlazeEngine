@@ -16,6 +16,7 @@ public:
 
 	uint16 CreateEntity();
 	uint16 CreateTriangle(BlazeFramework::Math::Vector2D position);
+	uint16 CreateStaticEntity(BlazeFramework::Math::Vector2D position);
 
 public:
 	

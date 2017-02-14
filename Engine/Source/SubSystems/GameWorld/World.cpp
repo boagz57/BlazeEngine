@@ -35,7 +35,10 @@ void World::GameLoop()
 	input.Initialize();
 	renderer.Initialize();
 
-	uint16 triangle = scene.CreateTriangle(BlazeFramework::Math::Vector2D(0.0f, 0.2f));
+	//Player
+	scene.CreateTriangle(BlazeFramework::Math::Vector2D(0.0f, 0.0f));
+	//Scenery
+	scene.CreateStaticEntity(BlazeFramework::Math::Vector2D(0.0f, 0.4f));
 
 	MyOpenGL::InstallShaders();
 
