@@ -1,7 +1,8 @@
 #pragma once
 #include "Components/Component.h"
 
-#define MOVEMENT_MASK (PositionComponentMask | VelocityComponentMask)
+//TODO: Remove AppearanceComponentMask. Just using now to prevent second entity from moving
+#define MOVEMENT_MASK (PositionComponentMask | VelocityComponentMask | AppearanceComponentMask)
 
 class SceneManager;
 

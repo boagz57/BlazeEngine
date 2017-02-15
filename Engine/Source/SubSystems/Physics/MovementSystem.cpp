@@ -37,10 +37,6 @@ void MovementSystem::Update(SceneManager& scene)
 			VelocityComponent* entityVelocity = &scene.velocityComponents.at(entity);
 			
 			entityPosition->position += (entityVelocity->velocity * engineClock.TimeSinceLastFrame());
-
-			//Need to reset velocity to zero to avoid 'floating' movement
-			entityVelocity->velocity.x = 0;
-			entityVelocity->velocity.y = 0;
 		}
 	}
 }

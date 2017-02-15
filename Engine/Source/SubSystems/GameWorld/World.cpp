@@ -2,6 +2,7 @@
 #include "Input/InputSystem.h"
 #include "Graphics/RenderSystem.h"
 #include "Physics/MovementSystem.h"
+#include "Physics/CollisionSystem.h"
 #include "GameWorld/SceneManager.h"
 #include "Framework/LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "Universal/Globals.h"
@@ -27,18 +28,22 @@ void World::GameLoop()
 {
 	MovementSystem movement;
 	InputSystem input;
+	CollisionSystem collision;
 	RenderSystem renderer;
+
 	SceneManager scene;
 
 	scene.Initialize();
-	movement.Initialize();
-	input.Initialize();
-	renderer.Initialize();
 
 	//Player
 	scene.CreateTriangle(BlazeFramework::Math::Vector2D(0.0f, 0.0f));
 	//Scenery
 	scene.CreateStaticEntity(BlazeFramework::Math::Vector2D(0.0f, 0.4f));
+
+	collision.Initialize(scene);
+	movement.Initialize();
+	input.Initialize();
+	renderer.Initialize();
 
 	MyOpenGL::InstallShaders();
 
@@ -51,6 +56,7 @@ void World::GameLoop()
 
 		input.Update(scene);
 		movement.Update(scene);
+		collision.Update(scene);
 		renderer.Update(scene);
 
 		window.Update();

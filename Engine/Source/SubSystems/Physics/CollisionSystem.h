@@ -11,9 +11,11 @@ public:
 	CollisionSystem();
 	~CollisionSystem();
 
-	bool Initialize();
+	bool Initialize(SceneManager& scene);
 	bool Shutdown();
 
 	void Update(SceneManager& scene);
 };
 
+//Free Standing Function Helper Classes
+void CheckForCollision();
