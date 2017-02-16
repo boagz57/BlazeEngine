@@ -1,7 +1,7 @@
 #pragma once
 #include "Components/Component.h"
 
-#define COLLISION_MASK (PositionComponentMask | VelocityComponentMask | AABBComponentMask)
+#define COLLISION_MASK (PositionComponentMask | AABBComponentMask)
 
 class SceneManager;
 

@@ -9,6 +9,7 @@
 static PositionComponent* entityPosition = nullptr;
 static AABBComponent* entityCollisionBox = nullptr;
 static AABBComponent* otherEntityCollisionBox = nullptr;
+static PositionComponent* otherEntityPos = nullptr;
 
 CollisionSystem::CollisionSystem()
 {
@@ -62,6 +63,7 @@ void CollisionSystem::Update(SceneManager& scene)
 		if ((scene.bitMasks.at(entity) & COLLISION_MASK) == COLLISION_MASK)
 		{
 			VelocityComponent* entityVelocity = &scene.velocityComponents.at(entity);
+			entityCollisionBox = &scene.AABBComponents.at(entity);
 
 			entityCollisionBox->max += (entityVelocity->velocity * engineClock.TimeSinceLastFrame());
 			entityCollisionBox->min += (entityVelocity->velocity * engineClock.TimeSinceLastFrame());
@@ -73,6 +75,7 @@ void CollisionSystem::Update(SceneManager& scene)
 			if (entity != 0)
 			{
 				otherEntityCollisionBox = &scene.AABBComponents.at(entity - 1);
+				otherEntityPos = &scene.positionComponents.at(entity -1);
 				CheckForCollision();
 			}
 		};
