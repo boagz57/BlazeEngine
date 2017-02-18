@@ -29,6 +29,7 @@ public:
 	
 
 private:
+	//So only systems have access to component arrays
 	friend class RenderSystem;
 	friend class InputSystem;
 	friend class MovementSystem;
@@ -37,8 +38,8 @@ private:
 	//Acts as the 'keys' which will selectively fit into system 'locks'.
 	Vector<uint32> bitMasks;
 
-	//Component vectors. Each index of the vectors represents an entity.
-	//So positionComponents.at(1) represents position with entity 1. 
+	//Component arrays. Each index of the arrays represents an entity.
+	//So positionComponents.at(1) represents entity 1's position. 
 	Vector<Position> positionComponents;
 	Vector<Appearance> geometryComponents;
 	Vector<Velocity> velocityComponents;
