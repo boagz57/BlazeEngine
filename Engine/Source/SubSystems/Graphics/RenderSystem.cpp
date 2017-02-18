@@ -4,8 +4,8 @@
 #include "GameWorld/SceneManager.h"
 #include "RenderSystem.h"
 
-static GLuint vertexBufferID;
-static GLuint indexBufferID;
+static GLuint TriangleVertexBufferID;
+static GLuint TriangleIndexBufferID;
 
 //The max buffer size in bytes I want to send down initially to GPU
 static uint16 const c_MaxBufferSize = 1024;
@@ -25,16 +25,19 @@ RenderSystem::~RenderSystem()
 
 bool RenderSystem::Initialize()
 {
+	using namespace BlazeGraphics;
+	using namespace BlazeFramework;
+
 	transformedVerts.resize(c_numTransformedVertices);
 
-	glGenBuffers(1, &vertexBufferID);
-	glGenBuffers(1, &indexBufferID);
+	glGenBuffers(1, &TriangleVertexBufferID);
+	glGenBuffers(1, &TriangleIndexBufferID);
 
-	glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferID);
+	glBindBuffer(GL_ARRAY_BUFFER, TriangleVertexBufferID);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, TriangleIndexBufferID);
 
-	glBufferData(GL_ARRAY_BUFFER, c_MaxBufferSize, nullptr, GL_DYNAMIC_DRAW);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, c_MaxBufferSize, nullptr, GL_DYNAMIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, (sizeof(Math::Vector2D) * ShapeData::Triangle().vertices.size()), &ShapeData::Triangle().vertices.front(), GL_DYNAMIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, (sizeof(uint16) * ShapeData::Triangle().indicies.size()), &ShapeData::Triangle().indicies.front(), GL_DYNAMIC_DRAW);
 
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 2, nullptr);
@@ -57,15 +60,6 @@ void RenderSystem::Update(SceneManager& scene)
 	{
 		if ((scene.bitMasks.at(entity) & RENDER_MASK) == RENDER_MASK)
 		{
-			Position* entityPosition = &scene.positionComponents.at(entity);
-
-			for (int i = 0; i < 3; i++)
-			{
-				transformedVerts.at(i) = BlazeGraphics::ShapeData::Triangle().vertices.at(i) + entityPosition->position;
-			};
-
-			glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(BlazeFramework::Math::Vector2D) * transformedVerts.size(), &transformedVerts.front());//TODO: Need to make it where I only send down geometry data once in initialize() func
-			glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, sizeof(uint16) * 3, &BlazeGraphics::ShapeData::Triangle().indicies.front());
 			glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
 		}
 	}

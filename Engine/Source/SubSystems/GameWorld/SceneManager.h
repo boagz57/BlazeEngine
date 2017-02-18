@@ -1,6 +1,6 @@
 #pragma once
 #include "DataStructures/Vector/Vector.h"
-#include "Math/Vector2D/Vector2D.h"
+#include "Math/Vector2D.h"
 #include "Components/Appearance.h"
 #include "Components/Position.h"
 #include "Components/Velocity.h"

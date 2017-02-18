@@ -1,5 +1,5 @@
 #pragma once
-#include "Math/Vector2D/Vector2D.h"
+#include "Math/Vector2D.h"
 #include "Graphics/Geometry.h"
 
 namespace BlazeGraphics
