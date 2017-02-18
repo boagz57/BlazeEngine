@@ -33,8 +33,8 @@ void MovementSystem::Update(SceneManager& scene)
 	{
 		if ((scene.bitMasks.at(entity) & MOVEMENT_MASK) == MOVEMENT_MASK)
 		{
-			PositionComponent* entityPosition = &scene.positionComponents.at(entity);
-			VelocityComponent* entityVelocity = &scene.velocityComponents.at(entity);
+			Position* entityPosition = &scene.positionComponents.at(entity);
+			Velocity* entityVelocity = &scene.velocityComponents.at(entity);
 			
 			entityPosition->position += (entityVelocity->velocity * engineClock.TimeSinceLastFrame());
 		}

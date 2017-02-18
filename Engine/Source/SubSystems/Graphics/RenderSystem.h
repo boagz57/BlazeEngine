@@ -4,7 +4,7 @@
 #include "Math/Vector2D/Vector2D.h"
 
 //Adding what components the system requires in order to process information
-#define RENDER_MASK (PositionComponentMask)
+#define RENDER_MASK (PositionComponent)
 
 class SceneManager;
 
@@ -15,12 +15,6 @@ public:
 protected:
 
 private:
-	GLuint vertexBufferID;
-	GLuint indexBufferID;
-	uint16 const c_MaxBufferSize;
-
-	uint16 const c_numTransformedVertices;
-	Vector<BlazeFramework::Math::Vector2D> transformedVerts;
 
 	/////////////////////////////////////////////////////////////
 

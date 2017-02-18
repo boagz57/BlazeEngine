@@ -58,7 +58,7 @@
     <ClCompile Include="Source\SubSystems\Graphics\ShapeData.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\SubSystems\Components\AABBComponent.h" />
+    <ClInclude Include="Source\SubSystems\Components\AABB.h" />
     <ClInclude Include="Source\SubSystems\Physics\CollisionSystem.h" />
     <ClInclude Include="Source\SubSystems\Physics\MovementSystem.h" />
     <ClInclude Include="Source\SubSystems\Input\InputSystem.h" />

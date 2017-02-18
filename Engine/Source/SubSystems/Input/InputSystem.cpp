@@ -29,15 +29,13 @@ bool InputSystem::Shutdown()
 
 void InputSystem::Update(SceneManager& scene)
 {
-	uint16 entity = 0;
-
 	//Loop through all 'entities' in scene to see which entities match the
 	//system bit mask (which entity 'keys' fit into the system 'lock').
-	for (entity = 0; entity < scene.numMaxEntities; entity++)
+	for (uint16 entity = 0; entity < scene.numMaxEntities; entity++)
 	{
 		if ((scene.bitMasks.at(entity) & INPUT_MASK) == INPUT_MASK)
 		{
-			VelocityComponent* entityVelocity = &scene.velocityComponents.at(entity);
+			Velocity* entityVelocity = &scene.velocityComponents.at(entity);
 
 			//Calls the function being stored at whatever keyCode location is polled
 			switch (BlazeFramework::KeyboardHandling::PollInput())

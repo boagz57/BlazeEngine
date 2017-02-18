@@ -4,12 +4,18 @@
 #include "GameWorld/SceneManager.h"
 #include "RenderSystem.h"
 
-#define NUM_BYTES 1024
-#define NUM_VERTICIES 3
+static GLuint vertexBufferID;
+static GLuint indexBufferID;
 
-RenderSystem::RenderSystem() :
-	c_MaxBufferSize(NUM_BYTES),
-	c_numTransformedVertices(NUM_VERTICIES)
+//The max buffer size in bytes I want to send down initially to GPU
+static uint16 const c_MaxBufferSize = 1024;
+
+//Used as a temporary storage container so we don't have to modify original
+//geometry during transformations
+Vector<BlazeFramework::Math::Vector2D> transformedVerts;
+static uint16 const c_numTransformedVertices = 3;
+
+RenderSystem::RenderSystem() 
 {
 }
 
@@ -51,7 +57,7 @@ void RenderSystem::Update(SceneManager& scene)
 	{
 		if ((scene.bitMasks.at(entity) & RENDER_MASK) == RENDER_MASK)
 		{
-			PositionComponent* entityPosition = &scene.positionComponents.at(entity);
+			Position* entityPosition = &scene.positionComponents.at(entity);
 
 			for (int i = 0; i < 3; i++)
 			{

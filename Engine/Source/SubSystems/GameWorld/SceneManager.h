@@ -4,7 +4,7 @@
 #include "Components/Appearance.h"
 #include "Components/Position.h"
 #include "Components/Velocity.h"
-#include "Components/AABBComponent.h"
+#include "Components/AABB.h"
 
 class SceneManager
 {
@@ -15,9 +15,15 @@ public:
 	bool Initialize();
 	bool Shutdown();
 
-	uint16 CreateEntity();
 	uint16 CreateTriangle(BlazeFramework::Math::Vector2D position);
 	uint16 CreateStaticEntity(BlazeFramework::Math::Vector2D position);
+
+protected:
+
+private:
+	uint16 M_CreateEntity();
+
+	///////////////////////////////////////////////////////////
 
 public:
 	
@@ -33,11 +39,10 @@ private:
 
 	//Component vectors. Each index of the vectors represents an entity.
 	//So positionComponents.at(1) represents position with entity 1. 
-	Vector<PositionComponent> positionComponents;
+	Vector<Position> positionComponents;
 	Vector<Appearance> geometryComponents;
-	Vector<VelocityComponent> velocityComponents;
-	Vector<AABBComponent> AABBComponents;
+	Vector<Velocity> velocityComponents;
+	Vector<AABB> AABBComponents;
 
 	uint16 const numMaxEntities;
 };
-

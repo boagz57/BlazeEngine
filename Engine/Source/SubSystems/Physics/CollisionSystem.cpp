@@ -1,15 +1,15 @@
 #include "Precompiled.h"
 #include "GameWorld/SceneManager.h"
 #include "Universal/Globals.h"
-#include "Components/AABBComponent.h"
+#include "Components/AABB.h"
 #include "Components/Position.h"
 #include "Components/Velocity.h"
 #include "CollisionSystem.h"
 
-static PositionComponent* entityPosition = nullptr;
-static AABBComponent* entityCollisionBox = nullptr;
-static AABBComponent* otherEntityCollisionBox = nullptr;
-static PositionComponent* otherEntityPos = nullptr;
+static Position* entityPosition = nullptr;
+static AABB* entityCollisionBox = nullptr;
+static AABB* otherEntityCollisionBox = nullptr;
+static Position* otherEntityPos = nullptr;
 
 CollisionSystem::CollisionSystem()
 {
@@ -21,11 +21,9 @@ CollisionSystem::~CollisionSystem()
 
 bool CollisionSystem::Initialize(SceneManager& scene)
 {
-	uint16 entity = 0;
-
 	//Loop through all 'entities' in scene to see which entities match the
 	//system bit mask (which entity 'keys' fit into the system 'lock').
-	for (entity = 0; entity < scene.numMaxEntities; entity++)
+	for (uint16 entity = 0; entity < scene.numMaxEntities; entity++)
 	{
 		if ((scene.bitMasks.at(entity) & COLLISION_MASK) == COLLISION_MASK)
 		{
@@ -54,15 +52,13 @@ bool CollisionSystem::Shutdown()
 
 void CollisionSystem::Update(SceneManager& scene)
 {
-	uint16 entity = 0;
-
 	//Loop through all 'entities' in scene to see which entities match the
 	//system bit mask (which entity 'keys' fit into the system 'lock').
-	for (entity = 0; entity < scene.numMaxEntities; entity++)
+	for (uint16 entity = 0; entity < scene.numMaxEntities; entity++)
 	{
 		if ((scene.bitMasks.at(entity) & COLLISION_MASK) == COLLISION_MASK)
 		{
-			VelocityComponent* entityVelocity = &scene.velocityComponents.at(entity);
+			Velocity* entityVelocity = &scene.velocityComponents.at(entity);
 			entityCollisionBox = &scene.AABBComponents.at(entity);
 
 			entityCollisionBox->max += (entityVelocity->velocity * engineClock.TimeSinceLastFrame());
