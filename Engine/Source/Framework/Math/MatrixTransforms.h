@@ -4,6 +4,6 @@
 
 namespace BlazeFramework
 {
-	Matrix4x4 Translate(Matrix4x4 matrix, Math::Vector3D amountToMove);
+	Matrix4x4 Translate(Matrix4x4 matrix, Vector3D amountToMove);
 }
 
