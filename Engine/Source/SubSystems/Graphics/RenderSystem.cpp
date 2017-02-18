@@ -12,7 +12,7 @@ static uint16 const c_MaxBufferSize = 1024;
 
 //Used as a temporary storage container so we don't have to modify original
 //geometry during transformations
-Vector<BlazeFramework::Math::Vector2D> transformedVerts;
+Vector<BlazeFramework::Vector2D> transformedVerts;
 static uint16 const c_numTransformedVertices = 3;
 
 RenderSystem::RenderSystem() 
@@ -36,7 +36,7 @@ bool RenderSystem::Initialize()
 	glBindBuffer(GL_ARRAY_BUFFER, TriangleVertexBufferID);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, TriangleIndexBufferID);
 
-	glBufferData(GL_ARRAY_BUFFER, (sizeof(Math::Vector2D) * ShapeData::Triangle().vertices.size()), &ShapeData::Triangle().vertices.front(), GL_DYNAMIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, (sizeof(Vector2D) * ShapeData::Triangle().vertices.size()), &ShapeData::Triangle().vertices.front(), GL_DYNAMIC_DRAW);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, (sizeof(uint16) * ShapeData::Triangle().indicies.size()), &ShapeData::Triangle().indicies.front(), GL_DYNAMIC_DRAW);
 
 	glEnableVertexAttribArray(0);

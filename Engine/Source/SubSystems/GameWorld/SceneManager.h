@@ -15,8 +15,8 @@ public:
 	bool Initialize();
 	bool Shutdown();
 
-	uint16 CreateTriangle(BlazeFramework::Math::Vector2D position);
-	uint16 CreateStaticEntity(BlazeFramework::Math::Vector2D position);
+	uint16 CreateTriangle(BlazeFramework::Vector2D position);
+	uint16 CreateStaticEntity(BlazeFramework::Vector2D position);
 
 protected:
 

@@ -45,7 +45,7 @@ uint16 SceneManager::M_CreateEntity()
 	return numMaxEntities;
 }
 
-uint16 SceneManager::CreateTriangle(BlazeFramework::Math::Vector2D startPosition)
+uint16 SceneManager::CreateTriangle(BlazeFramework::Vector2D startPosition)
 {
 	uint16 entity = M_CreateEntity();
 
@@ -58,7 +58,7 @@ uint16 SceneManager::CreateTriangle(BlazeFramework::Math::Vector2D startPosition
 	return entity;
 }
 
-uint16 SceneManager::CreateStaticEntity(BlazeFramework::Math::Vector2D startPosition)
+uint16 SceneManager::CreateStaticEntity(BlazeFramework::Vector2D startPosition)
 {
 	uint16 entity = M_CreateEntity();
 

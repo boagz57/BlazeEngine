@@ -13,7 +13,6 @@
 namespace MyOpenGL
 {
 	using namespace BlazeFramework;
-	using namespace Math;
 
 	std::string ReadShaderCode(const char8* cShaderFilePath, const char8* cTypeOfShader)
 	{

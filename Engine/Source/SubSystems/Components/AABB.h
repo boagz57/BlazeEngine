@@ -5,7 +5,7 @@
 struct AABB
 {
 	//Bottom left corner of box
-	BlazeFramework::Math::Vector2D min;
+	BlazeFramework::Vector2D min;
 	//Top right corner of box
-	BlazeFramework::Math::Vector2D max;
+	BlazeFramework::Vector2D max;
 };

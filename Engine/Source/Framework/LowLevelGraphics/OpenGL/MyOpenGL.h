@@ -10,7 +10,6 @@
 
 namespace MyOpenGL
 {
-	void InitializeGLBuffers(Vector<BlazeFramework::Math::Vector2D> objVerts);
 	std::string ReadShaderCode(const char8* cFileName, const char8* cTypeOfShader);
 	void InstallShaders();
 }

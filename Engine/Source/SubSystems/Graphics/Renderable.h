@@ -7,7 +7,7 @@ namespace BlazeGraphics
 	class Renderable
 	{
 	public:
-		BlazeFramework::Math::Vector2D location;
+		BlazeFramework::Vector2D location;
 
 	protected:
 

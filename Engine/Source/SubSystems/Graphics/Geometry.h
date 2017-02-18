@@ -8,7 +8,7 @@ namespace BlazeGraphics
 	class Geometry
 	{
 	public:
-		Vector<BlazeFramework::Math::Vector2D> vertices;
+		Vector<BlazeFramework::Vector2D> vertices;
 		Vector<uint16> indicies;
 
 	protected:
