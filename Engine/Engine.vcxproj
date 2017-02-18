@@ -58,6 +58,7 @@
     <ClCompile Include="Source\SubSystems\Graphics\ShapeData.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Framework\Math\Matrix4x4.h" />
     <ClInclude Include="Source\SubSystems\Components\AABB.h" />
     <ClInclude Include="Source\SubSystems\Physics\CollisionSystem.h" />
     <ClInclude Include="Source\SubSystems\Physics\MovementSystem.h" />

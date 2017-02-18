@@ -16,9 +16,9 @@ namespace BlazeGraphics
 	{
 		Vector<BlazeFramework::Math::Vector2D> triangleVerts
 		{
-			BlazeFramework::Math::Vector2D(+0.0f, +0.2f, 0.0f),
-			BlazeFramework::Math::Vector2D(-0.1f, 0.0f, 0.0f),
-			BlazeFramework::Math::Vector2D(+0.1f, 0.0f, 0.0f)
+			BlazeFramework::Math::Vector2D(+0.0f, +0.2f),
+			BlazeFramework::Math::Vector2D(-0.1f, 0.0f),
+			BlazeFramework::Math::Vector2D(+0.1f, 0.0f)
 		};
 
 		Vector<uint16> triangleIndicies
