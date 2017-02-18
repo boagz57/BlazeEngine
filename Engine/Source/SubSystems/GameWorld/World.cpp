@@ -36,9 +36,9 @@ void World::GameLoop()
 	scene.Initialize();
 
 	//Player
-	scene.CreateTriangle(BlazeFramework::Math::Vector2D(0.0f, 0.0f));
+	scene.CreateTriangle(BlazeFramework::Math::Vector2D(0.0f, 0.0f, 0.0f));
 	//Scenery
-	scene.CreateStaticEntity(BlazeFramework::Math::Vector2D(0.0f, 0.4f));
+	scene.CreateStaticEntity(BlazeFramework::Math::Vector2D(0.0f, 0.4f, 0.0f));
 
 	collision.Initialize(scene);
 	movement.Initialize();

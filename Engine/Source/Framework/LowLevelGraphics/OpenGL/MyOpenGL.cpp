@@ -15,26 +15,6 @@ namespace MyOpenGL
 	using namespace BlazeFramework;
 	using namespace Math;
 
-	void InitializeGLBuffers(Vector<Vector2D> objVerts)
-	{
-		GLuint bufferID;
-		glGenBuffers(1, &bufferID);
-		glBindBuffer(GL_ARRAY_BUFFER, bufferID);
-		glBufferData(GL_ARRAY_BUFFER, objVerts.size() * sizeof(Vector2D), &objVerts.front(), GL_STATIC_DRAW);
-		glEnableVertexAttribArray(0);
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, (sizeof(GLfloat)) * 3, nullptr);
-
-		GLushort indices[] =
-		{
-			0,1,2
-		};
-
-		GLuint indexBufferID;
-		glGenBuffers(1, &indexBufferID);
-		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferID);
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-	}
-
 	std::string ReadShaderCode(const char8* cShaderFilePath, const char8* cTypeOfShader)
 	{
 		std::ifstream shaderFileInputStream(cShaderFilePath);
@@ -62,7 +42,6 @@ namespace MyOpenGL
 		cAdapter[0] = temp.c_str();
 		glShaderSource(FragmentShaderID, 1, cAdapter, 0);
 
-		//Compile GL Shader
 		glCompileShader(vertexShaderID);
 		glCompileShader(FragmentShaderID);
 
@@ -74,7 +53,6 @@ namespace MyOpenGL
 		glAttachShader(programID, vertexShaderID);
 		glAttachShader(programID, FragmentShaderID);
 
-		//Link GL Program
 		glLinkProgram(programID);
 
 		if (!BlazeFramework::OpenGL::CheckGLProgramStatus(programID))
@@ -83,7 +61,6 @@ namespace MyOpenGL
 			return;
 		}
 
-		//Use program
 		glUseProgram(programID);
 	}
 }
