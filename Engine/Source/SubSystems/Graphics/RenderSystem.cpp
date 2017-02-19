@@ -42,7 +42,9 @@ void RenderSystem::Update(SceneManager& scene)
 		{
 			Position* entityPosition= &scene.positionComponents.at(entity);
 
-			MyOpenGL::sendUniformVec2Data("newPosition", &entityPosition->position[0]);
+			BlazeFramework::Matrix4x4 translationMatrix = BlazeFramework::Translate(BlazeFramework::Vector3D(entityPosition->position.x, entityPosition->position.y, 0.0f));
+
+			MyOpenGL::sendUniformMat4Data("translationMatrix", &translationMatrix[0][0]);
 
 			MyOpenGL::Draw();
 		}

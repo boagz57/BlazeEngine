@@ -10,6 +10,6 @@ out vec3 theColor;
 
 void main()
 {
-	gl_Position = vec4(position, 0.0f, 0.0f) + vec4(newPosition, 0.0f, 1.0f); 
+	gl_Position = translationMatrix * vec4(position, 0.0f, 1.0f);
 	theColor = vertexColor;
 };
