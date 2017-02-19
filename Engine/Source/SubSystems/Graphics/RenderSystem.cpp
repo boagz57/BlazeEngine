@@ -1,15 +1,10 @@
 #include "Precompiled.h"
 #include "Graphics/ShapeData.h"
 #include "Math/MatrixTransforms.h"
+#include "Framework/LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "Components/Component.h"
 #include "GameWorld/SceneManager.h"
 #include "RenderSystem.h"
-
-static GLuint TriangleVertexBufferID;
-static GLuint TriangleIndexBufferID;
-
-//The max buffer size in bytes I want to send down initially to GPU
-static uint16 const c_MaxBufferSize = 1024;
 
 //Used as a temporary storage container so we don't have to modify original
 //geometry during transformations
@@ -26,22 +21,8 @@ RenderSystem::~RenderSystem()
 
 bool RenderSystem::Initialize()
 {
-	using namespace BlazeGraphics;
-	using namespace BlazeFramework;
-
 	transformedVerts.resize(c_numTransformedVertices);
-
-	glGenBuffers(1, &TriangleVertexBufferID);
-	glGenBuffers(1, &TriangleIndexBufferID);
-
-	glBindBuffer(GL_ARRAY_BUFFER, TriangleVertexBufferID);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, TriangleIndexBufferID);
-
-	glBufferData(GL_ARRAY_BUFFER, (sizeof(Vector2D) * ShapeData::Triangle().vertices.size()), &ShapeData::Triangle().vertices.front(), GL_DYNAMIC_DRAW);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, (sizeof(uint16) * ShapeData::Triangle().indicies.size()), &ShapeData::Triangle().indicies.front(), GL_DYNAMIC_DRAW);
-
-	glEnableVertexAttribArray(0);
-	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 2, nullptr);
+	MyOpenGL::InitializeBuffers();
 
 	return false;
 }
@@ -59,10 +40,10 @@ void RenderSystem::Update(SceneManager& scene)
 	{
 		if ((scene.bitMasks.at(entity) & RENDER_MASK) == RENDER_MASK)
 		{
+			BlazeFramework::Matrix4x4 translationMat = BlazeFramework::Translate(BlazeFramework::Vector3D(0.04f, 0.0f, 0.0f));
+			MyOpenGL::sendUniformMat4Data("translationMatrix", &translationMat[0][0]);
 
-			BlazeFramework::Matrix4x4 translationMat = BlazeFramework::Translate(BlazeFramework::Vector3D(0.4f, 0.0f, 0.0f));
-
-			glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
+			MyOpenGL::Draw();
 		}
 	}
 }

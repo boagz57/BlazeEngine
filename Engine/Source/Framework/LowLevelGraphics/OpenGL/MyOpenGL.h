@@ -10,6 +10,9 @@
 
 namespace MyOpenGL
 {
+	void InitializeBuffers();
 	std::string ReadShaderCode(const char8* cFileName, const char8* cTypeOfShader);
 	void InstallShaders();
+	void sendUniformMat4Data(const char8* whatShaderVariableToSendTo, GLfloat* matrixData);
+	void Draw();
 }
