@@ -29,7 +29,7 @@ void World::GameLoop()
 	MovementSystem movement;
 	InputSystem input;
 	CollisionSystem collision;
-	RenderSystem renderer;
+	BlazeGraphics::RenderSystem renderer;
 
 	SceneManager scene;
 

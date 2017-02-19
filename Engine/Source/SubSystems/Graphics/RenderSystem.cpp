@@ -1,6 +1,7 @@
 #include "Precompiled.h"
 #include "Graphics/ShapeData.h"
 #include "Math/MatrixTransforms.h"
+#include "Graphics/ShapeData.h"
 #include "Framework/LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "Components/Component.h"
 #include "GameWorld/SceneManager.h"
@@ -11,42 +12,46 @@
 Vector<BlazeFramework::Vector2D> transformedVerts;
 static uint16 const c_numTransformedVertices = 3;
 
-RenderSystem::RenderSystem() 
+namespace BlazeGraphics
 {
-}
-
-RenderSystem::~RenderSystem()
-{
-}
-
-bool RenderSystem::Initialize()
-{
-	transformedVerts.resize(c_numTransformedVertices);
-	MyOpenGL::InitializeBuffers();
-
-	return false;
-}
-
-bool RenderSystem::Shutdown()
-{
-	return false;
-}
-
-void RenderSystem::Update(SceneManager& scene)
-{
-	//Loop through all 'entities' in scene to see which entities match the
-	//render bit mask (which entity 'keys' fit into the render 'lock').
-	for (uint16 entity = 0; entity < scene.numMaxEntities; entity++)
+	RenderSystem::RenderSystem()
 	{
-		if ((scene.bitMasks.at(entity) & RENDER_MASK) == RENDER_MASK)
+	}
+
+	RenderSystem::~RenderSystem()
+	{
+	}
+
+	bool RenderSystem::Initialize()
+	{
+		transformedVerts.resize(c_numTransformedVertices);
+
+		MyOpenGL::InitializeBuffers(ShapeData::Triangle().vertices.size(), &ShapeData::Triangle().vertices.front(), ShapeData::Triangle().indicies.size(), &ShapeData::Triangle().indicies.front());
+
+		return false;
+	}
+
+	bool RenderSystem::Shutdown()
+	{
+		return false;
+	}
+
+	void RenderSystem::Update(SceneManager& scene)
+	{
+		//Loop through all 'entities' in scene to see which entities match the
+		//render bit mask (which entity 'keys' fit into the render 'lock').
+		for (uint16 entity = 0; entity < scene.numMaxEntities; entity++)
 		{
-			Position* entityPosition= &scene.positionComponents.at(entity);
+			if ((scene.bitMasks.at(entity) & RENDER_MASK) == RENDER_MASK)
+			{
+				Position* entityPosition = &scene.positionComponents.at(entity);
 
-			BlazeFramework::Matrix4x4 translationMatrix = BlazeFramework::Translate(BlazeFramework::Vector3D(entityPosition->position.x, entityPosition->position.y, 0.0f));
+				BlazeFramework::Matrix4x4 translationMatrix = BlazeFramework::Translate(BlazeFramework::Vector3D(entityPosition->position.x, entityPosition->position.y, 0.0f));
 
-			MyOpenGL::sendUniformMat4Data("translationMatrix", &translationMatrix[0][0]);
+				MyOpenGL::sendUniformMat4Data("translationMatrix", &translationMatrix[0][0]);
 
-			MyOpenGL::Draw();
+				MyOpenGL::Draw();
+			}
 		}
 	}
 }

@@ -6,6 +6,8 @@
 #include "Components/Velocity.h"
 #include "Components/AABB.h"
 
+namespace BlazeGraphics { class RenderSystem; }
+
 class SceneManager
 {
 public:
@@ -30,7 +32,7 @@ public:
 
 private:
 	//So only systems have access to component arrays
-	friend class RenderSystem;
+	friend class BlazeGraphics::RenderSystem;
 	friend class InputSystem;
 	friend class MovementSystem;
 	friend class CollisionSystem;

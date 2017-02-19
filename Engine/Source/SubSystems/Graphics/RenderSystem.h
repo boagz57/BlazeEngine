@@ -8,26 +8,29 @@
 
 class SceneManager;
 
-class RenderSystem
+namespace BlazeGraphics
 {
-public:
+	class RenderSystem
+	{
+	public:
 
-protected:
+	protected:
 
-private:
+	private:
 
-	/////////////////////////////////////////////////////////////
+		/////////////////////////////////////////////////////////////
 
-public:
-	RenderSystem();
-	~RenderSystem();
+	public:
+		RenderSystem();
+		~RenderSystem();
 
-	bool Initialize();
-	bool Shutdown();
+		bool Initialize();
+		bool Shutdown();
 
-	void Update(SceneManager& scene);
+		void Update(SceneManager& scene);
 
-protected:
+	protected:
 
-private:
-};
+	private:
+	};
+}

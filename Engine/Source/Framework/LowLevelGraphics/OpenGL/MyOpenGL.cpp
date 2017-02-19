@@ -3,7 +3,6 @@
 #include "Universal/UniversalTypeDefs.h"
 #include <fstream>
 #include "GL/glew.h"
-#include "ShapeData.h"
 #include "MyOpenGL.h"
 #include "DataStructures/Vector/Vector.h"
 #include "Math/Vector2D.h"
@@ -22,19 +21,16 @@ namespace MyOpenGL
 {
 	using namespace BlazeFramework;
 
-	void InitializeBuffers()
-	{
-		using namespace BlazeGraphics;
-		using namespace BlazeFramework;
-
+	void InitializeBuffers(int64 sizeOfGeometry, const void* GeometryDataFirstElement, int64 sizeOfIndicies, const void* indicieDataFirstElement)
+{
 		glGenBuffers(1, &TriangleVertexBufferID);
 		glGenBuffers(1, &TriangleIndexBufferID);
 
 		glBindBuffer(GL_ARRAY_BUFFER, TriangleVertexBufferID);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, TriangleIndexBufferID);
 
-		glBufferData(GL_ARRAY_BUFFER, (sizeof(Vector2D) * ShapeData::Triangle().vertices.size()), &ShapeData::Triangle().vertices.front(), GL_DYNAMIC_DRAW);//TODO: Remove dependecy on Shapedata class. Have a parameter that accepts vector or something similar to what original bindBuffer() accepts
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, (sizeof(uint16) * ShapeData::Triangle().indicies.size()), &ShapeData::Triangle().indicies.front(), GL_DYNAMIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, (sizeof(Vector2D) * sizeOfGeometry), GeometryDataFirstElement, GL_DYNAMIC_DRAW);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, (sizeof(uint16) * sizeOfIndicies), indicieDataFirstElement, GL_DYNAMIC_DRAW);
 
 		glEnableVertexAttribArray(0);
 		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 2, nullptr);
