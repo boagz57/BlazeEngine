@@ -33,9 +33,9 @@ namespace BlazeGraphics
 			{
 				Appearance* entityAppearance = &scene.appearanceComponents.at(entity);
 
-				if (entityAppearance->geometryShapeName == "Triangle")
+				if (entityAppearance->geometryShapeName == "Square")
 				{
-					MyOpenGL::InitializeBuffers(ShapeData::Triangle().vertices.size(), &ShapeData::Triangle().vertices.front(), ShapeData::Triangle().indicies.size(), &ShapeData::Triangle().indicies.front());
+					MyOpenGL::InitializeBuffers(ShapeData::Square().vertices.size(), &ShapeData::Square().vertices.front(), ShapeData::Square().indicies.size(), &ShapeData::Square().indicies.front());
 				};
 			};
 		};

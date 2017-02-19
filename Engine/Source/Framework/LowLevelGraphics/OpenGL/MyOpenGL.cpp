@@ -12,6 +12,9 @@
 static GLuint TriangleVertexBufferID;
 static GLuint TriangleIndexBufferID;
 
+static GLuint squareVertexBufferID;
+static GLuint squareIndexBufferID;
+
 //The max buffer size in bytes I want to send down initially to GPU
 static uint16 const c_MaxBufferSize = 1024;
 
@@ -23,11 +26,11 @@ namespace MyOpenGL
 
 	void InitializeBuffers(int64 sizeOfGeometry, const void* GeometryDataFirstElement, int64 sizeOfIndicies, const void* indicieDataFirstElement)
 {
-		glGenBuffers(1, &TriangleVertexBufferID);
-		glGenBuffers(1, &TriangleIndexBufferID);
+		glGenBuffers(1, &squareVertexBufferID);
+		glGenBuffers(1, &squareIndexBufferID);
 
-		glBindBuffer(GL_ARRAY_BUFFER, TriangleVertexBufferID);
-		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, TriangleIndexBufferID);
+		glBindBuffer(GL_ARRAY_BUFFER, squareVertexBufferID);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, squareIndexBufferID);
 
 		glBufferData(GL_ARRAY_BUFFER, (sizeof(Vector2D) * sizeOfGeometry), GeometryDataFirstElement, GL_DYNAMIC_DRAW);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, (sizeof(uint16) * sizeOfIndicies), indicieDataFirstElement, GL_DYNAMIC_DRAW);
@@ -97,6 +100,6 @@ namespace MyOpenGL
 
 	void Draw()
 	{
-		glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, 0);
 	}
 }

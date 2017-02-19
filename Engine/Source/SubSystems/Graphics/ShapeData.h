@@ -19,6 +19,7 @@ namespace BlazeGraphics
 		~ShapeData();
 
 		static Geometry Triangle();
+		static Geometry Square();
 
 	protected:
 		

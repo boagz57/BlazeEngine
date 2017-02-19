@@ -33,4 +33,28 @@ namespace BlazeGraphics
 
 		return geometry;
 	}
+
+	BlazeGraphics::Geometry ShapeData::Square()
+	{
+		Vector<BlazeFramework::Vector2D> squareVerts 
+		{
+			BlazeFramework::Vector2D(-0.1f, +0.2f),//0
+			BlazeFramework::Vector2D(-0.1f, -0.1f), //1
+			BlazeFramework::Vector2D(+0.1f, 0.2f), //2
+			BlazeFramework::Vector2D(+0.1f, -0.1f)  //3
+		};
+
+		Vector<uint16> squareIndices 
+		{
+			0,1,2,3,1,2
+		};
+
+		geometry.numVerts = 4;
+		geometry.vertices = squareVerts;
+		geometry.numIndicies = 6;
+		geometry.indicies = squareIndices;
+
+		return geometry;
+	}
+
 }

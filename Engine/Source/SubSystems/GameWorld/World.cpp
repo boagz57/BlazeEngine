@@ -36,7 +36,7 @@ void World::GameLoop()
 	scene.Initialize();
 
 	//Player
-	scene.CreatePlayer(BlazeFramework::Vector2D(0.0f, 0.0f), "Triangle");
+	scene.CreatePlayer(BlazeFramework::Vector2D(0.0f, 0.0f), "Square");
 	//Scenery
 	scene.CreateStaticEntity(BlazeFramework::Vector2D(0.0f, 0.4f));
 
