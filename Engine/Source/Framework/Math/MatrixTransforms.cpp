@@ -1,13 +1,18 @@
 #include "Precompiled.h"
-#include "GLM/gtc/matrix_transform.hpp"
+#include "GLM/gtx/transform.hpp"//TODO: For faster implementation, need to use gtc/matrix_transform header
 #include "Vector4D.h"
 #include "MatrixTransforms.h"
 
 namespace BlazeFramework
 {
-	Matrix4x4 Translate(Matrix4x4 matrix, Vector3D amountToMove)
+	Matrix4x4 Translate(Vector3D amountToMove)
 	{
+		return glm::translate(amountToMove);//TODO: For faster implementation, change this translate function to glm's other translate function which takes in another matrix as a parameter
+	}
 
+	uint OrthoProjection(sfloat left, sfloat right, sfloat bottom, sfloat top)
+	{
+		return glm::ortho(left, right, bottom, top);
 	}
 }
 

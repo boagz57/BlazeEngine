@@ -1,5 +1,6 @@
 #include "Precompiled.h"
 #include "Graphics/ShapeData.h"
+#include "Math/MatrixTransforms.h"
 #include "Components/Component.h"
 #include "GameWorld/SceneManager.h"
 #include "RenderSystem.h"
@@ -52,11 +53,9 @@ bool RenderSystem::Shutdown()
 
 void RenderSystem::Update(SceneManager& scene)
 {
-	uint16 entity = 0;
-
 	//Loop through all 'entities' in scene to see which entities match the
 	//render bit mask (which entity 'keys' fit into the render 'lock').
-	for (entity = 0; entity < scene.numMaxEntities; entity++)
+	for (uint16 entity = 0; entity < scene.numMaxEntities; entity++)
 	{
 		if ((scene.bitMasks.at(entity) & RENDER_MASK) == RENDER_MASK)
 		{
