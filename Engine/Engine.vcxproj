@@ -27,6 +27,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Framework\Math\MatrixTransforms.cpp" />
     <ClCompile Include="Source\SubSystems\Physics\CollisionSystem.cpp" />
     <ClCompile Include="Source\SubSystems\Physics\MovementSystem.cpp" />
     <ClCompile Include="Source\SubSystems\Input\InputSystem.cpp" />
@@ -58,7 +59,10 @@
     <ClCompile Include="Source\SubSystems\Graphics\ShapeData.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Framework\Math\Matrix3x3.h" />
     <ClInclude Include="Source\Framework\Math\Matrix4x4.h" />
+    <ClInclude Include="Source\Framework\Math\MatrixTransforms.h" />
+    <ClInclude Include="Source\Framework\Math\Vector4D.h" />
     <ClInclude Include="Source\SubSystems\Components\AABB.h" />
     <ClInclude Include="Source\SubSystems\Physics\CollisionSystem.h" />
     <ClInclude Include="Source\SubSystems\Physics\MovementSystem.h" />

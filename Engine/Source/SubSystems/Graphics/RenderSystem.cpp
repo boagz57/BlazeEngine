@@ -59,6 +59,9 @@ void RenderSystem::Update(SceneManager& scene)
 	{
 		if ((scene.bitMasks.at(entity) & RENDER_MASK) == RENDER_MASK)
 		{
+
+			BlazeFramework::Matrix4x4 translationMat = BlazeFramework::Translate(BlazeFramework::Vector3D(0.4f, 0.0f, 0.0f));
+
 			glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
 		}
 	}

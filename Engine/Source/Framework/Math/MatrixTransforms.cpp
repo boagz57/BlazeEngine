@@ -10,7 +10,7 @@ namespace BlazeFramework
 		return glm::translate(amountToMove);//TODO: For faster implementation, change this translate function to glm's other translate function which takes in another matrix as a parameter
 	}
 
-	uint OrthoProjection(sfloat left, sfloat right, sfloat bottom, sfloat top)
+	Matrix4x4 OrthoProjection(sfloat left, sfloat right, sfloat bottom, sfloat top)
 	{
 		return glm::ortho(left, right, bottom, top);
 	}
