@@ -64,7 +64,7 @@ void CollisionSystem::Update(SceneManager& scene)
 			entityCollisionBox->max += (entityVelocity->velocity * engineClock.TimeSinceLastFrame());
 			entityCollisionBox->min += (entityVelocity->velocity * engineClock.TimeSinceLastFrame());
 
-			//Need to reset velocity to zero to avoid 'floating' movement
+			//Need to reset velocity to zero to avoid 'floating' movement effect
 			entityVelocity->velocity.x = 0;
 			entityVelocity->velocity.y = 0;
 
