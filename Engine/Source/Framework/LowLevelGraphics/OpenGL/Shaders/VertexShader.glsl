@@ -6,12 +6,10 @@ in layout(location=1) vec3 vertexColor;
 uniform mat4 translationMatrix;
 uniform vec2 newPosition;
 
-vec4 position = vec4(position, 0.0f, 0.0f);
-
 out vec3 theColor;
 
 void main()
 {
-	gl_Position = position + vec4(newPosition, 0.0f, 1.0f); 
+	gl_Position = vec4(position, 0.0f, 0.0f) + vec4(newPosition, 0.0f, 1.0f); 
 	theColor = vertexColor;
 };
