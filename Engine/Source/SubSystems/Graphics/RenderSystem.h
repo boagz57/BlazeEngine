@@ -24,7 +24,7 @@ namespace BlazeGraphics
 		RenderSystem();
 		~RenderSystem();
 
-		bool Initialize();
+		bool Initialize(SceneManager& scene);
 		bool Shutdown();
 
 		void Update(SceneManager& scene);

@@ -17,7 +17,7 @@ public:
 	bool Initialize();
 	bool Shutdown();
 
-	uint16 CreateTriangle(BlazeFramework::Vector2D position);
+	uint16 CreatePlayer(BlazeFramework::Vector2D position, char8* shapeToRender);
 	uint16 CreateStaticEntity(BlazeFramework::Vector2D position);
 
 protected:
@@ -43,7 +43,7 @@ private:
 	//Component arrays. Each index of the arrays represents an entity.
 	//So positionComponents.at(1) represents entity 1's position. 
 	Vector<Position> positionComponents;
-	Vector<Appearance> geometryComponents;
+	Vector<Appearance> appearanceComponents;
 	Vector<Velocity> velocityComponents;
 	Vector<AABB> AABBComponents;
 

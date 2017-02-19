@@ -3,6 +3,7 @@
 #include "Math/MatrixTransforms.h"
 #include "Graphics/ShapeData.h"
 #include "Framework/LowLevelGraphics/OpenGL/MyOpenGL.h"
+#include "Components/Position.h"
 #include "Components/Component.h"
 #include "GameWorld/SceneManager.h"
 #include "RenderSystem.h"
@@ -22,11 +23,22 @@ namespace BlazeGraphics
 	{
 	}
 
-	bool RenderSystem::Initialize()
+	bool RenderSystem::Initialize(SceneManager& scene)
 	{
 		transformedVerts.resize(c_numTransformedVertices);
 
-		MyOpenGL::InitializeBuffers(ShapeData::Triangle().vertices.size(), &ShapeData::Triangle().vertices.front(), ShapeData::Triangle().indicies.size(), &ShapeData::Triangle().indicies.front());
+		for (uint16 entity = 0; entity < scene.numMaxEntities; entity++)
+		{
+			if ((scene.bitMasks.at(entity) & RENDER_MASK) == RENDER_MASK)
+			{
+				Appearance* entityAppearance = &scene.appearanceComponents.at(entity);
+
+				if (entityAppearance->geometryShapeName == "Triangle")
+				{
+					MyOpenGL::InitializeBuffers(ShapeData::Triangle().vertices.size(), &ShapeData::Triangle().vertices.front(), ShapeData::Triangle().indicies.size(), &ShapeData::Triangle().indicies.front());
+				};
+			};
+		};
 
 		return false;
 	}
@@ -47,7 +59,6 @@ namespace BlazeGraphics
 				Position* entityPosition = &scene.positionComponents.at(entity);
 
 				BlazeFramework::Matrix4x4 translationMatrix = BlazeFramework::Translate(BlazeFramework::Vector3D(entityPosition->position.x, entityPosition->position.y, 0.0f));
-
 				MyOpenGL::sendUniformMat4Data("translationMatrix", &translationMatrix[0][0]);
 
 				MyOpenGL::Draw();

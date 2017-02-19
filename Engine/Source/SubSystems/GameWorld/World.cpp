@@ -36,14 +36,14 @@ void World::GameLoop()
 	scene.Initialize();
 
 	//Player
-	scene.CreateTriangle(BlazeFramework::Vector2D(0.0f, 0.0f));
+	scene.CreatePlayer(BlazeFramework::Vector2D(0.0f, 0.0f), "Triangle");
 	//Scenery
 	scene.CreateStaticEntity(BlazeFramework::Vector2D(0.0f, 0.4f));
 
 	input.Initialize();
 	movement.Initialize();
 	collision.Initialize(scene);
-	renderer.Initialize();
+	renderer.Initialize(scene);
 
 	MyOpenGL::InstallShaders();
 
