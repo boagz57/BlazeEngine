@@ -94,6 +94,11 @@ namespace MyOpenGL
 		glUniformMatrix4fv(glGetUniformLocation(programID, whatShaderVariableToSendTo), 1, GL_FALSE, matrixData);
 	}
 
+	void sendUniformVec2Data(const char8 * whatShaderVariableToSendTo, GLfloat * matrixData)
+	{
+		glUniform2fv(glGetUniformLocation(programID, whatShaderVariableToSendTo), 1, matrixData);
+	}
+
 	void Draw()
 	{
 		glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_SHORT, 0);
