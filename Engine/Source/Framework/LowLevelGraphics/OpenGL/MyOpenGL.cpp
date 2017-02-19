@@ -27,8 +27,6 @@ namespace MyOpenGL
 		using namespace BlazeGraphics;
 		using namespace BlazeFramework;
 
-		transformedVerts.resize(c_numTransformedVertices);
-
 		glGenBuffers(1, &TriangleVertexBufferID);
 		glGenBuffers(1, &TriangleIndexBufferID);
 
