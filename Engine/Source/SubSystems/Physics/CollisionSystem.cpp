@@ -9,7 +9,7 @@
 static Position* entityPosition = nullptr;
 static AABB* entityCollisionBox = nullptr;
 static AABB* otherEntityCollisionBox = nullptr;
-static Position* otherEntityPos = nullptr;
+static uint16 numOfABBComponents = 0;
 
 CollisionSystem::CollisionSystem()
 {
@@ -39,6 +39,8 @@ bool CollisionSystem::Initialize(SceneManager& scene)
 			//Position collision box around entity's current position
 			entityCollisionBox->max += entityPosition->position;
 			entityCollisionBox->min += entityPosition->position;
+
+			numOfABBComponents++;
 		}
 	}
 
@@ -74,15 +76,12 @@ void CollisionSystem::Update(SceneManager& scene)
 	{
 		if ((scene.bitMasks.at(entity) & COLLISION_MASK) == COLLISION_MASK)
 		{
-			for (int i = 0; i < 3; i++)
-			{
-				entityCollisionBox = &scene.AABBComponents.at(i);
+			entityCollisionBox = &scene.AABBComponents.at(entity);
 
-				for (int j = i + 1; j < 3; j++)
-				{
-					otherEntityCollisionBox = &scene.AABBComponents.at(j);
-					CheckForCollision();
-				};
+			for (int nextEntity = entity + 1; nextEntity < numOfABBComponents; nextEntity++)
+			{
+				otherEntityCollisionBox = &scene.AABBComponents.at(nextEntity);//TODO: Not sure if I need second for loop within this for loop. Just monitor things and see if the system has both objects detecting a collision and doing their corresponding actions
+				CheckForCollision();
 			};
 		};
 	};
