@@ -52,8 +52,7 @@ bool CollisionSystem::Shutdown()
 
 void CollisionSystem::Update(SceneManager& scene)
 {
-	//Loop through all 'entities' in scene to see which entities match the
-	//system bit mask (which entity 'keys' fit into the system 'lock').
+	//First loop through all entity's and update their bounding box positions
 	for (uint16 entity = 0; entity < scene.numMaxEntities; entity++)
 	{
 		if ((scene.bitMasks.at(entity) & COLLISION_MASK) == COLLISION_MASK)
@@ -67,15 +66,24 @@ void CollisionSystem::Update(SceneManager& scene)
 			//Need to reset velocity to zero to avoid 'floating' movement effect
 			entityVelocity->velocity.x = 0;
 			entityVelocity->velocity.y = 0;
+		};
+	};
 
-			//TODO: In current implementation, only entity and entity-1 can be checked for collision. 
-			//If say entity 1 and entity 4 collide, nothing will occur. Need to change.
-			if (entity != 0)
+	//Now check all entities against all other entities to see if any collisions are occurring
+	for (uint16 entity = 0; entity < scene.numMaxEntities; entity++)
+	{
+		if ((scene.bitMasks.at(entity) & COLLISION_MASK) == COLLISION_MASK)
+		{
+			for (int i = 0; i < 3; i++)
 			{
-				otherEntityCollisionBox = &scene.AABBComponents.at(entity - 1);
-				otherEntityPos = &scene.positionComponents.at(entity -1);
-				CheckForCollision();
-			}
+				entityCollisionBox = &scene.AABBComponents.at(i);
+
+				for (int j = i + 1; j < 3; j++)
+				{
+					otherEntityCollisionBox = &scene.AABBComponents.at(j);
+					CheckForCollision();
+				};
+			};
 		};
 	};
 }
