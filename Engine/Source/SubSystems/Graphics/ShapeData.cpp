@@ -16,9 +16,12 @@ namespace BlazeGraphics
 	{
 		Vector<BlazeFramework::Vector2D> triangleVerts
 		{
-			BlazeFramework::Vector2D(+0.0f, +0.2f),
-			BlazeFramework::Vector2D(-0.1f, 0.0f),
-			BlazeFramework::Vector2D(+0.1f, 0.0f)
+			//In order to have triangle centered on it's origin must use pathagoreans theorem on 1st
+			//vert to match distance from origin to the other verts. Just did this off site and put in
+			//the resulting number.
+			BlazeFramework::Vector2D(+0.0f, +0.1414213f), //0
+			BlazeFramework::Vector2D(-0.1f, -0.1f),       //1
+			BlazeFramework::Vector2D(+0.1f, -0.1f)        //2
 		};
 
 		Vector<uint16> triangleIndicies

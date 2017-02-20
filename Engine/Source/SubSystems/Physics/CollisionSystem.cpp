@@ -6,6 +6,7 @@
 #include "Components/Velocity.h"
 #include "CollisionSystem.h"
 
+static Velocity* entityVelocity = nullptr;
 static Position* entityPosition = nullptr;
 static AABB* entityCollisionBox = nullptr;
 static AABB* otherEntityCollisionBox = nullptr;
@@ -59,7 +60,7 @@ void CollisionSystem::Update(SceneManager& scene)
 	{
 		if ((scene.bitMasks.at(entity) & COLLISION_MASK) == COLLISION_MASK)
 		{
-			Velocity* entityVelocity = &scene.velocityComponents.at(entity);
+			entityVelocity = &scene.velocityComponents.at(entity);
 			entityCollisionBox = &scene.AABBComponents.at(entity);
 
 			entityCollisionBox->max += (entityVelocity->velocity * engineClock.TimeSinceLastFrame());

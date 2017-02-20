@@ -5,6 +5,9 @@
 #include "Components/Position.h"
 #include "MovementSystem.h"
 
+static Position* entityPosition = nullptr;
+static Velocity* entityVelocity = nullptr;
+
 MovementSystem::MovementSystem()
 {
 }
@@ -33,8 +36,8 @@ void MovementSystem::Update(SceneManager& scene)
 	{
 		if ((scene.bitMasks.at(entity) & MOVEMENT_MASK) == MOVEMENT_MASK)
 		{
-			Position* entityPosition = &scene.positionComponents.at(entity);
-			Velocity* entityVelocity = &scene.velocityComponents.at(entity);
+			entityPosition = &scene.positionComponents.at(entity);
+			entityVelocity = &scene.velocityComponents.at(entity);
 			
 			//Get new entity position that's based on the entity's velocity
 			entityPosition->position += (entityVelocity->velocity * engineClock.TimeSinceLastFrame());

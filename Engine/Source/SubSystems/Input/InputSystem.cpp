@@ -6,6 +6,8 @@
 #include "Framework/LowLevelInput/KeyboardHandling.h"
 #include "InputSystem.h"
 
+static Velocity* entityVelocity = nullptr;
+
 InputSystem::InputSystem()
 {
 }
@@ -35,7 +37,7 @@ void InputSystem::Update(SceneManager& scene)
 	{
 		if ((scene.bitMasks.at(entity) & INPUT_MASK) == INPUT_MASK)
 		{
-			Velocity* entityVelocity = &scene.velocityComponents.at(entity);
+			entityVelocity = &scene.velocityComponents.at(entity);
 
 			//Calls the function being stored at whatever keyCode location is polled
 			switch (BlazeFramework::KeyboardHandling::PollInput())

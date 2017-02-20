@@ -13,6 +13,9 @@ extern uint32 squareIndexBufferID;
 extern uint32 triangleVertexBufferID;
 extern uint32 triangleIndexBufferID;
 
+static Position* entityPosition = nullptr;
+static Appearance* entityAppearance = nullptr;
+
 namespace BlazeGraphics
 {
 	RenderSystem::RenderSystem()
@@ -45,16 +48,16 @@ namespace BlazeGraphics
 		{
 			if ((scene.bitMasks.at(entity) & RENDER_MASK) == RENDER_MASK)
 			{
-				Position* entityPosition = &scene.positionComponents.at(entity);
-				Appearance* entityApperance = &scene.appearanceComponents.at(entity);
+				entityPosition = &scene.positionComponents.at(entity);
+				entityAppearance = &scene.appearanceComponents.at(entity);
 
 				BlazeFramework::Matrix4x4 translationMatrix = BlazeFramework::Translate(BlazeFramework::Vector3D(entityPosition->position.x, entityPosition->position.y, 0.0f));
 				MyOpenGL::sendUniformMat4Data("translationMatrix", &translationMatrix[0][0]);
 
-				if (entityApperance->geometryShapeName == "Triangle")
+				if (entityAppearance->geometryShapeName == "Triangle")
 					MyOpenGL::Draw(triangleVertexBufferID, triangleIndexBufferID, 3);
 
-				else if (entityApperance->geometryShapeName == "Square")
+				else if (entityAppearance->geometryShapeName == "Square")
 					MyOpenGL::Draw(squareVertexBufferID, squareIndexBufferID, 6);
 			}
 		}
