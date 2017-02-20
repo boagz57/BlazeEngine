@@ -68,6 +68,8 @@ void CollisionSystem::Update(SceneManager& scene)
 			entityVelocity->velocity.x = 0;
 			entityVelocity->velocity.y = 0;
 
+			//TODO: In current implementation, only entity and entity-1 can be checked for collision. 
+			//If say entity 1 and entity 4 collide, nothing will occur. Need to change.
 			if (entity != 0)
 			{
 				otherEntityCollisionBox = &scene.AABBComponents.at(entity - 1);
