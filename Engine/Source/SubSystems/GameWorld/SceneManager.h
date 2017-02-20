@@ -18,7 +18,7 @@ public:
 	bool Shutdown();
 
 	uint16 CreatePlayer(BlazeFramework::Vector2D position, char8* shapeToRender);
-	uint16 CreateStaticEntity(BlazeFramework::Vector2D position);
+	uint16 CreateStaticEntity(BlazeFramework::Vector2D position, char8* shapeToRender);
 
 protected:
 

@@ -9,28 +9,25 @@
 #include "Universal/Globals.h"
 #include "StatusChecks/StatusChecks.h"
 
-static GLuint TriangleVertexBufferID;
-static GLuint TriangleIndexBufferID;
+GLuint triangleVertexBufferID;
+GLuint triangleIndexBufferID;
 
-static GLuint squareVertexBufferID;
-static GLuint squareIndexBufferID;
+GLuint squareVertexBufferID;
+GLuint squareIndexBufferID;
 
-//The max buffer size in bytes I want to send down initially to GPU
-static uint16 const c_MaxBufferSize = 1024;
-
-GLuint programID;
+static GLuint programID;
 
 namespace MyOpenGL
 {
 	using namespace BlazeFramework;
 
-	void InitializeBuffers(int64 sizeOfGeometry, const void* GeometryDataFirstElement, int64 sizeOfIndicies, const void* indicieDataFirstElement)
-{
-		glGenBuffers(1, &squareVertexBufferID);
-		glGenBuffers(1, &squareIndexBufferID);
+	void InitializeBuffers(int64 sizeOfGeometry, const void* GeometryDataFirstElement, int64 sizeOfIndicies, const void* indicieDataFirstElement, uint32* vertexBufferID, uint32* indexBufferID)
+	{
+		glGenBuffers(1, vertexBufferID);
+		glGenBuffers(1, indexBufferID);
 
-		glBindBuffer(GL_ARRAY_BUFFER, squareVertexBufferID);
-		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, squareIndexBufferID);
+		glBindBuffer(GL_ARRAY_BUFFER, *vertexBufferID);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, *indexBufferID);
 
 		glBufferData(GL_ARRAY_BUFFER, (sizeof(Vector2D) * sizeOfGeometry), GeometryDataFirstElement, GL_DYNAMIC_DRAW);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, (sizeof(uint16) * sizeOfIndicies), indicieDataFirstElement, GL_DYNAMIC_DRAW);
@@ -98,8 +95,13 @@ namespace MyOpenGL
 		glUniform2fv(glGetUniformLocation(programID, whatShaderVariableToSendTo), 1, matrixData);
 	}
 
-	void Draw()
+	void Draw(uint32 vertexBufferID, uint32 indexBufferID, uint16 numOfIndicies)
 	{
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, 0);
+		glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
+		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 2, nullptr);
+
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferID);
+
+		glDrawElements(GL_TRIANGLES, numOfIndicies, GL_UNSIGNED_SHORT, 0);
 	}
 }
