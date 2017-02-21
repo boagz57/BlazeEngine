@@ -54,10 +54,10 @@ namespace BlazeGraphics
 				BlazeFramework::Matrix4x4 translationMatrix = BlazeFramework::Translate(BlazeFramework::Vector3D(entityPosition->GetPosition().x, entityPosition->GetPosition().y, 0.0f));
 				MyOpenGL::sendUniformMat4Data("translationMatrix", &translationMatrix[0][0]);
 
-				if (entityAppearance->geometryShapeName == "Triangle")
+				if (entityAppearance->GetShapeName() == "Triangle")
 					MyOpenGL::Draw(triangleVertexBufferID, triangleIndexBufferID, 3);
 
-				else if (entityAppearance->geometryShapeName == "Square")
+				else if (entityAppearance->GetShapeName() == "Square")
 					MyOpenGL::Draw(squareVertexBufferID, squareIndexBufferID, 6);
 			}
 		}

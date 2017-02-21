@@ -51,12 +51,15 @@ uint16 SceneManager::CreatePlayer(BlazeFramework::Vector3D startPosition, char8 
 
 	uint16 entity = M_CreateEntity();
 
+	Position* entityPosition = &positionComponents.at(entity);
+	Appearance* entityAppearance = &appearanceComponents.at(entity);
+
 	//Set an entity to show as having certain components attached (creates
 	//the 'key' for the entity to see if it will fit in a system's 'lock'.
 	bitMasks.at(entity) = PositionComponent | AABBComponent | VelocityComponent | AppearanceComponent;
 
-	positionComponents.at(entity).SetPosition(startPosition);
-	appearanceComponents.at(entity).geometryShapeName = shapeToRender;
+	entityPosition->SetPosition(startPosition);
+	entityAppearance->SetRenderShape(shapeToRender);
 
 	return entity;
 }
@@ -65,12 +68,15 @@ uint16 SceneManager::CreateStaticEntity(BlazeFramework::Vector3D position, char8
 {
 	uint16 entity = M_CreateEntity();
 
+	Position* entityPosition = &positionComponents.at(entity);
+	Appearance* entityAppearance = &appearanceComponents.at(entity);
+
 	//Set an entity to show as having certain components attached (creates
 	//the 'key' for the entity to see if it will fit in a system's 'lock'.
 	bitMasks.at(entity) = PositionComponent | AABBComponent | AppearanceComponent;
 
-	positionComponents.at(entity).SetPosition(position);
-	appearanceComponents.at(entity).geometryShapeName = shapeToRender;
+	entityPosition->SetPosition(position);
+	entityAppearance->SetRenderShape(shapeToRender);
 
 	return entity;
 }
