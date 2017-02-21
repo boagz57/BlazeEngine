@@ -4,8 +4,8 @@
 struct Appearance 
 {
 public:
-	char8* GetShapeName() const { return geometryShapeName; }
-	void SetRenderShape(char8* shapeName) { geometryShapeName = shapeName; }
+	inline char8* GetShapeName() const { return geometryShapeName; }
+	inline void SetRenderShape(char8* shapeName) { geometryShapeName = shapeName; }
 
 private:
 	char8* geometryShapeName;
