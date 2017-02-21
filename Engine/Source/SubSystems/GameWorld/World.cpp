@@ -36,10 +36,10 @@ void World::GameLoop()
 	scene.Initialize();
 
 	//Player
-	scene.CreatePlayer(BlazeFramework::Vector2D(0.0f, 0.0f), "Triangle");
+	scene.CreatePlayer(BlazeFramework::Vector3D(0.0f, 0.0f, 0.0f), "Triangle");
 	//Scenery
-	scene.CreateStaticEntity(BlazeFramework::Vector2D(0.0f, 0.4f), "Square");
-	scene.CreateStaticEntity(BlazeFramework::Vector2D(0.4f, 0.4f), "Triangle");
+	scene.CreateStaticEntity(BlazeFramework::Vector3D(0.0f, 0.4f, 0.0f), "Square");
+	scene.CreateStaticEntity(BlazeFramework::Vector3D(0.4f, 0.4f, 0.0f), "Triangle");
 
 	input.Initialize();
 	movement.Initialize();

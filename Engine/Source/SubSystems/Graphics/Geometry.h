@@ -1,6 +1,6 @@
 #pragma once
 #include "DataStructures/Vector/Vector.h"
-#include "Math/Vector2D.h"
+#include "Math/Vector3D.h"
 #include "Universal/UniversalTypeDefs.h"
 
 namespace BlazeGraphics
@@ -8,7 +8,7 @@ namespace BlazeGraphics
 	class Geometry
 	{
 	public:
-		Vector<BlazeFramework::Vector2D> vertices;
+		Vector<BlazeFramework::Vector3D> vertices;
 		Vector<uint16> indicies;
 
 	protected:

@@ -1,6 +1,6 @@
 #include "Precompiled.h"
 #include "Universal/Macro.h"
-#include "Math/Vector2D.h"
+#include "Math/Vector3D.h"
 #include "Components/Component.h"
 #include "SceneManager.h"
 
@@ -45,7 +45,7 @@ uint16 SceneManager::M_CreateEntity()
 	return numMaxEntities;
 }
 
-uint16 SceneManager::CreatePlayer(BlazeFramework::Vector2D startPosition, char8 * shapeToRender)
+uint16 SceneManager::CreatePlayer(BlazeFramework::Vector3D startPosition, char8 * shapeToRender)
 {
 	RUNTIME_ASSERT(shapeToRender != nullptr, "ERROR: Need a valid shape to render!!!");//TODO: Need better assert system here to check that shape name matches a valid choice
 
@@ -61,7 +61,7 @@ uint16 SceneManager::CreatePlayer(BlazeFramework::Vector2D startPosition, char8 
 	return entity;
 }
 
-uint16 SceneManager::CreateStaticEntity(BlazeFramework::Vector2D position, char8* shapeToRender)
+uint16 SceneManager::CreateStaticEntity(BlazeFramework::Vector3D position, char8* shapeToRender)
 {
 	uint16 entity = M_CreateEntity();
 

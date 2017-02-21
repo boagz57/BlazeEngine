@@ -1,6 +1,6 @@
 #pragma once
 #include "DataStructures/Vector/Vector.h"
-#include "Math/Vector2D.h"
+#include "Math/Vector3D.h"
 #include "Components/Appearance.h"
 #include "Components/Position.h"
 #include "Components/Velocity.h"
@@ -17,8 +17,8 @@ public:
 	bool Initialize();
 	bool Shutdown();
 
-	uint16 CreatePlayer(BlazeFramework::Vector2D position, char8* shapeToRender);
-	uint16 CreateStaticEntity(BlazeFramework::Vector2D position, char8* shapeToRender);
+	uint16 CreatePlayer(BlazeFramework::Vector3D position, char8* shapeToRender);
+	uint16 CreateStaticEntity(BlazeFramework::Vector3D position, char8* shapeToRender);
 
 protected:
 

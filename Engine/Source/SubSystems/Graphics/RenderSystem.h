@@ -1,7 +1,7 @@
 #pragma once
 #include "GL/glew.h"
 #include "DataStructures/Vector/Vector.h"
-#include "Math/Vector2D.h"
+#include "Math/Vector3D.h"
 
 //Adding what components the system requires in order to process information
 #define RENDER_MASK (PositionComponent)

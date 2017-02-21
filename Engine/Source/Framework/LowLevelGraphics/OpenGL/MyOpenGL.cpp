@@ -5,7 +5,7 @@
 #include "GL/glew.h"
 #include "MyOpenGL.h"
 #include "DataStructures/Vector/Vector.h"
-#include "Math/Vector2D.h"
+#include "Math/Vector3D.h"
 #include "Universal/Globals.h"
 #include "StatusChecks/StatusChecks.h"
 
@@ -29,11 +29,11 @@ namespace MyOpenGL
 		glBindBuffer(GL_ARRAY_BUFFER, *vertexBufferID);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, *indexBufferID);
 
-		glBufferData(GL_ARRAY_BUFFER, (sizeof(Vector2D) * sizeOfGeometry), GeometryDataFirstElement, GL_DYNAMIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, (sizeof(Vector3D) * sizeOfGeometry), GeometryDataFirstElement, GL_DYNAMIC_DRAW);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, (sizeof(uint16) * sizeOfIndicies), indicieDataFirstElement, GL_DYNAMIC_DRAW);
 
 		glEnableVertexAttribArray(0);
-		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 2, nullptr);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 3, nullptr);
 	}
 
 	std::string ReadShaderCode(const char8* cShaderFilePath, const char8* cTypeOfShader)
@@ -98,7 +98,7 @@ namespace MyOpenGL
 	void Draw(uint32 vertexBufferID, uint32 indexBufferID, uint16 numOfIndicies)
 	{
 		glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
-		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 2, nullptr);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 3, nullptr);
 
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBufferID);
 
