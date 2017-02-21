@@ -43,16 +43,16 @@ void InputSystem::Update(SceneManager& scene)
 			switch (BlazeFramework::KeyboardHandling::PollInput())
 			{
 			case BlazeFramework::Key::UpArrow:
-				entityVelocity->velocity.y += .6f;
+				entityVelocity->SetVelocityY(.6f);
 				break;
 			case BlazeFramework::Key::DownArrow:
-				entityVelocity->velocity.y += -.6f;
+				entityVelocity->SetVelocityY(-.6f);
 				break;
 			case BlazeFramework::Key::RightArrow:
-				entityVelocity->velocity.x += .6f;
+				entityVelocity->SetVelocityX(.6f);
 				break;
 			case BlazeFramework::Key::LeftArrow:
-				entityVelocity->velocity.x += -.6f;
+				entityVelocity->SetVelocityX(-.6f);
 				break;
 			default:
 				break;

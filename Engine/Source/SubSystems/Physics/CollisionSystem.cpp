@@ -63,12 +63,11 @@ void CollisionSystem::Update(SceneManager& scene)
 			entityVelocity = &scene.velocityComponents.at(entity);
 			entityCollisionBox = &scene.AABBComponents.at(entity);
 
-			entityCollisionBox->max += (entityVelocity->velocity * engineClock.TimeSinceLastFrame());
-			entityCollisionBox->min += (entityVelocity->velocity * engineClock.TimeSinceLastFrame());
+			entityCollisionBox->max += (entityVelocity->GetVelocity() * engineClock.TimeSinceLastFrame());
+			entityCollisionBox->min += (entityVelocity->GetVelocity() * engineClock.TimeSinceLastFrame());
 
 			//Need to reset velocity to zero to avoid 'floating' movement effect
-			entityVelocity->velocity.x = 0;
-			entityVelocity->velocity.y = 0;
+			entityVelocity->SetVelocity(BlazeFramework::Vector2D(0.0f, 0.0f));
 		};
 	};
 
