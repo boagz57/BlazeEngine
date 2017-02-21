@@ -51,6 +51,7 @@ namespace BlazeGraphics
 				entityPosition = &scene.positionComponents.at(entity);
 				entityAppearance = &scene.appearanceComponents.at(entity);
 
+				//Use current entity position to store how much to translate vertices on GPU
 				BlazeFramework::Matrix4x4 translationMatrix = BlazeFramework::Translate(BlazeFramework::Vector3D(entityPosition->GetPosition().x, entityPosition->GetPosition().y, 0.0f));
 				MyOpenGL::sendUniformMat4Data("translationMatrix", &translationMatrix[0][0]);
 
