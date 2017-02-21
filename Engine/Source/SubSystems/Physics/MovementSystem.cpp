@@ -39,8 +39,8 @@ void MovementSystem::Update(SceneManager& scene)
 			entityPosition = &scene.positionComponents.at(entity);
 			entityVelocity = &scene.velocityComponents.at(entity);
 			
-			//Get new entity position that's based on the entity's velocity
-			entityPosition->position += (entityVelocity->velocity * engineClock.TimeSinceLastFrame());
+			//Set new entity position that's based on the entity's velocity
+			entityPosition->SetPosition(entityPosition->GetPosition() += entityVelocity->velocity * engineClock.TimeSinceLastFrame());
 		}
 	}
 }

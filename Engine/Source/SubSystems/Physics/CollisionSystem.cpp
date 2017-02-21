@@ -38,8 +38,8 @@ bool CollisionSystem::Initialize(SceneManager& scene)
 			entityCollisionBox->min.y = +0.0f;
 
 			//Position collision box around entity's current position
-			entityCollisionBox->max += entityPosition->position;
-			entityCollisionBox->min += entityPosition->position;
+			entityCollisionBox->max += entityPosition->GetPosition();
+			entityCollisionBox->min += entityPosition->GetPosition();
 
 			numOfABBComponents++;
 		}

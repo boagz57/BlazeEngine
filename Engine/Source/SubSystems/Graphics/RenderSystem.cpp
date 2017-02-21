@@ -51,7 +51,7 @@ namespace BlazeGraphics
 				entityPosition = &scene.positionComponents.at(entity);
 				entityAppearance = &scene.appearanceComponents.at(entity);
 
-				BlazeFramework::Matrix4x4 translationMatrix = BlazeFramework::Translate(BlazeFramework::Vector3D(entityPosition->position.x, entityPosition->position.y, 0.0f));
+				BlazeFramework::Matrix4x4 translationMatrix = BlazeFramework::Translate(BlazeFramework::Vector3D(entityPosition->GetPosition().x, entityPosition->GetPosition().y, 0.0f));
 				MyOpenGL::sendUniformMat4Data("translationMatrix", &translationMatrix[0][0]);
 
 				if (entityAppearance->geometryShapeName == "Triangle")

@@ -55,7 +55,7 @@ uint16 SceneManager::CreatePlayer(BlazeFramework::Vector2D startPosition, char8 
 	//the 'key' for the entity to see if it will fit in a system's 'lock'.
 	bitMasks.at(entity) = PositionComponent | AABBComponent | VelocityComponent | AppearanceComponent;
 
-	positionComponents.at(entity).position = startPosition;
+	positionComponents.at(entity).SetPosition(startPosition);
 	appearanceComponents.at(entity).geometryShapeName = shapeToRender;
 
 	return entity;
@@ -69,7 +69,7 @@ uint16 SceneManager::CreateStaticEntity(BlazeFramework::Vector2D position, char8
 	//the 'key' for the entity to see if it will fit in a system's 'lock'.
 	bitMasks.at(entity) = PositionComponent | AABBComponent | AppearanceComponent;
 
-	positionComponents.at(entity).position = position;
+	positionComponents.at(entity).SetPosition(position);
 	appearanceComponents.at(entity).geometryShapeName = shapeToRender;
 
 	return entity;
