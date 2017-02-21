@@ -32,14 +32,12 @@ bool CollisionSystem::Initialize(SceneManager& scene)
 			entityCollisionBox = &scene.AABBComponents.at(entity);
 
 			//Set bounds of the collision box 
-			entityCollisionBox->max.x = +0.1f;
-			entityCollisionBox->max.y = +0.2f;
-			entityCollisionBox->min.x = -0.1f;
-			entityCollisionBox->min.y = +0.0f;
+			entityCollisionBox->SetMax(+.1f, +.2f);
+			entityCollisionBox->SetMin(-.1f, 0.0f);
 
 			//Position collision box around entity's current position
-			entityCollisionBox->max += entityPosition->GetPosition();
-			entityCollisionBox->min += entityPosition->GetPosition();
+			entityCollisionBox->SetMax(entityCollisionBox->GetMax().x + entityPosition->GetPosition().x, entityCollisionBox->GetMax().y + entityPosition->GetPosition().y);
+			entityCollisionBox->SetMin(entityCollisionBox->GetMin().x + entityPosition->GetPosition().x, entityCollisionBox->GetMin().y + entityPosition->GetPosition().y);
 
 			numOfABBComponents++;
 		}
@@ -63,11 +61,12 @@ void CollisionSystem::Update(SceneManager& scene)
 			entityVelocity = &scene.velocityComponents.at(entity);
 			entityCollisionBox = &scene.AABBComponents.at(entity);
 
-			entityCollisionBox->max += (entityVelocity->GetVelocity() * engineClock.TimeSinceLastFrame());
-			entityCollisionBox->min += (entityVelocity->GetVelocity() * engineClock.TimeSinceLastFrame());
+			entityCollisionBox->SetMax(entityCollisionBox->GetMax() + (entityVelocity->GetVelocity() * engineClock.TimeSinceLastFrame()));
+			entityCollisionBox->SetMin(entityCollisionBox->GetMin() + (entityVelocity->GetVelocity() * engineClock.TimeSinceLastFrame()));
 
 			//Need to reset velocity to zero to avoid 'floating' movement effect
-			entityVelocity->SetVelocity(BlazeFramework::Vector2D(0.0f, 0.0f));
+			entityVelocity->SetVelocityX(0.0f);
+			entityVelocity->SetVelocityY(0.0f);
 		};
 	};
 
@@ -91,10 +90,10 @@ void CollisionSystem::Update(SceneManager& scene)
 void CheckForCollision()
 {
 	//Exit returning NO intersection between bounding box
-	if (entityCollisionBox->max.x < otherEntityCollisionBox->min.x || entityCollisionBox->min.x > otherEntityCollisionBox->max.x)
+	if (entityCollisionBox->GetMax().x < otherEntityCollisionBox->GetMin().x || entityCollisionBox->GetMin().x > otherEntityCollisionBox->GetMax().x)
 		return;
 	//Exit returning NO intersection between bounding box
-	if (entityCollisionBox->max.y < otherEntityCollisionBox->min.y || entityCollisionBox->min.y > otherEntityCollisionBox->max.y)
+	if (entityCollisionBox->GetMax().y < otherEntityCollisionBox->GetMin().y || entityCollisionBox->GetMin().y > otherEntityCollisionBox->GetMax().y)
 		return;
 
 	//Exit returning YES there is intersection
