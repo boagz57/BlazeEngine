@@ -42,16 +42,16 @@ void InputSystem::Update(SceneManager& scene)
 			//Calls the function being stored at whatever keyCode location is polled
 			switch (BlazeFramework::KeyboardHandling::PollInput())
 			{
-			case BlazeFramework::Key::UpArrow:
+			case BlazeFramework::Key::W :
 				entityVelocity->SetVelocityY(.6f);
 				break;
-			case BlazeFramework::Key::DownArrow:
+			case BlazeFramework::Key::S :
 				entityVelocity->SetVelocityY(-.6f);
 				break;
-			case BlazeFramework::Key::RightArrow:
+			case BlazeFramework::Key::D :
 				entityVelocity->SetVelocityX(.6f);
 				break;
-			case BlazeFramework::Key::LeftArrow:
+			case BlazeFramework::Key::A :
 				entityVelocity->SetVelocityX(-.6f);
 				break;
 			default:

@@ -32,12 +32,8 @@ void World::GameLoop()
 	BlazeGraphics::RenderSystem renderer;
 
 	SceneManager scene;
-
 	scene.Initialize();
-
-	//Player
 	scene.CreatePlayer(BlazeFramework::Vector3D(0.0f, 0.0f, 0.0f), "Triangle");
-	//Scenery
 	scene.CreateStaticEntity(BlazeFramework::Vector3D(0.0f, 0.4f, 0.0f), "Square");
 	scene.CreateStaticEntity(BlazeFramework::Vector3D(0.4f, 0.4f, 0.0f), "Triangle");
 

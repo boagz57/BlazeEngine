@@ -14,5 +14,11 @@ namespace BlazeFramework
 	{
 		return glm::ortho(left, right, bottom, top);
 	}
+
+	BlazeFramework::Matrix4x4 Rotate(Vector3D vertsToRotate, sfloat degreesToRotate)
+	{
+		return glm::rotate(degreesToRotate, vertsToRotate);
+	}
+
 }
 

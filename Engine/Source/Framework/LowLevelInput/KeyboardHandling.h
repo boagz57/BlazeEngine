@@ -13,6 +13,14 @@ namespace BlazeFramework
 		LeftArrow = GLFW_KEY_LEFT,
 		DownArrow = GLFW_KEY_DOWN,
 		UpArrow = GLFW_KEY_UP,
+		W = GLFW_KEY_W,
+		A = GLFW_KEY_A,
+		S = GLFW_KEY_S,
+		D = GLFW_KEY_D,
+		I = GLFW_KEY_I,
+		J = GLFW_KEY_J,
+		K = GLFW_KEY_K,
+		L = GLFW_KEY_L,
 		MaxKey = GLFW_KEY_LAST
 	};
 
