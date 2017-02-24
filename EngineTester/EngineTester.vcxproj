@@ -188,15 +188,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\ThirdParty\GoogleTest\src\gtest-all.cc" />
-    <ClCompile Include="Source\SubSystems\ComponentTest.cpp" />
-    <ClCompile Include="Source\SubSystems\Graphics\GraphicsComponents\RendererComponent\RendererComponentTest.cpp" />
-    <ClCompile Include="Source\SubSystems\Graphics\GraphicsManagerTest.cpp" />
-    <ClCompile Include="Source\SubSystems\Input\InputComponents\KeyboardComponent\KeyboardComponentTest.cpp" />
-    <ClCompile Include="Source\SubSystems\Physics\PhysicsComponents\CollisionComponent\CollisionComponentTest.cpp" />
+    <ClCompile Include="Source\SubSystems\GameWorld\SceneManagerTests.cpp" />
+    <ClCompile Include="Source\SubSystems\GameWorld\WorldTests.cpp" />
+    <ClCompile Include="Source\SubSystems\Graphics\RenderSystemTests.cpp" />
+    <ClCompile Include="Source\SubSystems\Input\InputSystemTests.cpp" />
+    <ClCompile Include="Source\SubSystems\Physics\CollisionSystemTests.cpp" />
+    <ClCompile Include="Source\SubSystems\Physics\MovementSystemTests.cpp" />
     <ClCompile Include="TestMain.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="AllEngineTests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
