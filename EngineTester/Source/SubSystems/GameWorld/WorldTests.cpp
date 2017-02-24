@@ -1,10 +1,19 @@
 #pragma once
 #include "gtest/gtest.h"
+#include <memory>
 #include "GameWorld/World.h"
 
-TEST(GameWorldSubSystem, WorldClass)
+//Setup objects to be used in all tests
+struct WorldTest : public testing::Test
 {
-	World gameWorld;
-	EXPECT_TRUE(gameWorld.Initialize());
-	EXPECT_TRUE(gameWorld.Shutdown());
+	std::unique_ptr<World> gameWorld;
+
+	WorldTest() :
+		gameWorld(new World)
+	{}
+};
+
+TEST_F(WorldTest, DoesCollisionSystemInitializeProperly_ExpectTrue)
+{
+	EXPECT_TRUE(gameWorld->Initialize());
 }

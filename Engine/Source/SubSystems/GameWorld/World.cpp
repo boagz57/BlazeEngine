@@ -21,7 +21,7 @@ bool World::Initialize()
 
 bool World::Shutdown()
 {
-	return true;
+	return false;
 }
 
 void World::GameLoop()

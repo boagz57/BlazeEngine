@@ -32,7 +32,7 @@ namespace BlazeGraphics
 		MyOpenGL::InitializeBuffers(ShapeData::Triangle().vertices.size(), &ShapeData::Triangle().vertices.front(), ShapeData::Triangle().indicies.size(), &ShapeData::Triangle().indicies.front(), &triangleVertexBufferID , &triangleIndexBufferID);
 		MyOpenGL::InitializeBuffers(ShapeData::Square().vertices.size(), &ShapeData::Square().vertices.front(), ShapeData::Square().indicies.size(), &ShapeData::Square().indicies.front(), &squareVertexBufferID, &squareIndexBufferID);
 
-		return false;
+		return true;
 	}
 
 	bool RenderSystem::Shutdown()

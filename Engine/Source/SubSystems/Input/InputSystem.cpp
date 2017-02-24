@@ -21,7 +21,7 @@ bool InputSystem::Initialize()
 	//InputSystem is a friend of Window so it has access to Windows private
 	//member window.
 	BlazeFramework::KeyboardHandling::SetWindowContextForKeyboard(window.m_window);
-	return false;
+	return true;
 }
 
 bool InputSystem::Shutdown()

@@ -43,7 +43,7 @@ bool CollisionSystem::Initialize(SceneManager& scene)
 		}
 	}
 
-	return false;
+	return true;
 }
 
 bool CollisionSystem::Shutdown()

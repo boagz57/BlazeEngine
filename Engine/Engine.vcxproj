@@ -63,6 +63,7 @@
     <ClInclude Include="Source\Framework\Math\MatrixTransforms.h" />
     <ClInclude Include="Source\Framework\Math\Vector4D.h" />
     <ClInclude Include="Source\SubSystems\Components\AABB.h" />
+    <ClInclude Include="Source\SubSystems\Components\Velocity.h" />
     <ClInclude Include="Source\SubSystems\Physics\CollisionSystem.h" />
     <ClInclude Include="Source\SubSystems\Physics\MovementSystem.h" />
     <ClInclude Include="Source\SubSystems\Input\InputSystem.h" />

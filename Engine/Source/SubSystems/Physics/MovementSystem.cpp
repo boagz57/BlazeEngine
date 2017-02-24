@@ -18,7 +18,7 @@ MovementSystem::~MovementSystem()
 
 bool MovementSystem::Initialize()
 {
-	return false;
+	return true;
 }
 
 bool MovementSystem::Shutdown()
