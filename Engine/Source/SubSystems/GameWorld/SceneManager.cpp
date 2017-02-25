@@ -45,6 +45,8 @@ uint16 SceneManager::M_CreateEntity()
 
 uint16 SceneManager::CreatePlayer(BlazeFramework::Vector3D startPosition, char8 * shapeToRender)
 {
+	RUNTIME_ASSERT(startPosition.x <= 1.1 && startPosition.x >= -1.1, "ERROR: Start position x set is outside current viewport area!!");
+	RUNTIME_ASSERT(startPosition.y <= 1.1 && startPosition.x >= -1.1, "ERROR: Start position y set is outside current viewport area!!");
 	RUNTIME_ASSERT(shapeToRender != nullptr, "ERROR: Need a valid shape to render!!!");//TODO: Need better assert system here to check that shape name matches a valid choice
 
 	uint16 entity = M_CreateEntity();

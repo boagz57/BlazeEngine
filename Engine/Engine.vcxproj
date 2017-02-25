@@ -74,8 +74,8 @@
     <ClInclude Include="Source\SubSystems\Components\Component.h" />
     <ClInclude Include="Source\SubSystems\Graphics\Geometry.h" />
     <ClInclude Include="Source\SubSystems\Audio\Audio.h" />
-    <ClInclude Include="Source\DataStructures\Array.h" />
-    <ClInclude Include="Source\DataStructures\Vector.h" />
+    <ClInclude Include="Source\Universal\DataStructures\Array.h" />
+    <ClInclude Include="Source\Universal\DataStructures\Vector.h" />
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\ErrorLogging\ErrorLogging.h" />
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\Initialization\GLInitialization.h" />
     <ClInclude Include="Source\SubSystems\GameWorld\World.h" />

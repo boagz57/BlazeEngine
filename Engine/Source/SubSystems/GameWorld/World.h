@@ -1,6 +1,6 @@
 #pragma once
 #include "Universal/UniversalTypeDefs.h"
-#include "DataStructures/Vector.h"
+#include "Universal/DataStructures/Vector.h"
 #include <Array>
 
 class World

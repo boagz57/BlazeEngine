@@ -1,5 +1,5 @@
 #pragma once
-#include "DataStructures/Array.h"
+#include "Universal/DataStructures/Array.h"
 #include "Math/Vector3D.h"
 #include "Components/Appearance.h"
 #include "Components/Position.h"

@@ -1,6 +1,6 @@
 #pragma once
 #include "GL/glew.h"
-#include "DataStructures/Vector.h"
+#include "Universal/DataStructures/Vector.h"
 #include "Math/Vector3D.h"
 
 //Adding what components the system requires in order to process information
