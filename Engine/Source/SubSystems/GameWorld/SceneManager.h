@@ -47,5 +47,5 @@ private:
 	Array<Velocity, 10> velocityComponents;
 	Array<AABB, 10> AABBComponents;
 
-	uint16 const numMaxEntities;
+	uint16 const numMaxEntities = 10;
 };

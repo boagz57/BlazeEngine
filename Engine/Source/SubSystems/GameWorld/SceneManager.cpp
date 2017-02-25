@@ -4,8 +4,7 @@
 #include "Components/Component.h"
 #include "SceneManager.h"
 
-SceneManager::SceneManager() :
-	numMaxEntities(10)
+SceneManager::SceneManager()
 {
 }
 
@@ -15,6 +14,9 @@ SceneManager::~SceneManager()
 
 bool SceneManager::Initialize()
 {
+	//Initialize bitMasks to 0, essentially meaning no components are attached to any entities
+	bitMasks.fill(0);
+
 	return true;
 }
 
