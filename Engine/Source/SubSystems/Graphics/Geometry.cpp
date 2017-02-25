@@ -1,7 +1,7 @@
 #include "Precompiled.h"
 #include "Geometry.h"
 
-namespace BlazeGraphics
+namespace BGraphics
 {
 	Geometry::Geometry()
 	{}

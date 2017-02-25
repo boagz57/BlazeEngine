@@ -5,15 +5,17 @@ class SceneManager;
 
 #define INPUT_MASK (VelocityComponent)
 
-class InputSystem
+namespace BInput
 {
-public:
-	InputSystem();
-	~InputSystem();
+	class InputSystem
+	{
+	public:
+		InputSystem();
+		~InputSystem();
 
-	bool Initialize();
-	bool Shutdown();
+		bool Initialize();
+		bool Shutdown();
 
-	void Update(SceneManager& scene);
-};
-
+		void Update(SceneManager& scene);
+	};
+}

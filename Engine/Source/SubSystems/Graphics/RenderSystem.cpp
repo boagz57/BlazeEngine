@@ -17,7 +17,7 @@ extern uint32 triangleIndexBufferID;
 static Position* entityPosition = nullptr;
 static Appearance* entityAppearance = nullptr;
 
-namespace BlazeGraphics
+namespace BGraphics
 {
 	RenderSystem::RenderSystem()
 	{

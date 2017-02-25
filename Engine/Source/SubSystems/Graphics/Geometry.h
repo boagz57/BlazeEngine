@@ -3,7 +3,7 @@
 #include "Math/Vector3D.h"
 #include "Universal/UniversalTypeDefs.h"
 
-namespace BlazeGraphics
+namespace BGraphics
 {
 	class Geometry
 	{
