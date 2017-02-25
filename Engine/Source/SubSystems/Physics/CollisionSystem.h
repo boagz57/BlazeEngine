@@ -5,17 +5,17 @@
 
 class SceneManager;
 
-class CollisionSystem
+namespace BPhysics
 {
-public:
-	CollisionSystem();
-	~CollisionSystem();
+	class CollisionSystem
+	{
+	public:
+		CollisionSystem();
+		~CollisionSystem();
 
-	bool Initialize(SceneManager& scene);
-	bool Shutdown();
+		bool Initialize(SceneManager& scene);
+		bool Shutdown();
 
-	void Update(SceneManager& scene);
-};
-
-//Free Standing Function Helper Classes
-void CheckForCollision();
+		void Update(SceneManager& scene);
+	};
+}

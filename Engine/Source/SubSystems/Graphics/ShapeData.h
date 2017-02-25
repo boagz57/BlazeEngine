@@ -1,7 +1,7 @@
 #pragma once
 #include "Geometry.h"
 
-namespace BlazeGraphics
+namespace BGraphics
 {
 	class ShapeData
 	{

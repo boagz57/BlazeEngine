@@ -1,7 +1,7 @@
 #include "Precompiled.h"
 #include "ShapeData.h"
 
-namespace BlazeGraphics
+namespace BGraphics
 {
 	//static memory
 	Geometry ShapeData::geometry;
@@ -37,7 +37,7 @@ namespace BlazeGraphics
 		return geometry;
 	}
 
-	BlazeGraphics::Geometry ShapeData::Square()
+	BGraphics::Geometry ShapeData::Square()
 	{
 		Vector<BlazeFramework::Vector3D> squareVerts 
 		{

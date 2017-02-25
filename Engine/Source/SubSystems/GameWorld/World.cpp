@@ -26,10 +26,10 @@ bool World::Shutdown()
 
 void World::GameLoop()
 {
-	MovementSystem movement;
-	InputSystem input;
-	CollisionSystem collision;
-	BlazeGraphics::RenderSystem renderer;
+	BPhysics::MovementSystem movement;
+	BInput::InputSystem input;
+	BPhysics::CollisionSystem collision;
+	BGraphics::RenderSystem renderer;
 
 	SceneManager scene;
 	scene.Initialize();

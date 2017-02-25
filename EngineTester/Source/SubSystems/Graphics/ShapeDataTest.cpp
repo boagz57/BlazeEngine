@@ -5,12 +5,12 @@
 
 TEST(ShapeDataTest, DoesTriangleMethodReturnProperAmountOfVertices_Expect3Verts)
 {
-	sizeofobject numberOfTriangleVerts = (BlazeGraphics::ShapeData::Triangle().vertices.size());
+	sizeofobject numberOfTriangleVerts = (BGraphics::ShapeData::Triangle().vertices.size());
 	EXPECT_EQ(numberOfTriangleVerts, 3);
 }
 
 TEST(ShapeDataTest, DoesSquareMethodReturnProperAmountOfVertices_Expect4Verts)
 {
-	sizeofobject numberOfTriangleVerts = (BlazeGraphics::ShapeData::Square().vertices.size());
+	sizeofobject numberOfTriangleVerts = (BGraphics::ShapeData::Square().vertices.size());
 	EXPECT_EQ(numberOfTriangleVerts, 4);
 }

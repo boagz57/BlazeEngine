@@ -6,15 +6,17 @@
 
 class SceneManager;
 
-class MovementSystem
+namespace BPhysics
 {
-public:
-	MovementSystem();
-	~MovementSystem();
+	class MovementSystem
+	{
+	public:
+		MovementSystem();
+		~MovementSystem();
 
-	bool Initialize();
-	bool Shutdown();
+		bool Initialize();
+		bool Shutdown();
 
-	void Update(SceneManager& scene);
-};
-
+		void Update(SceneManager& scene);
+	};
+}

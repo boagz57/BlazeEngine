@@ -6,7 +6,10 @@
 #include "Components/Velocity.h"
 #include "Components/AABB.h"
 
-namespace BlazeGraphics { class RenderSystem; }
+namespace BGraphics { class RenderSystem; }
+namespace BInput { class InputSystem; }
+namespace BPhysics { class CollisionSystem; }
+namespace BPhysics { class MovementSystem; }
 
 class SceneManager
 {
@@ -32,10 +35,10 @@ public:
 
 private:
 	//So only systems have access to component arrays
-	friend class BlazeGraphics::RenderSystem;
-	friend class InputSystem;
-	friend class MovementSystem;
-	friend class CollisionSystem;
+	friend class BGraphics::RenderSystem;
+	friend class BInput::InputSystem;
+	friend class BPhysics::MovementSystem;
+	friend class BPhysics::CollisionSystem;
 
 	//Acts as the 'keys' which will selectively fit into system 'locks'.
 	Array<uint32, 10> bitMasks;

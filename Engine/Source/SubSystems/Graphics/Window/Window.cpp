@@ -4,7 +4,7 @@
 #include "../Universal/Globals.h"
 #include "Window.h"
 
-namespace BlazeGraphics
+namespace BGraphics
 {
 	Window::Window(uint16 width, uint16 height, char8* title) :
 		cWidth(width),
@@ -59,4 +59,4 @@ namespace BlazeGraphics
 }
 
 //Global object declaration/intialization. Can be found in Globals.h
-BlazeGraphics::Window window(1280, 720, "Render Window");
+BGraphics::Window window(1280, 720, "Render Window");

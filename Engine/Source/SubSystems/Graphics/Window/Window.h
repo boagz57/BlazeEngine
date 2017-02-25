@@ -3,7 +3,9 @@
 #include "UniversalTypeDefs.h"
 #include "../Framework/LowLevelWindow/WindowHandling.h"
 
-namespace BlazeGraphics
+namespace BInput { class InputSystem; }
+
+namespace BGraphics
 {
 	class Window
 	{
@@ -17,7 +19,7 @@ namespace BlazeGraphics
 		const char8* cpTitle = nullptr;
 
 		//InputSystem needs access to private window member
-		friend class InputSystem;
+		friend class BInput::InputSystem;
 		BlazeFramework::WindowHandling::BlazeWindow* m_window;
 
 		//////////////////////////////////////////////////////////////////////

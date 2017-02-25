@@ -5,42 +5,45 @@
 #include "Components/Position.h"
 #include "MovementSystem.h"
 
-static Position* entityPosition = nullptr;
-static Velocity* entityVelocity = nullptr;
-
-MovementSystem::MovementSystem()
+namespace BPhysics
 {
-}
+	static Position* entityPosition = nullptr;
+	static Velocity* entityVelocity = nullptr;
 
-MovementSystem::~MovementSystem()
-{
-}
-
-bool MovementSystem::Initialize()
-{
-	return true;
-}
-
-bool MovementSystem::Shutdown()
-{
-	return true;
-}
-
-void MovementSystem::Update(SceneManager& scene)
-{
-	uint16 entity = 0;
-
-	//Loop through all 'entities' in scene to see which entities match the
-	//system bit mask (which entity 'keys' fit into the system 'lock').
-	for (entity = 0; entity < scene.numMaxEntities; entity++)
+	MovementSystem::MovementSystem()
 	{
-		if ((scene.bitMasks.at(entity) & MOVEMENT_MASK) == MOVEMENT_MASK)
+	}
+
+	MovementSystem::~MovementSystem()
+	{
+	}
+
+	bool MovementSystem::Initialize()
+	{
+		return true;
+	}
+
+	bool MovementSystem::Shutdown()
+	{
+		return true;
+	}
+
+	void MovementSystem::Update(SceneManager& scene)
+	{
+		uint16 entity = 0;
+
+		//Loop through all 'entities' in scene to see which entities match the
+		//system bit mask (which entity 'keys' fit into the system 'lock').
+		for (entity = 0; entity < scene.numMaxEntities; entity++)
 		{
-			entityPosition = &scene.positionComponents.at(entity);
-			entityVelocity = &scene.velocityComponents.at(entity);
-			
-			//Set new entity position that's based on the entity's velocity
-			entityPosition->SetPosition(entityPosition->GetPosition() += entityVelocity->GetVelocity() * engineClock.TimeSinceLastFrame());
+			if ((scene.bitMasks.at(entity) & MOVEMENT_MASK) == MOVEMENT_MASK)
+			{
+				entityPosition = &scene.positionComponents.at(entity);
+				entityVelocity = &scene.velocityComponents.at(entity);
+
+				//Set new entity position that's based on the entity's velocity
+				entityPosition->SetPosition(entityPosition->GetPosition() += entityVelocity->GetVelocity() * engineClock.TimeSinceLastFrame());
+			}
 		}
 	}
 }

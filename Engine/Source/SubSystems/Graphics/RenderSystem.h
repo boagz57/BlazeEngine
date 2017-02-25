@@ -8,7 +8,7 @@
 
 class SceneManager;
 
-namespace BlazeGraphics
+namespace BGraphics
 {
 	class RenderSystem
 	{
