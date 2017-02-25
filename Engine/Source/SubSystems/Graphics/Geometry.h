@@ -1,5 +1,5 @@
 #pragma once
-#include "DataStructures/Vector/Vector.h"
+#include "DataStructures/Vector.h"
 #include "Math/Vector3D.h"
 #include "Universal/UniversalTypeDefs.h"
 

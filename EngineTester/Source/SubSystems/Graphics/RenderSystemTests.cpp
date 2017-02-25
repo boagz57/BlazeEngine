@@ -22,3 +22,8 @@ TEST_F(RenderSystemTest, DoesRenderSystemInitializeProperly_ExpectTrue)
 {
 	EXPECT_TRUE(renderer->Initialize(*scene));
 }
+
+TEST_F(RenderSystemTest, DoesRenderSystemShutdownProperly_ExpectTrue)
+{
+	EXPECT_TRUE(renderer->Shutdown());
+}

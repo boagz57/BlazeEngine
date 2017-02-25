@@ -48,7 +48,7 @@ bool CollisionSystem::Initialize(SceneManager& scene)
 
 bool CollisionSystem::Shutdown()
 {
-	return false;
+	return true;
 }
 
 void CollisionSystem::Update(SceneManager& scene)

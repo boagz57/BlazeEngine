@@ -15,25 +15,21 @@ SceneManager::~SceneManager()
 
 bool SceneManager::Initialize()
 {
-	bitMasks.resize(numMaxEntities);
-	positionComponents.resize(numMaxEntities);
-	appearanceComponents.resize(numMaxEntities);
-	velocityComponents.resize(numMaxEntities);
-	AABBComponents.resize(numMaxEntities);
-
-	return false;
+	return true;
 }
 
 bool SceneManager::Shutdown()
 {
-	return false;
+	return true;
 }
 
 uint16 SceneManager::M_CreateEntity()
 {
+	uint16 entity;
+
 	//There are no concrete entities. Only entity ID numbers. Each index 
 	//in all container classes represents a separate entity.
-	for (uint16 entity = 0; entity < numMaxEntities; entity++)
+	for (entity = 0; entity < numMaxEntities; entity++)
 	{
 		//Return the first empty (no bits turned on in bitMask; no 
 		//components attached) entity index found.
@@ -41,7 +37,7 @@ uint16 SceneManager::M_CreateEntity()
 			return entity;
 	}
 
-	LOG("ERROR: Cannot create more entities!!");
+	RUNTIME_ASSERT(entity != numMaxEntities, "ERROR: Cannot create more entities. Reached maximum capacity!!");
 	return numMaxEntities;
 }
 

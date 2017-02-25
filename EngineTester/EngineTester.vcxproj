@@ -193,6 +193,7 @@
     <ClCompile Include="Source\SubSystems\GameWorld\SceneManagerTests.cpp" />
     <ClCompile Include="Source\SubSystems\GameWorld\WorldTests.cpp" />
     <ClCompile Include="Source\SubSystems\Graphics\RenderSystemTests.cpp" />
+    <ClCompile Include="Source\SubSystems\Graphics\ShapeDataTest.cpp" />
     <ClCompile Include="Source\SubSystems\Graphics\Window\WindowTest.cpp" />
     <ClCompile Include="Source\SubSystems\Input\InputSystemTests.cpp" />
     <ClCompile Include="Source\SubSystems\Physics\CollisionSystemTests.cpp" />

@@ -26,7 +26,7 @@ bool InputSystem::Initialize()
 
 bool InputSystem::Shutdown()
 {
-	return false;
+	return true;
 }
 
 void InputSystem::Update(SceneManager& scene)

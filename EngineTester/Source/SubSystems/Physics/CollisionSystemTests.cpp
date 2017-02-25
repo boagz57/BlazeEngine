@@ -21,3 +21,8 @@ TEST_F(CollisionSystemTest, DoesCollisionSystemInitializeProperly_ExpectTrue)
 {
 	EXPECT_TRUE(collision->Initialize(*scene));
 }
+
+TEST_F(CollisionSystemTest, DoesCollisionSystemShutdownProperly_ExpectTrue)
+{
+	EXPECT_TRUE(collision->Shutdown());
+}

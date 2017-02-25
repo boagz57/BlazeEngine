@@ -17,3 +17,8 @@ TEST_F(MovementSystemTest, DoesMovementSystemInitializeProperly_ExpectTrue)
 {
 	EXPECT_TRUE(movementSystem->Initialize());
 }
+
+TEST_F(MovementSystemTest, DoesMovementSystemShutdownProperly_ExpectTrue)
+{
+	EXPECT_TRUE(movementSystem->Shutdown());
+}

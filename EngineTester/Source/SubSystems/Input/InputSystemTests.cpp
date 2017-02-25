@@ -17,3 +17,8 @@ TEST_F(InputSystemTest, DoesInputSystemInitializeProperly_ExpectTrue)
 {
 	EXPECT_TRUE(input->Initialize());
 }
+
+TEST_F(InputSystemTest, DoesInputSystemShutdownProperly_ExpectTrue)
+{
+	EXPECT_TRUE(input->Shutdown());
+}

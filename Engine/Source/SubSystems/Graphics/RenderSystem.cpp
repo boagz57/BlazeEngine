@@ -1,4 +1,5 @@
 #include "Precompiled.h"
+#include "Universal/Macro.h"
 #include "Graphics/ShapeData.h"
 #include "Math/MatrixTransforms.h"
 #include "Graphics/ShapeData.h"
@@ -28,6 +29,7 @@ namespace BlazeGraphics
 
 	bool RenderSystem::Initialize(SceneManager& scene)
 	{
+
 		//Send all shape data down to GPU to be used for future rendering
 		MyOpenGL::InitializeBuffers(ShapeData::Triangle().vertices.size(), &ShapeData::Triangle().vertices.front(), ShapeData::Triangle().indicies.size(), &ShapeData::Triangle().indicies.front(), &triangleVertexBufferID , &triangleIndexBufferID);
 		MyOpenGL::InitializeBuffers(ShapeData::Square().vertices.size(), &ShapeData::Square().vertices.front(), ShapeData::Square().indicies.size(), &ShapeData::Square().indicies.front(), &squareVertexBufferID, &squareIndexBufferID);
@@ -37,7 +39,7 @@ namespace BlazeGraphics
 
 	bool RenderSystem::Shutdown()
 	{
-		return false;
+		return true;
 	}
 
 	void RenderSystem::Update(SceneManager& scene)

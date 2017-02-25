@@ -23,7 +23,7 @@ bool MovementSystem::Initialize()
 
 bool MovementSystem::Shutdown()
 {
-	return false;
+	return true;
 }
 
 void MovementSystem::Update(SceneManager& scene)

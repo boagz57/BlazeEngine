@@ -4,7 +4,7 @@
 #include <fstream>
 #include "GL/glew.h"
 #include "MyOpenGL.h"
-#include "DataStructures/Vector/Vector.h"
+#include "DataStructures/Vector.h"
 #include "Math/Vector3D.h"
 #include "Universal/Globals.h"
 #include "StatusChecks/StatusChecks.h"

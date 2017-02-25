@@ -1,5 +1,5 @@
 #pragma once
-#include "DataStructures/Vector/Vector.h"
+#include "DataStructures/Array.h"
 #include "Math/Vector3D.h"
 #include "Components/Appearance.h"
 #include "Components/Position.h"
@@ -38,14 +38,14 @@ private:
 	friend class CollisionSystem;
 
 	//Acts as the 'keys' which will selectively fit into system 'locks'.
-	Vector<uint32> bitMasks;
+	Array<uint32, 10> bitMasks;
 
 	//Component arrays. Each index of the arrays represents an entity.
 	//So positionComponents.at(1) represents entity 1's position. 
-	Vector<Position> positionComponents;
-	Vector<Appearance> appearanceComponents;
-	Vector<Velocity> velocityComponents;
-	Vector<AABB> AABBComponents;
+	Array<Position, 10> positionComponents;
+	Array<Appearance, 10> appearanceComponents;
+	Array<Velocity, 10> velocityComponents;
+	Array<AABB, 10> AABBComponents;
 
 	uint16 const numMaxEntities;
 };

@@ -13,7 +13,12 @@ struct WorldTest : public testing::Test
 	{}
 };
 
-TEST_F(WorldTest, DoesCollisionSystemInitializeProperly_ExpectTrue)
+TEST_F(WorldTest, DoesWorldInitializeProperly_ExpectTrue)
 {
 	EXPECT_TRUE(gameWorld->Initialize());
+}
+
+TEST_F(WorldTest, DoesWorldShutdownProperly_ExpectTrue)
+{
+	EXPECT_TRUE(gameWorld->Shutdown());
 }
