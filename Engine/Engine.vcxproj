@@ -291,7 +291,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Precompiled.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>$(ProjectDir)Source\SubSystems\AI;$(ProjectDir)Source\SubSystems\Audio;$(ProjectDir)Source\SubSystems\Physics;$(ProjectDir)Source\SubSystems\Input;$(ProjectDir)Source\SubSystems\Graphics;$(ProjectDir)Source\SubSystems\;$(ProjectDir)Source\;$(ProjectDir)Source\Universal\;$(ProjectDir)Source\Framework\;$(SolutionDir)\ThirdParty\Boost\Include;$(SolutionDir)ThirdParty\GLM\Include\;$(SolutionDir)\ThirdParty\GLEW\Include\;$(SolutionDir)\ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;_PROFILE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>

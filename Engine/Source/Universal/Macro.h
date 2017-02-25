@@ -12,13 +12,13 @@
 #define COMPILETIME_ASSERT(expr, msg) \
 	static_assert(expr, msg) 
 
-//Must switch to false to enable Release build
-#define _PROFILE \
-	false	
-
-#if (_DEBUG || _PROFILE)
+#if (_DEBUG)
 #define LOG(...) \
 	do { fprintf(stderr, __VA_ARGS__); } while (0)
+
+#elif (_PROFILE)
+#define LOG(...)
+
 #else
 #define NDEBUG
 #define LOG(...) 

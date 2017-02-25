@@ -199,6 +199,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(SolutionDir)Engine\Source\SubSystems\Input;$(SolutionDir)Engine\Source\SubSystems\AI;$(SolutionDir)Engine\Source\SubSystems\Audio;$(SolutionDir)Engine\Source\SubSystems\Physics;$(SolutionDir)Engine\Source\SubSystems\Graphics;$(SolutionDir)Engine\Source\SubSystems\;$(SolutionDir)Engine\Source\;$(SolutionDir)Engine\Source\Framework\;$(SolutionDir)\ThirdParty\Boost\Include;$(SolutionDir)\ThirdParty\GLEW\Include\;$(SolutionDir)ThirdParty\GLM\Include\;$(SolutionDir)\ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_PROFILE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
