@@ -34,7 +34,7 @@
     <ClCompile Include="Source\SubSystems\Graphics\RenderSystem.cpp" />
     <ClCompile Include="Source\SubSystems\GameWorld\SceneManager.cpp" />
     <ClCompile Include="Source\SubSystems\Graphics\Geometry.cpp" />
-    <ClCompile Include="Source\SubSystems\Audio\Audio.cpp" />
+    <ClCompile Include="Source\SubSystems\Audio\AudioSystem.cpp" />
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\ErrorLogging\ErrorLogging.cpp" />
     <ClCompile Include="Source\Framework\LowLevelGraphics\OpenGL\Initialization\GLInitialization.cpp" />
     <ClCompile Include="Source\SubSystems\GameWorld\World.cpp" />
@@ -73,7 +73,7 @@
     <ClInclude Include="Source\SubSystems\GameWorld\SceneManager.h" />
     <ClInclude Include="Source\SubSystems\Components\Component.h" />
     <ClInclude Include="Source\SubSystems\Graphics\Geometry.h" />
-    <ClInclude Include="Source\SubSystems\Audio\Audio.h" />
+    <ClInclude Include="Source\SubSystems\Audio\AudioSystem.h" />
     <ClInclude Include="Source\Universal\DataStructures\Array.h" />
     <ClInclude Include="Source\Universal\DataStructures\Vector.h" />
     <ClInclude Include="Source\Framework\LowLevelGraphics\OpenGL\ErrorLogging\ErrorLogging.h" />

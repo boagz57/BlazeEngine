@@ -6,6 +6,8 @@
 #include "Components/Velocity.h"
 #include "Components/AABB.h"
 
+//TODO:Need to shorten namespace names that are there, AND create namespaces for those systems that don't have any yet
+
 namespace BlazeGraphics { class RenderSystem; }
 
 class SceneManager
@@ -36,6 +38,7 @@ private:
 	friend class InputSystem;
 	friend class MovementSystem;
 	friend class CollisionSystem;
+	friend class AudioSystem;
 
 	//Acts as the 'keys' which will selectively fit into system 'locks'.
 	Array<uint32, 10> bitMasks;
