@@ -2,27 +2,30 @@
 #include "GameWorld/SceneManager.h"
 #include "AudioSystem.h"
 
-AudioSystem::AudioSystem()
+namespace BAudio
 {
+	AudioSystem::AudioSystem()
+	{
 
-}
+	}
 
-AudioSystem::~AudioSystem()
-{
+	AudioSystem::~AudioSystem()
+	{
 
-}
+	}
 
-bool AudioSystem::Initialize()
-{
-	return false;
-}
+	bool AudioSystem::Initialize()
+	{
+		return false;
+	}
 
-bool AudioSystem::Shutdown()
-{
-	return false;
-}
+	bool AudioSystem::Shutdown()
+	{
+		return false;
+	}
 
-void AudioSystem::Update(SceneManager& scene)
-{
+	void AudioSystem::Update(SceneManager& scene)
+	{
 
+	}
 }

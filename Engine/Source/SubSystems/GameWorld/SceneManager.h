@@ -11,6 +11,7 @@ namespace BGraphics { class RenderSystem; }
 namespace BInput { class InputSystem; }
 namespace BPhysics { class CollisionSystem; }
 namespace BPhysics { class MovementSystem; }
+namespace BAudio { class AudioSystem; }
 
 class SceneManager
 {
@@ -40,6 +41,7 @@ private:
 	friend class BInput::InputSystem;
 	friend class BPhysics::MovementSystem;
 	friend class BPhysics::CollisionSystem;
+	friend class BAudio::AudioSystem;
 
 	//Acts as the 'keys' which will selectively fit into system 'locks'.
 	Array<uint32, 10> bitMasks;
