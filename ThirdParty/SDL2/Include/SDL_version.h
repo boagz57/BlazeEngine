@@ -28,9 +28,9 @@
 #ifndef _SDL_version_h
 #define _SDL_version_h
 
-#include "SDL_stdinc.h"
+#include "SDL/SDL_stdinc.h"
 
-#include "begin_code.h"
+#include "SDL/begin_code.h"
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
 extern "C" {
@@ -155,7 +155,7 @@ extern DECLSPEC int SDLCALL SDL_GetRevisionNumber(void);
 #ifdef __cplusplus
 }
 #endif
-#include "close_code.h"
+#include "SDL/close_code.h"
 
 #endif /* _SDL_version_h */
 

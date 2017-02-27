@@ -1,11 +1,11 @@
 #include "Precompiled.h"
 #include "Universal/Macro.h"
+#include "Components/Component.h"
 #include "Graphics/ShapeData.h"
 #include "Math/MatrixTransforms.h"
 #include "Graphics/ShapeData.h"
 #include "Framework/LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "Components/Position.h"
-#include "Components/Component.h"
 #include "GameWorld/SceneManager.h"
 #include "RenderSystem.h"
 

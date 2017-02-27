@@ -1,5 +1,6 @@
 #pragma once
 #include "GL/glew.h"
+#include "Components/Component.h"
 #include "Universal/DataStructures/Vector.h"
 #include "Math/Vector3D.h"
 
