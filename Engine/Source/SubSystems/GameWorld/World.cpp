@@ -4,6 +4,7 @@
 #include "Physics/MovementSystem.h"
 #include "Physics/CollisionSystem.h"
 #include "GameWorld/SceneManager.h"
+#include "SDL/SDL.h"
 #include "Framework/LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "Universal/Globals.h"
 #include "World.h"
@@ -16,6 +17,7 @@ World::~World()
 
 bool World::Initialize()
 {
+	SDL_Init(SDL_INIT_EVERYTHING);
 	return true;
 }
 

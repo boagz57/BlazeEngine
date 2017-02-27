@@ -124,8 +124,8 @@
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>glfw3x64.lib;glew64s.lib;opengl32.lib;Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)\ThirdParty\GLEW\Lib\x64\;$(SolutionDir)\ThirdParty\GLFW\Lib\x64\;$(SolutionDir)\Engine\Binaries\$(PlatformName)_$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3x64.lib;glew64s.lib;opengl32.lib;Engine.lib;SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty\SDL2\lib\x64\;$(SolutionDir)\ThirdParty\GLEW\Lib\x64\;$(SolutionDir)\ThirdParty\GLFW\Lib\x64\;$(SolutionDir)\Engine\Binaries\$(PlatformName)_$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
