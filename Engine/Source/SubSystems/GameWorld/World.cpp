@@ -5,6 +5,7 @@
 #include "Physics/CollisionSystem.h"
 #include "GameWorld/SceneManager.h"
 #include "SDL/SDL.h"
+#include "SDL_mixer.h"
 #include "Framework/LowLevelGraphics/OpenGL/MyOpenGL.h"
 #include "Universal/Globals.h"
 #include "World.h"
@@ -17,12 +18,27 @@ World::~World()
 
 bool World::Initialize()
 {
-	SDL_Init(SDL_INIT_EVERYTHING);
+	SDL_Init(SDL_INIT_AUDIO);
+
+	//Parameters can be either MIX_INIT_FALC, MIX_INIT_MOD, MIX_INIT_MP3 or MIX_INIT_OGG. These bitwise macro 
+	//flags represent the different audio file types SDL_Mixer will support
+	if (Mix_Init(MIX_INIT_MP3) == -1)
+	{
+		LOG("ERROR: SDL_Mixer could not initialize!");
+	};
+
+
+	if (Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, 2, 1024) == -1)
+	{
+		LOG("ERROR: SDL_Mixer Mix_OpenAudio initialize function did not initialize!!");
+	};
+
 	return true;
 }
 
 bool World::Shutdown()
 {
+	Mix_Quit();
 	return true;
 }
 

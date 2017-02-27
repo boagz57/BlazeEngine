@@ -120,12 +120,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Source\SubSystems\Physics;$(SolutionDir)Engine\Source\SubSystems\Audio;$(SolutionDir)Engine\Source\SubSystems\AI;$(SolutionDir)Engine\Source\SubSystems\Input;$(SolutionDir)Engine\Source\SubSystems\Graphics;$(ProjectDir)Source\SubSystems\;$(SolutionDir)Engine\Source\SubSystems\;$(SolutionDir)ThirdParty\GoogleTest\;$(SolutionDir)Engine\Source\;$(SolutionDir)Engine\Source\Framework\;$(SolutionDir)\ThirdParty\Boost\Include;$(SolutionDir)ThirdParty\GLEW\Include\;$(SolutionDir)ThirdParty\GLM\Include\;$(SolutionDir)ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Engine\Source\SubSystems\Physics;$(SolutionDir)Engine\Source\SubSystems\Audio;$(SolutionDir)Engine\Source\SubSystems\AI;$(SolutionDir)Engine\Source\SubSystems\Input;$(SolutionDir)Engine\Source\SubSystems\Graphics;$(ProjectDir)Source\SubSystems\;$(SolutionDir)Engine\Source\SubSystems\;$(SolutionDir)ThirdParty\GoogleTest\;$(SolutionDir)Engine\Source\;$(SolutionDir)Engine\Source\Framework\;$(SolutionDir)\ThirdParty\Boost\Include;$(SolutionDir)ThirdParty\GLEW\Include\;$(SolutionDir)ThirdParty\GLM\Include\;$(SolutionDir)ThirdParty\GLFW\Include\;$(SolutionDir)ThirdParty\SDL2\Include\;$(SolutionDir)ThirdParty\SDL2Mixer\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>glfw3x64.lib;glew64s.lib;opengl32.lib;Engine.lib;SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty\SDL2\lib\x64\;$(SolutionDir)\ThirdParty\GLEW\Lib\x64\;$(SolutionDir)\ThirdParty\GLFW\Lib\x64\;$(SolutionDir)\Engine\Binaries\$(PlatformName)_$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3x64.lib;glew64s.lib;opengl32.lib;Engine.lib;SDL2.lib;SDL2Mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)ThirdParty\SDL2Mixer\Lib\x64;$(SolutionDir)ThirdParty\SDL2\lib\x64\;$(SolutionDir)\ThirdParty\GLEW\Lib\x64\;$(SolutionDir)\ThirdParty\GLFW\Lib\x64\;$(SolutionDir)\Engine\Binaries\$(PlatformName)_$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
