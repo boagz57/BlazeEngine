@@ -39,6 +39,7 @@ bool World::Initialize()
 bool World::Shutdown()
 {
 	Mix_Quit();
+	SDL_Quit();
 	return true;
 }
 
