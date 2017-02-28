@@ -6,13 +6,14 @@
 #include "AudioSystem.h"
 
 static Velocity* entityVelocity = nullptr;
+static BAudio::SoundEffect soundEffect;
 
 namespace BAudio
 {
 	void SoundEffect::PlaySoundEffect(uint16 loops /*default val = 0*/)
 	{
-		if (Mix_PlayChannel(-1, soundFile, loops) == -1)
-			LOG("SDL_Mixer PlayChannel could not play sound!!");
+		if (Mix_PlayChannel(loops, soundFile, loops) == -1)
+			LOG("SDL_Mixer PlayChannel error: %s", Mix_GetError());
 	}
 
 	AudioSystem::AudioSystem()
@@ -25,6 +26,7 @@ namespace BAudio
 
 	bool AudioSystem::Initialize()
 	{
+		soundEffect = LoadSoundEffect("boing.wav");
 		return false;
 	}
 
@@ -42,6 +44,8 @@ namespace BAudio
 			if ((scene.bitMasks.at(entity) & AUDIO_MASK) == AUDIO_MASK)
 			{
 				entityVelocity = &scene.velocityComponents.at(entity);
+				if (entityVelocity->GetVelocity().x || entityVelocity->GetVelocity().y > 0.0f)
+					soundEffect.PlaySoundEffect();
 			}
 		}
 	}

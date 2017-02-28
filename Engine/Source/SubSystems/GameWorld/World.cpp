@@ -3,6 +3,7 @@
 #include "Graphics/RenderSystem.h"
 #include "Physics/MovementSystem.h"
 #include "Physics/CollisionSystem.h"
+#include "Audio/AudioSystem.h"
 #include "GameWorld/SceneManager.h"
 #include "SDL/SDL.h"
 #include "SDL_mixer.h"
@@ -22,15 +23,15 @@ bool World::Initialize()
 
 	//Parameters can be either MIX_INIT_FALC, MIX_INIT_MOD, MIX_INIT_MP3 or MIX_INIT_OGG. These bitwise macro 
 	//flags represent the different audio file types SDL_Mixer will support
-	if (Mix_Init(MIX_INIT_MP3) == -1)
+	if (Mix_Init(MIX_INIT_MP3) == 0)
 	{
-		LOG("ERROR: SDL_Mixer could not initialize!");
+		LOG("ERROR: SDL_Mixer error: %s", Mix_GetError());
 	};
 
 
 	if (Mix_OpenAudio(MIX_DEFAULT_FREQUENCY, MIX_DEFAULT_FORMAT, 2, 1024) == -1)
 	{
-		LOG("ERROR: SDL_Mixer Mix_OpenAudio initialize function did not initialize!!");
+		LOG("ERROR: SDL_Mixer OpenAudio function error: %s", Mix_GetError());
 	};
 
 	return true;
@@ -39,6 +40,7 @@ bool World::Initialize()
 bool World::Shutdown()
 {
 	Mix_Quit();
+	Mix_CloseAudio();
 	SDL_Quit();
 	return true;
 }
@@ -49,6 +51,7 @@ void World::GameLoop()
 	BInput::InputSystem input;
 	BPhysics::CollisionSystem collision;
 	BGraphics::RenderSystem renderer;
+	BAudio::AudioSystem audio;
 
 	SceneManager scene;
 	scene.Initialize();
@@ -59,6 +62,7 @@ void World::GameLoop()
 
 	input.Initialize();
 	movement.Initialize();
+	audio.Initialize();
 	collision.Initialize(scene);
 	renderer.Initialize(scene);
 
@@ -73,6 +77,7 @@ void World::GameLoop()
 
 		input.Update(scene);
 		movement.Update(scene);
+		audio.Update(scene);
 		collision.Update(scene);
 		renderer.Update(scene);
 
