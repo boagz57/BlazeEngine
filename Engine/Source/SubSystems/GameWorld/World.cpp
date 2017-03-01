@@ -17,7 +17,7 @@ World::World()
 World::~World()
 {}
 
-bool World::Initialize()
+bool World::Initialize(SceneManager& scene)
 {
 	SDL_Init(SDL_INIT_AUDIO);
 
@@ -34,10 +34,17 @@ bool World::Initialize()
 		LOG("ERROR: SDL_Mixer OpenAudio function error: %s", Mix_GetError());
 	};
 
+	input.Initialize();
+	movement.Initialize();
+	audio.Initialize();
+	collision.Initialize(scene);
+	renderer.Initialize(scene);
+
+
 	return true;
 }
 
-bool World::Shutdown()
+bool World::Shutdown(SceneManager& scene)
 {
 	Mix_Quit();
 	Mix_CloseAudio();
@@ -45,26 +52,8 @@ bool World::Shutdown()
 	return true;
 }
 
-void World::GameLoop()
+void World::GameLoop(SceneManager& scene)
 {
-	BPhysics::MovementSystem movement;
-	BInput::InputSystem input;
-	BPhysics::CollisionSystem collision;
-	BGraphics::RenderSystem renderer;
-	BAudio::AudioSystem audio;
-
-	SceneManager scene;
-	scene.Initialize();
-
-	scene.CreatePlayer(BlazeFramework::Vector3D(0.0f, 0.0f, 0.0f), "Triangle");
-	scene.CreateStaticEntity(BlazeFramework::Vector3D(0.0f, 0.4f, 0.0f), "Square");
-	scene.CreateStaticEntity(BlazeFramework::Vector3D(0.4f, 0.4f, 0.0f), "Triangle");
-
-	input.Initialize();
-	movement.Initialize();
-	audio.Initialize();
-	collision.Initialize(scene);
-	renderer.Initialize(scene);
 
 	MyOpenGL::InstallShaders();
 
