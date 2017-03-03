@@ -66,8 +66,8 @@ void World::GameLoop(SceneManager& scene)
 
 		input.Update(scene);
 		movement.Update(scene);
-		audio.Update(scene);
 		collision.Update(scene);
+		audio.Update();
 		renderer.Update(scene);
 
 		window.Update();

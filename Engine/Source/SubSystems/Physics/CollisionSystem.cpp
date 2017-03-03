@@ -1,5 +1,6 @@
 #include "Precompiled.h"
 #include "GameWorld/SceneManager.h"
+#include "Audio/AudioSystem.h"
 #include "Universal/Globals.h"
 #include "Components/AABB.h"
 #include "Components/Position.h"
@@ -100,6 +101,9 @@ namespace BPhysics
 		//Exit returning NO intersection between bounding box
 		if (entityCollisionBox->GetMax().y < otherEntityCollisionBox->GetMin().y || entityCollisionBox->GetMin().y > otherEntityCollisionBox->GetMax().y)
 			return;
+
+		BAudio::AudioSystem::PlaySound(1);
+		BAudio::AudioSystem::PlaySound(3);
 
 		//Exit returning YES there is intersection
 		//between points and a collision has occurred

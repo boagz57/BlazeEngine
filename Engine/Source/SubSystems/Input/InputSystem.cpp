@@ -1,6 +1,7 @@
 #include "Precompiled.h"
 #include "GameWorld/SceneManager.h"
 #include "Components/Position.h"
+#include "Audio/AudioSystem.h"
 #include "Components/Velocity.h"
 #include "Universal/Globals.h"
 #include "Framework/LowLevelInput/KeyboardHandling.h"

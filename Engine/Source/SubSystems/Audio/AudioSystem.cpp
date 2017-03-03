@@ -1,20 +1,54 @@
 #include "Precompiled.h"
 #include "SDL_mixer.h"
+#include "Universal/Macro.h"
 #include "GameWorld/SceneManager.h"
 #include "Components/Component.h"
 #include "Components/Velocity.h"
 #include "AudioSystem.h"
 
-static Velocity* entityVelocity = nullptr;
-static BAudio::SoundEffect soundEffect;
-
-namespace BAudio
-{
-	void SoundEffect::PlaySoundEffect(uint16 loops /*default val = 0*/)
+/*	void SoundEffect::PlaySoundEffect(uint16 loops default val = 0)
 	{
 		if (Mix_PlayChannel(loops, soundFile, loops) == -1)
 			LOG("SDL_Mixer PlayChannel error: %s", Mix_GetError());
+	} */
+
+
+/* SoundEffect AudioSystem::LoadSoundEffect(char8* filePathToSoundEffect)
+{
+	auto it = soundEffectCache.find(filePathToSoundEffect);
+
+	SoundEffect effect;
+
+	if (it == soundEffectCache.end())
+	{
+		//Failed to find effect file path, have to load it
+		Mix_Chunk* soundFile = Mix_LoadWAV(filePathToSoundEffect);
+
+		if (soundFile == nullptr)
+			LOG("ERROR: Failed to load sound file!!");
+
+		effect.soundFile = soundFile;
+		//Cache sound file in map data structure at file path name
+		soundEffectCache[filePathToSoundEffect] = soundFile;
 	}
+	else
+	{
+		//Already cached
+		effect.soundFile = it->second;
+	};
+
+	return effect;
+} */
+
+static Velocity* entityVelocity = nullptr;
+
+namespace BAudio
+{
+	static uint16 const numMaxSoundsPending = 16;
+	static SoundMessage oldPendingSoundRequests[numMaxSoundsPending] = {};
+
+	uint16 AudioSystem::numSoundsPending = 0;
+	SoundMessage AudioSystem::pendingSoundRequests[numMaxSoundsPending] = {};
 
 	AudioSystem::AudioSystem()
 	{
@@ -26,7 +60,6 @@ namespace BAudio
 
 	bool AudioSystem::Initialize()
 	{
-		soundEffect = LoadSoundEffect("boing.wav");
 		return false;
 	}
 
@@ -35,45 +68,31 @@ namespace BAudio
 		return false;
 	}
 
-	void AudioSystem::Update(SceneManager& scene)
+	void AudioSystem::Update()
 	{
-		//Loop through all 'entities' in scene to see which entities match the
-		//render bit mask (which entity 'keys' fit into the render 'lock').
-		for (uint16 entity = 0; entity < scene.numMaxEntities; entity++)
+		for (int i = 0; i < numSoundsPending; i++)
 		{
-			if ((scene.bitMasks.at(entity) & AUDIO_MASK) == AUDIO_MASK)
+			if (oldPendingSoundRequests[i].id == pendingSoundRequests[i].id)
 			{
-				entityVelocity = &scene.velocityComponents.at(entity);
-				if (entityVelocity->GetVelocity().x || entityVelocity->GetVelocity().y > 0.0f)
-					soundEffect.PlaySoundEffect();
 			}
-		}
+			else 
+			{
+				LOG("Sound %i", pendingSoundRequests[i].id);
+			}
+
+			oldPendingSoundRequests[i] = pendingSoundRequests[i];
+			pendingSoundRequests[i].id = 0;
+		} 
+
+		numSoundsPending = 0;
 	}
 
-	SoundEffect AudioSystem::LoadSoundEffect(char8* filePathToSoundEffect)
+	void AudioSystem::PlaySound(uint16 soundID)
 	{
-		auto it = soundEffectCache.find(filePathToSoundEffect);
+		RUNTIME_ASSERT(numSoundsPending != numMaxSoundsPending, "ERROR: Too many sounds in Audio systems' sound queue!");
 
-		SoundEffect effect;
+		pendingSoundRequests[numSoundsPending].id = soundID;
 
-		if (it == soundEffectCache.end())
-		{
-			//Failed to find effect file path, have to load it
-			Mix_Chunk* soundFile = Mix_LoadWAV(filePathToSoundEffect);
-
-			if (soundFile == nullptr)
-				LOG("ERROR: Failed to load sound file!!");
-
-			effect.soundFile = soundFile;
-			//Cache sound file in map data structure at file path name
-			soundEffectCache[filePathToSoundEffect] = soundFile;
-		}
-		else
-		{
-			//Already cached
-			effect.soundFile = it->second;
-		};
-
-		return effect;
+		numSoundsPending++;
 	}
 }

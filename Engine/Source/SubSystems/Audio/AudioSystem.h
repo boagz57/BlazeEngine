@@ -1,24 +1,17 @@
 #pragma once
 #include <map>
+#include "Universal/DataStructures/Array.h"
 #include "SDL_mixer.h"
 #include "Universal/UniversalTypeDefs.h"
 #include "Components/Component.h"
-
-#define AUDIO_MASK (VelocityComponent)
 
 class SceneManger;
 
 namespace BAudio
 {
-	class SoundEffect
+	struct SoundMessage
 	{
-	public:
-		void PlaySoundEffect(uint16 loops = 0);
-
-	private:
-		friend class AudioSystem;
-
-		Mix_Chunk* soundFile = nullptr;
+		uint16 id;
 	};
 
 	class AudioSystem
@@ -30,12 +23,15 @@ namespace BAudio
 		bool Initialize();
 		bool Shutdown();
 
-		void Update(SceneManager& scene);
+		void Update();
 
-		SoundEffect LoadSoundEffect(char8* filePathToSoundEffect);
+		static void PlaySound(uint16 soundID);
 
 	private:
 		//Used to store all sound files loaded by user
 		std::map<char8*, Mix_Chunk*> soundEffectCache;
+
+		static uint16 numSoundsPending;
+		static SoundMessage pendingSoundRequests[];
 	};
 }
