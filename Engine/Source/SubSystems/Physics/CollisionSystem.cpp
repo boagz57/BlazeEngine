@@ -103,7 +103,6 @@ namespace BPhysics
 			return;
 
 		BAudio::AudioSystem::PlaySound(1);
-		BAudio::AudioSystem::PlaySound(3);
 
 		//Exit returning YES there is intersection
 		//between points and a collision has occurred

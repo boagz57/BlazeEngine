@@ -8,10 +8,7 @@
 
 /*	void SoundEffect::PlaySoundEffect(uint16 loops default val = 0)
 	{
-		if (Mix_PlayChannel(loops, soundFile, loops) == -1)
-			LOG("SDL_Mixer PlayChannel error: %s", Mix_GetError());
 	} */
-
 
 /* SoundEffect AudioSystem::LoadSoundEffect(char8* filePathToSoundEffect)
 {
@@ -44,7 +41,7 @@ static Velocity* entityVelocity = nullptr;
 
 namespace BAudio
 {
-	static uint16 const numMaxSoundsPending = 116;
+	static uint16 const numMaxSoundsPending = 16;
 	static SoundMessage oldPendingSoundRequests[numMaxSoundsPending] = {};
 
 	uint16 AudioSystem::numSoundsPending = 0;
@@ -60,6 +57,8 @@ namespace BAudio
 
 	bool AudioSystem::Initialize()
 	{
+		sounds[1] = Mix_LoadWAV("boing.wav");
+		sounds[2] = Mix_LoadWAV("Test.mp3");
 		return false;
 	}
 
@@ -79,7 +78,9 @@ namespace BAudio
 			}
 			else
 			{
-				//If first time the event is occurring then play sound associated with it
+				if (Mix_PlayChannel(-1, sounds[pendingSoundRequests[i].id], 0) == -1)
+					LOG("SDL_Mixer PlayChannel error: %s", Mix_GetError());
+
 				LOG("Sound %i", pendingSoundRequests[i].id);
 			};
 		}

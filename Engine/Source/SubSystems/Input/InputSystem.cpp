@@ -47,6 +47,7 @@ namespace BInput
 				{
 				case BlazeFramework::Key::W:
 					entityVelocity->SetVelocityY(.6f);
+					BAudio::AudioSystem::PlaySound(2);
 					break;
 				case BlazeFramework::Key::S:
 					entityVelocity->SetVelocityY(-.6f);

@@ -31,6 +31,7 @@ namespace BAudio
 		//Used to store all sound files loaded by user
 		std::map<char8*, Mix_Chunk*> soundEffectCache;
 
+		std::map<uint16, Mix_Chunk*> sounds;
 		static uint16 numSoundsPending;
 		static SoundMessage pendingSoundRequests[];
 	};
