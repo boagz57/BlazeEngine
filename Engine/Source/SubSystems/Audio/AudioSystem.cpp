@@ -44,7 +44,7 @@ static Velocity* entityVelocity = nullptr;
 
 namespace BAudio
 {
-	static uint16 const numMaxSoundsPending = 16;
+	static uint16 const numMaxSoundsPending = 116;
 	static SoundMessage oldPendingSoundRequests[numMaxSoundsPending] = {};
 
 	uint16 AudioSystem::numSoundsPending = 0;
@@ -75,15 +75,18 @@ namespace BAudio
 			if (oldPendingSoundRequests[i].id == pendingSoundRequests[i].id)
 			{
 			}
-			else 
+			else
 			{
 				LOG("Sound %i", pendingSoundRequests[i].id);
-			}
+			};
+		}
 
-			oldPendingSoundRequests[i] = pendingSoundRequests[i];
+		for (int i = 0; i < 2; i++)
+		{
+			oldPendingSoundRequests[i].id = pendingSoundRequests[i].id;
 			pendingSoundRequests[i].id = 0;
-		} 
-
+		}
+		
 		numSoundsPending = 0;
 	}
 

@@ -14,6 +14,7 @@ uint16 main()
 
 	scene.CreatePlayer(BlazeFramework::Vector3D(0.0f, 0.0f, 0.0f), "Triangle");
 	scene.CreateStaticEntity(BlazeFramework::Vector3D(0.0f, 0.4f, 0.0f), "Triangle");
+	scene.CreateStaticEntity(BlazeFramework::Vector3D(0.8f, 0.4f, 0.0f), "Square");
 
 	gameWorld.Initialize(scene);
 
