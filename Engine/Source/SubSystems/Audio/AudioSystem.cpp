@@ -72,21 +72,27 @@ namespace BAudio
 	{
 		for (int i = 0; i < numSoundsPending; i++)
 		{
+			//Check if previous event which called the PlaySound request function is still occurring by comparing
+			//the old pendingSound state to new pendingSound state
 			if (oldPendingSoundRequests[i].id == pendingSoundRequests[i].id)
 			{
 			}
 			else
 			{
+				//If first time the event is occurring then play sound associated with it
 				LOG("Sound %i", pendingSoundRequests[i].id);
 			};
 		}
 
 		for (int i = 0; i < 2; i++)
 		{
+			//Store the current event's sound request for comparison next frame to prevent the same sound from
+			//restarting and playing each frame iteration
 			oldPendingSoundRequests[i].id = pendingSoundRequests[i].id;
 			pendingSoundRequests[i].id = 0;
 		}
 		
+		//Reset the number of sounds pending each frame to prevent an overflow
 		numSoundsPending = 0;
 	}
 
