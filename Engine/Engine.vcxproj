@@ -230,8 +230,9 @@
       </Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>copy "$(SolutionDir)ThirdParty\SDL2\lib\x64\SDL2.dll" "$(SolutionDir)\Game\Binaries\$(PlatformName)_$(Configuration)"
+copy "$(SolutionDir)ThirdParty\SDL2Mixer\Lib\x64\SDL2_mixer.dll" "$(SolutionDir)\Game\Binaries\$(PlatformName)_$(Configuration)"
+copy "$(SolutionDir)ThirdParty\SDL2Mixer\Lib\x64\smpeg2.dll" "$(SolutionDir)\Game\Binaries\$(PlatformName)_$(Configuration)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -269,7 +270,7 @@
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Precompiled.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)Source\SubSystems\AI;$(ProjectDir)Source\SubSystems\Audio;$(ProjectDir)Source\SubSystems\Physics;$(ProjectDir)Source\SubSystems\Input;$(ProjectDir)Source\SubSystems\Graphics;$(ProjectDir)Source\SubSystems\;$(ProjectDir)Source\;$(ProjectDir)Source\Universal\;$(ProjectDir)Source\Framework\;$(SolutionDir)\ThirdParty\Boost\Include;$(SolutionDir)ThirdParty\GLM\Include\;$(SolutionDir)\ThirdParty\GLEW\Include\;$(SolutionDir)\ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ThirdParty\SDL2Mixer\Include\;$(SolutionDir)ThirdParty\SDL2\Include\;$(ProjectDir)Source\SubSystems\AI;$(ProjectDir)Source\SubSystems\Audio;$(ProjectDir)Source\SubSystems\Physics;$(ProjectDir)Source\SubSystems\Input;$(ProjectDir)Source\SubSystems\Graphics;$(ProjectDir)Source\SubSystems\;$(ProjectDir)Source\;$(ProjectDir)Source\Universal\;$(ProjectDir)Source\Framework\;$(SolutionDir)\ThirdParty\Boost\Include;$(SolutionDir)ThirdParty\GLM\Include\;$(SolutionDir)\ThirdParty\GLEW\Include\;$(SolutionDir)\ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -279,8 +280,9 @@
       <AdditionalDependencies>glfw3x64.lib;glew64s.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>copy "$(SolutionDir)ThirdParty\SDL2\lib\x64\SDL2.dll" "$(SolutionDir)\Game\Binaries\$(PlatformName)_$(Configuration)"
+copy "$(SolutionDir)ThirdParty\SDL2Mixer\Lib\x64\SDL2_mixer.dll" "$(SolutionDir)\Game\Binaries\$(PlatformName)_$(Configuration)"
+copy "$(SolutionDir)ThirdParty\SDL2Mixer\Lib\x64\smpeg2.dll" "$(SolutionDir)\Game\Binaries\$(PlatformName)_$(Configuration)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">
@@ -292,7 +294,7 @@
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Precompiled.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(ProjectDir)Source\SubSystems\AI;$(ProjectDir)Source\SubSystems\Audio;$(ProjectDir)Source\SubSystems\Physics;$(ProjectDir)Source\SubSystems\Input;$(ProjectDir)Source\SubSystems\Graphics;$(ProjectDir)Source\SubSystems\;$(ProjectDir)Source\;$(ProjectDir)Source\Universal\;$(ProjectDir)Source\Framework\;$(SolutionDir)\ThirdParty\Boost\Include;$(SolutionDir)ThirdParty\GLM\Include\;$(SolutionDir)\ThirdParty\GLEW\Include\;$(SolutionDir)\ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)ThirdParty\SDL2Mixer\Include\;$(SolutionDir)ThirdParty\SDL2\Include\;$(ProjectDir)Source\SubSystems\AI;$(ProjectDir)Source\SubSystems\Audio;$(ProjectDir)Source\SubSystems\Physics;$(ProjectDir)Source\SubSystems\Input;$(ProjectDir)Source\SubSystems\Graphics;$(ProjectDir)Source\SubSystems\;$(ProjectDir)Source\;$(ProjectDir)Source\Universal\;$(ProjectDir)Source\Framework\;$(SolutionDir)\ThirdParty\Boost\Include;$(SolutionDir)ThirdParty\GLM\Include\;$(SolutionDir)\ThirdParty\GLEW\Include\;$(SolutionDir)\ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GLEW_STATIC;_PROFILE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
@@ -302,8 +304,9 @@
       <AdditionalDependencies>glfw3x64.lib;glew64s.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>
-      </Command>
+      <Command>copy "$(SolutionDir)ThirdParty\SDL2\lib\x64\SDL2.dll" "$(SolutionDir)\Game\Binaries\$(PlatformName)_$(Configuration)"
+copy "$(SolutionDir)ThirdParty\SDL2Mixer\Lib\x64\SDL2_mixer.dll" "$(SolutionDir)\Game\Binaries\$(PlatformName)_$(Configuration)"
+copy "$(SolutionDir)ThirdParty\SDL2Mixer\Lib\x64\smpeg2.dll" "$(SolutionDir)\Game\Binaries\$(PlatformName)_$(Configuration)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
