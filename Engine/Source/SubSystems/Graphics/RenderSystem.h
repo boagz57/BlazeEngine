@@ -1,37 +1,14 @@
 #pragma once
-#include "GL/glew.h"
-#include "Components/Component.h"
-#include "Universal/DataStructures/Vector.h"
-#include "Math/Vector3D.h"
+#include "Graphics/Sprite.h"
+#include "Character.h"
 
-//Adding what components the system requires in order to process information
-#define RENDER_MASK (PositionComponent)
-
-class SceneManager;
-
-namespace BGraphics
+namespace RenderSystem
 {
-	class RenderSystem
-	{
-	public:
-
-	protected:
-
-	private:
-
-		/////////////////////////////////////////////////////////////
-
-	public:
-		RenderSystem();
-		~RenderSystem();
-
-		bool Initialize(SceneManager& scene);
-		bool Shutdown();
-
-		void Update(SceneManager& scene);
-
-	protected:
-
-	private:
-	};
+	void Initialize();
+	//Load verts so renderer has them loaded at start and data is only sent down once. Return 
+	//unique ID that we can use to attach to a Character later
+	uint16 LoadSprite(BGraphics::Sprite sprite);
+	//Use unique ID from before which will represent a sprite and attache to character
+	void AttachSprite(/* SpriteID, Character */);
+	void RenderCharacter(Character* character);
 }

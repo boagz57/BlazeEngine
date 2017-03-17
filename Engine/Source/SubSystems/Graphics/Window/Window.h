@@ -1,6 +1,6 @@
 #pragma once
-#include "Macro.h"
-#include "UniversalTypeDefs.h"
+#include "Universal/Macro.h"
+#include "Universal/UniversalTypeDefs.h"
 #include "../Framework/LowLevelWindow/WindowHandling.h"
 
 namespace BInput { class InputSystem; }

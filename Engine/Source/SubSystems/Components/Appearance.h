@@ -4,9 +4,9 @@
 struct Appearance 
 {
 public:
-	inline char8* GetShapeName() const { return geometryShapeName; }
-	inline void SetRenderShape(char8* shapeName) { geometryShapeName = shapeName; }
+	inline uint16 GetSpriteID() const { return spriteID; }
+	inline void SetSpriteID(uint16 newSpriteID) { newSpriteID = spriteID; }
 
 private:
-	char8* geometryShapeName;
+	uint16 spriteID;
 };

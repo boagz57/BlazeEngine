@@ -199,7 +199,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(SolutionDir)ThirdParty\SDL2Mixer\Include;$(SolutionDir)\ThirdParty\SDL2\Include\;$(SolutionDir)Engine\Source\SubSystems\Input;$(SolutionDir)Engine\Source\SubSystems\AI;$(SolutionDir)Engine\Source\SubSystems\Audio;$(SolutionDir)Engine\Source\SubSystems\Physics;$(SolutionDir)Engine\Source\SubSystems\Graphics;$(SolutionDir)Engine\Source\SubSystems\;$(SolutionDir)Engine\Source\;$(SolutionDir)Engine\Source\Framework\;$(SolutionDir)\ThirdParty\Boost\Include;$(SolutionDir)\ThirdParty\GLEW\Include\;$(SolutionDir)ThirdParty\GLM\Include\;$(SolutionDir)\ThirdParty\GLFW\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_PROFILE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;_PROFILE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -213,7 +213,13 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Source\GameWorld\World.cpp" />
     <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Source\GameWorld\World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

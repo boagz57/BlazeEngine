@@ -188,16 +188,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\ThirdParty\GoogleTest\src\gtest-all.cc" />
-    <ClCompile Include="Source\SubSystems\Audio\AudioTest.cpp" />
-    <ClCompile Include="Source\SubSystems\Clock\ClockTest.cpp" />
-    <ClCompile Include="Source\SubSystems\GameWorld\SceneManagerTests.cpp" />
-    <ClCompile Include="Source\SubSystems\GameWorld\WorldTests.cpp" />
-    <ClCompile Include="Source\SubSystems\Graphics\RenderSystemTests.cpp" />
-    <ClCompile Include="Source\SubSystems\Graphics\ShapeDataTest.cpp" />
-    <ClCompile Include="Source\SubSystems\Graphics\Window\WindowTest.cpp" />
-    <ClCompile Include="Source\SubSystems\Input\InputSystemTests.cpp" />
-    <ClCompile Include="Source\SubSystems\Physics\CollisionSystemTests.cpp" />
-    <ClCompile Include="Source\SubSystems\Physics\MovementSystemTests.cpp" />
     <ClCompile Include="TestMain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

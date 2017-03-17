@@ -1,5 +1,5 @@
 #pragma once
-#include "Geometry.h"
+#include "Sprite.h"
 
 namespace BGraphics
 {
@@ -10,7 +10,7 @@ namespace BGraphics
 	protected:
 
 	private:
-		static Geometry geometry;
+		static Sprite sprite;
 
 		///////////////////////////////////////////////////////
 
@@ -18,8 +18,8 @@ namespace BGraphics
 		ShapeData();
 		~ShapeData();
 
-		static Geometry Triangle();
-		static Geometry Square();
+		static Sprite Triangle();
+		static Sprite Square();
 
 	protected:
 		

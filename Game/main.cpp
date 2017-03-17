@@ -1,26 +1,23 @@
 #include "Math/Vector3D.h"
-#include "GameWorld/SceneManager.h"
-#include "GameWorld/World.h"
+#include "Player.h"
+#include "ShapeData.h"
+#include "Universal/Globals.h"
+#include "Graphics/Window/Window.h"
+#include "Graphics/RenderSystem.h"
+#include "Universal/UniversalTypeDefs.h"
 
-World gameWorld;
-SceneManager scene;
 
 uint16 main()
 {
-	scene.Initialize();
+	RenderSystem::LoadSprite(BGraphics::ShapeData::Triangle());
+	Player goku;
 
-	//LoadSound(char8* filePath, enum TYPE_OF_SOUND) { return Sound* };
-	//PlaySound(Sound* sound);
+	while (!window.Closed())
+	{
+		window.Clear();
 
-	scene.CreatePlayer(BlazeFramework::Vector3D(0.0f, 0.0f, 0.0f), "Triangle");
-	scene.CreateStaticEntity(BlazeFramework::Vector3D(0.0f, 0.4f, 0.0f), "Triangle");
-	scene.CreateStaticEntity(BlazeFramework::Vector3D(0.8f, 0.4f, 0.0f), "Square");
-
-	gameWorld.Initialize(scene);
-
-	gameWorld.GameLoop(scene);
-
-	gameWorld.Shutdown(scene);
+		window.Update();
+	}
 
 	return 0;
 }

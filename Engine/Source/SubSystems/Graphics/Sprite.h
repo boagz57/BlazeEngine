@@ -5,7 +5,7 @@
 
 namespace BGraphics
 {
-	class Geometry
+	class Sprite
 	{
 	public:
 		Vector<BlazeFramework::Vector3D> vertices;
@@ -23,8 +23,8 @@ namespace BGraphics
 		//////////////////////////////////////////////////////////////////////
 
 	public:
-		Geometry();
-		~Geometry();
+		Sprite();
+		~Sprite();
 
 	protected:
 

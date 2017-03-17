@@ -4,7 +4,7 @@
 namespace BGraphics
 {
 	//static memory
-	Geometry ShapeData::geometry;
+	Sprite ShapeData::sprite;
 
 	ShapeData::ShapeData()
 	{}
@@ -12,7 +12,7 @@ namespace BGraphics
 	ShapeData::~ShapeData()
 	{}
 
-	Geometry ShapeData::Triangle()
+	Sprite ShapeData::Triangle()
 	{
 		Vector<BlazeFramework::Vector3D> triangleVerts
 		{
@@ -29,15 +29,15 @@ namespace BGraphics
 			0,1,2
 		};
 
-		geometry.numVerts = 3;
-		geometry.vertices = triangleVerts;
-		geometry.numIndicies = 3;
-		geometry.indicies = triangleIndicies;
+		sprite.numVerts = 3;
+		sprite.vertices = triangleVerts;
+		sprite.numIndicies = 3;
+		sprite.indicies = triangleIndicies;
 
-		return geometry;
+		return sprite;
 	}
 
-	BGraphics::Geometry ShapeData::Square()
+	BGraphics::Sprite ShapeData::Square()
 	{
 		Vector<BlazeFramework::Vector3D> squareVerts 
 		{
@@ -52,12 +52,12 @@ namespace BGraphics
 			0,1,2,3,1,2
 		};
 
-		geometry.numVerts = 4;
-		geometry.vertices = squareVerts;
-		geometry.numIndicies = 6;
-		geometry.indicies = squareIndices;
+		sprite.numVerts = 4;
+		sprite.vertices = squareVerts;
+		sprite.numIndicies = 6;
+		sprite.indicies = squareIndices;
 
-		return geometry;
+		return sprite;
 	}
 
 }
