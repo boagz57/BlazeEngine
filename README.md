@@ -1,6 +1,6 @@
 # BlazeEngine
 
-This is my experimental game engine where I will test ideas such as different programming paradigms, optimization techniques, etc. 
+This is my experimental game engine where I will test ideas such as different programming paradigms, optimization techniques, etc. Right now only tested for Windows 8+ with Visual Studio IDE. 
 
 Branch Descriptions:
 --------------------------
