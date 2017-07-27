@@ -1,5 +1,7 @@
 # BlazeEngine
 
+This is my experimental game engine where I will test ideas such as different programming paradigms, optimization techniques, etc. 
+
 Branch Descriptions:
 --------------------------
 
