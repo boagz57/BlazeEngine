@@ -1,12 +1,3 @@
 # BlazeEngine
 
-This is my experimental game engine where I will test ideas such as different programming paradigms, optimization techniques, etc. Right now only tested for Windows 8+ with Visual Studio IDE. 
-
-Branch Descriptions:
---------------------------
-
-**Release:** This Branch is both the most up-to-date AND most stable branch. This branch has had it's features tested (somewhat :-)) before being merged. 
-
-**Development:** This branch is where active development is taking place. This is where features are merged to first before merging project to Release branch. This is where multiple features should be tested together to see if the overall architecture makes sense and works.
-
-**Feature - FeatureName:** Feature branches will branch from Development and try to implement a certain, focused feature. Once a feature is 'finished' it will be merged into development to test with other features.
+This was my first toy project for experimenting with different ideas in game development. Really just getting my feet wet here and attempting to understand how a game project might be constructed. This project uses more traditional oop techniques with many class structures, inheritance heirachies, etc. 
